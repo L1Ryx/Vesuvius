@@ -86,8 +86,29 @@ namespace TarodevController
 
             var velocityX = _player.Velocity.x; // Assuming Velocity.x represents horizontal movement speed.
 
-            // Set the Speed parameter in your Animator to transition between Idle and Running animations.
             _anim.SetFloat("Speed", Mathf.Abs(velocityX));
+
+            // Get vertical velocity from the player controller
+            float verticalVelocity = _player.Velocity.y;
+            _anim.SetFloat("VerticalVelocity", verticalVelocity);
+
+            // Check grounded status to manage landing animations
+            bool isGrounded = _player.IsGrounded();
+            _anim.SetBool("Grounded", isGrounded);
+
+            // Handle jumping and falling animations based on velocity and grounded status
+            if (!isGrounded) {
+                if (verticalVelocity > 0) {
+                    _anim.SetBool("IsJumping", true);
+                    _anim.SetBool("IsFalling", false);
+                } else if (verticalVelocity <= 0) {
+                    _anim.SetBool("IsJumping", false);
+                    _anim.SetBool("IsFalling", true);
+                }
+            } else {
+                _anim.SetBool("IsJumping", false);
+                _anim.SetBool("IsFalling", false);
+            }
 
             SetParticleColor(-_player.Up, _moveParticles);
 
@@ -346,6 +367,7 @@ namespace TarodevController
 
         private void OnGroundedChanged(bool grounded, float impact)
         {
+            _anim.SetBool("Grounded", _player.IsGrounded());
             _grounded = grounded;
 
             if (grounded)

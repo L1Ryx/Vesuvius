@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TarodevController
@@ -135,6 +136,11 @@ namespace TarodevController
         private bool _cachedQueryMode, _cachedQueryTriggers;
         private GeneratedCharacterSize _character;
         private const float GRAVITY_SCALE = 1;
+
+        // SHAWN CUSTOM
+        public bool IsGrounded() {
+            return _grounded;
+        }
 
         private void SetupCharacter()
         {
@@ -357,6 +363,8 @@ namespace TarodevController
         #region Direction
 
         private Vector2 _frameDirection;
+
+        
 
         private void CalculateDirection()
         {
@@ -949,6 +957,8 @@ namespace TarodevController
         WallJump
     }
 
+    
+
     public interface IPlayerController
     {
         public PlayerStats Stats { get; }
@@ -968,6 +978,8 @@ namespace TarodevController
         public Vector2 Velocity { get; }
         public int WallDirection { get; }
         public bool ClimbingLadder { get; }
+
+        public bool IsGrounded();
 
         // External force
         public void AddFrameForce(Vector2 force, bool resetVelocity = false);
