@@ -41,7 +41,7 @@ namespace TarodevController
             {
                 JumpDown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C),
                 JumpHeld = Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.C),
-                DashDown = Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1),
+                DashDown = Input.GetKeyDown(KeyCode.LeftControl) || Input.GetMouseButtonDown(1),
                 Move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"))
             };
         }
