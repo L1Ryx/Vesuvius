@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace TarodevController
 {
@@ -38,6 +40,15 @@ namespace TarodevController
         public Vector2 Velocity { get; private set; }
         public int WallDirection { get; private set; }
         public bool ClimbingLadder { get; private set; }
+
+
+
+
+
+
+
+
+        
 
         public void AddFrameForce(Vector2 force, bool resetVelocity = false)
         {
@@ -127,7 +138,20 @@ namespace TarodevController
             CleanFrameData();
 
             SaveCharacterState();
+
+            CheckIfZeroIsPressed(); // DEBUG ONLY
         }
+
+         // TEST BEGIN
+        public UnityEvent onZeroPressed;
+
+        private void CheckIfZeroIsPressed() {
+            if (UnityEngine.Input.GetKey(KeyCode.L)) {
+                onZeroPressed.Invoke();
+            }
+        }
+
+        // TEST END
 
         #endregion
 
@@ -174,6 +198,8 @@ namespace TarodevController
         #endregion
 
         #region Input
+
+       
 
         private FrameInput _frameInput;
 
