@@ -42,9 +42,24 @@ namespace TarodevController
         public bool ClimbingLadder { get; private set; }
 
 
+        // SAVE INFO
+        public void SavePlayerTransform() {
+            ES3.Save("PlayerTransform", this.transform);
+        }
 
-
-
+        public void LoadPlayerTransform() {
+            if (ES3.KeyExists("PlayerTransform")) {
+                ES3.LoadInto("PlayerTransform", this.transform);
+            } else {
+                Debug.LogError("No PlayerTransform save to load!");
+            }
+        }
+        
+        public void ClearPlayerTransformSave() {
+            if (ES3.KeyExists("PlayerTransform")) {
+                ES3.DeleteKey("PlayerTransform");
+            }
+        }
 
 
 
