@@ -435,6 +435,7 @@ namespace TarodevController
         private float _canGrabWallAfter;
         private int _wallDirThisFrame;
 
+
         private bool HorizontalInputPressed => Mathf.Abs(_frameInput.Move.x) > Stats.HorizontalDeadZoneThreshold;
         private bool IsPushingAgainstWall => HorizontalInputPressed && (int)Mathf.Sign(_frameDirection.x) == _wallDirThisFrame;
 
@@ -642,7 +643,7 @@ namespace TarodevController
         private float _startedDashing;
         private float _nextDashTime;
 
-        private void CalculateDash()
+       private void CalculateDash()
         {
             if (!Stats.AllowDash) return;
 
@@ -657,20 +658,23 @@ namespace TarodevController
                 _startedDashing = _time;
                 _nextDashTime = _time + Stats.DashCooldown;
                 DashChanged?.Invoke(true, dir);
+
+                // Reset jump-related states
+                _endedJumpEarly = true; // Prevents further application of jump force
+                SetVelocity(_dashVel);  // Set the new velocity for the dash
             }
 
-            if (_dashing)
+            if (_dashing && _time > _startedDashing + Stats.DashDuration)
             {
-                if (_time > _startedDashing + Stats.DashDuration)
-                {
-                    _dashing = false;
-                    DashChanged?.Invoke(false, Vector2.zero);
+                _dashing = false;
+                DashChanged?.Invoke(false, Vector2.zero);
 
-                    SetVelocity(new Vector2(Velocity.x * Stats.DashEndHorizontalMultiplier, Velocity.y));
-                    if (_grounded) _canDash = true;
-                }
+                // Set post-dash velocity
+                SetVelocity(new Vector2(Velocity.x * Stats.DashEndHorizontalMultiplier, Velocity.y));
+                if (_grounded) _canDash = true;
             }
         }
+
 
         #endregion
 
