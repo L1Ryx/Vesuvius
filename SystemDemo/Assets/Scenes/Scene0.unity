@@ -641,17 +641,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3054942120541986095, guid: a758f4c47c8e05242aa9c708a1c99374, type: 3}
   m_PrefabInstance: {fileID: 817713508}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &736832022 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 189282391083916021, guid: a758f4c47c8e05242aa9c708a1c99374, type: 3}
-  m_PrefabInstance: {fileID: 817713508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736832016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &736832023 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2706007887582569552, guid: a758f4c47c8e05242aa9c708a1c99374, type: 3}
@@ -2321,6 +2310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2140972440}
     m_Modifications:
+    - target: {fileID: 237336425137965945, guid: 77a7d95f9fad34be39289b2a746aa830, type: 3}
+      propertyPath: transitionData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e4f5c6ad76144465b0c900306835a0e, type: 2}
     - target: {fileID: 5871046933598660599, guid: 77a7d95f9fad34be39289b2a746aa830, type: 3}
       propertyPath: m_Name
       value: 000-001-0
@@ -2847,7 +2840,7 @@ PrefabInstance:
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[238]
       value: 
-      objectReference: {fileID: 736832022}
+      objectReference: {fileID: 0}
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[239]
       value: 
@@ -3135,7 +3128,7 @@ PrefabInstance:
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[331]
       value: 
-      objectReference: {fileID: 736832022}
+      objectReference: {fileID: 0}
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[332]
       value: 
@@ -3439,7 +3432,7 @@ PrefabInstance:
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[415]
       value: 
-      objectReference: {fileID: 736832022}
+      objectReference: {fileID: 0}
     - target: {fileID: 7479918064765176879, guid: 1e67618fb18dc4aadb3bd2e59e7540df, type: 3}
       propertyPath: idRef._Values.Array.data[416]
       value: 

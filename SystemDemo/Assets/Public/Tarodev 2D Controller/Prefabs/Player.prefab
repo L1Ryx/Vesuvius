@@ -19870,7 +19870,6 @@ GameObject:
   - component: {fileID: 537198729}
   - component: {fileID: 5731089695359280883}
   - component: {fileID: 2706007887582569552}
-  - component: {fileID: 189282391083916021}
   - component: {fileID: 4202083171830734431}
   m_Layer: 7
   m_Name: Player
@@ -20050,34 +20049,6 @@ MonoBehaviour:
       - m_Target: {fileID: 3054942120541986090}
         m_TargetAssemblyTypeName: TarodevController.PlayerController, Assembly-CSharp
         m_MethodName: SavePlayerTransform
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &189282391083916021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054942120541986084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 00fc7c9d4ea2d47b09e2f115fd3f6a24, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3054942120541986090}
-        m_TargetAssemblyTypeName: TarodevController.PlayerController, Assembly-CSharp
-        m_MethodName: LoadPlayerTransform
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
