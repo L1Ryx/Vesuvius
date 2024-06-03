@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -103,6 +105,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +127,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -144,6 +148,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -164,6 +169,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -184,6 +190,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -204,6 +211,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -224,6 +232,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -244,6 +253,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -264,6 +274,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 76
@@ -284,6 +295,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 76
@@ -304,6 +316,7 @@ ScriptedImporter:
     pivot: {x: 0.625, y: 0.125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 76
@@ -330,6 +343,7 @@ ScriptedImporter:
     cells:
     - name: Player Death 64x64_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -338,6 +352,7 @@ ScriptedImporter:
       spriteId: 10de42e9791c846b490f4eea3b2e683e
     - name: Player Death 64x64_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -346,6 +361,7 @@ ScriptedImporter:
       spriteId: 70bbab393c2b44961a8adf22d0bf1c5c
     - name: Player Death 64x64_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -354,6 +370,7 @@ ScriptedImporter:
       spriteId: f00cd36e2973b453fbc6be4ac56558ca
     - name: Player Death 64x64_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -362,6 +379,7 @@ ScriptedImporter:
       spriteId: 3ebab2db5c196477b8a815b0566fe2da
     - name: Player Death 64x64_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -370,6 +388,7 @@ ScriptedImporter:
       spriteId: bbcb730c0163d449a8bb83919ec67bba
     - name: Player Death 64x64_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -378,6 +397,7 @@ ScriptedImporter:
       spriteId: d0572b26694ee40868d798cf1016af18
     - name: Player Death 64x64_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -386,6 +406,7 @@ ScriptedImporter:
       spriteId: 955482d6222ee4c18b634cf691d078a4
     - name: Player Death 64x64_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -394,6 +415,7 @@ ScriptedImporter:
       spriteId: c8fe14d04efdd42f990e91b9a98cd85f
     - name: Player Death 64x64_Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -402,6 +424,7 @@ ScriptedImporter:
       spriteId: 6fa0205916da74712920136ce17038d6
     - name: Player Death 64x64_Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: -16
         y: -8
@@ -411,6 +434,7 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 48, y: 48}

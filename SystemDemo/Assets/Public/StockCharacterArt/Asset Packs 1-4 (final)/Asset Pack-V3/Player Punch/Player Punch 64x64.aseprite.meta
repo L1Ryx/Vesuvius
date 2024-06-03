@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -103,6 +105,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -124,6 +127,7 @@ ScriptedImporter:
     pivot: {x: 0.7058824, y: -0.55172414}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 31
@@ -144,6 +148,7 @@ ScriptedImporter:
     pivot: {x: 0.75, y: -0.5925926}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -164,6 +169,7 @@ ScriptedImporter:
     pivot: {x: 0.75, y: -0.5925926}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 32
@@ -184,6 +190,7 @@ ScriptedImporter:
     pivot: {x: 0.7368421, y: -0.5714286}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -204,6 +211,7 @@ ScriptedImporter:
     pivot: {x: 0.2195122, y: -0.6956522}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -224,6 +232,7 @@ ScriptedImporter:
     pivot: {x: -0.03448276, y: -0.7619048}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 53
@@ -244,6 +253,7 @@ ScriptedImporter:
     pivot: {x: -0.05, y: -0.64}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 60
@@ -264,6 +274,7 @@ ScriptedImporter:
     pivot: {x: 0.07692308, y: -0.55172414}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 56
@@ -290,6 +301,7 @@ ScriptedImporter:
     cells:
     - name: Player Punch 64x64_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 16
@@ -298,6 +310,7 @@ ScriptedImporter:
       spriteId: 008525b76b5e54526a390d67286b9f89
     - name: Player Punch 64x64_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 16
@@ -306,6 +319,7 @@ ScriptedImporter:
       spriteId: f1b287b705f8d4b9da75a239c811ddba
     - name: Player Punch 64x64_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 17
         y: 16
@@ -314,6 +328,7 @@ ScriptedImporter:
       spriteId: 30eb534bd925f41bf8e9cc9c4bdb2dab
     - name: Player Punch 64x64_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 16
@@ -322,6 +337,7 @@ ScriptedImporter:
       spriteId: d19625ab959d74d459e86f71a5014bc4
     - name: Player Punch 64x64_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 16
@@ -330,6 +346,7 @@ ScriptedImporter:
       spriteId: 351b452e461134bb5b87ea21cb418e5d
     - name: Player Punch 64x64_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 16
@@ -338,6 +355,7 @@ ScriptedImporter:
       spriteId: 2d35de8810fac4a84a6832d1355a3bd2
     - name: Player Punch 64x64_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 16
@@ -346,6 +364,7 @@ ScriptedImporter:
       spriteId: 74480b8c50f19434b9c59548ecb13326
     - name: Player Punch 64x64_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 31
         y: 16
@@ -355,6 +374,7 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
