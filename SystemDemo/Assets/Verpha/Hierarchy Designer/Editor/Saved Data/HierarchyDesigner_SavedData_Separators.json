@@ -1,0 +1,80 @@
+{
+    "items": [
+        {
+            "name": "System",
+            "textColor": {
+                "r": 1.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "fontStyle": 1,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 5
+        },
+        {
+            "name": "UI",
+            "textColor": {
+                "r": 0.4756448268890381,
+                "g": 1.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "fontStyle": 1,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 5
+        },
+        {
+            "name": "Scene",
+            "textColor": {
+                "r": 0.0,
+                "g": 0.9903090000152588,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "fontStyle": 1,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 5
+        },
+        {
+            "name": "Debug",
+            "textColor": {
+                "r": 0.4675636291503906,
+                "g": 0.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "fontStyle": 1,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 5
+        }
+    ]
+}
