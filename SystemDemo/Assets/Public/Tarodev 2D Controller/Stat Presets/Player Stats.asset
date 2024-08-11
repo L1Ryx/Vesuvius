@@ -19,15 +19,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 769
   CharacterSize:
-    Height: 1.41
-    Width: 0.9
-    StepHeight: 0.6
+    Height: 0.9
+    Width: 0.7
+    StepHeight: 0.05
     CrouchHeight: 0.8
     RayInset: 0.1
   VerticalDeadZoneThreshold: 0.3
   HorizontalDeadZoneThreshold: 0.1
   PositionCorrectionMode: 0
-  BaseSpeed: 10
+  BaseSpeed: 6
   Acceleration: 100
   Friction: 70
   AirFrictionMultiplier: 0.5
@@ -36,11 +36,11 @@ MonoBehaviour:
   ExtraConstantGravity: 40
   BufferedJumpTime: 0.15
   CoyoteTime: 0.1
-  JumpPower: 20
+  JumpPower: 17
   EndJumpEarlyExtraForceMultiplier: 3
   MaxAirJumps: 0
   AllowDash: 1
-  DashVelocity: 30
+  DashVelocity: 17
   DashDuration: 0.1
   DashCooldown: 1
   DashEndHorizontalMultiplier: 1

@@ -116,7 +116,7 @@ namespace TarodevController
 
             HandleIdleSpeed(xInput);
 
-            HandleCharacterTilt(xInput);
+            HandleCharacterTilt(-xInput);
 
             HandleCrouching();
 
