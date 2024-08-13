@@ -19,7 +19,7 @@ MonoBehaviour:
     rid: 8609308072989163520
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/Scene Mockup.unity
+    m_path: Assets/Scenes/01-03.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
