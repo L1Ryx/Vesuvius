@@ -899,6 +899,12 @@ namespace TarodevController
 
         private void SetVelocity(Vector2 newVel)
         {
+            // Cap the maximum fall speed
+            if (newVel.y < -Stats.MaxFallSpeed)
+            {
+                newVel.y = -Stats.MaxFallSpeed;
+            }
+
             _rb.linearVelocity = newVel;
             Velocity = newVel;
         }

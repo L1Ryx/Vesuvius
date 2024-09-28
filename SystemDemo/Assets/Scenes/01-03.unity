@@ -185,7 +185,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 300, y: 15.3}
+  m_Size: {x: 300, y: 13.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   subject: {fileID: 3054942121358642251}
-  outOfBoundsYMin: -200
-  outOfBoundsYMax: 200
+  outOfBoundsYMin: -100
+  outOfBoundsYMax: 100
   verticalParallaxFactor: 1
 --- !u!1001 &143809343
 PrefabInstance:
@@ -478,7 +478,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 7.5
+    OrthographicSize: 6.5
     NearClipPlane: 0.3
     FarClipPlane: 50
     Dutch: 0
@@ -826,7 +826,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -851,7 +851,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.3576565, y: 15.9939995, z: -10}
+  m_LocalPosition: {x: 7.559461, y: 15.9939995, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1043,8 +1043,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   subject: {fileID: 3054942121358642251}
-  outOfBoundsYMin: -200
-  outOfBoundsYMax: 200
+  outOfBoundsYMin: -100
+  outOfBoundsYMax: 100
   verticalParallaxFactor: 1
 --- !u!212 &597632721
 SpriteRenderer:
@@ -1095,7 +1095,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 300, y: 15.3}
+  m_Size: {x: 300, y: 13.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -26974,8 +26974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   subject: {fileID: 3054942121358642251}
-  outOfBoundsYMin: -200
-  outOfBoundsYMax: 200
+  outOfBoundsYMin: -100
+  outOfBoundsYMax: 100
   verticalParallaxFactor: 1
 --- !u!212 &1309362867
 SpriteRenderer:
@@ -27026,7 +27026,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 300, y: 15.3}
+  m_Size: {x: 300, y: 13.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -29593,11 +29593,11 @@ SceneRoots:
   - {fileID: 359155079}
   - {fileID: 1846957549}
   - {fileID: 1948409172}
+  - {fileID: 310316572}
   - {fileID: 5768742348382516502}
   - {fileID: 2043189177}
   - {fileID: 1022995365}
   - {fileID: 1011041607}
-  - {fileID: 310316572}
   - {fileID: 1112072059}
   - {fileID: 299302154}
   - {fileID: 1347238807}
