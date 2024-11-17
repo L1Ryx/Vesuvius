@@ -41,6 +41,23 @@ namespace TarodevController
         public int WallDirection { get; private set; }
         public bool ClimbingLadder { get; private set; }
 
+        [Header("Player State")]
+        private bool _freezeMode;
+        public bool FreezeMode
+        {
+            get => _freezeMode;
+            set
+            {
+                _freezeMode = value;
+
+                if (_freezeMode)
+                {
+                    // Reset velocity and stop any ongoing movement
+                    SetVelocity(Vector2.zero);
+                    _frameInput = new FrameInput(); // Reset input to clear any held movement keys
+                }
+            }
+        }
 
         // SAVE INFO
         public void SavePlayerTransform() {
@@ -110,6 +127,8 @@ namespace TarodevController
             _delta = delta;
             _time = time;
 
+            if (FreezeMode) return; // Skip input gathering if FreezeMode is active
+
             GatherInput();
         }
 
@@ -169,6 +188,20 @@ namespace TarodevController
             return _grounded;
         }
 
+        public void SetFreezeMode(bool freeze)
+        {
+            FreezeMode = freeze;
+            if (freeze)
+            {
+                // Clear all movement-related state when entering FreezeMode
+                SetVelocity(Vector2.zero);
+                _dashToConsume = false;
+                _jumpToConsume = false;
+                _forceToApplyThisFrame = Vector2.zero;
+            }
+        }
+
+
         private void SetupCharacter()
         {
             _character = Stats.CharacterSize.GenerateCharacterSize();
@@ -208,9 +241,15 @@ namespace TarodevController
 
         private void GatherInput()
         {
+            if (FreezeMode)
+            {
+                // Do nothing if freeze is active to prevent gathering input
+                return;
+            }
+
+            // Regular input gathering logic
             _frameInput = _playerInput.Gather();
-
-
+            
             if (_frameInput.JumpDown)
             {
                 _jumpToConsume = true;
@@ -222,7 +261,6 @@ namespace TarodevController
                 _dashToConsume = true;
             }
         }
-
         #endregion
 
         #region Frame Data

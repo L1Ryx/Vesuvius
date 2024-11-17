@@ -8,22 +8,48 @@ using UnityEngine.SceneManagement;
 public class PlayerSpawner : MonoBehaviour {
     public SpawnData spawnData;
     public GameObject playerPrefab;
+    public GameObject playerDummy;
 
-    void Start()
+    [Header("Runtime Data")]
+    [SerializeField] private GameObject runtimePlayer;
+
+    private void Awake()
     {
-        InstantiatePlayer(spawnData.spawnLocation);
+        runtimePlayer = InstantiatePlayer(spawnData.spawnLocation);
     }
 
-    private void InstantiatePlayer(Vector2 spawnLocation)
+    public GameObject GetRuntimePlayer() {
+        return runtimePlayer;
+    }
+
+    [ContextMenu("Update Spawn Location")]
+    public void UpdateSpawnLocationFromDummy() {
+        UpdatePlayerLocationInSpawnData();
+    }
+
+
+    public Vector2 UpdatePlayerLocationInSpawnData() {
+        if (playerDummy != null) {
+            spawnData.spawnLocation = playerDummy.transform.position;
+            return spawnData.spawnLocation;
+        } else {
+            Debug.LogError("PlayerDummy is not assigned.");
+            return spawnData.spawnLocation; // Return the current spawn location in case of error
+        }
+    }
+
+    private GameObject InstantiatePlayer(Vector2 spawnLocation)
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {  // Check if the player doesn't already exist
             GameObject player = Instantiate(playerPrefab, spawnLocation, Quaternion.identity);
             player.tag = "Player";
+            return player;
         }
         else
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = spawnLocation;
+            return GameObject.FindGameObjectWithTag("Player");
         }
     }
 
