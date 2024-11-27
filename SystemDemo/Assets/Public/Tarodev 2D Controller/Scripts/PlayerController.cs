@@ -59,6 +59,20 @@ namespace TarodevController
             }
         }
 
+        // Returns true if the player is facing right// Add a reference to the player's SpriteRenderer
+        [SerializeField] private SpriteRenderer playerSpriteRenderer;
+
+        // Returns true if the player is facing right
+        public bool IsFacingRight() {
+            return !playerSpriteRenderer.flipX; // Not flipped means facing right
+        }
+
+        // Returns true if the player is facing left
+        public bool IsFacingLeft() {
+            return playerSpriteRenderer.flipX; // Flipped means facing left
+        }
+
+
         // SAVE INFO
         public void SavePlayerTransform() {
             ES3.Save("PlayerTransform", this.transform);
@@ -187,6 +201,21 @@ namespace TarodevController
         public bool IsGrounded() {
             return _grounded;
         }
+
+        public void CancelJump()
+        {
+            // Reset the vertical velocity if the player is moving upwards
+            if (Velocity.y > 0)
+            {
+                SetVelocity(new Vector2(Velocity.x, 0));
+            }
+
+            // Reset any ongoing jump force application
+            _endedJumpEarly = true;
+            _jumpToConsume = false;
+            _bufferedJumpUsable = false;
+        }
+
 
         public void SetFreezeMode(bool freeze)
         {

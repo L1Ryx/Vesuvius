@@ -1,0 +1,165 @@
+using System.Collections;
+using TarodevController;
+using UnityEngine;
+
+public class Swing : MonoBehaviour
+{
+    [SerializeField] private int damageAmount = 20;
+    [SerializeField] private float knockbackForce = 5f; // Parameterized knockback force
+
+    private PlayerController playerController;
+    private PlayerMelee playerMelee;
+    private GameObject playerParent;
+    private Rigidbody2D rb;
+    private Vector2 direction;
+    private bool collided;
+    private bool downwardStrike;
+    private bool isAltSwing; // Tracks if this swing is alt variation
+
+
+    public void Init(PlayerController pc, PlayerMelee pm, GameObject playerParent, bool altSwing)
+    {
+        this.playerController = pc;
+        this.playerMelee = pm;
+        this.playerParent = playerParent;
+        this.isAltSwing = altSwing;
+
+        rb = playerParent.GetComponent<Rigidbody2D>();
+
+            if (playerController == null) Debug.LogError("PlayerController is null in Swing.Init");
+    if (playerMelee == null) Debug.LogError("PlayerMelee is null in Swing.Init");
+    if (playerParent == null) Debug.LogError("PlayerParent is null in Swing.Init");
+    if (rb == null) Debug.LogError("Rigidbody2D is missing on PlayerParent");
+
+        // Set animation based on swing type
+        PlayAnimation();
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovement();
+    }
+
+    private void PlayAnimation()
+    {
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            string animationName = isAltSwing ? "SwingAttackAlt" : "SwingAttack1";
+            animator.Play(animationName);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
+        {
+            HandleCollision(enemyHealth, collision);
+        }
+    }
+
+    private void HandleCollision(EnemyHealth objHealth, Collider2D collision)
+    {
+        // Deals damage to the enemy
+        objHealth.Damage(damageAmount);
+
+        // Determine the input direction
+        Vector2 inputDirection = playerMelee.GetInputDirection();
+
+        // Check if the attack is a downward strike while in the air
+        if (inputDirection.y < 0 && !playerController.IsGrounded())
+        {
+            // Determine if the enemy gives upward force
+            if (objHealth.giveUpwardsForce)
+            {
+                direction = Vector2.up;
+                downwardStrike = true;
+
+                // Cancel jump hold to prevent further upward velocity
+                playerController.CancelJump();
+            }
+            else
+            {
+                direction = Vector2.down;
+            }
+
+            collided = true;
+        }
+        // Check if it's a horizontal attack
+        else if (inputDirection.y == 0)
+        {
+            // Set direction based on player's facing direction
+            direction = playerController.IsFacingLeft() ? Vector2.right : Vector2.left;
+            collided = true;
+            // Apply knockback to the enemy if applicable
+            if (objHealth.canBeKnockedBack)
+            {
+                ApplyKnockback(objHealth, collision);
+            }
+        }
+
+
+
+        // Start coroutine to reset collision flags
+        StartCoroutine(NoLongerColliding());
+    }
+
+    private void ApplyKnockback(EnemyHealth objHealth, Collider2D collision)
+    {
+        Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
+        if (enemyRb != null)
+        {
+            // Calculate knockback direction (opposite of the swing's force direction)
+            Vector2 knockbackDirection = (collision.transform.position - playerParent.transform.position).normalized;
+            Vector2 knockbackForceVector = knockbackDirection * knockbackForce;
+
+            // Apply knockback via the TestEnemyMovement script
+            var enemyMovement = collision.GetComponent<TestEnemyMovement>();
+            if (enemyMovement != null)
+            {
+                enemyMovement.ApplyKnockback(knockbackForceVector);
+            }
+
+        }
+        else
+        {
+            Debug.LogWarning($"No Rigidbody2D found on {collision.gameObject.name}. Knockback skipped.");
+        }
+    }
+
+    private void HandleMovement()
+    {
+        if (collided)
+        {
+            if (downwardStrike)
+            {
+                // Reset upward velocity to avoid stacking velocity
+                if (rb.linearVelocity.y > 0)
+                {
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+                }
+
+                // Apply upward force using Impulse mode
+                rb.AddForce(Vector2.up * playerMelee.upwardsForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                // Apply force in the determined direction using Impulse mode
+                rb.AddForce(direction * playerMelee.defaultForce, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    private IEnumerator NoLongerColliding()
+    {
+        // Waits for a specified time before resetting collision flags
+        yield return new WaitForSeconds(playerMelee.movementTime);
+        collided = false;
+        downwardStrike = false;
+    }
+
+    public void SwingFinish()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+}

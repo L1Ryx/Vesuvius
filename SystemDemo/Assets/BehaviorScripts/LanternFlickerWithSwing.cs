@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 using UnityEngine.Rendering.Universal; // Import for 2D Lights
 
 public class LanternFlickerWithSwing : MonoBehaviour

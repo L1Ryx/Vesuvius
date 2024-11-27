@@ -61,6 +61,15 @@ public class PlayerInfo : ScriptableObject
         }
     }
 
+    public int DecrementHealth() {
+        currentHealth -= 1;
+        if (currentHealth <= 0) {
+            Debug.Log("Player Death");
+            // death logic
+        }
+        return currentHealth;
+    }
+
     public int GetAbilityCost() => abilityCost;
     public void SetAbilityCost(int value) => abilityCost = Mathf.Max(0, value);
 }

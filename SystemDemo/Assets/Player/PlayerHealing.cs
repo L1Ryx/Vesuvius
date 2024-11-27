@@ -76,7 +76,7 @@ public class PlayerHealing : MonoBehaviour
         healingParticles.Play();
 
         // Schedule healing completion after the animation duration
-        Invoke(nameof(CompleteHealing), healAnimationLength); // Assuming 2 seconds for the heal animation
+        Invoke(nameof(CompleteHealing), healAnimationLength);
     }
 
     private void CompleteHealing()
@@ -98,9 +98,12 @@ public class PlayerHealing : MonoBehaviour
         isHealing = false;
     }
 
-    public void InterruptHealing()
+    private void InterruptHealing()
     {
         if (!isHealing) return;
+
+        // Cancel scheduled CompleteHealing invocation
+        CancelInvoke(nameof(CompleteHealing));
 
         // Stop healing particles
         healingParticles.Stop();
@@ -108,6 +111,20 @@ public class PlayerHealing : MonoBehaviour
         // Reset freeze mode and return to normal animations
         playerController.SetFreezeMode(false);
         isHealing = false;
+
+        // Reset healing animation state
+        animator.ResetTrigger("Heal");
+        animator.Play("Idle"); // Assuming "Idle" is the default animation state
+
+        // Ensure any overlay effects are stopped
+        StopAllCoroutines();
+        ResetOverlayAlpha();
+    }
+
+    public void CancelHeal()
+    {
+        // This method performs the same actions as InterruptHealing
+        InterruptHealing();
     }
 
     private IEnumerator LerpOverlayAlpha(float targetAlpha, float speed)
@@ -137,6 +154,15 @@ public class PlayerHealing : MonoBehaviour
         overlayColor.a = 0f;
         whiteOverlay.color = overlayColor;
 
+        overlayActive = false;
+    }
+
+    private void ResetOverlayAlpha()
+    {
+        // Immediately reset the overlay alpha to 0
+        Color overlayColor = whiteOverlay.color;
+        overlayColor.a = 0f;
+        whiteOverlay.color = overlayColor;
         overlayActive = false;
     }
 }
