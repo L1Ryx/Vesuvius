@@ -32,6 +32,11 @@ public class PlayerMelee : MonoBehaviour
     public Transform leftSheathPoint;
     public Transform rightSheathPoint;
     public float sheathLerpSpeed = 5f;
+    [Header("Coyote Time Settings")]
+    public float coyoteTimeDuration = 0.3f; // Time before the end of a swing to register a queued input
+    private bool isSwingQueued = false; // Tracks if a swing input is queued
+    private Vector2 queuedInputDirection; // Stores the direction of the queued swing
+
 
     public bool IsSwinging { get; private set; }
 
@@ -90,16 +95,29 @@ public class PlayerMelee : MonoBehaviour
 
     private void OnSwing(InputAction.CallbackContext context)
     {
+        // Check if swinging is currently allowed
         if (Time.time - lastSwingTime < cooldownTime || IsSwinging)
         {
+            // If the player presses swing during the coyote time, queue the swing
+            if (IsSwinging && swingDuration - (Time.time - lastSwingTime) <= coyoteTimeDuration)
+            {
+                isSwingQueued = true;
+                queuedInputDirection = inputDirection; // Store the current input direction
+            }
             return;
         }
 
+        PerformSwing();
+    }
+
+    private void PerformSwing()
+    {
         if (swingPrefab != null && playerController != null)
         {
             Vector3 swingPosition;
             Quaternion swingRotation;
 
+            // Determine swing direction based on input
             if (inputDirection.y > 0)
             {
                 swingPosition = playerSprite.position + (Vector3)upSwingOffset;
@@ -144,6 +162,8 @@ public class PlayerMelee : MonoBehaviour
         }
     }
 
+
+
     private void UpdateSwingSequence()
     {
         // Check if the sequence has timed out
@@ -161,7 +181,16 @@ public class PlayerMelee : MonoBehaviour
     {
         IsSwinging = false;
         SetSheathActive(true);
+
+        // Check if a swing was queued during the coyote time
+        if (isSwingQueued)
+        {
+            isSwingQueued = false; // Reset the queued swing flag
+            inputDirection = queuedInputDirection; // Use the queued input direction
+            PerformSwing(); // Perform the queued swing
+        }
     }
+
 
     private void SetSheathActive(bool active)
     {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c491d15c3774d4321b9f1d525140e1a2
+guid: 04ea8e9922986450aa683f6becfc07ff
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 16
@@ -80,7 +80,7 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
@@ -93,11 +93,11 @@ ScriptedImporter:
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638683446496835180
+  platformSettingsDirtyTick: 638683196256914330
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,19 +122,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: chinchilla-walk
+  - name: Midge-Walk
     originalName: 
-    pivot: {x: 0.53846157, y: 0.5714286}
+    pivot: {x: 0.5, y: 0.6}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 44
-      y: 4
-      width: 13
-      height: 14
-    spriteID: 602d07700b3b741349be38db7ddd25fa
+      x: 4
+      y: 32
+      width: 12
+      height: 5
+    spriteID: 675b2f99cbf654d0bae3a03c3bba4610
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,10 +142,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 4}
-  - name: chinchilla-walk_Frame_1
+    uvTransform: {x: 4, y: 32}
+  - name: Midge-Walk_Frame_1
     originalName: 
-    pivot: {x: 0.5833334, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -154,8 +154,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 12
-      height: 16
-    spriteID: f6c0675d06ad54fd2b93ec03e7098d5e
+      height: 6
+    spriteID: 70d667cdae44344d1959d57ae140748d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -164,40 +164,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: chinchilla-walk_Frame_2
+  - name: Midge-Walk_Frame_2
     originalName: 
-    pivot: {x: 0.5833334, y: 0.53333336}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 25
-      y: 28
-      width: 12
-      height: 15
-    spriteID: d4575e86f5cf24daf8b3fc3038dc13d3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 25, y: 28}
-  - name: chinchilla-walk_Frame_3
-    originalName: 
-    pivot: {x: 0.53846157, y: 0.5714286}
+    pivot: {x: 0.5, y: 0.6}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
-      width: 13
-      height: 14
-    spriteID: 62776c0e56ea64e859d53fb4837f75cd
+      y: 45
+      width: 12
+      height: 5
+    spriteID: c300a2f1b57d0446dbb1dcc3b86cd958
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -205,20 +184,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: chinchilla-walk_Frame_4
+    uvTransform: {x: 4, y: 45}
+  - name: Midge-Walk_Frame_3
     originalName: 
-    pivot: {x: 0.5833334, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 24
-      y: 4
+      x: 4
+      y: 18
       width: 12
-      height: 16
-    spriteID: 49cfae2e5529e4544a6cf6b967639ac0
+      height: 6
+    spriteID: 73900df72fd244b3c82154bcaf9130da
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -226,91 +205,52 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 24, y: 4}
-  - name: chinchilla-walk_Frame_5
-    originalName: 
-    pivot: {x: 0.5833334, y: 0.53333336}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 45
-      y: 28
-      width: 12
-      height: 15
-    spriteID: 2b25f91fb686248a6a769891b4ec0b69
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 45, y: 28}
+    uvTransform: {x: 4, y: 18}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1126401037
-    name: chinchilla-walk
+    guid: -1521638058
+    name: Midge-Walk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: chinchilla-walk_Frame_0
+    - name: Midge-Walk_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 13
-        height: 14
-      spriteId: 602d07700b3b741349be38db7ddd25fa
-    - name: chinchilla-walk_Frame_1
+        x: 2
+        y: 1
+        width: 12
+        height: 5
+      spriteId: 675b2f99cbf654d0bae3a03c3bba4610
+    - name: Midge-Walk_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
+        x: 2
+        y: 1
         width: 12
-        height: 16
-      spriteId: f6c0675d06ad54fd2b93ec03e7098d5e
-    - name: chinchilla-walk_Frame_2
+        height: 6
+      spriteId: 70d667cdae44344d1959d57ae140748d
+    - name: Midge-Walk_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
+        x: 2
+        y: 1
         width: 12
-        height: 15
-      spriteId: d4575e86f5cf24daf8b3fc3038dc13d3
-    - name: chinchilla-walk_Frame_3
+        height: 5
+      spriteId: c300a2f1b57d0446dbb1dcc3b86cd958
+    - name: Midge-Walk_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 13
-        height: 14
-      spriteId: 62776c0e56ea64e859d53fb4837f75cd
-    - name: chinchilla-walk_Frame_4
-      frameIndex: 4
-      additiveSortOrder: 0
-      cellRect:
-        x: 1
-        y: 0
+        x: 2
+        y: 1
         width: 12
-        height: 16
-      spriteId: 49cfae2e5529e4544a6cf6b967639ac0
-    - name: chinchilla-walk_Frame_5
-      frameIndex: 5
-      additiveSortOrder: 0
-      cellRect:
-        x: 1
-        y: 0
-        width: 12
-        height: 15
-      spriteId: 2b25f91fb686248a6a769891b4ec0b69
+        height: 6
+      spriteId: 73900df72fd244b3c82154bcaf9130da
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -319,7 +259,7 @@ ScriptedImporter:
     ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -350,7 +290,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  generatePhysicsShape: 0
+  generatePhysicsShape: 1
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 16, y: 8}

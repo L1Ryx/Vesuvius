@@ -40004,6 +40004,7 @@ MonoBehaviour:
   leftSheathPoint: {fileID: 2826921789405335631}
   rightSheathPoint: {fileID: 1871424738202098426}
   sheathLerpSpeed: 5
+  coyoteTimeDuration: 0.3
 --- !u!114 &1454567660941895288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40031,6 +40032,7 @@ MonoBehaviour:
   timeStopScaleValue: 0.1
   originalColor: {r: 0, g: 0, b: 0, a: 0}
   damageColor: {r: 0, g: 0, b: 0, a: 1}
+  useTimeStop: 1
   damageBurst: {fileID: 6585826289682711527}
 --- !u!1 &6079751377557621919
 GameObject:

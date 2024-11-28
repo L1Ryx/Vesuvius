@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c491d15c3774d4321b9f1d525140e1a2
+guid: 9b733f7b17282487f8c745223e6b671f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -75,12 +75,12 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
@@ -88,16 +88,16 @@ ScriptedImporter:
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
-    generateAnimationClips: 0
+    generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638683446496835180
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,19 +122,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: chinchilla-walk
+  - name: Goat-Walk_Frame_0
     originalName: 
-    pivot: {x: 0.53846157, y: 0.5714286}
+    pivot: {x: 0.4615385, y: -0.10000001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 44
-      y: 4
+      x: 4
+      y: 62
       width: 13
-      height: 14
-    spriteID: 602d07700b3b741349be38db7ddd25fa
+      height: 20
+    spriteID: c614690264f2d4abf9151db45d06ada4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,10 +142,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 4}
-  - name: chinchilla-walk_Frame_1
+    uvTransform: {x: 4, y: 62}
+  - name: Goat-Walk_Frame_1
     originalName: 
-    pivot: {x: 0.5833334, y: 0.5}
+    pivot: {x: 0.42857146, y: -0.095238104}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -153,9 +153,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 12
-      height: 16
-    spriteID: f6c0675d06ad54fd2b93ec03e7098d5e
+      width: 14
+      height: 21
+    spriteID: 22ac57f22659049dfb791dad78131d9d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -164,40 +164,19 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: chinchilla-walk_Frame_2
+  - name: Goat-Walk_Frame_2
     originalName: 
-    pivot: {x: 0.5833334, y: 0.53333336}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 25
-      y: 28
-      width: 12
-      height: 15
-    spriteID: d4575e86f5cf24daf8b3fc3038dc13d3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 25, y: 28}
-  - name: chinchilla-walk_Frame_3
-    originalName: 
-    pivot: {x: 0.53846157, y: 0.5714286}
+    pivot: {x: 0.4615385, y: -0.10000001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 28
+      y: 90
       width: 13
-      height: 14
-    spriteID: 62776c0e56ea64e859d53fb4837f75cd
+      height: 20
+    spriteID: 9332e17d7953f4c5a96fc4e258d8292f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -205,20 +184,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 28}
-  - name: chinchilla-walk_Frame_4
+    uvTransform: {x: 4, y: 90}
+  - name: Goat-Walk_Frame_3
     originalName: 
-    pivot: {x: 0.5833334, y: 0.5}
+    pivot: {x: 0.53846157, y: -0.10000001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 24
+      x: 26
       y: 4
-      width: 12
-      height: 16
-    spriteID: 49cfae2e5529e4544a6cf6b967639ac0
+      width: 13
+      height: 20
+    spriteID: cf9c7ef9dd9fe4fa592c299da8e3a988
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -226,20 +205,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 24, y: 4}
-  - name: chinchilla-walk_Frame_5
+    uvTransform: {x: 26, y: 4}
+  - name: Goat-Walk_Frame_4
     originalName: 
-    pivot: {x: 0.5833334, y: 0.53333336}
+    pivot: {x: 0.5714286, y: -0.095238104}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 45
-      y: 28
-      width: 12
-      height: 15
-    spriteID: 2b25f91fb686248a6a769891b4ec0b69
+      x: 4
+      y: 33
+      width: 14
+      height: 21
+    spriteID: 42b2db1c5beb04a2cbcdd6d03dc61a58
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -247,110 +226,95 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 45, y: 28}
+    uvTransform: {x: 4, y: 33}
+  - name: Goat-Walk_Frame_5
+    originalName: 
+    pivot: {x: 0.53846157, y: -0.10000001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 32
+      width: 13
+      height: 20
+    spriteID: 4b2a5d0ba1f234a52b37c3a4a54e5775
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 32}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1126401037
-    name: chinchilla-walk
+    guid: 1707137049
+    name: Goat-Walk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: chinchilla-walk_Frame_0
+    - name: Goat-Walk_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
+        x: 2
+        y: 2
         width: 13
-        height: 14
-      spriteId: 602d07700b3b741349be38db7ddd25fa
-    - name: chinchilla-walk_Frame_1
+        height: 20
+      spriteId: c614690264f2d4abf9151db45d06ada4
+    - name: Goat-Walk_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 12
-        height: 16
-      spriteId: f6c0675d06ad54fd2b93ec03e7098d5e
-    - name: chinchilla-walk_Frame_2
+        x: 2
+        y: 2
+        width: 14
+        height: 21
+      spriteId: 22ac57f22659049dfb791dad78131d9d
+    - name: Goat-Walk_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 12
-        height: 15
-      spriteId: d4575e86f5cf24daf8b3fc3038dc13d3
-    - name: chinchilla-walk_Frame_3
+        x: 2
+        y: 2
+        width: 13
+        height: 20
+      spriteId: 9332e17d7953f4c5a96fc4e258d8292f
+    - name: Goat-Walk_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
         x: 1
-        y: 0
+        y: 2
         width: 13
-        height: 14
-      spriteId: 62776c0e56ea64e859d53fb4837f75cd
-    - name: chinchilla-walk_Frame_4
+        height: 20
+      spriteId: cf9c7ef9dd9fe4fa592c299da8e3a988
+    - name: Goat-Walk_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
-        x: 1
-        y: 0
-        width: 12
-        height: 16
-      spriteId: 49cfae2e5529e4544a6cf6b967639ac0
-    - name: chinchilla-walk_Frame_5
+        x: 0
+        y: 2
+        width: 14
+        height: 21
+      spriteId: 42b2db1c5beb04a2cbcdd6d03dc61a58
+    - name: Goat-Walk_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
         x: 1
-        y: 0
-        width: 12
-        height: 15
-      spriteId: 2b25f91fb686248a6a769891b4ec0b69
+        y: 2
+        width: 13
+        height: 20
+      spriteId: 4b2a5d0ba1f234a52b37c3a4a54e5775
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 16, y: 16}
+  canvasSize: {x: 16, y: 24}
