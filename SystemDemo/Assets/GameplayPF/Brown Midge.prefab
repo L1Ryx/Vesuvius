@@ -5206,7 +5206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: 1
-  healthAmount: 100
+  healthAmount: 80
   iFramesTime: 0.2
   giveUpwardsForce: 1
   canBeKnockedBack: 1
@@ -5220,6 +5220,9 @@ MonoBehaviour:
   fadeDuration: 3
   deathBurst: {fileID: 6320719750087831749}
   sr: {fileID: 2722311031877274524}
+  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+  minTotemPower: 12
+  maxTotemPower: 16
 --- !u!1 &8448140482492376326
 GameObject:
   m_ObjectHideFlags: 0

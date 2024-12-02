@@ -61,6 +61,16 @@ public class PlayerInfo : ScriptableObject
         }
     }
 
+    public int AddTotemPower(int addedPower)
+    {
+        int total = totemPower + addedPower;
+        if (total >= 100) {
+            total = 100;
+        }
+        totemPower = total;
+        return totemPower;
+    }
+
     public int DecrementHealth() {
         currentHealth -= 1;
         if (currentHealth <= 0) {

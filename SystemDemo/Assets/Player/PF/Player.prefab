@@ -39914,7 +39914,7 @@ MonoBehaviour:
   healedBurstParticles: {fileID: 456815343108005221}
   playerController: {fileID: 4915597169364020558}
   whiteOverlay: {fileID: 7639604128756639145}
-  healAnimationLength: 1.1
+  healAnimationLength: 0.8
   overlayAlpha: 0.01
   overlayLerpSpeed: 12
 --- !u!114 &1619734125982476819
@@ -40034,6 +40034,8 @@ MonoBehaviour:
   damageColor: {r: 0, g: 0, b: 0, a: 1}
   useTimeStop: 1
   damageBurst: {fileID: 6585826289682711527}
+  maxKnockbackVelocity: 250
+  finalMaxKnockbackVelocity: 300
 --- !u!1 &6079751377557621919
 GameObject:
   m_ObjectHideFlags: 0
@@ -45091,7 +45093,7 @@ Transform:
   m_GameObject: {fileID: 7671283246918718252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.034, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -15,7 +15,12 @@ public class TotemSection : MonoBehaviour
     [Header("Color Settings")]
     [SerializeField] private Color insufficientTotemsColor = Color.red; // Customizable color for insufficient totems
 
+    [Header("Transition Settings")]
+    [SerializeField] private float transitionSpeed = 5f; // Integers per second
+
     private Color initialTextColor; // Store the initial text color
+    private int displayedTotems; // The totem value currently displayed
+    private float totemUpdateTimer = 0f; // Timer for the transition
 
     private void Start()
     {
@@ -25,27 +30,54 @@ public class TotemSection : MonoBehaviour
             initialTextColor = currentTotemsText.color;
         }
 
+        // Initialize the displayed totems
+        displayedTotems = playerInfo.GetTotemPower();
+
         // Initial Update
         UpdateTotemSection();
     }
 
     private void Update()
     {
-        // Continuously update the Totem Section
-        UpdateTotemSection();
+        int targetTotems = playerInfo.GetTotemPower();
+        if (displayedTotems != targetTotems)
+        {
+            // Transition displayedTotems towards targetTotems
+            totemUpdateTimer += Time.deltaTime * transitionSpeed;
+
+            if (totemUpdateTimer >= 1f)
+            {
+                int steps = Mathf.FloorToInt(totemUpdateTimer);
+                totemUpdateTimer -= steps;
+
+                if (displayedTotems < targetTotems)
+                {
+                    displayedTotems = Mathf.Min(displayedTotems + steps, targetTotems);
+                }
+                else if (displayedTotems > targetTotems)
+                {
+                    displayedTotems = Mathf.Max(displayedTotems - steps, targetTotems);
+                }
+
+                UpdateTotemSection();
+            }
+        }
+        else
+        {
+            totemUpdateTimer = 0f;
+        }
     }
 
     private void UpdateTotemSection()
     {
-        // Update texts based on PlayerInfo values
-        int currentTotems = playerInfo.GetTotemPower();
+        // Update texts based on displayedTotems and requiredTotems
         int requiredTotems = playerInfo.GetAbilityCost();
 
-        currentTotemsText.text = currentTotems.ToString();
+        currentTotemsText.text = displayedTotems.ToString();
         requiredTotemsText.text = requiredTotems.ToString();
 
         // Change color based on comparison
-        bool insufficientTotems = currentTotems < requiredTotems;
+        bool insufficientTotems = displayedTotems < requiredTotems;
         Color targetColor = insufficientTotems ? insufficientTotemsColor : initialTextColor;
 
         // Apply colors

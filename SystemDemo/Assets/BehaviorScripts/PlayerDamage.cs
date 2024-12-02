@@ -1,6 +1,5 @@
 using System.Collections;
 using TarodevController;
-using Unity.Profiling;
 using UnityEngine;
 
 /*
@@ -45,208 +44,250 @@ public class PlayerDamage : MonoBehaviour
     private int enemyLayer;
     private bool shouldIgnoreCollision = false;
     private bool shouldResetCollision = false;
+    
     private Vector2 pendingKnockback = Vector2.zero;
     private bool applyKnockback = false;
+    [Header("Knockback")]
+    public float maxKnockbackVelocity = 10f; 
+    public float finalMaxKnockbackVelocity = 20f;
 
 
-    // private void Awake()
-    // {
-    //     playerRb = playerParent.GetComponent<Rigidbody2D>();
-    //     spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
-    //     playerHealing = playerParent.GetComponent<PlayerHealing>();
+//     private void Awake()
+//     {
+//         playerRb = playerParent.GetComponent<Rigidbody2D>();
+//         spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
+//         playerHealing = playerParent.GetComponent<PlayerHealing>();
 
-    //     playerLayer = LayerMask.NameToLayer("Player");
-    //     enemyLayer = LayerMask.NameToLayer("Enemy");
-    // }
+//         playerLayer = LayerMask.NameToLayer("Player");
+//         enemyLayer = LayerMask.NameToLayer("Enemy");
+//     }
 
-    // void Start() {
-    //     originalColor = spriteRenderer.color;
-    // }
+//     void Start() {
+//         originalColor = spriteRenderer.color;
+//     }
 
-    // private void Update()
-    // {
-    //     // Handle collision layer changes outside of physics callbacks
-    //     if (shouldIgnoreCollision)
-    //     {
-    //         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
-    //         shouldIgnoreCollision = false;
-    //     }
+//     private void Update()
+//     {
+//         // Handle collision layer changes outside of physics callbacks
+//         if (shouldIgnoreCollision)
+//         {
+//             Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+//             shouldIgnoreCollision = false;
+//         }
 
-    //     if (shouldResetCollision)
-    //     {
-    //         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
-    //         shouldResetCollision = false;
-    //     }
+//         if (shouldResetCollision)
+//         {
+//             Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+//             shouldResetCollision = false;
+//         }
 
-    // if (isTimeStopped)
-    // {
-    //     timeStopMaxDuration -= Time.unscaledDeltaTime;
-    //     if (timeStopMaxDuration <= 0)
-    //     {
-    //         timeStopMaxDuration = 0; // Ensure it doesn't go negative
-    //         ResumeTimeEffect();
-    //     }
-    // }
+//     if (isTimeStopped)
+//     {
+//         timeStopMaxDuration -= Time.unscaledDeltaTime;
+//         if (timeStopMaxDuration <= 0)
+//         {
+//             timeStopMaxDuration = 0; // Ensure it doesn't go negative
+//             ResumeTimeEffect();
+//         }
+//     }
 
-    // }
+//     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if (collision.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
-    //     {
-    //         HandleCollisionWithEnemy(enemyHealth, collision);
-    //     }
-    // }
-
-    // private void HandleCollisionWithEnemy(EnemyHealth enemy, Collision2D collision)
-    // {
-    //     // Skip processing if the enemy is dead
-    //     if (enemy.GetIsDead())
-    //     {
-    //         // Permanently ignore collision with the dead enemy
-    //         Collider2D enemyCollider = collision.collider;
-    //         Collider2D playerCollider = GetComponent<Collider2D>();
-
-    //         if (playerCollider != null && enemyCollider != null)
-    //         {
-    //             Physics2D.IgnoreCollision(playerCollider, enemyCollider, true);
-    //         }
-    //         return;
-    //     }
-
-    //     if (!isInvincible)
-    //     {
-    //         playerHealing.CancelHeal();
-    //         isInvincible = true;
-    //         if (useTimeStop) {
-    //             TurnToTimeStopColor();
-    //         }
-            
-
-    //         // Temporarily ignore collision layers for invincibility
-    //         shouldIgnoreCollision = true;
-
-    //         if (useTimeStop) {
-    //             StartCoroutine(StartStopTimeEffectCoroutine());
-    //         } else {
-    //             playerInfo.DecrementHealth();
-
-    //             // Trigger the Damage Burst particle effect
-    //             if (damageBurst != null)
-    //             {
-    //                 damageBurst.Play();
-    //             }
-    //             else
-    //             {
-    //                 Debug.LogWarning("Damage Burst particle system is not assigned!");
-    //             }
-
-    //             StartCoroutine(FlashPlayer());
-    //         }
-            
-    //         StartCoroutine(ResetInvincibilityCoroutine());
-
-    //         Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-    //         pendingKnockback = Vector2.ClampMagnitude(knockbackDirection * playerKnockbackVelocity, 1000f);
-    //         applyKnockback = true;
-    //     }
-    // }
+// private void OnCollisionEnter2D(Collision2D collision)
+// {
+//     // Try to get EnemyHealth directly on the object
+//     if (collision.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
+//     {
+//         HandleCollisionWithEnemy(enemyHealth, collision);
+//     }
+//     else
+//     {
+//         // Search in children
+//         var enemyHealthScriptInChildren = collision.gameObject.GetComponentInChildren<EnemyHealth>();
+//         if (enemyHealthScriptInChildren != null)
+//         {
+//             HandleCollisionWithEnemy(enemyHealthScriptInChildren, collision);
+//         }
+//         else
+//         {
+//             // Search in parent
+//             var enemyHealthScriptInParent = collision.gameObject.GetComponentInParent<EnemyHealth>();
+//             if (enemyHealthScriptInParent != null)
+//             {
+//                 HandleCollisionWithEnemy(enemyHealthScriptInParent, collision);
+//             }
+//             else
+//             {
+//                 // // Debug if no EnemyHealth was found
+//                 // Debug.LogError($"No Enemy Health Script found on {collision.gameObject.name} or its hierarchy.");
+//             }
+//         }
+//     }
+// }
 
 
+//     private void HandleCollisionWithEnemy(EnemyHealth enemy, Collision2D collision)
+//     {
+//         // Skip processing if the enemy is dead
+//         if (enemy.GetIsDead())
+//         {
+//             Collider2D enemyCollider = collision.collider;
+//             Collider2D playerCollider = GetComponent<Collider2D>();
 
-    // private void FixedUpdate()
-    // {
-    //     if (applyKnockback)
-    //     {
-    //         playerRb.linearVelocity = pendingKnockback;
-    //         applyKnockback = false;
-    //     }
-    // }
+//             if (playerCollider != null && enemyCollider != null)
+//             {
+//                 Physics2D.IgnoreCollision(playerCollider, enemyCollider, true);
+//             }
+//             return;
+//         }
 
+//         if (!isInvincible)
+//         {
+//             playerHealing.CancelHeal();
+//             isInvincible = true;
 
-    // private IEnumerator StartStopTimeEffectCoroutine()
-    // {
-    //     yield return new WaitForSecondsRealtime(timeStopDelay);
-    //     StartStopTimeEffect();
-    // }
+//             if (useTimeStop)
+//             {
+//                 TurnToTimeStopColor();
+//             }
 
-    // private IEnumerator ResetInvincibilityCoroutine()
-    // {
-    //     yield return new WaitForSecondsRealtime(playerIFrames);
-    //     ResetInvincibility();
-    // }
+//             // Temporarily ignore collision layers for invincibility
+//             shouldIgnoreCollision = true;
+//             playerRb.linearVelocity = Vector2.zero;
 
+//             if (useTimeStop)
+//             {
+//                 StartCoroutine(StartStopTimeEffectCoroutine());
+//             }
+//             else
+//             {
+//                 playerInfo.DecrementHealth();
 
-    // private void TurnToTimeStopColor() {
-    //     spriteRenderer.color = damageColor;
-    // }
+//                 // Trigger the Damage Burst particle effect
+//                 if (damageBurst != null)
+//                 {
+//                     damageBurst.Play();
+//                 }
+//                 else
+//                 {
+//                     Debug.LogWarning("Damage Burst particle system is not assigned!");
+//                 }
 
-    // private void RevertToOriginalColor() {
-    //     spriteRenderer.color = originalColor;
-    // }
+//                 StartCoroutine(FlashPlayer());
+//             }
 
-    // private IEnumerator FlashPlayer()
-    // {
-    //     float elapsed = 0;
-    //     Color originalColor = spriteRenderer.color;
-    //     Color flashColor = originalColor;
-    //     flashColor.a = lowAlpha;
+//             StartCoroutine(ResetInvincibilityCoroutine());
 
-    //     try
-    //     {
-    //         while (elapsed < playerIFrames - timeStopDelay)
-    //         {
-    //             spriteRenderer.color = flashColor;
-    //             yield return new WaitForSecondsRealtime(flashFrequency / 2);
-    //             spriteRenderer.color = originalColor;
-    //             yield return new WaitForSecondsRealtime(flashFrequency / 2);
-    //             elapsed += flashFrequency;
-    //         }
-    //     }
-    //     finally
-    //     {
-    //         spriteRenderer.color = originalColor;
-    //     }
-    // }
+//             // Calculate knockback
+//             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+//             float knockbackMagnitude = Mathf.Min(playerKnockbackVelocity, finalMaxKnockbackVelocity);
+//             pendingKnockback = knockbackDirection * knockbackMagnitude;
 
-
-    // private void StartStopTimeEffect()
-    // {
-    //     isTimeStopped = true;
-    //     timeStopMaxDuration = timeStopDuration; // Reset the time stop duration
-    //     Time.timeScale = timeStopScaleValue;
-    //     Time.fixedDeltaTime = 0.02f * Time.timeScale; // Adjust fixed delta time
-    // }
+//             applyKnockback = true; // Mark knockback to be applied
+//         }
+//     }
 
 
-    // private void ResetInvincibility()
-    // {
-    //     isInvincible = false;
-    //     // Set a flag to reset collision layers
-    //     shouldResetCollision = true;
-    // }
 
-    // private void ResumeTimeEffect()
-    // {
-    //     isTimeStopped = false;
-    //     Time.timeScale = 1f; // Reset time scale
-    //     Time.fixedDeltaTime = 0.02f; // Reset fixed delta time
 
-    //     RevertToOriginalColor();
-    //     playerInfo.DecrementHealth();
 
-    //     // Trigger the Damage Burst particle effect
-    //     if (damageBurst != null)
-    //     {
-    //         damageBurst.Play();
-    //     }
-    //     else
-    //     {
-    //         Debug.LogWarning("Damage Burst particle system is not assigned!");
-    //     }
+//     private void FixedUpdate()
+//     {
+//         if (applyKnockback)
+//         {
+//             // Directly apply pending knockback velocity
+//             playerRb.linearVelocity = Vector2.ClampMagnitude(pendingKnockback, finalMaxKnockbackVelocity);
 
-    //     StartCoroutine(FlashPlayer());
-    //     timeStopMaxDuration = timeStopDuration;
-    // }
+//             applyKnockback = false; // Reset the flag
+//         }
+//     }
+
+
+
+
+//     private IEnumerator StartStopTimeEffectCoroutine()
+//     {
+//         yield return new WaitForSecondsRealtime(timeStopDelay);
+//         StartStopTimeEffect();
+//     }
+
+//     private IEnumerator ResetInvincibilityCoroutine()
+//     {
+//         yield return new WaitForSecondsRealtime(playerIFrames);
+//         ResetInvincibility();
+//     }
+
+
+//     private void TurnToTimeStopColor() {
+//         spriteRenderer.color = damageColor;
+//     }
+
+//     private void RevertToOriginalColor() {
+//         spriteRenderer.color = originalColor;
+//     }
+
+//     private IEnumerator FlashPlayer()
+//     {
+//         float elapsed = 0;
+//         Color originalColor = spriteRenderer.color;
+//         Color flashColor = originalColor;
+//         flashColor.a = lowAlpha;
+
+//         try
+//         {
+//             while (elapsed < playerIFrames - timeStopDelay)
+//             {
+//                 spriteRenderer.color = flashColor;
+//                 yield return new WaitForSecondsRealtime(flashFrequency / 2);
+//                 spriteRenderer.color = originalColor;
+//                 yield return new WaitForSecondsRealtime(flashFrequency / 2);
+//                 elapsed += flashFrequency;
+//             }
+//         }
+//         finally
+//         {
+//             spriteRenderer.color = originalColor;
+//         }
+//     }
+
+
+//     private void StartStopTimeEffect()
+//     {
+//         isTimeStopped = true;
+//         timeStopMaxDuration = timeStopDuration; // Reset the time stop duration
+//         Time.timeScale = timeStopScaleValue;
+//         Time.fixedDeltaTime = 0.02f * Time.timeScale; // Adjust fixed delta time
+//     }
+
+
+//     private void ResetInvincibility()
+//     {
+//         isInvincible = false;
+//         // Set a flag to reset collision layers
+//         shouldResetCollision = true;
+//     }
+
+//     private void ResumeTimeEffect()
+//     {
+//         isTimeStopped = false;
+//         Time.timeScale = 1f; // Reset time scale
+//         Time.fixedDeltaTime = 0.02f; // Reset fixed delta time
+
+//         RevertToOriginalColor();
+//         playerInfo.DecrementHealth();
+
+//         // Trigger the Damage Burst particle effect
+//         if (damageBurst != null)
+//         {
+//             damageBurst.Play();
+//         }
+//         else
+//         {
+//             Debug.LogWarning("Damage Burst particle system is not assigned!");
+//         }
+
+//         StartCoroutine(FlashPlayer());
+//         timeStopMaxDuration = timeStopDuration;
+//     }
 
 }

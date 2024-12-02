@@ -37,6 +37,19 @@ public class WatcherAI : MonoBehaviour
     [SerializeField] private State currentState = State.Passive;
     [SerializeField] private PassiveSubstate currentPassiveSubstate;
     [SerializeField] private AggroSubstate currentAggroSubstate;
+    [Header("Animation Settings")]
+    [SerializeField] private Animator animator; // Reference to the Animator
+    [Header("References")]
+    public EnemyHealth enemyHealth;
+
+    [Header("Knockback")]
+    private bool isKnockedBack = false; // Flag for knockback state
+    private float knockbackTimer = 0f; // Timer to track knockback recovery
+    public float knockbackRecoveryTime = 0.5f; // Time to recover from knockback
+
+    private const string idleTrigger = "Watcher-Idle";
+    private const string walkTrigger = "Watcher-Walk";
+    private const string pokeTrigger = "Watcher-Poke";
 
     private Rigidbody2D rb;
     private Transform spriteTransform;
@@ -44,26 +57,107 @@ public class WatcherAI : MonoBehaviour
     private bool movingRight = true; // Direction flag
     private float deaggroTimer = 0f;
     private bool isPerformingAttack = false; // Flag to indicate if Poke or Charge is in progress
+    private bool isDead = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteTransform = transform.GetChild(0); // Assuming the sprite is the first child
+
+        // Correctly initialize EnemyHealth reference from child
+        enemyHealth = GetComponentInChildren<EnemyHealth>();
+
         StartCoroutine(PassiveBehavior());
+        isDead = false;
+
     }
+
 
     private void Update()
     {
-        HandleStateTransitions();
+        // Check if the enemy is dead
+        if (enemyHealth != null && enemyHealth.GetIsDead())
+        {   
+            isDead = true;
+            HandleDeathBehavior();
+            return; // Skip all other logic
+        }
 
-        if (currentState == State.Aggro)
+        // Handle knockback state
+        if (isKnockedBack)
         {
-            HandleAggroState();
+            knockbackTimer -= Time.deltaTime;
+            if (knockbackTimer <= 0f)
+            {
+                isKnockedBack = false; // Recover from knockback
+            }
+            return; // Skip normal behavior while knocked back
+        }
+
+        // Proceed with normal AI behavior
+        if (!isDead)
+        {
+            HandleStateTransitions();
+
+            if (currentState == State.Aggro)
+            {
+                HandleAggroState();
+            }
         }
     }
 
+
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines(); // Stop all ongoing coroutines to avoid referencing destroyed objects
+    }
+
+
+    private void HandleDeathBehavior()
+    {
+        // Stop all movement and AI logic
+        StopAllCoroutines(); // Stops any active PassiveBehavior or AggroState coroutines
+
+        // Disable velocity modifications
+        //rb.linearVelocity = Vector2.zero; // Stop movement completely
+
+        // Set to Passive Idle substate (for consistency)
+        currentState = State.Passive;
+        currentPassiveSubstate = PassiveSubstate.Idle;
+
+        // Play idle animation to indicate death (if desired)
+        SetAnimation(idleTrigger);
+    }
+
+
+
+    private void ResetAllTriggers()
+    {
+        animator.ResetTrigger(idleTrigger);
+        animator.ResetTrigger(walkTrigger);
+        animator.ResetTrigger(pokeTrigger);
+    }
+
+    private void SetAnimation(string triggerName)
+    {
+        if (animator != null)
+        {
+            ResetAllTriggers(); // Clear all other triggers
+            animator.SetTrigger(triggerName); // Set the correct trigger
+        }
+    }
+
+
+
     private void HandleStateTransitions()
     {
+        // Do not process state transitions if the enemy is dead or health is null
+        if (enemyHealth == null || enemyHealth.GetIsDead())
+        {
+            return;
+        }
+
         Collider2D player = Physics2D.OverlapCircle(transform.position, aggroRadius, playerLayer);
 
         if (player != null)
@@ -72,7 +166,6 @@ public class WatcherAI : MonoBehaviour
             {
                 currentState = State.Aggro;
                 playerTransform = player.transform;
-                Debug.Log("Watcher has entered Aggro state!");
                 StopAllCoroutines();
             }
 
@@ -84,12 +177,12 @@ public class WatcherAI : MonoBehaviour
             if (deaggroTimer >= deaggroTime)
             {
                 currentState = State.Passive;
-                Debug.Log("Watcher has exited Aggro state and returned to Passive state.");
                 playerTransform = null;
                 StartCoroutine(PassiveBehavior());
             }
         }
     }
+
 
     private IEnumerator PassiveBehavior()
     {
@@ -97,15 +190,18 @@ public class WatcherAI : MonoBehaviour
 
         while (currentState == State.Passive)
         {
+            if (isKnockedBack) yield break; // Stop behavior if knocked back
+
             currentPassiveSubstate = PassiveSubstate.Idle;
-            Debug.Log("Watcher entered Passive Idle state.");
             rb.linearVelocity = Vector2.zero;
+            SetAnimation(idleTrigger);
 
             float idleDuration = Random.Range(minIdleTime, maxIdleTime);
             yield return new WaitForSeconds(idleDuration);
 
             currentPassiveSubstate = PassiveSubstate.Walking;
-            Debug.Log("Watcher entered Passive Walking state.");
+            SetAnimation(walkTrigger);
+
             bool walkRight = Random.value > 0.5f;
             movingRight = walkRight;
             FlipSprite();
@@ -115,9 +211,8 @@ public class WatcherAI : MonoBehaviour
 
             while (elapsedTime < walkDuration)
             {
-                if (enableDetection && (CheckWall() || !CheckEdge()))
+                if (enableDetection && (CheckWall() || !CheckEdge()) || isKnockedBack)
                 {
-                    Debug.Log("Watcher detected wall or edge, stopping movement.");
                     break;
                 }
 
@@ -129,6 +224,7 @@ public class WatcherAI : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
     }
+
 
     private void HandleAggroState()
     {
@@ -144,11 +240,13 @@ public class WatcherAI : MonoBehaviour
         if (Mathf.Abs(playerX - watcherX) <= xLevelPadding)
         {
             SetAggroSubstate(AggroSubstate.Idle);
+            SetAnimation(idleTrigger);
             TryInitiateAttack();
         }
         else
         {
             SetAggroSubstate(AggroSubstate.Walking);
+            SetAnimation(walkTrigger);
             WalkTowardsPlayer();
             TryInitiateAttack();
         }
@@ -160,13 +258,24 @@ public class WatcherAI : MonoBehaviour
         if (currentAggroSubstate != substate)
         {
             currentAggroSubstate = substate;
-            Debug.Log($"Watcher entered {substate} state.");
+
+            // Trigger animations based on state
+            switch (substate)
+            {
+                case AggroSubstate.Idle:
+                    SetAnimation(idleTrigger);
+                    break;
+                case AggroSubstate.Walking:
+                    SetAnimation(walkTrigger);
+                    break;
+            }
         }
     }
 
+
     private void WalkTowardsPlayer()
     {
-        if (playerTransform == null) return;
+        if (playerTransform == null || isKnockedBack) return;
 
         bool playerToRight = playerTransform.position.x > transform.position.x;
 
@@ -182,8 +291,11 @@ public class WatcherAI : MonoBehaviour
         rb.linearVelocity = new Vector2((movingRight ? aggroWalkSpeed : -aggroWalkSpeed), rb.linearVelocity.y);
     }
 
+
     private void TryInitiateAttack()
     {
+        if (isPerformingAttack) return; // Prevent overlap with current attack
+
         if (Random.value < pokeChance * Time.deltaTime)
         {
             StartCoroutine(PokeAttack());
@@ -194,19 +306,26 @@ public class WatcherAI : MonoBehaviour
         }
     }
 
+
     private IEnumerator PokeAttack()
     {
         SetAggroSubstate(AggroSubstate.Poke);
-        isPerformingAttack = true; // Mark attack as active
+        isPerformingAttack = true;
 
-        rb.linearVelocity = Vector2.zero; // Stop movement during attack
+        rb.linearVelocity = Vector2.zero; // Stop movement during Poke
         FlipTowardsPlayer();
 
-        Debug.Log("Watcher is performing Poke attack.");
+        SetAnimation(pokeTrigger); // Trigger Poke animation
 
-        yield return new WaitForSeconds(pokeDuration); // Placeholder duration for attack
+        // Wait for EndPoke to be called by animation event
+        yield return null;
+    }
 
+
+    public void EndPoke()
+    {
         isPerformingAttack = false; // Mark attack as complete
+        // Transition back to Idle or Walking depending on player's position
         SetAggroSubstate(Mathf.Abs(playerTransform.position.x - transform.position.x) <= xLevelPadding
             ? AggroSubstate.Idle
             : AggroSubstate.Walking);
@@ -216,17 +335,15 @@ public class WatcherAI : MonoBehaviour
     private IEnumerator ChargeAttack()
     {
         SetAggroSubstate(AggroSubstate.Charge);
-        isPerformingAttack = true; // Mark attack as active
+        isPerformingAttack = true;
 
         FlipTowardsPlayer();
-        Debug.Log("Watcher is performing Charge attack.");
 
         float elapsedTime = 0f;
         while (elapsedTime < chargeDuration)
         {
             if (enableDetection && (CheckWall() || !CheckEdge()))
             {
-                Debug.Log("Charge interrupted by wall or edge.");
                 break;
             }
 
@@ -235,7 +352,7 @@ public class WatcherAI : MonoBehaviour
             yield return null;
         }
 
-        StopMovement(); // Stop movement after the charge ends
+        StopMovement(); // Stop movement after Charge
         isPerformingAttack = false; // Mark attack as complete
         SetAggroSubstate(Mathf.Abs(playerTransform.position.x - transform.position.x) <= xLevelPadding
             ? AggroSubstate.Idle
@@ -243,10 +360,18 @@ public class WatcherAI : MonoBehaviour
     }
 
 
+
     private void StopMovement()
     {
+        if (enemyHealth != null && enemyHealth.GetIsDead())
+        {
+            return; // Don't stop movement if the enemy is dead
+        }
+
         rb.linearVelocity = Vector2.zero;
     }
+
+
 
     private bool CheckWall()
     {
@@ -298,4 +423,18 @@ public class WatcherAI : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, aggroRadius);
     }
+
+    public void ApplyKnockback(Vector2 knockbackForce)
+    {
+        if (enemyHealth != null && enemyHealth.GetIsDead()) return; // Skip if dead
+
+        if (rb != null)
+        {
+            rb.AddForce(knockbackForce, ForceMode2D.Impulse); // Apply knockback force
+            isKnockedBack = true; // Enter knockback state
+            knockbackTimer = knockbackRecoveryTime; // Set recovery timer
+        }
+    }
+
+
 }

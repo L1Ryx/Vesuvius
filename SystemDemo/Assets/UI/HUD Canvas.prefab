@@ -5073,6 +5073,7 @@ MonoBehaviour:
   totemImage: {fileID: 3593575254181175117}
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
   insufficientTotemsColor: {r: 0.6792453, g: 0.31719473, b: 0.31719473, a: 1}
+  transitionSpeed: 20
 --- !u!1 &2070498369009766095
 GameObject:
   m_ObjectHideFlags: 0

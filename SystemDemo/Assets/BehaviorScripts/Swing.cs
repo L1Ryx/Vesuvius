@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TarodevController;
 using UnityEngine;
@@ -58,55 +59,56 @@ public class Swing : MonoBehaviour
         }
     }
 
-    private void HandleCollision(EnemyHealth objHealth, Collider2D collision)
+private void HandleCollision(EnemyHealth objHealth, Collider2D collision)
+{
+    // Calculate knockback direction
+    Vector2 knockbackDirection = (collision.transform.position - playerParent.transform.position).normalized * knockbackForce;
+
+    // Deals damage to the enemy with knockback force
+    objHealth.Damage(damageAmount, knockbackDirection);
+
+    // Determine the input direction
+    Vector2 inputDirection = playerMelee.GetInputDirection();
+
+    // Check if the attack is a downward strike while in the air
+    if (inputDirection.y < 0 && !playerController.IsGrounded())
     {
-        // Deals damage to the enemy
-        objHealth.Damage(damageAmount);
-
-        // Determine the input direction
-        Vector2 inputDirection = playerMelee.GetInputDirection();
-
-        // Check if the attack is a downward strike while in the air
-        if (inputDirection.y < 0 && !playerController.IsGrounded())
+        if (objHealth.giveUpwardsForce)
         {
-            // Determine if the enemy gives upward force
-            if (objHealth.giveUpwardsForce)
-            {
-                direction = Vector2.up;
-                downwardStrike = true;
+            direction = Vector2.up;
+            downwardStrike = true;
 
-                // Cancel jump hold to prevent further upward velocity
-                playerController.CancelJump();
-            }
-            else
-            {
-                direction = Vector2.down;
-            }
-
-            collided = true;
+            playerController.CancelJump();
         }
-        // Check if it's a horizontal attack
-        else if (inputDirection.y == 0)
+        else
         {
-            // Set direction based on player's facing direction
-            direction = playerController.IsFacingLeft() ? Vector2.right : Vector2.left;
-            collided = true;
-            // Apply knockback to the enemy if applicable
-            if (objHealth.canBeKnockedBack)
-            {
-                ApplyKnockback(objHealth, collision);
-            }
+            direction = Vector2.down;
         }
 
-
-
-        // Start coroutine to reset collision flags
-        StartCoroutine(NoLongerColliding());
+        collided = true;
     }
+    else if (inputDirection.y == 0)
+    {
+        direction = playerController.IsFacingLeft() ? Vector2.right : Vector2.left;
+        collided = true;
+    }
+
+    StartCoroutine(NoLongerColliding());
+}
+
 
     private void ApplyKnockback(EnemyHealth objHealth, Collider2D collision)
     {
         Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
+        if (enemyRb == null) {
+            enemyRb = collision.GetComponentInParent<Rigidbody2D>();
+        }
+        if (enemyRb == null) {
+            enemyRb = collision.GetComponentInChildren<Rigidbody2D>();
+        }
+        if (enemyRb == null) {
+            Debug.LogError("no enemyRb in Swing");
+        }
         if (enemyRb != null)
         {
             // Calculate knockback direction (opposite of the swing's force direction)
@@ -119,6 +121,10 @@ public class Swing : MonoBehaviour
             {
                 enemyMovement.ApplyKnockback(knockbackForceVector);
             }
+            var watcherMovement = collision.GetComponentInParent<WatcherAI>();
+            if (watcherMovement != null) {
+                watcherMovement.ApplyKnockback(knockbackForceVector);
+            } 
 
         }
         else

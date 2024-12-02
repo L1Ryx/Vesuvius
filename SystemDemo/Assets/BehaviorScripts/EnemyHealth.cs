@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -27,6 +28,10 @@ public class EnemyHealth : MonoBehaviour
     public SpriteRenderer sr; // Reference to the enemy's SpriteRenderer
     private Rigidbody2D rb; // Reference to the enemy's Rigidbody2D
     private bool isDead = false; // Flag to indicate if the enemy is dead
+    [SerializeField] private PlayerInfo playerInfo;
+    [Header("Totem Power Settings")]
+    [SerializeField] private int minTotemPower = 10; // Minimum totem power to grant
+    [SerializeField] private int maxTotemPower = 20; // Maximum totem power to grant
 
     [Header("Private Fields")]
     private bool hit;
@@ -46,6 +51,13 @@ public class EnemyHealth : MonoBehaviour
         if (rb == null)
         {
             rb = GetComponent<Rigidbody2D>();
+            if (rb == null) {
+                rb = GetComponentInParent<Rigidbody2D>();
+            }
+
+            if (rb == null) {
+                Debug.LogError("rb is null in EnemyHealth");
+            }
         }
 
         if (sr != null)
@@ -54,41 +66,51 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void Death()
+public void Death(Vector2 knockbackForce)
+{
+    if (!isLiveEnemy) return;
+
+    isDead = true;
+    isLiveEnemy = false; // Mark as no longer a live enemy
+    damageable = false; // Make the enemy unhittable
+
+    gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+
+    // Change sprite appearance
+    if (sr != null)
     {
-        if (!isLiveEnemy) return;
-
-        isDead = true;
-        isLiveEnemy = false; // Mark as no longer a live enemy
-        damageable = false; // Make the enemy unhittable
-
-        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
-
-        // Change sprite appearance
         sr.color = deathColor;
-        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z); // Flip upside down
-
-        // Apply upward force
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero; // Reset velocity
-            rb.AddForce(Vector2.up * upwardForce, ForceMode2D.Impulse);
-        }
-
-        // Play death burst particle system
-        if (deathBurst != null)
-        {
-            deathBurst.Play();
-        }
-
-        // Start fade-out coroutine
-        StartCoroutine(FadeOutAndDestroy());
     }
+    transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z); // Flip upside down
+
+    // Apply upward force combined with knockback
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector2.zero; // Reset velocity before applying forces
+        rb.AddForce(knockbackForce + Vector2.up * upwardForce, ForceMode2D.Impulse); // Combine knockback and upward forces
+    }
+    else
+    {
+        Debug.LogError("Rigidbody2D not found on EnemyHealth or its parent.");
+    }
+
+    // Play death burst particle system
+    if (deathBurst != null)
+    {
+        deathBurst.Play();
+    }
+
+    GrantTotemPower();
+
+    // Start fade-out coroutine
+    StartCoroutine(FadeOutAndDestroy());
+}
+
 
     public bool GetIsDead() {
         return isDead;
     }
-    public void Damage(int amount)
+    public void Damage(int amount, Vector2 knockbackForce)
     {
         if (!damageable || hit) return; // Prevent taking damage if not damageable or in iFrames
 
@@ -103,13 +125,14 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Death();
+            Death(knockbackForce); // Pass knockback force to Death
         }
         else
         {
             StartCoroutine(TurnOffHit());
         }
     }
+
 
     private IEnumerator TurnOffHit()
     {
@@ -128,6 +151,19 @@ public class EnemyHealth : MonoBehaviour
 
             sr.color = originalColor; // Revert to original color
             yield return new WaitForSeconds(flashDuration); // Wait for the other half
+        }
+    }
+
+    private void GrantTotemPower()
+    {
+        if (playerInfo != null)
+        {
+            int addedTotemPower = UnityEngine.Random.Range(minTotemPower, maxTotemPower + 1);
+            playerInfo.AddTotemPower(addedTotemPower);
+        }
+        else
+        {
+            Debug.LogError("PlayerInfo is not assigned. Cannot add totem power.");
         }
     }
 
