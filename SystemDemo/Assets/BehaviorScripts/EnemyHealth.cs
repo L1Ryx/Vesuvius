@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class EnemyHealth : MonoBehaviour
     [Header("Totem Power Settings")]
     [SerializeField] private int minTotemPower = 10; // Minimum totem power to grant
     [SerializeField] private int maxTotemPower = 20; // Maximum totem power to grant
+    [Header("Time Slowdown Settings")]
+    [SerializeField] private float slowdownTime = 0.2f; // Duration of the slowdown
+    [SerializeField] private float slowdownScale = 0.05f; // Time scale during the slowdown
+
 
     [Header("Private Fields")]
     private bool hit;
@@ -66,45 +71,49 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-public void Death(Vector2 knockbackForce)
-{
-    if (!isLiveEnemy) return;
-
-    isDead = true;
-    isLiveEnemy = false; // Mark as no longer a live enemy
-    damageable = false; // Make the enemy unhittable
-
-    gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
-
-    // Change sprite appearance
-    if (sr != null)
+    public void Death(Vector2 knockbackForce)
     {
-        sr.color = deathColor;
-    }
-    transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z); // Flip upside down
+        if (!isLiveEnemy) return;
 
-    // Apply upward force combined with knockback
-    if (rb != null)
-    {
-        rb.linearVelocity = Vector2.zero; // Reset velocity before applying forces
-        rb.AddForce(knockbackForce + Vector2.up * upwardForce, ForceMode2D.Impulse); // Combine knockback and upward forces
-    }
-    else
-    {
-        Debug.LogError("Rigidbody2D not found on EnemyHealth or its parent.");
+        isDead = true;
+        isLiveEnemy = false; // Mark as no longer a live enemy
+        damageable = false; // Make the enemy unhittable
+
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+
+        // Change sprite appearance
+        if (sr != null)
+        {
+            sr.color = deathColor;
+        }
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z); // Flip upside down
+
+        // Apply upward force combined with knockback
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero; // Reset velocity before applying forces
+            rb.AddForce(knockbackForce + Vector2.up * upwardForce, ForceMode2D.Impulse); // Combine knockback and upward forces
+        }
+        else
+        {
+            Debug.LogError("Rigidbody2D not found on EnemyHealth or its parent.");
+        }
+
+        // Play death burst particle system
+        if (deathBurst != null)
+        {
+            deathBurst.Play();
+        }
+
+        GrantTotemPower();
+
+        // Trigger the time slowdown
+        StartCoroutine(TimeSlowdownCoroutine());
+
+        // Start fade-out coroutine
+        StartCoroutine(FadeOutAndDestroy());
     }
 
-    // Play death burst particle system
-    if (deathBurst != null)
-    {
-        deathBurst.Play();
-    }
-
-    GrantTotemPower();
-
-    // Start fade-out coroutine
-    StartCoroutine(FadeOutAndDestroy());
-}
 
 
     public bool GetIsDead() {
@@ -167,6 +176,16 @@ public void Death(Vector2 knockbackForce)
         }
     }
 
+    private IEnumerator TimeSlowdownCoroutine()
+    {
+        Time.timeScale = slowdownScale; // Apply the slowdown scale
+        // Time.fixedDeltaTime = 0.02f * Time.timeScale; // Adjust fixed delta time for physics
+        yield return new WaitForSecondsRealtime(slowdownTime); // Wait in real-time
+        Time.timeScale = 1f; // Reset time scale
+        // Time.fixedDeltaTime = 0.02f; // Reset fixed delta time
+    }
+
+
     private IEnumerator FadeOutAndDestroy()
     {
         if (sr == null) yield break;
@@ -185,4 +204,10 @@ public void Death(Vector2 knockbackForce)
 
         Destroy(gameObject); // Destroy the enemy object after fading out
     }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
 }

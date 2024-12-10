@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8105228112850552421}
   - component: {fileID: 8555880061318591369}
   - component: {fileID: 1614528498331406795}
+  - component: {fileID: 5592120180678922361}
   m_Layer: 12
   m_Name: Swing Sprite
   m_TagString: Untagged
@@ -195,3 +196,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.11, y: 0.92}
   m_Size: {x: 0.059210777, y: 0.059210777}
   m_Direction: 0
+--- !u!114 &5592120180678922361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842138990708145678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed8f3516f58f4f14bd9dd8bf5c43b21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneAudioData: {fileID: 11400000, guid: 7c2c2efbba98848d191e29c32774138e, type: 2}

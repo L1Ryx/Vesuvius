@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HDGS-logo-designJam-export_0: -4881801071433740025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

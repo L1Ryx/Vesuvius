@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4388176656734587077}
   m_Layer: 11
   m_Name: Enemy Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,6 +181,8 @@ MonoBehaviour:
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
   minTotemPower: 20
   maxTotemPower: 24
+  slowdownTime: 0.1
+  slowdownScale: 0.2
 --- !u!114 &4388176656734587077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +196,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   watcherAI: {fileID: 4133521809812167552}
+  watcherSwung:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: e5980cb43fd714af0b8eb1466d61daa7, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1980358650441627234
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,9 +223,13 @@ GameObject:
   - component: {fileID: 4133521809812167552}
   - component: {fileID: 7018758372218215541}
   - component: {fileID: 2598944846074065544}
+  - component: {fileID: 1383448306319998115}
+  - component: {fileID: 4323269584728844713}
+  - component: {fileID: 7801219532500714326}
+  - component: {fileID: 1328058177063652400}
   m_Layer: 11
   m_Name: Watcher
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,21 +277,35 @@ MonoBehaviour:
   pokeRange: 2
   pokeDuration: 1
   pokeChance: 0.5
-  chargeSpeed: 4
-  chargeDuration: 2
-  chargeChance: 0.25
   enableDetection: 1
   wallDetectionOffset: 0.8
   edgeDetectionDistance: 1
   terrainLayer:
     serializedVersion: 2
     m_Bits: 1024
+  aggroDelay: 0.5
   currentState: 0
   currentPassiveSubstate: 0
   currentAggroSubstate: 0
   animator: {fileID: 3277239906802279612}
   enemyHealth: {fileID: 7117936608105250689}
+  watcherStepped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b208a834210a1413dafa102c9251606b, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   knockbackRecoveryTime: 0.5
+  footstepInterval: 0.5
 --- !u!114 &7018758372218215541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +353,97 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1383448306319998115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980358650441627234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9204b21c7394ff0b8ac1aa8fb49852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneAudioData: {fileID: 11400000, guid: 7c2c2efbba98848d191e29c32774138e, type: 2}
+--- !u!114 &4323269584728844713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980358650441627234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e5980cb43fd714af0b8eb1466d61daa7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1383448306319998115}
+        m_TargetAssemblyTypeName: WatcherAudio, Assembly-CSharp
+        m_MethodName: PlaySwing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7801219532500714326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980358650441627234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b208a834210a1413dafa102c9251606b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1383448306319998115}
+        m_TargetAssemblyTypeName: WatcherAudio, Assembly-CSharp
+        m_MethodName: PlayFootstep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1328058177063652400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980358650441627234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4eeee00385a4bfe9cda128a7830e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &2964592428273814281
 GameObject:
   m_ObjectHideFlags: 0

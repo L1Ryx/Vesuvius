@@ -15,6 +15,7 @@ public class BigBlue : MonoBehaviour
     [Header("Component References")]
     [SerializeField] private PlayerSpawner playerSpawner;
     [SerializeField] private NPCDialogueCollection dialogueCollection;
+    [SerializeField] private BigBlueAudio bigBlueAudio;
 
     [Header("GO References")]
     [SerializeField] private GameObject player;
@@ -41,18 +42,21 @@ public class BigBlue : MonoBehaviour
     private void Awake()
     {
         _controls = new PlayerControls();
+        bigBlueAudio = this.gameObject.GetComponent<BigBlueAudio>();
     }
 
     private void OnEnable()
     {
         _controls.Player.Interact.performed += OnInteractPerformed;
         _controls.Enable();
+        bigBlueAudio.PlayBigBlueSolo();
     }
 
     private void OnDisable()
     {
         _controls.Player.Interact.performed -= OnInteractPerformed;
         _controls.Disable();
+        bigBlueAudio.StopBigBlueSolo();
     }
 
     private void Start()
@@ -162,6 +166,7 @@ public class BigBlue : MonoBehaviour
 
         // Play the "PutDown" animation before transitioning to "Idle"
         animator.Play("PutDown");
+        bigBlueAudio.StopBigBlueSolo();
         StartCoroutine(WaitForAnimation("PutDown", () =>
         {
             animator.Play("Idle"); // Transition to "Idle" after "PutDown" finishes
@@ -177,6 +182,17 @@ public class BigBlue : MonoBehaviour
 
         if (dialogueTree != null && currentDialogueIndex < dialogueTree.dialogues.Count)
         {
+            // Play the associated Wwise event if specified
+            if (dialogueTree.wwiseEvents != null && currentDialogueIndex < dialogueTree.wwiseEvents.Count)
+            {
+                string wwiseEvent = dialogueTree.wwiseEvents[currentDialogueIndex];
+                if (!string.IsNullOrEmpty(wwiseEvent))
+                {
+                    bigBlueAudio.PlayWwiseEvent(wwiseEvent);
+                }
+            }
+
+            // Display the dialogue text
             isTyping = true; // Set typing flag
             StartCoroutine(TypeDialogue(dialogueTree.dialogues[currentDialogueIndex]));
             currentDialogueIndex++;
@@ -186,6 +202,7 @@ public class BigBlue : MonoBehaviour
             EndDialogue();
         }
     }
+
 
     private IEnumerator TypeDialogue(string dialogue)
     {
@@ -218,6 +235,7 @@ public class BigBlue : MonoBehaviour
 
         // Play the "PutBack" animation before transitioning to "Playing"
         animator.Play("PutBack");
+        bigBlueAudio.PlayBigBlueSolo();
         StartCoroutine(WaitForAnimation("PutBack", () =>
         {
             animator.Play("Playing"); // Transition back to "Playing"

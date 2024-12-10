@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class WatcherAI : MonoBehaviour
 {
     public enum State { Passive, Aggro }
     public enum PassiveSubstate { Idle, Walking }
-    public enum AggroSubstate { Idle, Walking, Poke, Charge }
+    public enum AggroSubstate { Idle, Walking, Poke }
 
     [Header("Passive State Settings")]
     [SerializeField] private float minIdleTime = 2f;
@@ -23,15 +24,17 @@ public class WatcherAI : MonoBehaviour
     [SerializeField] private float pokeRange = 2f;
     [SerializeField] private float pokeDuration = 3f;
     [SerializeField] private float pokeChance = 0.4f; // 40% chance per second
-    [SerializeField] private float chargeSpeed = 6f;
-    [SerializeField] private float chargeDuration = 2f;
-    [SerializeField] private float chargeChance = 0.25f; // 25% chance per second
+    // [SerializeField] private float chargeSpeed = 6f;
+    // [SerializeField] private float chargeDuration = 2f;
+    // [SerializeField] private float chargeChance = 0.25f; // 25% chance per second
 
     [Header("Detection Settings")]
     [SerializeField] private bool enableDetection = true;
     [SerializeField] private float wallDetectionOffset = 0.3f;
     [SerializeField] private float edgeDetectionDistance = 0.5f;
     [SerializeField] private LayerMask terrainLayer;
+    [SerializeField] private float aggroDelay = 1f; // Delay before first move in Aggro
+
 
     [Header("Debug")]
     [SerializeField] private State currentState = State.Passive;
@@ -41,11 +44,17 @@ public class WatcherAI : MonoBehaviour
     [SerializeField] private Animator animator; // Reference to the Animator
     [Header("References")]
     public EnemyHealth enemyHealth;
+    public UnityEvent watcherStepped;
+    private WatcherAudio watcherAudio;
 
     [Header("Knockback")]
     private bool isKnockedBack = false; // Flag for knockback state
     private float knockbackTimer = 0f; // Timer to track knockback recovery
     public float knockbackRecoveryTime = 0.5f; // Time to recover from knockback
+    [Header("Footstep Settings")]
+    [SerializeField] private float footstepInterval = 0.5f; // Interval between footsteps in seconds
+    private Coroutine footstepCoroutine;
+
 
     private const string idleTrigger = "Watcher-Idle";
     private const string walkTrigger = "Watcher-Walk";
@@ -58,10 +67,14 @@ public class WatcherAI : MonoBehaviour
     private float deaggroTimer = 0f;
     private bool isPerformingAttack = false; // Flag to indicate if Poke or Charge is in progress
     private bool isDead = false;
+    private bool isAggroDelayActive = false;
+    private bool hasPlayedDeathSFX = false;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        watcherAudio = GetComponent<WatcherAudio>();
         spriteTransform = transform.GetChild(0); // Assuming the sprite is the first child
 
         // Correctly initialize EnemyHealth reference from child
@@ -103,6 +116,7 @@ public class WatcherAI : MonoBehaviour
             {
                 HandleAggroState();
             }
+            HandleFootsteps(); 
         }
     }
 
@@ -128,6 +142,11 @@ public class WatcherAI : MonoBehaviour
 
         // Play idle animation to indicate death (if desired)
         SetAnimation(idleTrigger);
+        if (!hasPlayedDeathSFX) {
+            watcherAudio.PlayWatcherDeath();
+            hasPlayedDeathSFX = true;
+        }
+        
     }
 
 
@@ -152,7 +171,6 @@ public class WatcherAI : MonoBehaviour
 
     private void HandleStateTransitions()
     {
-        // Do not process state transitions if the enemy is dead or health is null
         if (enemyHealth == null || enemyHealth.GetIsDead())
         {
             return;
@@ -164,13 +182,15 @@ public class WatcherAI : MonoBehaviour
         {
             if (currentState != State.Aggro)
             {
+                watcherAudio.PlayWatcherAlert();
                 currentState = State.Aggro;
                 playerTransform = player.transform;
                 StopAllCoroutines();
+                StartCoroutine(AggroDelay());
             }
-
             deaggroTimer = 0f;
         }
+
         else if (currentState == State.Aggro)
         {
             deaggroTimer += Time.deltaTime;
@@ -178,10 +198,21 @@ public class WatcherAI : MonoBehaviour
             {
                 currentState = State.Passive;
                 playerTransform = null;
+
+                StopAllCoroutines(); // Ensure no conflicting coroutines
                 StartCoroutine(PassiveBehavior());
             }
         }
     }
+
+    private IEnumerator AggroDelay()
+    {
+        isAggroDelayActive = true; // Activate the delay
+        yield return new WaitForSeconds(aggroDelay); // Wait for the specified duration
+        isAggroDelayActive = false; // End the delay
+    }
+
+
 
 
     private IEnumerator PassiveBehavior()
@@ -228,7 +259,7 @@ public class WatcherAI : MonoBehaviour
 
     private void HandleAggroState()
     {
-        if (isPerformingAttack)
+        if (isPerformingAttack || isAggroDelayActive)
         {
             // If an attack is in progress, do not transition substates
             return;
@@ -300,10 +331,6 @@ public class WatcherAI : MonoBehaviour
         {
             StartCoroutine(PokeAttack());
         }
-        else if (Random.value < chargeChance * Time.deltaTime)
-        {
-            StartCoroutine(ChargeAttack());
-        }
     }
 
 
@@ -316,6 +343,7 @@ public class WatcherAI : MonoBehaviour
         FlipTowardsPlayer();
 
         SetAnimation(pokeTrigger); // Trigger Poke animation
+        watcherAudio.PlayWatcherAttack();
 
         // Wait for EndPoke to be called by animation event
         yield return null;
@@ -326,34 +354,6 @@ public class WatcherAI : MonoBehaviour
     {
         isPerformingAttack = false; // Mark attack as complete
         // Transition back to Idle or Walking depending on player's position
-        SetAggroSubstate(Mathf.Abs(playerTransform.position.x - transform.position.x) <= xLevelPadding
-            ? AggroSubstate.Idle
-            : AggroSubstate.Walking);
-    }
-
-
-    private IEnumerator ChargeAttack()
-    {
-        SetAggroSubstate(AggroSubstate.Charge);
-        isPerformingAttack = true;
-
-        FlipTowardsPlayer();
-
-        float elapsedTime = 0f;
-        while (elapsedTime < chargeDuration)
-        {
-            if (enableDetection && (CheckWall() || !CheckEdge()))
-            {
-                break;
-            }
-
-            rb.linearVelocity = new Vector2((movingRight ? chargeSpeed : -chargeSpeed), rb.linearVelocity.y);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        StopMovement(); // Stop movement after Charge
-        isPerformingAttack = false; // Mark attack as complete
         SetAggroSubstate(Mathf.Abs(playerTransform.position.x - transform.position.x) <= xLevelPadding
             ? AggroSubstate.Idle
             : AggroSubstate.Walking);
@@ -399,6 +399,8 @@ public class WatcherAI : MonoBehaviour
         Vector3 localScale = spriteTransform.localScale;
         localScale.x = movingRight ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
         spriteTransform.localScale = localScale;
+
+
     }
 
     private void FlipTowardsPlayer()
@@ -435,6 +437,35 @@ public class WatcherAI : MonoBehaviour
             knockbackTimer = knockbackRecoveryTime; // Set recovery timer
         }
     }
+
+    private void HandleFootsteps()
+    {
+        bool isWalking = (currentState == State.Passive && currentPassiveSubstate == PassiveSubstate.Walking) ||
+                        (currentState == State.Aggro && currentAggroSubstate == AggroSubstate.Walking);
+
+        if (isWalking && footstepCoroutine == null)
+        {
+            footstepCoroutine = StartCoroutine(FootstepLoop());
+        }
+        else if (!isWalking && footstepCoroutine != null)
+        {
+            StopCoroutine(footstepCoroutine);
+            footstepCoroutine = null;
+        }
+    }
+
+    private IEnumerator FootstepLoop()
+    {
+        while (true)
+        {
+            watcherStepped.Invoke(); // Trigger the event for a footstep
+            yield return new WaitForSeconds(footstepInterval); // Wait for the interval before playing the next step
+        }
+    }
+
+
+
+
 
 
 }

@@ -9,6 +9,7 @@ public class NPCDialogueCollection : ScriptableObject
     {
         public string treeID; // Unique identifier for the dialogue tree
         [TextArea] public List<string> dialogues; // Ordered dialogues for the tree
+        public List<string> wwiseEvents; // List of optional Wwise events corresponding to dialogues
         public string nextTreeID; // ID of the next dialogue tree to transition to
     }
 

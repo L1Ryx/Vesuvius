@@ -32,8 +32,25 @@ MonoBehaviour:
     - This is the only place I've ever known, so I must embark on my journey soon.
     - ...
     - You're holding up my performance. Perhaps we'll talk again some other day.
+    wwiseEvents:
+    - Play_Beneh
+    - 
+    - 
+    - Play_Hah
+    - 
+    - 
+    - 
+    - 
+    - Play_Nulla
+    - 
+    - Play_Keeyo
+    - 
+    - 
+    - Play_Abileh
     nextTreeID: IntroBrief
   - treeID: IntroBrief
     dialogues:
     - You're holding up my performance. Perhaps we'll talk again some other day.
+    wwiseEvents:
+    - Play_Abileh
     nextTreeID: IntroBrief

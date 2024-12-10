@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Swing : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] private int damageAmount = 20;
     [SerializeField] private float knockbackForce = 5f; // Parameterized knockback force
 
@@ -16,6 +17,7 @@ public class Swing : MonoBehaviour
     private bool collided;
     private bool downwardStrike;
     private bool isAltSwing; // Tracks if this swing is alt variation
+    private SwingAudio swingAudio;
 
 
     public void Init(PlayerController pc, PlayerMelee pm, GameObject playerParent, bool altSwing)
@@ -26,6 +28,7 @@ public class Swing : MonoBehaviour
         this.isAltSwing = altSwing;
 
         rb = playerParent.GetComponent<Rigidbody2D>();
+        swingAudio = GetComponent<SwingAudio>();
 
             if (playerController == null) Debug.LogError("PlayerController is null in Swing.Init");
     if (playerMelee == null) Debug.LogError("PlayerMelee is null in Swing.Init");
@@ -59,42 +62,57 @@ public class Swing : MonoBehaviour
         }
     }
 
-private void HandleCollision(EnemyHealth objHealth, Collider2D collision)
-{
-    // Calculate knockback direction
-    Vector2 knockbackDirection = (collision.transform.position - playerParent.transform.position).normalized * knockbackForce;
-
-    // Deals damage to the enemy with knockback force
-    objHealth.Damage(damageAmount, knockbackDirection);
-
-    // Determine the input direction
-    Vector2 inputDirection = playerMelee.GetInputDirection();
-
-    // Check if the attack is a downward strike while in the air
-    if (inputDirection.y < 0 && !playerController.IsGrounded())
+    private void HandleCollision(EnemyHealth objHealth, Collider2D collision)
     {
-        if (objHealth.giveUpwardsForce)
-        {
-            direction = Vector2.up;
-            downwardStrike = true;
+        // Calculate knockback direction
+        Vector2 knockbackDirection = (collision.transform.position - playerParent.transform.position).normalized * knockbackForce;
 
-            playerController.CancelJump();
-        }
-        else
+        // Get the enemy's current health before applying damage
+        int enemyHealthBefore = objHealth.GetCurrentHealth();
+
+        // Deals damage to the enemy with knockback force
+        objHealth.Damage(damageAmount, knockbackDirection);
+
+        // Check if the enemy was killed or just damaged
+        if (objHealth.GetIsDead() && enemyHealthBefore > 0)
         {
-            direction = Vector2.down;
+            swingAudio.PlayPlayerAttackHit(); // Play hit sound
+            swingAudio.PlayPlayerAttackKill(); // Play kill sound
+        }
+        else if (enemyHealthBefore > 0)
+        {
+            swingAudio.PlayPlayerAttackHit(); // Play hit sound
         }
 
-        collided = true;
-    }
-    else if (inputDirection.y == 0)
-    {
-        direction = playerController.IsFacingLeft() ? Vector2.right : Vector2.left;
-        collided = true;
+        // Determine the input direction
+        Vector2 inputDirection = playerMelee.GetInputDirection();
+
+        // Check if the attack is a downward strike while in the air
+        if (inputDirection.y < 0 && !playerController.IsGrounded())
+        {
+            if (objHealth.giveUpwardsForce)
+            {
+                direction = Vector2.up;
+                downwardStrike = true;
+
+                playerController.CancelJump();
+            }
+            else
+            {
+                direction = Vector2.down;
+            }
+
+            collided = true;
+        }
+        else if (inputDirection.y == 0)
+        {
+            direction = playerController.IsFacingLeft() ? Vector2.right : Vector2.left;
+            collided = true;
+        }
+
+        StartCoroutine(NoLongerColliding());
     }
 
-    StartCoroutine(NoLongerColliding());
-}
 
 
     private void ApplyKnockback(EnemyHealth objHealth, Collider2D collision)

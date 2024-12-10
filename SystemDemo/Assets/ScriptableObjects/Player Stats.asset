@@ -40,7 +40,7 @@ MonoBehaviour:
   JumpPower: 17
   EndJumpEarlyExtraForceMultiplier: 3
   MaxAirJumps: 0
-  AllowDash: 1
+  AllowDash: 0
   DashVelocity: 17
   DashDuration: 0.1
   DashCooldown: 1

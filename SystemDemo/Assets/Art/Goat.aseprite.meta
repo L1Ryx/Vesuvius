@@ -173,7 +173,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Goat_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -182,7 +182,7 @@ ScriptedImporter:
         width: 13
         height: 20
       spriteId: 7a170d7d8236c415ea7708ae0ae062b4
-    - name: Goat_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:

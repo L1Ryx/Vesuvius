@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,9 +10,12 @@ public class TestEnemyMovement : MonoBehaviour
     public LayerMask terrainLayer; // Layer mask for terrain
     public float knockbackRecoveryTime = 0.5f; // Time to recover from knockback
     public float wallCheckOffset = 0.3f; // Reduced offset for smaller sprite
+    public float delayBeforeStartScuttling = 0.1f;
 
     [Header("References")]
     public EnemyHealth eh;
+    private MidgeAudio midgeAudio;
+    private bool isSoundStopped = false; // Ensure the sound is stopped only once
 
     private Rigidbody2D rb;
     private Transform spriteTransform; // Reference to the sprite for flipping
@@ -22,15 +26,26 @@ public class TestEnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        midgeAudio = GetComponent<MidgeAudio>();
         spriteTransform = transform.GetChild(0); // Assuming the sprite is the first child
+
+        StartCoroutine(Scuttling());
+    }
+
+    private IEnumerator Scuttling() {
+        yield return new WaitForSeconds(delayBeforeStartScuttling);
+        midgeAudio.PlayMidgeWalk();
     }
 
     void Update()
     {  
         if (!eh.GetIsDead()) {
             HandleMovementLogic();
+        } else if (!isSoundStopped)
+        {
+            midgeAudio?.StopMidgeWalk();
+            isSoundStopped = true;
         }
-
     }
 
     private void HandleMovementLogic() {
@@ -109,4 +124,10 @@ public class TestEnemyMovement : MonoBehaviour
             knockbackTimer = knockbackRecoveryTime;
         }
     }
+
+    private void OnDestroy()
+    {
+        midgeAudio?.StopMidgeWalk();
+    }
+
 }

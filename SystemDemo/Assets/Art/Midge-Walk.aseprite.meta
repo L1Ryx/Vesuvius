@@ -215,7 +215,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Midge-Walk_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -224,7 +224,7 @@ ScriptedImporter:
         width: 12
         height: 5
       spriteId: 675b2f99cbf654d0bae3a03c3bba4610
-    - name: Midge-Walk_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -233,7 +233,7 @@ ScriptedImporter:
         width: 12
         height: 6
       spriteId: 70d667cdae44344d1959d57ae140748d
-    - name: Midge-Walk_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -242,7 +242,7 @@ ScriptedImporter:
         width: 12
         height: 5
       spriteId: c300a2f1b57d0446dbb1dcc3b86cd958
-    - name: Midge-Walk_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:

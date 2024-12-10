@@ -40,7 +40,13 @@ namespace TarodevController
         public Vector2 Velocity { get; private set; }
         public int WallDirection { get; private set; }
         public bool ClimbingLadder { get; private set; }
-
+        private bool wasGrounded; // Tracks the player's grounded state in the previous frame
+        private bool wasFalling;
+        private float fallingGraceTimer; // Timer for the grace period
+        [SerializeField] private float fallingGracePeriod = 0.05f; // Grace period duration
+        [SerializeField] private float fallThreshold = 1f;
+        [SerializeField] private UnityEvent playerJumped;
+        
         [Header("Player State")]
         private bool _freezeMode;
         public bool FreezeMode
@@ -201,6 +207,73 @@ namespace TarodevController
         public bool IsGrounded() {
             return _grounded;
         }
+
+        public bool IsWalking()
+        {
+            // Check if the player is moving (left or right) and is grounded
+            return this.Input.x != 0 && this.IsGrounded();
+        }
+
+        public bool HasLanded()
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb == null)
+            {
+                Debug.LogError("No Rigidbody2D detected for HasLanded()");
+                return false;
+            }
+
+            bool isGroundedNow = IsGrounded(); // Check if the player is grounded
+            bool isFallingNow = rb.linearVelocity.y < - fallThreshold; // Check if the player is falling (adjusted velocity threshold)
+
+            // Update grace timer if falling
+            if (isFallingNow)
+            {
+                fallingGraceTimer = fallingGracePeriod; // Reset the timer
+            }
+            else if (fallingGraceTimer > 0)
+            {
+                fallingGraceTimer -= Time.deltaTime; // Countdown grace timer
+            }
+
+            // Treat the player as falling if the grace timer is active
+            bool isFallingWithGrace = fallingGraceTimer > 0;
+
+            // Player has landed if they were falling (including grace) and are now grounded
+            bool hasLanded = (wasFalling || isFallingWithGrace) && isGroundedNow;
+
+            // Debugging
+            //Debug.Log($"IsGrounded: {isGroundedNow}, IsFalling: {isFallingNow}, FallingGraceTimer: {fallingGraceTimer}, HasLanded: {hasLanded}");
+
+            // Update states for the next frame
+            wasGrounded = isGroundedNow;
+            wasFalling = !isGroundedNow && isFallingNow;
+
+            return hasLanded;
+        }
+
+        public bool HasJumped()
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb == null)
+            {
+                Debug.LogError("No Rigidbody2D detected for HasJumped()");
+                return false;
+            }
+
+            bool isGroundedNow = IsGrounded(); // Check if the player is currently grounded
+            bool isJumpingNow = !isGroundedNow && rb.linearVelocity.y > 0.1f; // Check for upward movement when not grounded
+
+            // Player has jumped if they transitioned from grounded to upward movement
+            bool hasJumped = wasGrounded && isJumpingNow;
+
+            // Update grounded state for the next frame
+            wasGrounded = isGroundedNow;
+
+            return hasJumped;
+        }
+
+
 
         public void CancelJump()
         {
@@ -647,6 +720,7 @@ namespace TarodevController
 
         private void ExecuteJump(JumpType jumpType)
         {
+            playerJumped.Invoke();
             SetVelocity(_trimmedFrameVelocity);
             _endedJumpEarly = false;
             _bufferedJumpUsable = false;

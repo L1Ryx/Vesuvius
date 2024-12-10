@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TarodevController;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerMelee : MonoBehaviour
@@ -36,6 +37,8 @@ public class PlayerMelee : MonoBehaviour
     public float coyoteTimeDuration = 0.3f; // Time before the end of a swing to register a queued input
     private bool isSwingQueued = false; // Tracks if a swing input is queued
     private Vector2 queuedInputDirection; // Stores the direction of the queued swing
+    [Header("Events")]
+    public UnityEvent playerSwung;
 
 
     public bool IsSwinging { get; private set; }
@@ -143,6 +146,8 @@ public class PlayerMelee : MonoBehaviour
                 Debug.LogWarning("Player facing direction is ambiguous!");
                 return;
             }
+
+            playerSwung.Invoke();
 
             GameObject swing = Instantiate(swingPrefab, swingPosition, swingRotation, transform);
             swing.GetComponentInChildren<Swing>().Init(playerController, this, playerParent, isAltSwing);

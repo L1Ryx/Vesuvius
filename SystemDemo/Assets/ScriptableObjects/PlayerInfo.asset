@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   maximumHealth: 5
-  currentHealth: 5
+  currentHealth: 3
   totalCurrency: 0
-  totemPower: 100
+  totemPower: 22
   abilityCost: 25
