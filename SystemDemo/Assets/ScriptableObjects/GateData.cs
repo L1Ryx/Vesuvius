@@ -31,4 +31,12 @@ public class GateData : ScriptableObject
         return false;
     }
 
+    public void ResetGates()
+    {
+        foreach (var gate in gateEntries)
+        {
+            gate.isLocked = true;
+        }
+        Debug.Log("All gates have been reset to locked state.");
+    }
 }
