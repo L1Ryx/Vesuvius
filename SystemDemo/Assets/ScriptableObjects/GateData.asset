@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gateEntries:
   - gateID: 01-02-01
-    isLocked: 0
+    isLocked: 1
   - gateID: 01-02-02
-    isLocked: 0
+    isLocked: 1

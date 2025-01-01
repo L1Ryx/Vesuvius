@@ -1,6 +1,8 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI; // Required for handling UI images
 
 public class CradleMenu : MonoBehaviour
 {
@@ -10,12 +12,24 @@ public class CradleMenu : MonoBehaviour
     [Header("Other Text Elements")]
     public TMP_Text[] nonMenuTexts; // Texts not used as options (e.g., titles or descriptions)
 
+    [Header("UI Images")]
+    public Image[] uiImages; // UI images to be faded in and out
+    [Header("Panels")]
+    public GameObject mainPanel;
+    public GameObject readPanel;
+    private TMP_Text[] readPanelTexts;
+
+
     [Header("Settings")]
     public Color defaultColor = Color.white;
     public Color selectedColor = Color.yellow;
+    public float fadeSpeed = 1f; // Speed of the fade-in and fade-out
+    public float startDelay = 0.2f; // Delay before starting fade-in
 
     private int selectedIndex = 0;
     private PlayerControls playerControls;
+    private bool isReading = false; // False = Main Panel, True = Read Panel
+
 
     public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
     public event OnMenuClosed MenuClosed;
@@ -27,15 +41,14 @@ public class CradleMenu : MonoBehaviour
         // Subscribe to navigation and selection actions
         playerControls.Player.Navigate.performed += OnNavigate;
         playerControls.Player.Confirm.performed += OnSelect;
+
+
     }
 
     private void OnEnable()
     {
         playerControls.Enable();
-
-        // Make all menu and non-menu texts fully visible
-        SetTextAlpha(menuOptions, 1);
-        SetTextAlpha(nonMenuTexts, 1);
+        StartCoroutine(FadeInUI());
     }
 
     private void OnDisable()
@@ -45,11 +58,18 @@ public class CradleMenu : MonoBehaviour
 
     private void Start()
     {
-        // Ensure all texts are fully visible at the start
-        SetTextAlpha(menuOptions, 1);
-        SetTextAlpha(nonMenuTexts, 1);
-
         UpdateMenu(); // Highlight the default selected option
+
+        // Set initial alpha to 0 for texts and images
+        SetTextAlpha(menuOptions, 0);
+        SetTextAlpha(nonMenuTexts, 0);
+        SetImageAlpha(uiImages, 0);
+
+        // Temporarily activate readPanel to gather its TMP_Text components
+        readPanel.SetActive(true);
+        readPanelTexts = readPanel.GetComponentsInChildren<TMP_Text>();
+        SetTextAlpha(readPanelTexts, 0); // Set initial alpha to 0 for read panel texts
+        readPanel.SetActive(false); // Deactivate readPanel again
     }
 
     private void OnNavigate(InputAction.CallbackContext context)
@@ -70,25 +90,93 @@ public class CradleMenu : MonoBehaviour
 
     private void OnSelect(InputAction.CallbackContext context)
     {
-        string selectedOption = menuOptions[selectedIndex].text;
-
-        Debug.Log($"Selected option: {selectedOption}");
-
-        switch (selectedOption)
+        if (isReading)
         {
-            case "Rest":
-                Debug.Log("Rest functionality to be implemented.");
-                break;
+            // Switch back to Main Panel
+            StartCoroutine(SwitchPanels(readPanel, mainPanel));
+            isReading = false;
+        }
+        else
+        {
+            string selectedOption = menuOptions[selectedIndex].text;
 
-            case "Read":
-                Debug.Log("Read functionality to be implemented.");
-                break;
+            Debug.Log($"Selected option: {selectedOption}");
 
-            case "Leave":
-                CloseMenu();
-                break;
+            switch (selectedOption)
+            {
+                case "Rest":
+                    Debug.Log("Rest functionality to be implemented.");
+                    break;
+
+                case "Read":
+                    // Switch to Read Panel
+                    StartCoroutine(SwitchPanels(mainPanel, readPanel));
+                    isReading = true;
+                    break;
+
+                case "Leave":
+                    StartCoroutine(FadeOutUIAndClose()); // Correct method name
+                    break;
+            }
         }
     }
+
+
+private IEnumerator SwitchPanels(GameObject outgoingPanel, GameObject incomingPanel)
+{
+    CanvasGroup outgoingGroup = outgoingPanel.GetComponent<CanvasGroup>();
+    CanvasGroup incomingGroup = incomingPanel.GetComponent<CanvasGroup>();
+
+    TMP_Text[] outgoingTexts = outgoingPanel.GetComponentsInChildren<TMP_Text>();
+    TMP_Text[] incomingTexts = incomingPanel.GetComponentsInChildren<TMP_Text>();
+
+    float alpha = 1f;
+
+    // Fade out outgoing panel
+    while (alpha > 0f)
+    {
+        alpha -= Time.deltaTime * fadeSpeed;
+
+        if (outgoingGroup != null)
+            outgoingGroup.alpha = alpha;
+
+        SetTextAlpha(outgoingTexts, alpha);
+        SetImageAlpha(uiImages, alpha); // Use the class field for UI images
+        yield return null;
+    }
+
+    if (outgoingGroup != null)
+        outgoingGroup.alpha = 0f;
+
+    SetTextAlpha(outgoingTexts, 0f);
+    SetImageAlpha(uiImages, 0f); // Ensure the UI images are fully transparent
+    outgoingPanel.SetActive(false);
+
+    // Activate incoming panel and fade it in
+    incomingPanel.SetActive(true);
+    alpha = 0f;
+    while (alpha < 1f)
+    {
+        alpha += Time.deltaTime * fadeSpeed;
+
+        if (incomingGroup != null)
+            incomingGroup.alpha = alpha;
+
+        SetTextAlpha(incomingTexts, alpha);
+        SetImageAlpha(uiImages, alpha); // Use the class field for UI images
+        yield return null;
+    }
+
+    if (incomingGroup != null)
+        incomingGroup.alpha = 1f;
+
+    SetTextAlpha(incomingTexts, 1f);
+    SetImageAlpha(uiImages, 1f); // Ensure the UI images are fully visible
+}
+
+
+
+
 
     private void UpdateMenu()
     {
@@ -116,10 +204,53 @@ public class CradleMenu : MonoBehaviour
         }
     }
 
-    private void CloseMenu()
+    private void SetImageAlpha(Image[] images, float alpha)
     {
-        Debug.Log("Menu closed.");
+        foreach (var image in images)
+        {
+            var currentColor = image.color;
+            image.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
+        }
+    }
+
+    private IEnumerator FadeInUI()
+    {
+        yield return new WaitForSeconds(startDelay); // Short delay to avoid race conditions
+
+        float alpha = 0f;
+        while (alpha < 1f)
+        {
+            alpha += Time.deltaTime * fadeSpeed;
+            SetTextAlpha(menuOptions, alpha);
+            SetTextAlpha(nonMenuTexts, alpha);
+            SetImageAlpha(uiImages, alpha);
+            yield return null;
+        }
+
+        // Ensure full alpha
+        SetTextAlpha(menuOptions, 1f);
+        SetTextAlpha(nonMenuTexts, 1f);
+        SetImageAlpha(uiImages, 1f);
+    }
+
+    private IEnumerator FadeOutUIAndClose()
+    {
+        float alpha = 1f;
+        while (alpha > 0f)
+        {
+            alpha -= Time.deltaTime * fadeSpeed;
+            SetTextAlpha(menuOptions, alpha);
+            SetTextAlpha(nonMenuTexts, alpha);
+            SetImageAlpha(uiImages, alpha);
+            yield return null;
+        }
+
+        // Ensure zero alpha
+        SetTextAlpha(menuOptions, 0f);
+        SetTextAlpha(nonMenuTexts, 0f);
+        SetImageAlpha(uiImages, 0f);
+
         MenuClosed?.Invoke(); // Notify any listeners that the menu is closing
-        gameObject.SetActive(false); // Hide the menu
+        Destroy(gameObject); // Destroy the menu object
     }
 }
