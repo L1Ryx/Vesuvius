@@ -144,7 +144,7 @@
 						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{2F8BDD4C-1910-4450-8B3F-780009FEAFB8}4087264679"/>
+				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{2F8BDD4C-1910-4450-8B3F-780009FEAFB8}2479652770"/>
 				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{1FB94A0B-E6A6-464C-9B0F-EC8D4EB12AA7}"/>
 			</PropertyList>
 		</UserProjectSettings>

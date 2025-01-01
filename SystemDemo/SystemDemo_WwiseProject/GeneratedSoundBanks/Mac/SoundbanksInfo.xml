@@ -39,7 +39,7 @@
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{A4010EB2-A0B7-481F-4531-26CF75A67123}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{0A2D5443-63CC-A2C8-59DC-32C6C8CCE3F3}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -454,5 +454,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E6C465B1-E672-908F-F4BD-610884718797}</FileHash>
+	<FileHash>{D28ACF73-3E61-EE0C-B1D2-DABB294A45F4}</FileHash>
 </SoundBanksInfo>
