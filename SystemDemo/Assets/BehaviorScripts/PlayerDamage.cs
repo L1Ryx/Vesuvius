@@ -3,6 +3,7 @@ using System.Collections;
 using TarodevController;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerDamage : MonoBehaviour
 {
@@ -55,6 +56,11 @@ public class PlayerDamage : MonoBehaviour
     [Header("Knockback")]
     public float maxKnockbackVelocity = 10f;
     public float finalMaxKnockbackVelocity = 20f;
+    [Header("Death Overlay")]
+    public GameObject deathOverlayPanel; // Assign the black overlay image in the Inspector
+    public float deathDelay = 4f; // Time to wait before reloading the checkpoint
+    public SpawnData spawnData; // Reference to the SpawnData ScriptableObject
+
 
     private void Awake()
     {
@@ -231,7 +237,11 @@ public class PlayerDamage : MonoBehaviour
         Time.fixedDeltaTime = 0.02f;
 
         RevertToOriginalColor();
-        playerInfo.DecrementHealth();
+        if (playerInfo.DecrementHealth()) {
+            StartCoroutine(HandlePlayerDeath());
+            return; // Prevent further processing
+        }
+
 
         if (useParticles && damageBurst != null)
         {
@@ -240,4 +250,59 @@ public class PlayerDamage : MonoBehaviour
 
         StartCoroutine(FlashPlayer());
     }
+
+private IEnumerator HandlePlayerDeath()
+{
+    // Activate the death overlay
+    Image overlayImage = deathOverlayPanel.GetComponent<Image>();
+    if (overlayImage != null)
+    {
+        Color overlayColor = overlayImage.color;
+        overlayColor.a = 1f;
+        overlayImage.color = overlayColor;
+        deathOverlayPanel.SetActive(true);
+    }
+    else
+    {
+        Debug.LogError("Death overlay panel is missing an Image component!");
+    }
+
+    // Wait for the death delay
+    yield return new WaitForSeconds(deathDelay);
+
+    // Set spawn location in SpawnData
+    if (playerInfo != null && spawnData != null)
+    {
+        spawnData.spawnLocation = playerInfo.GetCheckpointLocation();
+        Debug.Log($"SpawnData updated: Location {spawnData.spawnLocation}");
+    }
+    else
+    {
+        Debug.LogError("PlayerInfo or SpawnData is not assigned!");
+    }
+
+    // Refill health and totem power
+    if (playerInfo != null)
+    {
+        playerInfo.RefillHealthAndTotemPower();
+    }
+
+    // Load the checkpoint scene
+    if (playerInfo != null)
+    {
+        string checkpointScene = playerInfo.GetCheckpointScene();
+        if (!string.IsNullOrEmpty(checkpointScene))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(checkpointScene);
+        }
+        else
+        {
+            Debug.LogError("Checkpoint scene is not set in PlayerInfo!");
+        }
+    }
+}
+
+
+    
+
 }

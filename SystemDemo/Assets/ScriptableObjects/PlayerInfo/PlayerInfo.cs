@@ -10,12 +10,17 @@ public class PlayerInfo : ScriptableObject
     [SerializeField] [Range(0, 100)] private int totemPower = 0;
     [SerializeField] private int abilityCost = 30; // Required totems to use the ability
 
+    [Header("Checkpoint Info")]
+    [SerializeField] private string sceneToLoad = ""; // Scene to load on respawn
+    [SerializeField] private Vector2 spawnLocation = Vector2.zero; // Player's spawn position in the scene
+
     // Getters
     public int GetMaximumHealth() => maximumHealth;
     public int GetCurrentHealth() => currentHealth;
     public int GetTotalCurrency() => totalCurrency;
     public int GetTotemPower() => totemPower;
-
+    public string GetSceneToLoad() => sceneToLoad;
+    public Vector2 GetSpawnLocation() => spawnLocation;
 
     // Setters
     public void SetMaximumHealth(int value)
@@ -44,9 +49,14 @@ public class PlayerInfo : ScriptableObject
     public void SetTotemPower(int value)
     {
         totemPower = Mathf.Clamp(value, 0, 100);
-
-        
     }
+
+    public void SetCheckpoint(string newScene, Vector2 newLocation)
+    {
+        sceneToLoad = newScene;
+        spawnLocation = newLocation;
+    }
+
     public bool BuyAbility()
     {
         if (totemPower >= abilityCost)
@@ -64,24 +74,43 @@ public class PlayerInfo : ScriptableObject
     public int AddTotemPower(int addedPower)
     {
         int total = totemPower + addedPower;
-        if (total >= 100) {
+        if (total >= 100)
+        {
             total = 100;
         }
         totemPower = total;
         return totemPower;
     }
 
-    public int DecrementHealth() {
+    public bool DecrementHealth() {
         currentHealth -= 1;
         if (currentHealth <= 0) {
             Debug.Log("Player Death");
-            // death logic
+            return true; // Indicates the player is dead
         }
-        return currentHealth;
+        return false;
     }
+
+    public void RefillHealthAndTotemPower()
+    {
+        currentHealth = maximumHealth;
+        totemPower = 100;
+        Debug.Log("Player fully healed and totem power restored.");
+    }
+
+    // Getter for the checkpoint scene
+    public string GetCheckpointScene()
+    {
+        return sceneToLoad;
+    }
+
+    // Getter for the spawn location
+    public Vector2 GetCheckpointLocation()
+    {
+        return spawnLocation;
+    }
+
 
     public int GetAbilityCost() => abilityCost;
     public void SetAbilityCost(int value) => abilityCost = Mathf.Max(0, value);
 }
-
-

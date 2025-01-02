@@ -13,6 +13,10 @@ public class EmptyCradle : MonoBehaviour
     public float activationRadius = 2f; // Distance for interaction
     public GameObject menuPrefab; // Prefab for the temporary menu
 
+    [Header("Checkpoint Info")]
+    public string checkpointScene; // Scene to set as checkpoint
+    public Vector2 checkpointLocation; // Exact location to set as checkpoint
+
     private GameObject player;
     private PlayerController playerController; // Dynamically fetched PlayerController
     private PlayerControls playerControls;
@@ -153,7 +157,7 @@ public class EmptyCradle : MonoBehaviour
     {
         if (menuActive)
         {
-            CloseMenu();
+            return;
         }
         else if (isPlayerNear)
         {
@@ -169,8 +173,12 @@ public class EmptyCradle : MonoBehaviour
             return;
         }
 
-        GameObject menuInstance = Instantiate(menuPrefab);
+        GameObject menuInstance = Instantiate(menuPrefab, this.transform);
         CradleMenu menuScript = menuInstance.GetComponent<CradleMenu>();
+
+        // Set the menu's PlayerInfo reference
+        //menuScript.playerInfo.SetCheckpoint(checkpointScene, checkpointLocation);
+
         menuScript.MenuClosed += CloseMenu; // Subscribe to the MenuClosed event
 
         menuActive = true;
@@ -196,5 +204,4 @@ public class EmptyCradle : MonoBehaviour
 
         Debug.Log("Menu closed and player unfrozen.");
     }
-
 }
