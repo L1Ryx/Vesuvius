@@ -116,6 +116,13 @@ public class PlayerDamage : MonoBehaviour
     {
         try
         {
+            // Ensure the player cannot take damage if their health is 0 or below
+            if (playerInfo.GetCurrentHealth() <= 0)
+            {
+                Debug.Log("Player is already at 0 health and cannot take further damage.");
+                return;
+            }
+
             if (enemy.GetIsDead())
             {
                 Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
@@ -138,7 +145,6 @@ public class PlayerDamage : MonoBehaviour
                 }
 
                 Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
-                // playerInfo?.DecrementHealth();
 
                 if (useParticles && damageBurst != null && !damageBurst.isPlaying)
                 {
@@ -160,6 +166,7 @@ public class PlayerDamage : MonoBehaviour
             Debug.LogError("Error in HandleCollisionWithEnemy: " + ex.Message);
         }
     }
+
 
     private void ApplyKnockback()
     {

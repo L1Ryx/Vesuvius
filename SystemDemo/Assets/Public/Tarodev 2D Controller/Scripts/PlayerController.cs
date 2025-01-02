@@ -66,7 +66,11 @@ namespace TarodevController
         }
 
         // Returns true if the player is facing right// Add a reference to the player's SpriteRenderer
-        [SerializeField] private SpriteRenderer playerSpriteRenderer;
+        [SerializeField] public SpriteRenderer playerSpriteRenderer;
+
+        public SpriteRenderer getPlayerSpriteRenderer() {
+            return playerSpriteRenderer;
+        }
 
         // Returns true if the player is facing right
         public bool IsFacingRight() {

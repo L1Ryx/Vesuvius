@@ -6,7 +6,7 @@ public class RoomSensor : MonoBehaviour
     [Header("Events")]
     [SerializeField] private UnityEvent roomLoaded;
     
-    void Awake() {
+    void Start() {
         roomLoaded.Invoke();
     }
 } 

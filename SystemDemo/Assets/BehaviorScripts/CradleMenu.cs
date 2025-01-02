@@ -151,68 +151,83 @@ public class CradleMenu : MonoBehaviour
     }
 
 
-private IEnumerator HandleRest()
-{
-    menuActive = false; // Lock menu interaction
-
-    Image restImage = restPanel.GetComponent<Image>();
-    if (restImage == null)
+    private IEnumerator HandleRest()
     {
-        Debug.LogError("Rest panel is missing an Image component!");
-        yield break;
+        menuActive = false; // Lock menu interaction
+
+        Image restImage = restPanel.GetComponent<Image>();
+        if (restImage == null)
+        {
+            Debug.LogError("Rest panel is missing an Image component!");
+            yield break;
+        }
+
+        restPanel.SetActive(true);
+
+        // Fade in the rest panel
+        float alpha = 0f;
+        while (alpha < 1f)
+        {
+            alpha += Time.deltaTime / veilDuration;
+            SetImageAlpha(restImage, alpha);
+            yield return null;
+        }
+        SetImageAlpha(restImage, 1f);
+
+        // Restore player stats
+        if (playerInfo != null)
+        {
+            playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
+            playerInfo.SetTotemPower(100); // Fully restore totem power
+            Debug.Log("Player stats restored: Health and Totem Power set to maximum.");
+
+            // Get the parent EmptyCradle component
+            EmptyCradle parentCradle = GetComponentInParent<EmptyCradle>();
+
+            if (parentCradle != null)
+            {
+                playerInfo.SetCheckpoint(parentCradle.checkpointScene, parentCradle.checkpointLocation);
+                Debug.Log($"Checkpoint updated: Scene - {parentCradle.checkpointScene}, Location - {parentCradle.checkpointLocation}");
+            }
+            else
+            {
+                Debug.LogError("Parent EmptyCradle not found!");
+            }
+
+        }
+        else
+        {
+            Debug.LogError("PlayerInfo ScriptableObject is not assigned.");
+        }
+
+        // Lerp in the "Saved Text"
+        if (savedText != null)
+        {
+            yield return StartCoroutine(LerpTextAlpha(savedText, 0f, 1f, savedTextLerpDuration));
+        }
+
+        // Wait for the rest duration
+        yield return new WaitForSeconds(restDuration);
+
+        // Lerp out the "Saved Text"
+        if (savedText != null)
+        {
+            yield return StartCoroutine(LerpTextAlpha(savedText, 1f, 0f, savedTextLerpDuration));
+        }
+
+        // Fade out the rest panel
+        while (alpha > 0f)
+        {
+            alpha -= Time.deltaTime / veilDuration;
+            SetImageAlpha(restImage, alpha);
+            yield return null;
+        }
+        SetImageAlpha(restImage, 0f);
+
+        restPanel.SetActive(false);
+        menuActive = true; // Unlock menu interaction
     }
 
-    restPanel.SetActive(true);
-
-    // Fade in the rest panel
-    float alpha = 0f;
-    while (alpha < 1f)
-    {
-        alpha += Time.deltaTime / veilDuration;
-        SetImageAlpha(restImage, alpha);
-        yield return null;
-    }
-    SetImageAlpha(restImage, 1f);
-
-    // Restore player stats
-    if (playerInfo != null)
-    {
-        playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
-        playerInfo.SetTotemPower(100); // Fully restore totem power
-        Debug.Log("Player stats restored: Health and Totem Power set to maximum.");
-    }
-    else
-    {
-        Debug.LogError("PlayerInfo ScriptableObject is not assigned.");
-    }
-
-    // Lerp in the "Saved Text"
-    if (savedText != null)
-    {
-        yield return StartCoroutine(LerpTextAlpha(savedText, 0f, 1f, savedTextLerpDuration));
-    }
-
-    // Wait for the rest duration
-    yield return new WaitForSeconds(restDuration);
-
-    // Lerp out the "Saved Text"
-    if (savedText != null)
-    {
-        yield return StartCoroutine(LerpTextAlpha(savedText, 1f, 0f, savedTextLerpDuration));
-    }
-
-    // Fade out the rest panel
-    while (alpha > 0f)
-    {
-        alpha -= Time.deltaTime / veilDuration;
-        SetImageAlpha(restImage, alpha);
-        yield return null;
-    }
-    SetImageAlpha(restImage, 0f);
-
-    restPanel.SetActive(false);
-    menuActive = true; // Unlock menu interaction
-}
 
     private IEnumerator LerpTextAlpha(TMP_Text text, float fromAlpha, float toAlpha, float duration)
     {

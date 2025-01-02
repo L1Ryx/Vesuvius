@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnData: {fileID: 11400000, guid: 27a4ed05d7c2540369d9dfa5010b24ba, type: 2}
-  playerPrefab: {fileID: 3054942120541986084, guid: a758f4c47c8e05242aa9c708a1c99374, type: 3}
+  playerPrefab: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
   playerDummy: {fileID: 0}
   runtimePlayer: {fileID: 0}
 --- !u!114 &7386378690134220324

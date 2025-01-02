@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TarodevController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class PlayerSpawner : MonoBehaviour {
+public class PlayerSpawner : MonoBehaviour
+{
     public SpawnData spawnData;
     public GameObject playerPrefab;
     public GameObject playerDummy;
@@ -13,26 +14,34 @@ public class PlayerSpawner : MonoBehaviour {
     [Header("Runtime Data")]
     [SerializeField] private GameObject runtimePlayer;
 
+    private bool spawnFacingLeft = false; // Determines if the player should spawn facing left
+
     private void Awake()
     {
+        spawnFacingLeft = spawnData.isFacingLeft;
         runtimePlayer = InstantiatePlayer(spawnData.spawnLocation);
     }
 
-    public GameObject GetRuntimePlayer() {
+    public GameObject GetRuntimePlayer()
+    {
         return runtimePlayer;
     }
 
     [ContextMenu("Update Spawn Location")]
-    public void UpdateSpawnLocationFromDummy() {
+    public void UpdateSpawnLocationFromDummy()
+    {
         UpdatePlayerLocationInSpawnData();
     }
 
-
-    public Vector2 UpdatePlayerLocationInSpawnData() {
-        if (playerDummy != null) {
+    public Vector2 UpdatePlayerLocationInSpawnData()
+    {
+        if (playerDummy != null)
+        {
             spawnData.spawnLocation = playerDummy.transform.position;
             return spawnData.spawnLocation;
-        } else {
+        }
+        else
+        {
             Debug.LogError("PlayerDummy is not assigned.");
             return spawnData.spawnLocation; // Return the current spawn location in case of error
         }
@@ -41,19 +50,54 @@ public class PlayerSpawner : MonoBehaviour {
     private GameObject InstantiatePlayer(Vector2 spawnLocation)
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
-        {  // Check if the player doesn't already exist
+        {
             GameObject player = Instantiate(playerPrefab, spawnLocation, Quaternion.identity);
             player.tag = "Player";
+
+            // Set player facing direction based on the spawnFacingLeft field
+            FlipPlayerIfNecessary(player);
+
             return player;
         }
         else
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = spawnLocation;
-            return GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = spawnLocation;
+
+            // Set player facing direction if necessary
+            FlipPlayerIfNecessary(player);
+
+            return player;
         }
     }
 
-    public void SaveScene() {
+    private void FlipPlayerIfNecessary(GameObject player)
+    {
+        // Access the PlayerController component
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController not found on the player!");
+            return;
+        }
+
+        // Get the correct SpriteRenderer via PlayerController
+        SpriteRenderer spriteRenderer = playerController.getPlayerSpriteRenderer();
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer not found via PlayerController!");
+            return;
+        }
+
+        Debug.Log("Flip player left: " + spawnFacingLeft);
+        
+        // Flip the sprite based on the spawnFacingLeft field
+        spriteRenderer.flipX = spawnFacingLeft;
+    }
+
+
+    public void SaveScene()
+    {
         ES3.Save("PlayerScene", SceneManager.GetActiveScene().name);
     }
 
@@ -63,16 +107,18 @@ public class PlayerSpawner : MonoBehaviour {
         LoadPlayerTransform();
     }
 
-    public void ClearPlayerSceneSave() {
-        if (ES3.KeyExists("PlayerScene")) {
+    public void ClearPlayerSceneSave()
+    {
+        if (ES3.KeyExists("PlayerScene"))
+        {
             ES3.DeleteKey("PlayerScene");
         }
-    }     
+    }
 
     private void LoadPlayerScene()
     {
         if (ES3.KeyExists("PlayerScene") && ES3.Load<string>("PlayerScene") == SceneManager.GetActiveScene().name)
-        {  
+        {
             UpdateSpawnLocation();
         }
         else if (ES3.KeyExists("PlayerScene") && ES3.Load<string>("PlayerScene") != SceneManager.GetActiveScene().name)
@@ -86,16 +132,20 @@ public class PlayerSpawner : MonoBehaviour {
         }
     }
 
-    private void UpdateSpawnLocation() {
+    private void UpdateSpawnLocation()
+    {
         spawnData.spawnLocation = ES3.Load<Transform>("PlayerTransform").position;
     }
 
-    private void LoadPlayerTransform() {
-        if (ES3.KeyExists("PlayerTransform")) {
+    private void LoadPlayerTransform()
+    {
+        if (ES3.KeyExists("PlayerTransform"))
+        {
             InstantiatePlayer(ES3.Load<Transform>("PlayerTransform").position);
-        } else {
+        }
+        else
+        {
             Debug.LogError("No PlayerTransform save to load!");
         }
     }
 }
-

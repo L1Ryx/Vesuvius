@@ -204,4 +204,15 @@ public class EmptyCradle : MonoBehaviour
 
         Debug.Log("Menu closed and player unfrozen.");
     }
+
+    public string GetCheckpointScene()
+    {
+        return checkpointScene;
+    }
+
+    public Vector2 GetCheckpointLocation()
+    {
+        return checkpointLocation;
+    }
+
 }
