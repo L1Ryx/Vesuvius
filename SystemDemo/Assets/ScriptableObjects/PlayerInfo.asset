@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumHealth: 5
   currentHealth: 5
-  totalCurrency: 0
+  totalCurrency: 50
   totemPower: 100
   abilityCost: 25
   sceneToLoad: 01-02

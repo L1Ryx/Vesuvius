@@ -24,8 +24,8 @@ public class GateSwitch : MonoBehaviour
     public float pulseIntensity = 0.06f;
 
     private Color targetColor;
-    private bool isPlayerNear = false;
-    private bool gateUnlocked = false;
+    protected bool isPlayerNear = false;
+    protected bool gateUnlocked = false;
     private GameObject player;
 
     private PlayerControls playerControls;
@@ -59,7 +59,7 @@ public class GateSwitch : MonoBehaviour
         UpdateSwitchSprite(); // Set the correct sprite at the start
     }
 
-    private void InitializeUI()
+    protected virtual void InitializeUI()
     {
         gateSwitchCanvas.gameObject.SetActive(false);
         SetTextAlpha(0);
@@ -76,7 +76,7 @@ public class GateSwitch : MonoBehaviour
         HandleSwitchProximityLogic();
     }
 
-    private void HandleSwitchProximityLogic()
+    protected virtual void HandleSwitchProximityLogic()
     {
         if (!gate.gateData.GetGateLockedState(gate.gateID))
         {
@@ -147,7 +147,7 @@ public class GateSwitch : MonoBehaviour
         interactPromptText.color = new Color(interactPromptText.color.r, interactPromptText.color.g, interactPromptText.color.b, alpha);
     }
 
-    private void OnInteract(InputAction.CallbackContext context)
+    protected virtual void OnInteract(InputAction.CallbackContext context)
     {
         if (isPlayerNear && gate != null && !gateUnlocked)
         {
