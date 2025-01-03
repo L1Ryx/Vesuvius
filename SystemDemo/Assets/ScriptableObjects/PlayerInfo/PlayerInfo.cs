@@ -1,4 +1,33 @@
+using System.ComponentModel;
+using Unity.Collections;
 using UnityEngine;
+using UnityEditor;
+using UnityEngine.Events;
+
+public class ReadOnlyAttribute : PropertyAttribute
+{
+
+}
+
+[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
+public class ReadOnlyDrawer : PropertyDrawer
+
+{
+    public override float GetPropertyHeight(SerializedProperty property,
+                                            GUIContent label)
+    {
+        return EditorGUI.GetPropertyHeight(property, label, true);
+    }
+
+    public override void OnGUI(Rect position,
+                               SerializedProperty property,
+                               GUIContent label)
+    {
+        GUI.enabled = false;
+        EditorGUI.PropertyField(position, property, label, true);
+        GUI.enabled = true;
+    }
+}
 
 [CreateAssetMenu(fileName = "PlayerInfo", menuName = "ScriptableObjects/PlayerInfo", order = 1)]
 public class PlayerInfo : ScriptableObject
@@ -9,10 +38,14 @@ public class PlayerInfo : ScriptableObject
     [SerializeField] private int totalCurrency = 0;
     [SerializeField] [Range(0, 100)] private int totemPower = 0;
     [SerializeField] private int abilityCost = 30; // Required totems to use the ability
+    [Header("Monitoring")]
+    [ReadOnly] public int lastCurrencyChangeAmount = 24;
 
     [Header("Checkpoint Info")]
     [SerializeField] private string sceneToLoad = ""; // Scene to load on respawn
     [SerializeField] private Vector2 spawnLocation = Vector2.zero; // Player's spawn position in the scene
+    [Header("Events")]
+    public UnityEvent currencyChanged;
 
     // Getters
     public int GetMaximumHealth() => maximumHealth;
@@ -80,6 +113,15 @@ public class PlayerInfo : ScriptableObject
         }
         totemPower = total;
         return totemPower;
+    }
+
+    // Public method to add currency
+    public void AddCurrency(int amount)
+    {
+        int oldTotalCurrency = totalCurrency;
+        totalCurrency = Mathf.Max(0, totalCurrency + amount);
+        lastCurrencyChangeAmount = totalCurrency - oldTotalCurrency;
+        currencyChanged.Invoke();
     }
 
     public bool DecrementHealth() {

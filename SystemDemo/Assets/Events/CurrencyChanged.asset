@@ -9,13 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e99e3634ab2d4712bae794d9917c073, type: 3}
-  m_Name: PlayerInfo
+  m_Script: {fileID: 11500000, guid: 30df7ee0b7d7943428417d3f84c2138a, type: 3}
+  m_Name: CurrencyChanged
   m_EditorClassIdentifier: 
-  maximumHealth: 5
-  currentHealth: 5
-  totalCurrency: 50
-  totemPower: 100
-  abilityCost: 25
-  sceneToLoad: 01-02
-  spawnLocation: {x: 60, y: 4}

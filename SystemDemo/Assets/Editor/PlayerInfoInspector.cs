@@ -1,17 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(PlayerInfoInspector))]
-public class PlayerInfoInspector : Editor {
-    public override void OnInspectorGUI() {
-        base.OnInspectorGUI();
-        
-    }
-}
-
 [CustomEditor(typeof(PlayerInfo))]
 public class PlayerInfoEditor : Editor
 {
+    private int currencyAmountToAdd; // Field for the amount of currency to add
+
     public override void OnInspectorGUI()
     {
         // Draw the default inspector
@@ -46,6 +40,18 @@ public class PlayerInfoEditor : Editor
             playerInfo.SetCurrentHealth(playerInfo.GetCurrentHealth() - 1);
         }
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("Currency Controls", EditorStyles.boldLabel);
+
+        // Input field for the amount of currency to add
+        currencyAmountToAdd = EditorGUILayout.IntField("Currency Amount to Add", currencyAmountToAdd);
+
+        // Button to apply the currency change using the AddCurrency method
+        if (GUILayout.Button("Add/Subtract Currency"))
+        {
+            playerInfo.AddCurrency(currencyAmountToAdd);
+        }
 
         // Save changes to the ScriptableObject
         if (GUI.changed)

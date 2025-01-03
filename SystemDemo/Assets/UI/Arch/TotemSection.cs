@@ -16,7 +16,7 @@ public class TotemSection : MonoBehaviour
     [SerializeField] private Color insufficientTotemsColor = Color.red; // Customizable color for insufficient totems
 
     [Header("Transition Settings")]
-    [SerializeField] private float transitionSpeed = 5f; // Integers per second
+    [SerializeField] private float transitionSpeed = 20f; // Integers per second
 
     private Color initialTextColor; // Store the initial text color
     private int displayedTotems; // The totem value currently displayed

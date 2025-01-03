@@ -140,7 +140,7 @@ public class CostlyGateSwitch : GateSwitch
         if (playerInfo != null && playerInfo.GetTotalCurrency() >= cost)
         {
             // Deduct the cost
-            playerInfo.SetTotalCurrency(playerInfo.GetTotalCurrency() - cost);
+            playerInfo.AddCurrency(-cost);
 
             // Unlock the gate
             base.OnInteract(context);
