@@ -33,6 +33,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 public class PlayerInfo : ScriptableObject
 {
     [Header("Player Info")]
+    public bool hasCompletedDemo = false;
     [SerializeField] private int maximumHealth = 5;
     [SerializeField] private int currentHealth = 5;
     [SerializeField] private int totalCurrency = 0;

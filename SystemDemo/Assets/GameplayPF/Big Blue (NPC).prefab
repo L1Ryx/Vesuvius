@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 8017170214293421726}
   - component: {fileID: 2419483815631988418}
   - component: {fileID: 7717773664866960996}
+  - component: {fileID: 8924419233062624757}
   m_Layer: 0
   m_Name: Big Blue (NPC)
   m_TagString: Untagged
@@ -278,6 +279,7 @@ MonoBehaviour:
   typingSpeed: 0.025
   dialoguePulseSpeed: 0.5
   dialoguePulseIntensity: 0.02
+  isForMainMenu: 0
   currentDialogueTreeID: Intro
 --- !u!114 &2419483815631988418
 MonoBehaviour:
@@ -315,6 +317,34 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &8924419233062624757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747749749922084995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 073096590c5344e6bad511fbfde10869, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2419483815631988418}
+        m_TargetAssemblyTypeName: BigBlueAudio, Assembly-CSharp
+        m_MethodName: StopBigBlueSolo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2131307498568448481
 GameObject:
   m_ObjectHideFlags: 0

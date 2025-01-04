@@ -32,6 +32,9 @@ public class MainMenu : MonoBehaviour
     public float startDelay = 0.2f;
     public float fadeInterval = 0.5f; // Time between fading in texts in the info panel
     public float switchToStartSceneDelay = 2f;
+    [Header("Completion Text")]
+    public TMP_Text completionText; // Reference to the completion text
+
     [Header("Data Cubes")] 
     [SerializeField] private PlayerInfo playerInfo;
     [SerializeField] private SpawnData spawnData;
@@ -64,7 +67,7 @@ public class MainMenu : MonoBehaviour
         tutorialData.ResetTutorials();
 
         roomExited.Invoke();
-        
+
 
         StartCoroutine(SwitchToStartScene());
 
@@ -104,6 +107,22 @@ public class MainMenu : MonoBehaviour
         // Set info panel texts and options to alpha 0
         SetTextAlpha(infoTexts, 0);
         SetTextAlpha(infoOptions, 0);
+
+        // Check if the demo has been completed
+        if (playerInfo.hasCompletedDemo)
+        {
+            completionText.gameObject.SetActive(true); // Show completion text
+        }
+        else
+        {
+            completionText.gameObject.SetActive(false); // Hide completion text
+        }
+
+        // Ensure completion text starts with alpha 0
+        if (completionText.gameObject.activeSelf)
+        {
+            SetTextAlpha(new TMP_Text[] { completionText }, 0);
+        }
 
         infoPanel.SetActive(false); // Ensure info panel is inactive initially
         roomEntered.Invoke();
@@ -246,8 +265,15 @@ public class MainMenu : MonoBehaviour
         {
             alpha += Time.deltaTime * fadeSpeed;
             SetTextAlpha(allTexts, alpha);
-            SetTextAlpha(menuOptions, alpha); // Fade in menu options as well
+            SetTextAlpha(menuOptions, alpha);
             SetImageAlpha(uiImages, alpha);
+
+            // Fade in completion text if it is active
+            if (completionText.gameObject.activeSelf)
+            {
+                SetTextAlpha(new TMP_Text[] { completionText }, alpha);
+            }
+
             yield return null;
         }
 
@@ -255,8 +281,15 @@ public class MainMenu : MonoBehaviour
         SetTextAlpha(menuOptions, 1f);
         SetImageAlpha(uiImages, 1f);
 
+        // Ensure completion text is fully visible
+        if (completionText.gameObject.activeSelf)
+        {
+            SetTextAlpha(new TMP_Text[] { completionText }, 1f);
+        }
+
         UpdateMenu(menuOptions); // Update menu after fade-in
     }
+
 
     private void UpdateMenu(TMP_Text[] currentOptions)
     {
