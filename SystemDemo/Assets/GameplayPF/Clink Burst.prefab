@@ -3846,7 +3846,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minKillSpeed: 10
+    minKillSpeed: 1000
     maxKillSpeed: 10000
     radiusScale: 1
     collidesWith:
@@ -4904,6 +4904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524c63def7a4a48b3bd8321a34b58de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackSpeedMin: 6
-  trackSpeedMax: 10
-  particleSystemLifetime: 10
+  trackSpeedMin: 10
+  trackSpeedMax: 15
+  particleSystemLifetime: 3
+  particlesEmitted: 5

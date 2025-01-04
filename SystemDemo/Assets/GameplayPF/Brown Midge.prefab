@@ -5130,6 +5130,7 @@ MonoBehaviour:
     m_Bits: 1024
   knockbackRecoveryTime: 0.5
   wallCheckOffset: 0.5
+  delayBeforeStartScuttling: 0.1
   eh: {fileID: 60173013660121056}
 --- !u!70 &3011290736341283584
 CapsuleCollider2D:
@@ -5227,6 +5228,21 @@ MonoBehaviour:
   maxTotemPower: 16
   slowdownTime: 0.1
   slowdownScale: 0.2
+  RebalanceTutorialNeeded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2c302f70c8e664fe0a5ff10b16270e3f, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6037487896659280819
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Experimental.AI;
 
 public class EnemyHealth : MonoBehaviour
@@ -36,6 +37,8 @@ public class EnemyHealth : MonoBehaviour
     [Header("Time Slowdown Settings")]
     [SerializeField] private float slowdownTime = 0.2f; // Duration of the slowdown
     [SerializeField] private float slowdownScale = 0.05f; // Time scale during the slowdown
+    [Header("Events")]
+    [SerializeField] private UnityEvent RebalanceTutorialNeeded;
 
 
     [Header("Private Fields")]
@@ -112,6 +115,10 @@ public class EnemyHealth : MonoBehaviour
 
         // Start fade-out coroutine
         StartCoroutine(FadeOutAndDestroy());
+
+        if (playerInfo.GetCurrentHealth() < playerInfo.GetMaximumHealth()) {
+            RebalanceTutorialNeeded.Invoke();
+        }
     }
 
 

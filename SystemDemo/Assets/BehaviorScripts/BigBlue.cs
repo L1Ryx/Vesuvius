@@ -29,6 +29,7 @@ public class BigBlue : MonoBehaviour
     public float typingSpeed = 0.05f;
     public float dialoguePulseSpeed = 0.5f;
     public float dialoguePulseIntensity = 0.02f;
+    public bool isForMainMenu = false;
 
     public string currentDialogueTreeID;
 
@@ -75,6 +76,9 @@ public class BigBlue : MonoBehaviour
 
     private void FindPlayer()
     {
+        if (isForMainMenu) {
+            return;
+        }
         playerSpawner = FindFirstObjectByType<PlayerSpawner>();
         if (playerSpawner == null)
         {

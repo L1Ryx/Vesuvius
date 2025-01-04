@@ -28,13 +28,18 @@ MonoBehaviour:
       Windiness: 10
       Openness: 7.7
       Creakiness: 43.9
-  - sceneName: 02-01
+  - sceneName: 01-01
     audioInfo:
-      Windiness: 37
-      Openness: 49
-      Creakiness: 82.17
-  - sceneName: 02-02
+      Windiness: 13.8
+      Openness: 5.4
+      Creakiness: 47.2
+  - sceneName: 01-05
     audioInfo:
-      Windiness: 46.2
-      Openness: 56.3
-      Creakiness: 63.9
+      Windiness: 16.7
+      Openness: 6.4
+      Creakiness: 49.6
+  - sceneName: 00-01
+    audioInfo:
+      Windiness: 16.5
+      Openness: 6.4
+      Creakiness: 49.6
