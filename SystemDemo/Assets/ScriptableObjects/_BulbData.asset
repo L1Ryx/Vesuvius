@@ -9,13 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b3d6ffc150204b989ac237d006b410f, type: 3}
-  m_Name: GateData
+  m_Script: {fileID: 11500000, guid: 4d05d04c65c0940ae9f9494d26815304, type: 3}
+  m_Name: _BulbData
   m_EditorClassIdentifier: 
-  gateEntries:
-  - gateID: 01-02-01
-    isLocked: 1
-  - gateID: 01-02-02
-    isLocked: 1
-  - gateID: 01-03-01
-    isLocked: 1
+  bulbEntries:
+  - bulbID: 01-02-01
+    isAlive: 0
+    clinkAmount: 7

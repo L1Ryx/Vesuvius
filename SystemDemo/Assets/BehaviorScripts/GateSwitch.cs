@@ -113,7 +113,7 @@ public class GateSwitch : MonoBehaviour
 
     private void DeactivateSwitch()
     {
-        Debug.Log("Deactivating prompt.");
+        
         SetTargetAlpha(0);
         if (GetTextAlpha() <= 0.01f && gateSwitchCanvas.gameObject.activeSelf)
         {

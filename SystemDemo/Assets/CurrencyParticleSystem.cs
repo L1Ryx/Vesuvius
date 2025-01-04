@@ -6,11 +6,17 @@ public class CurrencyParticleSystem : MonoBehaviour
     [SerializeField] private float trackSpeedMin = 6f; // Minimum speed for particle tracking
     [SerializeField] private float trackSpeedMax = 10f; // Maximum speed for particle tracking
     [SerializeField] private float particleSystemLifetime = 3f; // Time in seconds before the system destroys itself
+    [SerializeField] public int particlesEmitted = 5;
 
     private ParticleSystem particleSystem;
     private Transform playerTransform;
     private float destructionTimer = 0f;
     private bool hasEmittedParticles = false;
+
+    public int SetParticlesEmitted(int num) {
+        particlesEmitted = num;
+        return num;
+    }
 
     private void Start()
     {
@@ -22,6 +28,9 @@ public class CurrencyParticleSystem : MonoBehaviour
         {
             playerTransform = player.transform;
         }
+
+        EmitCurrencyParticles(particlesEmitted);
+        
     }
 
     public void EmitCurrencyParticles(int particleCount)
@@ -43,10 +52,10 @@ public class CurrencyParticleSystem : MonoBehaviour
     private void LateUpdate()
     {
         // Example: Test emission by pressing 'E'
-        if (Input.GetKeyDown(KeyCode.E)) // Press 'E' to emit particles
-        {
-            EmitCurrencyParticles(10); // Emit 10 particles as a test
-        }
+        // if (Input.GetKeyDown(KeyCode.E)) // Press 'E' to emit particles
+        // {
+        //     EmitCurrencyParticles(10); // Emit 10 particles as a test
+        // }
 
         if (particleSystem == null || playerTransform == null) return;
 
