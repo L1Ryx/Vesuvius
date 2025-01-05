@@ -11,3 +11,5 @@ A surreal metroidvania where you uncover the secrets of a snowy Mt. Vesuvius and
 ![Cover](https://imgur.com/vbWL5Oc.png)
 
 Set on a reimagined Mt. Vesuvius, you are to uncover the mystery of a vanished cult that disappeared into the mountain years ago. Within its depths, you will traverse a series of biomes that defy logic — lush forests, icy caves, tranquil lakes, and more — all hidden beneath the snow. Reality often bends, leaving questions on what is real as you navigate shifting landscapes and uncover the mountain’s secrets.
+
+All art and audio assets were created by Shawn Guo.
