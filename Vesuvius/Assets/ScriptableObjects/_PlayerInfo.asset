@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e99e3634ab2d4712bae794d9917c073, type: 3}
+  m_Name: _PlayerInfo
+  m_EditorClassIdentifier: 
+  hasCompletedDemo: 0
+  maximumHealth: 5
+  currentHealth: 3
+  totalCurrency: 80
+  totemPower: 80
+  abilityCost: 25
+  lastCurrencyChangeAmount: -75
+  sceneToLoad: 01-02
+  spawnLocation: {x: 60, y: 4}
+  currencyChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  currencyChangedGameEvent: {fileID: 11400000, guid: 4cce6411f850248269d8d357003fd500, type: 2}
+  currencyChangedEventPath: Assets/GameEvents/CurrencyChanged.asset
