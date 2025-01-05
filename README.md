@@ -1,3 +1,5 @@
+A surreal metroidvania where you uncover the secrets of a snowy Mt. Vesuvius and its mysterious cult.
+
 ## Demo Build: v0.0.1 Released 1/5/2025
 This version showcases core mechanics such as movement, combat, exploration, and early sound design. It serves as a testbed for gameplay features and doesn't fully represent the final game's world, visuals, or story.
 
