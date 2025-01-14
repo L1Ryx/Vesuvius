@@ -48,6 +48,49 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_ForestAmbienceBlend" ID="{7AF920EA-6B92-4484-8EB3-439CB2037220}">
+							<ChildrenList>
+								<Action Name="" ID="{D43DC6C8-DAC1-4C87-8D00-470E326014F1}" ShortID="582612027">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="0"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SurrealForestBlend" ID="{D2F65314-A4D2-4895-8CC4-EBD5C004167D}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A07BCDDB-9A95-4FA5-B729-A7A988C71C78}" ShortID="562922090">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SurrealForestBlend" ID="{D2F65314-A4D2-4895-8CC4-EBD5C004167D}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_ForestAmbienceBlend" ID="{3FDF8614-1282-4012-902D-0E61E80D768D}">
+							<ChildrenList>
+								<Action Name="" ID="{12260263-D554-4989-AEEF-DAAF950074F6}" ShortID="844739438">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SurrealForestBlend" ID="{D2F65314-A4D2-4895-8CC4-EBD5C004167D}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Random Cave Sounds" ID="{9098BF20-1C6F-4944-A32B-D9B862A9AE84}" ShortID="977405160">

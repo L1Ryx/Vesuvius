@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundPairs:
   - icySprite: {fileID: 21300000, guid: bb8454fc45874445d8c1dcc898e54066, type: 3}
-    forestSprite: {fileID: 21300000, guid: 85fa0ea8bd93f41538d95a561786279f, type: 3}
+    forestSprite: {fileID: 21300000, guid: d00bbbfaafc1e46ee8710b2004b8dd58, type: 3}
   - icySprite: {fileID: 21300000, guid: 9bf8b7f9040154a38beeb51806bd98cc, type: 3}
-    forestSprite: {fileID: 21300000, guid: 82291bae8019d416d88787ae0158734d, type: 3}
+    forestSprite: {fileID: 21300000, guid: 96ddcc8cc876e4666bd508251d5d6f04, type: 3}
   - icySprite: {fileID: 21300000, guid: a8f71f85daaf34f849301f0c93628af2, type: 3}
-    forestSprite: {fileID: 21300000, guid: b226704da3d4741cda825c640ed747f0, type: 3}
+    forestSprite: {fileID: 21300000, guid: 5cecc98d29ae94457b453e58c20624b3, type: 3}

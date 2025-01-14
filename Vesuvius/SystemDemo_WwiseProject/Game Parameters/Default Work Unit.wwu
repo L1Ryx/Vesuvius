@@ -27,6 +27,12 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="20"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Dimension_Blend" ID="{F4B7B2CD-D971-44A0-8588-5289AD7E313F}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

@@ -11,6 +11,7 @@
 				<Property Name="Event Action List\{34EC8016-C99B-41A6-BCE4-B8F751803D74}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{38044521-FCE1-4120-88E2-DC5D2F713034}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{3F1FA469-E723-472C-80BB-07AF41D6F62E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3FDF8614-1282-4012-902D-0E61E80D768D}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{4D888C9D-54F2-42EE-A4BF-38460A830AF4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{536DB0EF-072C-4FA0-82BC-D8632C8EB292}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{556B4B5B-5C34-446D-9BB4-5EF66E354BF5}\x64_Expand States" Type="string" Value=""/>
@@ -22,6 +23,7 @@
 				<Property Name="Event Action List\{6F590272-0AED-4D81-8EA4-FF9C9B6CF3F3}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7625E79D-F1DD-40A4-BAB4-729A3E992D24}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7A30FF67-5EB0-4E08-B2F4-D95A35E96C12}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{7AF920EA-6B92-4484-8EB3-439CB2037220}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7E35622E-F968-4048-A147-C5E98B0BEDE0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{960B4DFD-CA80-4B66-BB8C-FA01CCB076D6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{97D1FB14-9EB5-470E-942E-7D01DD8124D4}\x64_Expand States" Type="string" Value=""/>
@@ -153,7 +155,7 @@
 						<Value Platform="Mac"></Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{2F8BDD4C-1910-4450-8B3F-780009FEAFB8}2479652770"/>
+				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{2F8BDD4C-1910-4450-8B3F-780009FEAFB8}2901130575"/>
 				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{1FB94A0B-E6A6-464C-9B0F-EC8D4EB12AA7}"/>
 			</PropertyList>
 		</UserProjectSettings>

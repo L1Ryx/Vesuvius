@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 883150b0f9ef9a40a63c49d8838f5b7c
     GuidInternal: 
-    m_lastTime: -8584681773696102291
+    m_lastTime: -8584647211067067274
     List:
     - name: AMB_Reverb
       guid: 41b1ddbecf765242a598181b8819c571
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: df3682325a13ec4eac474172ce78796e
     GuidInternal: 
-    m_lastTime: -8584655719353691679
+    m_lastTime: -8584647219781753958
     List:
     - name: DefaultSoundbank
       guid: b9bec53298baed48b2923c586ee8991f
@@ -111,7 +111,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ed84d2cae3faca48be2dd6fa4e4d485c
     GuidInternal: 
-    m_lastTime: -8584655719519886679
+    m_lastTime: -8584647227051674236
     List:
     - name: Big Blue
       guid: 6d3eb5986e02a744915f8ab3d036f459
@@ -400,6 +400,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5978665
       minDuration: 0.42080733
+    - name: Play_ForestAmbienceBlend
+      guid: ea20f97a926b84448eb3439cb2037220
+      id: 1648494590
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cave Ambience
+        ObjectType: 4
+        guid: 57a179dd4cb87f42ab96df366afa333a
+      - ElementName: Play_ForestAmbienceBlend
+        ObjectType: 3
+        guid: ea20f97a926b84448eb3439cb2037220
+      Path: Events/Default Work Unit/Cave Ambience/Play_ForestAmbienceBlend
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_GateOpen
       guid: 9d8c884df254ee42a4bf38460a830af4
       id: 3788303255
@@ -948,6 +968,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_ForestAmbienceBlend
+      guid: 1486df3f82121240902d0e61e80d768d
+      id: 1262204860
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cave Ambience
+        ObjectType: 4
+        guid: 57a179dd4cb87f42ab96df366afa333a
+      - ElementName: Stop_ForestAmbienceBlend
+        ObjectType: 3
+        guid: 1486df3f82121240902d0e61e80d768d
+      Path: Events/Default Work Unit/Cave Ambience/Stop_ForestAmbienceBlend
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_Landing
       guid: d7517129df09b1498336945723781f8c
       id: 3286627841
@@ -1090,7 +1130,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 0d5354ff6462e54aa4342ab5adea9d21
     GuidInternal: 
-    m_lastTime: -8584684047026874462
+    m_lastTime: -8584647210768106830
     List:
     - name: Creakiness
       guid: 22994c854c2a784da2acebbc51bc08fe
@@ -1106,6 +1146,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: 22994c854c2a784da2acebbc51bc08fe
       Path: Game Parameters/Default Work Unit/Creakiness
+    - name: Dimension_Blend
+      guid: cdb2b7f471d9a04485885289ad7e313f
+      id: 1692948755
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 0d5354ff6462e54aa4342ab5adea9d21
+      - ElementName: Dimension_Blend
+        ObjectType: 13
+        guid: cdb2b7f471d9a04485885289ad7e313f
+      Path: Game Parameters/Default Work Unit/Dimension_Blend
     - name: Openness
       guid: 59144f5ae754384bbb36f99804cff046
       id: 4168635916
@@ -1160,8 +1214,58 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: e9e1ce6ca680be44b4bff4dd5a24f627
     GuidInternal: 
-    m_lastTime: -8584684198729324204
-    List: []
+    m_lastTime: -8584647237067200744
+    List:
+    - name: Dimension
+      guid: 87ee3dbf76dbea44a53a8e13a2a7c5b2
+      id: 3846126883
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: e9e1ce6ca680be44b4bff4dd5a24f627
+      - ElementName: Dimension
+        ObjectType: 11
+        guid: 87ee3dbf76dbea44a53a8e13a2a7c5b2
+      Path: Switches/Default Work Unit/Dimension
+      values:
+      - name: Forest
+        guid: 5e9744b4a734a243b82254dbf6ebf5c7
+        id: 491961918
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: e9e1ce6ca680be44b4bff4dd5a24f627
+        - ElementName: Dimension
+          ObjectType: 11
+          guid: 87ee3dbf76dbea44a53a8e13a2a7c5b2
+        - ElementName: Forest
+          ObjectType: 10
+          guid: 5e9744b4a734a243b82254dbf6ebf5c7
+      - name: Ice
+        guid: 6b5b5a4e9b73f942ab2b3f9a0b153193
+        id: 344481046
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: e9e1ce6ca680be44b4bff4dd5a24f627
+        - ElementName: Dimension
+          ObjectType: 11
+          guid: 87ee3dbf76dbea44a53a8e13a2a7c5b2
+        - ElementName: Ice
+          ObjectType: 10
+          guid: 6b5b5a4e9b73f942ab2b3f9a0b153193
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
     PathAndIcons:

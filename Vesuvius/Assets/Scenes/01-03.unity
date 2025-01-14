@@ -18644,6 +18644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112072059}
   - component: {fileID: 1112072058}
+  - component: {fileID: 1112072060}
   m_Layer: 0
   m_Name: Global Light
   m_TagString: Untagged
@@ -18718,6 +18719,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112072060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112072057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be470fdf846ce4a06942fa2d3a632dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstDimensionColor: {r: 0.12976147, g: 0.207745, b: 0.33962262, a: 1}
+  firstDimensionIntensity: 0.1
+  secondDimensionColor: {r: 0.13069598, g: 0.31132078, b: 0.16488487, a: 1}
+  secondDimensionIntensity: 0.25
+  transitionDuration: 2.5
 --- !u!1 &1114660040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1980358650441627234, guid: 29a4088bff296471e87825e32f1c0625, type: 3}
@@ -19259,6 +19277,7 @@ GameObject:
   - component: {fileID: 1292539440}
   - component: {fileID: 1292539442}
   - component: {fileID: 1292539441}
+  - component: {fileID: 1292539443}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -24081,6 +24100,22 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1292539443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292539439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7001a4aed054f2cb965ba2552299b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstDimensionColorMin: {r: 0.69085974, g: 0.7057569, b: 0.7075472, a: 1}
+  firstDimensionColorMax: {r: 0.5166429, g: 0.7856805, b: 0.8113208, a: 1}
+  secondDimensionColorMin: {r: 0.496351, g: 0.735849, b: 0.5065424, a: 1}
+  secondDimensionColorMax: {r: 0.17515129, g: 0.9056604, b: 0.55222636, a: 1}
 --- !u!1001 &1294508919
 PrefabInstance:
   m_ObjectHideFlags: 0

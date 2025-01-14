@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{DEB5D5D2-708B-6272-2C19-6EE8A1D38930}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{C22119A2-4AB1-FFCB-D332-81708B18EB56}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -34,12 +34,21 @@
 				</AuxBus>
 			</AuxBusses>
 			<GameParameters>
+				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3846126883" Name="Dimension">
+					<Switches>
+						<Switch Id="344481046" Name="Ice"/>
+						<Switch Id="491961918" Name="Forest"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{113D73ED-1D1A-34F6-A6BD-FCB7967A311D}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{FC5DE843-1930-2794-0355-C092932BCA93}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -207,6 +216,10 @@
 					<ShortName>SFX_PlayerAttackKill_R2_V1.wav</ShortName>
 					<CachePath>SFX/SFX_PlayerAttackKill_R2_V1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="806091628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_SurrealForest_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_SurrealForest_R1_V1_CBBF46EB.wem</CachePath>
+				</File>
 				<File Id="812590943" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Footstep_R5_V1.wav</ShortName>
 					<CachePath>SFX/SFX_Footstep_R5_V1_818F3B66.wem</CachePath>
@@ -309,6 +322,11 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="1648494590" Name="Play_ForestAmbienceBlend" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="806091628"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="3788303255" Name="Play_GateOpen" DurationType="OneShot" DurationMin="1.3495047" DurationMax="1.514768">
 					<MediaRefs>
@@ -546,16 +564,18 @@
 				<Event Id="1210756211" Name="Stop_BigBlueSolo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3411346464" Name="Stop_CaveAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3927559978" Name="Stop_Footstep" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1262204860" Name="Stop_ForestAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3286627841" Name="Stop_Landing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3006809981" Name="Stop_MidgeWalk" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="721707010" Name="Stop_RandomCaveSounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DAB91E90-5E49-903E-B27E-7E8BE611B613}</FileHash>
+	<FileHash>{053B7F5D-22CE-B6C0-43D9-0184676868AA}</FileHash>
 </SoundBanksInfo>

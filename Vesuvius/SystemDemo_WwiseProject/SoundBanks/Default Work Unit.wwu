@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="DefaultSoundbank" ID="{32C5BEB9-BA98-48ED-B292-3C586EE8991F}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Stop_ForestAmbienceBlend" ID="{3FDF8614-1282-4012-902D-0E61E80D768D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MidgeWalk" ID="{7E35622E-F968-4048-A147-C5E98B0BEDE0}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_MidgeWalk" ID="{EFE57EE2-9A69-407D-8F73-31A32CDB0219}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerAttackHit" ID="{7625E79D-F1DD-40A4-BAB4-729A3E992D24}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
@@ -18,6 +19,7 @@
 						<ObjectRef Name="Stop_RandomCaveSounds" ID="{5E6A0103-FF68-4316-8AF5-22241A547E87}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerHealing" ID="{6F0CA207-64C4-43B8-A1B3-6698B6E5801D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerHealed" ID="{556B4B5B-5C34-446D-9BB4-5EF66E354BF5}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_ForestAmbienceBlend" ID="{7AF920EA-6B92-4484-8EB3-439CB2037220}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Beneh" ID="{CA8C702E-E338-4508-810D-D85B7B34C866}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Abileh" ID="{98447895-C871-4523-BDE7-795A0471571A}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Swing" ID="{97D1FB14-9EB5-470E-942E-7D01DD8124D4}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>

@@ -54,12 +54,12 @@
 							<Position X="1" Y="5"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_ShovelSequence" ID="{6F4E07C2-1DC7-4D22-B347-2F88345B3410}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
-							<Position X="2" Y="1"/>
+							<ObjectRef Name="Play_ForestAmbienceBlend" ID="{7AF920EA-6B92-4484-8EB3-439CB2037220}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_UINavigate" ID="{C90D0D9A-83F6-4DBA-B3F9-96A9FF0FCD40}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
-							<Position X="2" Y="2"/>
+							<ObjectRef Name="Stop_ForestAmbienceBlend" ID="{3FDF8614-1282-4012-902D-0E61E80D768D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_GateOpenSequence" ID="{536DB0EF-072C-4FA0-82BC-D8632C8EB292}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
@@ -82,7 +82,7 @@
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_UISelect" ID="{960B4DFD-CA80-4B66-BB8C-FA01CCB076D6}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Play_UINavigate" ID="{C90D0D9A-83F6-4DBA-B3F9-96A9FF0FCD40}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
@@ -102,26 +102,36 @@
 							<Position X="4" Y="1"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_UISelect" ID="{960B4DFD-CA80-4B66-BB8C-FA01CCB076D6}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_PlayerAttackAll" ID="{7A30FF67-5EB0-4E08-B2F4-D95A35E96C12}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="4" Y="5"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="Dimension_Blend" ID="{F4B7B2CD-D971-44A0-8588-5289AD7E313F}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="Windiness" ID="{856B4807-561B-4A1A-A33F-1DF239E7BFBE}"/>
-							<Value>59</Value>
+							<Value>20</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Openness" ID="{5A4F1459-54E7-4B38-BB36-F99804CFF046}"/>
-							<Value>79.4542186379928</Value>
+							<Value>28.454</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Creakiness" ID="{854C9922-2A4C-4D78-A2AC-EBBC51BC08FE}"/>
-							<Value>52.662</Value>
+							<Value>24.662</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Forest" ID="{B444975E-34A7-43A2-B822-54DBF6EBF5C7}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
