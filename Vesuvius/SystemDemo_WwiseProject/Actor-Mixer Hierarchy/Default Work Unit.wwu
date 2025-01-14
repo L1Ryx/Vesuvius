@@ -1546,9 +1546,9 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="AMB_SurrealForest_R1_V1" ID="{BDDB358D-09F5-476B-A8CD-87BD36CB9BE6}" ShortID="481858219">
+								<RandomSequenceContainer Name="ForestSequence" ID="{6637752C-FF39-4BE5-BCB7-9BC6B591066F}" ShortID="568972837">
 									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1559,18 +1559,46 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="AMB_SurrealForest_R1_V1" ID="{36D365C2-2C9C-455E-8F61-8EE319BF9AB3}">
-											<Language>SFX</Language>
-											<AudioFile>AMB_SurrealForest_R1_V1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="806091628"/>
-											</MediaIDList>
-										</AudioFileSource>
+										<Sound Name="AMB_SurrealForest_R1_V1" ID="{BDDB358D-09F5-476B-A8CD-87BD36CB9BE6}" ShortID="481858219">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{AA823C3D-5D05-4662-8117-4054B7BDAFBC}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SurrealForest_R1_V1" ID="{36D365C2-2C9C-455E-8F61-8EE319BF9AB3}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="2150.493"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.84838914756447"/>
+														<Property Name="LoopEnd" Type="Real64" Value="41.2190779906877"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SurrealForest_R1_V1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="806091628"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SurrealForest_R1_V1" ID="{36D365C2-2C9C-455E-8F61-8EE319BF9AB3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="AMB_SurrealForest_R1_V1" ID="{36D365C2-2C9C-455E-8F61-8EE319BF9AB3}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
+									<ObjectLists>
+										<ObjectList Name="Playlist">
+											<Reference>
+												<ObjectRef Name="AMB_SurrealForest_R1_V1" ID="{BDDB358D-09F5-476B-A8CD-87BD36CB9BE6}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</RandomSequenceContainer>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">

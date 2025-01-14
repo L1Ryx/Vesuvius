@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Cinemachine;
 
 public class AmbiencePlayer : MonoBehaviour
 {
-    // Reference to your SceneAudioData ScriptableObject
     public SceneAudioData sceneAudioData;
+    public CinemachineImpulseSource impulseSource;
 
     // Singleton instance
     public static AmbiencePlayer Instance { get; private set; }
@@ -31,6 +32,12 @@ public class AmbiencePlayer : MonoBehaviour
         {
             Destroy(gameObject); // Destroy duplicate instances
         }
+    }
+
+    private void Start()
+    {
+        // Initialize audio data for the current scene
+        UpdateAudioData();
     }
 
     private void Update()
@@ -66,6 +73,9 @@ public class AmbiencePlayer : MonoBehaviour
         Debug.Log(isSecondDimension
             ? "Switched to Forest dimension."
             : "Switched to Icy Cavern dimension.");
+
+        // Trigger camera shake during dimension switch
+        TriggerCameraShake();
     }
 
     private System.Collections.IEnumerator CrossfadeDimension(float targetValue)
@@ -87,5 +97,52 @@ public class AmbiencePlayer : MonoBehaviour
         // Ensure the final RTPC value is set
         currentDimensionBlend = targetValue;
         AkSoundEngine.SetRTPCValue("Dimension_Blend", currentDimensionBlend);
+    }
+
+    private void TriggerCameraShake()
+    {
+        // Generate an impulse
+        if (impulseSource != null)
+        {
+            impulseSource.GenerateImpulse();
+        }
+        else
+        {
+            Debug.LogWarning("No Cinemachine Impulse Source assigned!");
+        }
+    }
+
+    public void UpdateAudioData()
+    {
+        // Check if the scene audio data contains the current scene
+        if (sceneAudioData.sceneAudioDictionary.TryGetValue(SceneManager.GetActiveScene().name, out AudioInfo audioInfo))
+        {
+            // Update the RTPCs in Wwise
+            AkSoundEngine.SetRTPCValue("Windiness", audioInfo.Windiness);
+            AkSoundEngine.SetRTPCValue("Openness", audioInfo.Openness);
+            AkSoundEngine.SetRTPCValue("Creakiness", audioInfo.Creakiness);
+
+            Debug.Log("Updated audio data for scene: " + SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            Debug.LogWarning($"No audio data found for scene: {SceneManager.GetActiveScene().name}");
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        // Restore RTPC values or clean up if needed
+        RestoreOriginalValues();
+    }
+
+    private void RestoreOriginalValues()
+    {
+        // Example: Reset RTPC values for cleanup on application quit
+        AkSoundEngine.SetRTPCValue("Windiness", 0);
+        AkSoundEngine.SetRTPCValue("Openness", 0);
+        AkSoundEngine.SetRTPCValue("Creakiness", 0);
+
+        Debug.Log("Restored original RTPC values on quit.");
     }
 }
