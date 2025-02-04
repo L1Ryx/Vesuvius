@@ -1,4 +1,11 @@
-## Demo Build: v0.0.1 Released 1/5/2025
+## Demo Build: v0.1.1 Released 2/4/2025
+Includes several bug fixes:
+- Player character no longer gets flung back really far when taking damage while landing a hit.
+- Clink (currency) change indicator is no longer hidden when spending clinks.
+- Invisible clink bulbs now do not play an audio cue when collected by the player character.
+- Minor positional audio fixes and tweaks.
+
+## Demo Build: v0.1.0 Released 1/5/2025
 This version showcases core mechanics such as movement, combat, exploration, and early sound design. It serves as a testbed for gameplay features and doesn't fully represent the final game's world, visuals, or story.
 
 The objective is to explore the environment and interact with the systems while progressing to the designated endpoint. The expected playtime is ~10 minutes.
