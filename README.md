@@ -1,4 +1,4 @@
-## Demo Build: v0.0.1 Released 1/5/2025
+## Demo Build: v0.1.0 Released 1/5/2025
 This version showcases core mechanics such as movement, combat, exploration, and early sound design. It serves as a testbed for gameplay features and doesn't fully represent the final game's world, visuals, or story.
 
 The objective is to explore the environment and interact with the systems while progressing to the designated endpoint. The expected playtime is ~10 minutes.
