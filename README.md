@@ -1,6 +1,3 @@
-# Vesuvius
-A surreal metroidvania where you uncover the secrets of a snowy Mt. Vesuvius and its mysterious cult.
-
 ## Demo Build: v0.1.1 Released 2/4/2025
 Includes several bug fixes:
 - Player character no longer gets flung back really far when taking damage while landing a hit.
