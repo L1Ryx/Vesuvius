@@ -40693,6 +40693,7 @@ MonoBehaviour:
   timeStopMaxDuration: 0.15
   timeStopDuration: 0.15
   timeStopScaleValue: 0.1
+  swingKnockbackCooldown: 0.5
   originalColor: {r: 0, g: 0, b: 0, a: 0}
   damageColor: {r: 0, g: 0, b: 0, a: 1}
   useTimeStop: 1
@@ -40721,9 +40722,13 @@ MonoBehaviour:
     m_Bits: 2048
   maxKnockbackVelocity: 250
   finalMaxKnockbackVelocity: 300
+  velocityClampDuration: 0.2
+  maxAllowedVelocity: 10
   deathOverlayPanel: {fileID: 180496489851788458}
   deathDelay: 2
   spawnData: {fileID: 11400000, guid: 27a4ed05d7c2540369d9dfa5010b24ba, type: 2}
+  currentVelocity: {x: 0, y: 0}
+  maxVelocityMagnitude: 0
 --- !u!114 &4669839539907238237
 MonoBehaviour:
   m_ObjectHideFlags: 0

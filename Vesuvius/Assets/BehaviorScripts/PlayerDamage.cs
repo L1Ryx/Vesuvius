@@ -24,6 +24,7 @@ public class PlayerDamage : MonoBehaviour
     public float timeStopMaxDuration = 0.2f;
     public float timeStopDuration = 0.2f;
     public float timeStopScaleValue = 0.05f;
+    public float swingKnockbackCooldown = 0.2f; 
 
     [Header("Visuals")]
     public Color originalColor;
@@ -57,10 +58,17 @@ public class PlayerDamage : MonoBehaviour
     [Header("Knockback")]
     public float maxKnockbackVelocity = 10f;
     public float finalMaxKnockbackVelocity = 20f;
+    public float velocityClampDuration = 0.15f; // Duration to clamp velocity after damage
+    public float maxAllowedVelocity = 20f; // The max velocity we allow after taking damage
+
+    private float velocityClampEndTime = 0f; // Time when clamping should stop
     [Header("Death Overlay")]
     public GameObject deathOverlayPanel; // Assign the black overlay image in the Inspector
     public float deathDelay = 4f; // Time to wait before reloading the checkpoint
     public SpawnData spawnData; // Reference to the SpawnData ScriptableObject
+    [Header("Debug Info")]
+    public Vector2 currentVelocity; // Tracks the player's velocity
+    public float maxVelocityMagnitude = 0f; // Tracks the highest velocity recorded
 
 
     private void Awake()
@@ -96,6 +104,30 @@ public class PlayerDamage : MonoBehaviour
                 ResumeTimeEffect();
             }
         }
+
+        if (playerRb != null)
+        {
+            // Store the player's current velocity
+            currentVelocity = playerRb.linearVelocity;
+
+         // If within velocity clamp duration, limit velocity magnitude
+        if (Time.time < velocityClampEndTime)
+        {
+            float currentMagnitude = playerRb.linearVelocity.magnitude;
+            if (currentMagnitude > maxAllowedVelocity)
+            {
+                // Scale down velocity to not exceed maxAllowedVelocity
+                playerRb.linearVelocity = playerRb.linearVelocity.normalized * maxAllowedVelocity;
+            }
+        }
+
+            // Update the max velocity magnitude if the current velocity exceeds it
+            float velocityMagnitude = playerRb.linearVelocity.magnitude;
+            if (velocityMagnitude > maxVelocityMagnitude)
+            {
+                maxVelocityMagnitude = velocityMagnitude;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -113,67 +145,54 @@ public class PlayerDamage : MonoBehaviour
         }
     }
 
+    // Call this when the player takes damage
     private void HandleCollisionWithEnemy(EnemyHealth enemy, Collision2D collision)
     {
-        try
+        if (playerInfo.GetCurrentHealth() <= 0) return;
+        if (enemy.GetIsDead()) return;
+        if (!isInvincible)
         {
-            // Ensure the player cannot take damage if their health is 0 or below
-            if (playerInfo.GetCurrentHealth() <= 0)
-            {
-                Debug.Log("Player is already at 0 health and cannot take further damage.");
-                return;
-            }
+            playerHealing?.CancelHeal();
+            isInvincible = true;
+            playerDamaged.Invoke();
 
-            if (enemy.GetIsDead())
-            {
-                Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>(), true);
-                return;
-            }
+            playerRb.linearVelocity = Vector2.zero;
 
-            if (!isInvincible)
-            {
-                playerHealing?.CancelHeal();
-                isInvincible = true;
-                playerDamaged.Invoke();
+            if (useTimeStop) StartCoroutine(StartStopTimeEffectCoroutine());
 
-                if (useTimeStop) TurnToTimeStopColor();
+            Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
-                playerRb.linearVelocity = Vector2.zero;
+            if (useParticles && damageBurst != null && !damageBurst.isPlaying) damageBurst.Play();
+            if (!isFlashing) StartCoroutine(FlashPlayer());
+            StartCoroutine(ResetInvincibilityCoroutine());
 
-                if (useTimeStop)
-                {
-                    StartCoroutine(StartStopTimeEffectCoroutine());
-                }
+            // **Enable velocity clamping for a short period**
+            velocityClampEndTime = Time.time + velocityClampDuration;
 
-                Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            pendingKnockback = knockbackDirection * Mathf.Min(playerKnockbackVelocity, finalMaxKnockbackVelocity);
 
-                if (useParticles && damageBurst != null && !damageBurst.isPlaying)
-                {
-                    damageBurst.Play();
-                }
-
-                if (!isFlashing) StartCoroutine(FlashPlayer());
-
-                StartCoroutine(ResetInvincibilityCoroutine());
-
-                Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-                pendingKnockback = knockbackDirection * Mathf.Min(playerKnockbackVelocity, finalMaxKnockbackVelocity);
-
-                ApplyKnockback();
-            }
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("Error in HandleCollisionWithEnemy: " + ex.Message);
+            ApplyKnockback();
         }
     }
 
 
     private void ApplyKnockback()
     {
-        playerRb.AddForce(pendingKnockback, ForceMode2D.Impulse);
+        // Hard reset player velocity before applying knockback
+        playerRb.linearVelocity = Vector2.zero;  
+
+        // Clamp knockback force to prevent extreme movement
+        Vector2 clampedKnockback = Vector2.ClampMagnitude(pendingKnockback, finalMaxKnockbackVelocity);
+        
+        // Apply knockback force
+        playerRb.AddForce(clampedKnockback, ForceMode2D.Impulse);
+
+        // Clear pending knockback to prevent additional stacking
         pendingKnockback = Vector2.zero;
     }
+
+
 
     private IEnumerator StartStopTimeEffectCoroutine()
     {

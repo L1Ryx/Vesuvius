@@ -159,6 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   knockbackForce: 20
+  knockbackCooldown: 0.2
+  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
 --- !u!70 &1614528498331406795
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

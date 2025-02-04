@@ -15381,7 +15381,7 @@ Transform:
   m_GameObject: {fileID: 310316569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44, y: 5.984, z: -10}
+  m_LocalPosition: {x: 16.79, y: 8.094, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16408,7 +16408,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.651375, y: 8.5, z: -10}
+  m_LocalPosition: {x: 16.789993, y: 8.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -37756,6 +37756,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1228658237052407279, guid: 2d2a827d4ad224bf09821ab47bafe1ad, type: 3}
+      propertyPath: DefaultVelocity.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228658237052407279, guid: 2d2a827d4ad224bf09821ab47bafe1ad, type: 3}
+      propertyPath: DefaultVelocity.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228658237052407279, guid: 2d2a827d4ad224bf09821ab47bafe1ad, type: 3}
+      propertyPath: ImpulseDefinition.ImpulseShape
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228658237052407279, guid: 2d2a827d4ad224bf09821ab47bafe1ad, type: 3}
+      propertyPath: ImpulseDefinition.ImpulseDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6530997784091163262, guid: 2d2a827d4ad224bf09821ab47bafe1ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -37918,11 +37934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44
+      value: 16.79
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 7.11
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38350,6 +38366,21 @@ MonoBehaviour:
   enoughCurrencyColor: {r: 1, g: 1, b: 1, a: 1}
   notEnoughCurrencyColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+  currencyChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4cce6411f850248269d8d357003fd500, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7287816639617771120
 MonoBehaviour:
   m_ObjectHideFlags: 0

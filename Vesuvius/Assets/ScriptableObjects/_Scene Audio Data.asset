@@ -13,11 +13,16 @@ MonoBehaviour:
   m_Name: _Scene Audio Data
   m_EditorClassIdentifier: 
   sceneAudioEntries:
+  - sceneName: 01-01
+    audioInfo:
+      Windiness: 5
+      Openness: 5
+      Creakiness: 25
   - sceneName: 01-02
     audioInfo:
-      Windiness: 63.3
-      Openness: 41.2
-      Creakiness: 54.3
+      Windiness: 60
+      Openness: 40
+      Creakiness: 55
   - sceneName: 01-03
     audioInfo:
       Windiness: 75.1
@@ -28,11 +33,6 @@ MonoBehaviour:
       Windiness: 10
       Openness: 7.7
       Creakiness: 43.9
-  - sceneName: 01-01
-    audioInfo:
-      Windiness: 13.8
-      Openness: 5.4
-      Creakiness: 47.2
   - sceneName: 01-05
     audioInfo:
       Windiness: 16.7

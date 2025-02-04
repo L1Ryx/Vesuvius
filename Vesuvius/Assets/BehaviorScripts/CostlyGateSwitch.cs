@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class CostlyGateSwitch : GateSwitch
 {
@@ -20,6 +21,8 @@ public class CostlyGateSwitch : GateSwitch
     private Color costTargetColor; // Current target color for both text and image
     private float costTextAlphaTarget = 0;
     private float costImageAlphaTarget = 0;
+    [Header("Events")]
+    public UnityEvent currencyChanged;
 
     protected override void InitializeUI()
     {
@@ -141,6 +144,7 @@ public class CostlyGateSwitch : GateSwitch
         {
             // Deduct the cost
             playerInfo.AddCurrency(-cost);
+            currencyChanged.Invoke();
 
             // Unlock the gate
             base.OnInteract(context);

@@ -3,6 +3,7 @@ using Unity.Collections;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Events;
+using System.Collections;
 
 // public class ReadOnlyAttribute : PropertyAttribute
 // {
@@ -39,6 +40,11 @@ public class PlayerInfo : ScriptableObject
     [SerializeField] private int totalCurrency = 0;
     [SerializeField] [Range(0, 100)] private int totemPower = 0;
     [SerializeField] private int abilityCost = 30; // Required totems to use the ability
+    [Header("Combat Cooldowns")]
+    // [SerializeField] private bool disableSwingKnockback = false;
+    private float swingKnockbackCooldownEnd = 0f;
+    private float lastDamageTime = 0f;
+
 
     [Header("Monitoring")]
     public int lastCurrencyChangeAmount = 24;
@@ -191,6 +197,19 @@ public class PlayerInfo : ScriptableObject
     {
         return spawnLocation;
     }
+
+    // Store last time player took damage
+    public void SetLastDamageTime()
+    {
+        lastDamageTime = Time.time;
+    }
+
+    // Get last damage time
+    public float GetLastDamageTime()
+    {
+        return lastDamageTime;
+    }
+
 
 
     public int GetAbilityCost() => abilityCost;

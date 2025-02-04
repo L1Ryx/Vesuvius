@@ -41,18 +41,21 @@ public class ClinkBulb : MonoBehaviour
     private void Start()
     {
         // THE HEAD's COLLIDER IS ON THE PARENT
-        headRenderer = clinkBulbHead.GetComponent<SpriteRenderer>();
+        headRenderer = clinkBulbHead != null ? clinkBulbHead.GetComponent<SpriteRenderer>() : null;
         headCollider = GetComponent<Collider2D>();
 
-        if (headRenderer == null || headCollider == null)
+        if (headCollider == null)
         {
-            Debug.LogError("Clink Bulb: Missing required components on the head.");
+            Debug.LogError("Clink Bulb: Missing required collider.");
+            return;
         }
 
         // Check if the bulb is alive based on BulbData
         if (bulbData != null && !bulbData.GetBulbAliveState(bulbID))
         {
             Destroy(clinkBulbHead); // Destroy if the bulb HEAD is not alive
+            headCollider.enabled = false; // Disable the collider to prevent player interaction
+            return;
         }
 
         // Start the flicker coroutine
@@ -65,8 +68,8 @@ public class ClinkBulb : MonoBehaviour
         {
             StartCoroutine(TweenHead());
         }
-
     }
+
 
 
     private IEnumerator FlickerLight()

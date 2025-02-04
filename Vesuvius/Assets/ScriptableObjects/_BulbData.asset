@@ -38,5 +38,5 @@ MonoBehaviour:
     isAlive: 1
     clinkAmount: 24
   - bulbID: 01-03-01
-    isAlive: 1
+    isAlive: 0
     clinkAmount: 8
