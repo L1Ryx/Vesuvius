@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: _PlayerInfo
   m_EditorClassIdentifier: 
   hasCompletedDemo: 0
-  maximumHealth: 15
-  currentHealth: 8
+  maximumHealth: 20
+  currentHealth: 5
   totalCurrency: 271
-  totemPower: 50
+  totemPower: 9
   abilityCost: 25
   lastCurrencyChangeAmount: 8
   sceneToLoad: 01-02

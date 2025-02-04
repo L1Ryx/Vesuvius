@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Frozen-Tunnel-Background-Alt_0: -666353836744609897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

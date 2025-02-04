@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 
@@ -37,8 +36,11 @@ public class TileMappingGenerator : MonoBehaviour
             tileMapping.tilePairs.Add(newPair);
         }
 
-        // Save changes to the ScriptableObject
-        EditorUtility.SetDirty(tileMapping);
+        // Ensure this part only runs in the Unity Editor
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(tileMapping); // Save changes to the ScriptableObject
+#endif
+
         Debug.Log("Tile Mapping successfully generated!");
     }
 }
