@@ -15,9 +15,9 @@ MonoBehaviour:
   sceneAudioEntries:
   - sceneName: 01-01
     audioInfo:
-      Windiness: 5
-      Openness: 5
-      Creakiness: 25
+      Windiness: 10
+      Openness: 20
+      Creakiness: 45
   - sceneName: 01-02
     audioInfo:
       Windiness: 60

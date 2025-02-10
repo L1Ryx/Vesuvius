@@ -22,12 +22,12 @@ public class TilemapSwitcher : MonoBehaviour
     {
         
         // DEBUGGING ONLY
-        // if (Input.GetKeyDown(KeyCode.Alpha0))
-        // {
-        //     // Trigger the tilemap switching with crossfade
-        //     SwitchWithCrossfade();
-        //     Debug.Log("Tilemap switch activated through debug key `0`.");
-        // }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            // Trigger the tilemap switching with crossfade
+            SwitchWithCrossfade();
+            Debug.Log("Tilemap switch activated through debug key `0`.");
+        }
     }
 
 

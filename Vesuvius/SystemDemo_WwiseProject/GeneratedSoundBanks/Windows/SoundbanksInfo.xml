@@ -48,7 +48,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{FC5DE843-1930-2794-0355-C092932BCA93}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{67BFA1E6-DA8C-2AFB-F55E-E8AD223B6F58}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -218,7 +218,7 @@
 				</File>
 				<File Id="806091628" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SurrealForest_R1_V1.wav</ShortName>
-					<CachePath>SFX/AMB_SurrealForest_R1_V1_CBBF46EB.wem</CachePath>
+					<CachePath>SFX/AMB_SurrealForest_R1_V1_21ECBC3B.wem</CachePath>
 				</File>
 				<File Id="812590943" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Footstep_R5_V1.wav</ShortName>
@@ -577,5 +577,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{053B7F5D-22CE-B6C0-43D9-0184676868AA}</FileHash>
+	<FileHash>{9D198B0D-D8E1-E5EE-410E-16DB53E7311E}</FileHash>
 </SoundBanksInfo>
