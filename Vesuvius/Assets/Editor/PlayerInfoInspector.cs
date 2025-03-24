@@ -1,3 +1,4 @@
+using ScriptableObjects.PlayerInfo;
 using UnityEditor;
 using UnityEngine;
 

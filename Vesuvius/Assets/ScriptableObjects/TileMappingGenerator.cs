@@ -1,46 +1,49 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TileMappingGenerator : MonoBehaviour
+namespace ScriptableObjects
 {
-    [Header("Tile Palette References")]
-    public List<TileBase> icyTiles;      // Drag the icy tile assets here
-    public List<TileBase> forestTiles;  // Drag the forest tile assets here
-    public TileMapping tileMapping;     // The TileMapping ScriptableObject to populate
-
-    [ContextMenu("Generate Tile Mapping")]
-    public void GenerateTileMapping()
+    public class TileMappingGenerator : MonoBehaviour
     {
-        if (tileMapping == null || icyTiles == null || forestTiles == null)
-        {
-            Debug.LogError("Please assign all references before generating the mapping.");
-            return;
-        }
+        [Header("Tile Palette References")]
+        public List<TileBase> icyTiles;      // Drag the icy tile assets here
+        public List<TileBase> forestTiles;  // Drag the forest tile assets here
+        public TileMapping tileMapping;     // The TileMapping ScriptableObject to populate
 
-        if (icyTiles.Count != forestTiles.Count)
+        [ContextMenu("Generate Tile Mapping")]
+        public void GenerateTileMapping()
         {
-            Debug.LogError("The number of icy tiles and forest tiles must match!");
-            return;
-        }
-
-        tileMapping.tilePairs.Clear(); // Clear any existing entries
-
-        for (int i = 0; i < icyTiles.Count; i++)
-        {
-            TileMapping.TilePair newPair = new TileMapping.TilePair
+            if (tileMapping == null || icyTiles == null || forestTiles == null)
             {
-                icyTile = icyTiles[i],
-                forestTile = forestTiles[i]
-            };
-            tileMapping.tilePairs.Add(newPair);
-        }
+                Debug.LogError("Please assign all references before generating the mapping.");
+                return;
+            }
 
-        // Ensure this part only runs in the Unity Editor
+            if (icyTiles.Count != forestTiles.Count)
+            {
+                Debug.LogError("The number of icy tiles and forest tiles must match!");
+                return;
+            }
+
+            tileMapping.tilePairs.Clear(); // Clear any existing entries
+
+            for (int i = 0; i < icyTiles.Count; i++)
+            {
+                TileMapping.TilePair newPair = new TileMapping.TilePair
+                {
+                    icyTile = icyTiles[i],
+                    forestTile = forestTiles[i]
+                };
+                tileMapping.tilePairs.Add(newPair);
+            }
+
+            // Ensure this part only runs in the Unity Editor
 #if UNITY_EDITOR
-        UnityEditor.EditorUtility.SetDirty(tileMapping); // Save changes to the ScriptableObject
+            UnityEditor.EditorUtility.SetDirty(tileMapping); // Save changes to the ScriptableObject
 #endif
 
-        Debug.Log("Tile Mapping successfully generated!");
+            Debug.Log("Tile Mapping successfully generated!");
+        }
     }
 }

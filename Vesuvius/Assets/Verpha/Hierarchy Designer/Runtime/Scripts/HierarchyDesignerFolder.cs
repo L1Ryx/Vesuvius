@@ -1,7 +1,7 @@
-namespace Verpha.HierarchyDesigner
-{
-    using UnityEngine;
+using UnityEngine;
 
+namespace Verpha.Hierarchy_Designer.Runtime.Scripts
+{
     public class HierarchyDesignerFolder : MonoBehaviour
     {
         [SerializeField] private bool flattenFolder = true;

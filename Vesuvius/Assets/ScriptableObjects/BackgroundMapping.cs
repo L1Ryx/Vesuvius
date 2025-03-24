@@ -1,37 +1,40 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "BackgroundMapping", menuName = "ScriptableObjects/BackgroundMapping", order = 1)]
-public class BackgroundMapping : ScriptableObject
+namespace ScriptableObjects
 {
-    [System.Serializable]
-    public class BackgroundPair
+    [CreateAssetMenu(fileName = "BackgroundMapping", menuName = "ScriptableObjects/BackgroundMapping", order = 1)]
+    public class BackgroundMapping : ScriptableObject
     {
-        public Sprite icySprite;       // Reference to the icy sprite
-        public Sprite forestSprite;   // Reference to the forest sprite
-    }
-
-    public List<BackgroundPair> backgroundPairs = new List<BackgroundPair>();
-
-    // Get the forest sprite for a given icy sprite
-    public Sprite GetForestSprite(Sprite icySprite)
-    {
-        foreach (var pair in backgroundPairs)
+        [System.Serializable]
+        public class BackgroundPair
         {
-            if (pair.icySprite == icySprite)
-                return pair.forestSprite;
+            public Sprite icySprite;       // Reference to the icy sprite
+            public Sprite forestSprite;   // Reference to the forest sprite
         }
-        return null;
-    }
 
-    // Get the icy sprite for a given forest sprite (optional)
-    public Sprite GetIcySprite(Sprite forestSprite)
-    {
-        foreach (var pair in backgroundPairs)
+        public List<BackgroundPair> backgroundPairs = new List<BackgroundPair>();
+
+        // Get the forest sprite for a given icy sprite
+        public Sprite GetForestSprite(Sprite icySprite)
         {
-            if (pair.forestSprite == forestSprite)
-                return pair.icySprite;
+            foreach (var pair in backgroundPairs)
+            {
+                if (pair.icySprite == icySprite)
+                    return pair.forestSprite;
+            }
+            return null;
         }
-        return null;
+
+        // Get the icy sprite for a given forest sprite (optional)
+        public Sprite GetIcySprite(Sprite forestSprite)
+        {
+            foreach (var pair in backgroundPairs)
+            {
+                if (pair.forestSprite == forestSprite)
+                    return pair.icySprite;
+            }
+            return null;
+        }
     }
 }

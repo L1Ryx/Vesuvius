@@ -1,55 +1,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BulbData", menuName = "GameData/BulbData")]
-public class BulbData : ScriptableObject
+namespace ScriptableObjects
 {
-    [System.Serializable]
-    public class BulbEntry
+    [CreateAssetMenu(fileName = "BulbData", menuName = "GameData/BulbData")]
+    public class BulbData : ScriptableObject
     {
-        public string bulbID;
-        public bool isAlive;
-        public int clinkAmount; // Amount of clink this bulb contains
-    }
-
-    public int GetClinkAmount(string bulbID)
-    {
-        var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
-        if (bulb != null)
+        [System.Serializable]
+        public class BulbEntry
         {
-            return bulb.clinkAmount;
+            public string bulbID;
+            public bool isAlive;
+            public int clinkAmount; // Amount of clink this bulb contains
         }
-        Debug.LogWarning($"Bulb with ID {bulbID} not found in BulbData.");
-        return 0;
-    }
 
-
-    public List<BulbEntry> bulbEntries = new List<BulbEntry>();
-
-    public bool GetBulbAliveState(string bulbID)
-    {
-        var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
-        return bulb != null && bulb.isAlive;
-    }
-
-    public bool SetBulbAliveState(string bulbID, bool isAlive)
-    {
-        var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
-        if (bulb != null)
+        public int GetClinkAmount(string bulbID)
         {
-            bulb.isAlive = isAlive;
-            return true;
+            var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
+            if (bulb != null)
+            {
+                return bulb.clinkAmount;
+            }
+            Debug.LogWarning($"Bulb with ID {bulbID} not found in BulbData.");
+            return 0;
         }
-        Debug.LogWarning($"Bulb with ID {bulbID} not found in BulbData.");
-        return false;
-    }
 
-    public void ResetBulbs()
-    {
-        foreach (var bulb in bulbEntries)
+
+        public List<BulbEntry> bulbEntries = new List<BulbEntry>();
+
+        public bool GetBulbAliveState(string bulbID)
         {
-            bulb.isAlive = true;
+            var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
+            return bulb != null && bulb.isAlive;
         }
-        Debug.Log("All bulbs have been reset to alive state.");
+
+        public bool SetBulbAliveState(string bulbID, bool isAlive)
+        {
+            var bulb = bulbEntries.Find(entry => entry.bulbID == bulbID);
+            if (bulb != null)
+            {
+                bulb.isAlive = isAlive;
+                return true;
+            }
+            Debug.LogWarning($"Bulb with ID {bulbID} not found in BulbData.");
+            return false;
+        }
+
+        public void ResetBulbs()
+        {
+            foreach (var bulb in bulbEntries)
+            {
+                bulb.isAlive = true;
+            }
+            Debug.Log("All bulbs have been reset to alive state.");
+        }
     }
 }

@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class RoomSensor : MonoBehaviour
+namespace Gameplay._Arch
 {
-    [Header("Events")]
-    [SerializeField] private UnityEvent roomLoaded;
+    public class RoomSensor : MonoBehaviour
+    {
+        [Header("Events")]
+        [SerializeField] private UnityEvent roomLoaded;
     
-    void Start() {
-        roomLoaded.Invoke();
+        void Start() {
+            roomLoaded.Invoke();
+        }
     }
 } 

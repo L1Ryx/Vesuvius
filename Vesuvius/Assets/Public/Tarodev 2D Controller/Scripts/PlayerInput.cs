@@ -1,10 +1,8 @@
+using TarodevController;
 using UnityEngine;
-
-#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-#endif
 
-namespace TarodevController
+namespace Public.Tarodev_2D_Controller.Scripts
 {
     public class PlayerInput : MonoBehaviour
     {

@@ -2,40 +2,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider2D))]
-public class TutorialCollider : MonoBehaviour
+namespace Gameplay._Arch
 {
-    [Header("Available Tutorial Events")]
-    [Tooltip("List of UnityEvents to be called when the player enters the trigger.")]
-    public List<UnityEvent> tutorialEvents;
-
-    [Header("Event Selection")]
-    [Tooltip("Index of the event to invoke from the tutorialEvents list.")]
-    public int selectedEventIndex = 0;
-
-    private void Start()
+    [RequireComponent(typeof(Collider2D))]
+    public class TutorialCollider : MonoBehaviour
     {
-        // Ensure the Collider is set as a trigger
-        Collider2D collider = GetComponent<Collider2D>();
-        if (!collider.isTrigger)
-        {
-            Debug.LogWarning($"{gameObject.name} collider is not set as a trigger. Setting it now.");
-            collider.isTrigger = true;
-        }
-    }
+        [Header("Available Tutorial Events")]
+        [Tooltip("List of UnityEvents to be called when the player enters the trigger.")]
+        public List<UnityEvent> tutorialEvents;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player")) // Check if the collider is the player
+        [Header("Event Selection")]
+        [Tooltip("Index of the event to invoke from the tutorialEvents list.")]
+        public int selectedEventIndex = 0;
+
+        private void Start()
         {
-            if (tutorialEvents != null && selectedEventIndex >= 0 && selectedEventIndex < tutorialEvents.Count)
+            // Ensure the Collider is set as a trigger
+            Collider2D collider = GetComponent<Collider2D>();
+            if (!collider.isTrigger)
             {
-                tutorialEvents[selectedEventIndex]?.Invoke();
-                Debug.Log($"Tutorial event {selectedEventIndex} invoked.");
+                Debug.LogWarning($"{gameObject.name} collider is not set as a trigger. Setting it now.");
+                collider.isTrigger = true;
             }
-            else
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player")) // Check if the collider is the player
             {
-                Debug.LogWarning("Invalid event index or tutorial events not set.");
+                if (tutorialEvents != null && selectedEventIndex >= 0 && selectedEventIndex < tutorialEvents.Count)
+                {
+                    tutorialEvents[selectedEventIndex]?.Invoke();
+                    Debug.Log($"Tutorial event {selectedEventIndex} invoked.");
+                }
+                else
+                {
+                    Debug.LogWarning("Invalid event index or tutorial events not set.");
+                }
             }
         }
     }

@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+using Gameplay._Arch;
 
-public class DoorEventListener : GameEventListener
+namespace Events._Arch
 {
-    public DoorController doorController;
+    public class DoorEventListener : GameEventListener
+    {
+        public DoorController doorController;
 
-    public override void OnEventRaised() {
-        // doorController.AttemptTransition();
-        // deprecated
+        public override void OnEventRaised() {
+            // doorController.AttemptTransition();
+            // deprecated
+        }
     }
 }

@@ -1,37 +1,40 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName = "TileMapping", menuName = "ScriptableObjects/TileMapping", order = 1)]
-public class TileMapping : ScriptableObject
+namespace ScriptableObjects
 {
-    [System.Serializable]
-    public class TilePair
+    [CreateAssetMenu(fileName = "TileMapping", menuName = "ScriptableObjects/TileMapping", order = 1)]
+    public class TileMapping : ScriptableObject
     {
-        public TileBase icyTile;       // Reference to the icy tile
-        public TileBase forestTile;   // Reference to the lush forest tile
-    }
-    public List<TilePair> tilePairs = new List<TilePair>();
-
-    // Find the forest tile corresponding to a given icy tile
-    public TileBase GetForestTile(TileBase icyTile)
-    {
-        foreach (var pair in tilePairs)
+        [System.Serializable]
+        public class TilePair
         {
-            if (pair.icyTile == icyTile)
-                return pair.forestTile;
+            public TileBase icyTile;       // Reference to the icy tile
+            public TileBase forestTile;   // Reference to the lush forest tile
         }
-        return null; // Return null if no match is found
-    }
+        public List<TilePair> tilePairs = new List<TilePair>();
 
-    // Find the icy tile corresponding to a given forest tile (optional)
-    public TileBase GetIcyTile(TileBase forestTile)
-    {
-        foreach (var pair in tilePairs)
+        // Find the forest tile corresponding to a given icy tile
+        public TileBase GetForestTile(TileBase icyTile)
         {
-            if (pair.forestTile == forestTile)
-                return pair.icyTile;
+            foreach (var pair in tilePairs)
+            {
+                if (pair.icyTile == icyTile)
+                    return pair.forestTile;
+            }
+            return null; // Return null if no match is found
         }
-        return null;
+
+        // Find the icy tile corresponding to a given forest tile (optional)
+        public TileBase GetIcyTile(TileBase forestTile)
+        {
+            foreach (var pair in tilePairs)
+            {
+                if (pair.forestTile == forestTile)
+                    return pair.icyTile;
+            }
+            return null;
+        }
     }
 }

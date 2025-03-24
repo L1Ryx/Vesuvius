@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using Verpha.Hierarchy_Designer.Runtime.Scripts;
 
 namespace Verpha.HierarchyDesigner
 {

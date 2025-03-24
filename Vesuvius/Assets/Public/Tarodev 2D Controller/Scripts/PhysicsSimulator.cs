@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TarodevController
+namespace Public.Tarodev_2D_Controller.Scripts
 {
     public class PhysicsSimulator : MonoBehaviour
     {

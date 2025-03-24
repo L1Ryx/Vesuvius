@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class TotemFloatAnimation : MonoBehaviour
+namespace UI._Arch
 {
-    [Header("Animation Settings")]
-    [SerializeField] private float floatAmplitude = 3f; // Vertical movement range
-    [SerializeField] private float floatSpeed = 1.5f; // Speed of vertical movement
-
-    private Vector3 initialPosition;
-
-    private void Start()
+    public class TotemFloatAnimation : MonoBehaviour
     {
-        // Cache the initial position
-        initialPosition = transform.localPosition;
-    }
+        [Header("Animation Settings")]
+        [SerializeField] private float floatAmplitude = 3f; // Vertical movement range
+        [SerializeField] private float floatSpeed = 1.5f; // Speed of vertical movement
 
-    private void Update()
-    {
-        // Vertical floating animation
-        float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
-        transform.localPosition = initialPosition + new Vector3(0, yOffset, 0);
+        private Vector3 initialPosition;
+
+        private void Start()
+        {
+            // Cache the initial position
+            initialPosition = transform.localPosition;
+        }
+
+        private void Update()
+        {
+            // Vertical floating animation
+            float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
+            transform.localPosition = initialPosition + new Vector3(0, yOffset, 0);
+        }
     }
 }

@@ -1,407 +1,413 @@
 using System.Collections;
+using ScriptableObjects.PlayerInfo;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI; // Required for handling UI images
+using UnityEngine.UI;
 
-public class CradleMenu : MonoBehaviour
+// Required for handling UI images
+
+namespace Gameplay._Arch
 {
-    [Header("Menu Options")]
-    public TMP_Text[] menuOptions; // Only menu option texts (for navigation)
+    public class CradleMenu : MonoBehaviour
+    {
+        [Header("Menu Options")]
+        public TMP_Text[] menuOptions; // Only menu option texts (for navigation)
 
-    [Header("Other Text Elements")]
-    public TMP_Text[] nonMenuTexts; // Texts not used as options (e.g., titles or descriptions)
+        [Header("Other Text Elements")]
+        public TMP_Text[] nonMenuTexts; // Texts not used as options (e.g., titles or descriptions)
 
-    [Header("UI Images")]
-    public Image[] uiImages; // UI images to be faded in and out
-    [Header("Panels")]
-    public GameObject mainPanel;
-    public GameObject readPanel;
-    private TMP_Text[] readPanelTexts;
-    [Header("Rest Panel")]
-    public GameObject restPanel; // The panel that veils the screen during rest
-    public float veilDuration = 1f; // Time it takes for the veil to fade in/out
-    public float restDuration = 3f; // Duration for which the veil stays fully opaque
-    public PlayerInfo playerInfo; // Reference to the PlayerInfo ScriptableObject
-    [Header("Rest Panel - Saved Text")]
-    public TMP_Text savedText; // Reference to the "Saved Text"
-    public float savedTextLerpDuration = 1f; // Duration for the text to fade in and out
-    [Header("Events")]
-    public UnityEvent uiNavigated;
-    public UnityEvent uiSelected;
-    public UnityEvent restStarted;
-
-
+        [Header("UI Images")]
+        public Image[] uiImages; // UI images to be faded in and out
+        [Header("Panels")]
+        public GameObject mainPanel;
+        public GameObject readPanel;
+        private TMP_Text[] readPanelTexts;
+        [Header("Rest Panel")]
+        public GameObject restPanel; // The panel that veils the screen during rest
+        public float veilDuration = 1f; // Time it takes for the veil to fade in/out
+        public float restDuration = 3f; // Duration for which the veil stays fully opaque
+        public PlayerInfo playerInfo; // Reference to the PlayerInfo ScriptableObject
+        [Header("Rest Panel - Saved Text")]
+        public TMP_Text savedText; // Reference to the "Saved Text"
+        public float savedTextLerpDuration = 1f; // Duration for the text to fade in and out
+        [Header("Events")]
+        public UnityEvent uiNavigated;
+        public UnityEvent uiSelected;
+        public UnityEvent restStarted;
 
 
-    [Header("Settings")]
-    public Color defaultColor = Color.white;
-    public Color selectedColor = Color.yellow;
-    public float fadeSpeed = 1f; // Speed of the fade-in and fade-out
-    public float startDelay = 0.2f; // Delay before starting fade-in
+
+
+        [Header("Settings")]
+        public Color defaultColor = Color.white;
+        public Color selectedColor = Color.yellow;
+        public float fadeSpeed = 1f; // Speed of the fade-in and fade-out
+        public float startDelay = 0.2f; // Delay before starting fade-in
     
 
-    private int selectedIndex = 0;
-    private PlayerControls playerControls;
-    private bool isReading = false; // False = Main Panel, True = Read Panel
-    private bool menuActive = true; // Start as true since the menu is active initially
+        private int selectedIndex = 0;
+        private PlayerControls playerControls;
+        private bool isReading = false; // False = Main Panel, True = Read Panel
+        private bool menuActive = true; // Start as true since the menu is active initially
 
 
 
-    public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
-    public event OnMenuClosed MenuClosed;
+        public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
+        public event OnMenuClosed MenuClosed;
 
-    private void Awake()
-    {
-        playerControls = new PlayerControls();
-
-        // Subscribe to navigation and selection actions
-        playerControls.Player.Navigate.performed += OnNavigate;
-        playerControls.Player.Confirm.performed += OnSelect;
-
-
-    }
-
-    private void OnEnable()
-    {
-        playerControls.Enable();
-        StartCoroutine(FadeInUI());
-        menuActive = true; // Menu is now active
-
-        // Disable the Interact action
-        playerControls.Player.Interact.Disable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Disable();
-        menuActive = false; // Menu is no longer active
-
-        // Re-enable the Interact action
-        playerControls.Player.Interact.Enable();
-    }
-
-    private void Start()
-    {
-        UpdateMenu(); // Highlight the default selected option
-
-        // Set initial alpha to 0 for texts and images
-        SetTextAlpha(menuOptions, 0);
-        SetTextAlpha(nonMenuTexts, 0);
-        SetImageAlpha(uiImages, 0);
-
-        // Temporarily activate readPanel to gather its TMP_Text components
-        readPanel.SetActive(true);
-        readPanelTexts = readPanel.GetComponentsInChildren<TMP_Text>();
-        SetTextAlpha(readPanelTexts, 0); // Set initial alpha to 0 for read panel texts
-        readPanel.SetActive(false); // Deactivate readPanel again
-
-        if (savedText != null)
+        private void Awake()
         {
-            SetTextAlpha(savedText, 0f); // Ensure the "Saved Text" starts fully transparent
+            playerControls = new PlayerControls();
+
+            // Subscribe to navigation and selection actions
+            playerControls.Player.Navigate.performed += OnNavigate;
+            playerControls.Player.Confirm.performed += OnSelect;
+
+
         }
 
-    }
-
-    private void OnNavigate(InputAction.CallbackContext context)
-    {
-        float navigationValue = context.ReadValue<float>();
-
-        if (navigationValue > 0.1f) // Move up
+        private void OnEnable()
         {
-            selectedIndex = (selectedIndex - 1 + menuOptions.Length) % menuOptions.Length;
-            UpdateMenu();
+            playerControls.Enable();
+            StartCoroutine(FadeInUI());
+            menuActive = true; // Menu is now active
+
+            // Disable the Interact action
+            playerControls.Player.Interact.Disable();
         }
-        else if (navigationValue < -0.1f) // Move down
+
+        private void OnDisable()
         {
-            selectedIndex = (selectedIndex + 1) % menuOptions.Length;
-            UpdateMenu();
+            playerControls.Disable();
+            menuActive = false; // Menu is no longer active
+
+            // Re-enable the Interact action
+            playerControls.Player.Interact.Enable();
         }
-        uiNavigated.Invoke();
-    }
 
-    private void OnSelect(InputAction.CallbackContext context)
-    {
-        if (!menuActive) return; // Ignore input if the menu is not active
-
-        if (isReading)
+        private void Start()
         {
-            // Switch back to Main Panel
-            StartCoroutine(SwitchPanels(readPanel, mainPanel));
-            isReading = false;
-        }
-        else
-        {
-            string selectedOption = menuOptions[selectedIndex].text;
+            UpdateMenu(); // Highlight the default selected option
 
-            switch (selectedOption)
+            // Set initial alpha to 0 for texts and images
+            SetTextAlpha(menuOptions, 0);
+            SetTextAlpha(nonMenuTexts, 0);
+            SetImageAlpha(uiImages, 0);
+
+            // Temporarily activate readPanel to gather its TMP_Text components
+            readPanel.SetActive(true);
+            readPanelTexts = readPanel.GetComponentsInChildren<TMP_Text>();
+            SetTextAlpha(readPanelTexts, 0); // Set initial alpha to 0 for read panel texts
+            readPanel.SetActive(false); // Deactivate readPanel again
+
+            if (savedText != null)
             {
-                case "Rest":
-                    StartCoroutine(HandleRest());
-                    break;
-
-                case "Read":
-                    // Switch to Read Panel
-                    StartCoroutine(SwitchPanels(mainPanel, readPanel));
-                    isReading = true;
-                    break;
-
-                case "Leave":
-                    StartCoroutine(FadeOutUIAndClose());
-                    break;
+                SetTextAlpha(savedText, 0f); // Ensure the "Saved Text" starts fully transparent
             }
 
-            uiSelected.Invoke();
-        }
-    }
-
-
-    private IEnumerator HandleRest()
-    {
-        menuActive = false; // Lock menu interaction
-
-        Image restImage = restPanel.GetComponent<Image>();
-        if (restImage == null)
-        {
-            Debug.LogError("Rest panel is missing an Image component!");
-            yield break;
         }
 
-        restPanel.SetActive(true);
-
-        // Fade in the rest panel
-        float alpha = 0f;
-        while (alpha < 1f)
+        private void OnNavigate(InputAction.CallbackContext context)
         {
-            alpha += Time.deltaTime / veilDuration;
-            SetImageAlpha(restImage, alpha);
-            yield return null;
-        }
-        SetImageAlpha(restImage, 1f);
+            float navigationValue = context.ReadValue<float>();
 
-        // Restore player stats
-        if (playerInfo != null)
-        {
-            playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
-            playerInfo.SetTotemPower(100); // Fully restore totem power
-            Debug.Log("Player stats restored: Health and Totem Power set to maximum.");
-
-            // Get the parent EmptyCradle component
-            EmptyCradle parentCradle = GetComponentInParent<EmptyCradle>();
-
-            if (parentCradle != null)
+            if (navigationValue > 0.1f) // Move up
             {
-                playerInfo.SetCheckpoint(parentCradle.checkpointScene, parentCradle.checkpointLocation);
-                Debug.Log($"Checkpoint updated: Scene - {parentCradle.checkpointScene}, Location - {parentCradle.checkpointLocation}");
+                selectedIndex = (selectedIndex - 1 + menuOptions.Length) % menuOptions.Length;
+                UpdateMenu();
+            }
+            else if (navigationValue < -0.1f) // Move down
+            {
+                selectedIndex = (selectedIndex + 1) % menuOptions.Length;
+                UpdateMenu();
+            }
+            uiNavigated.Invoke();
+        }
+
+        private void OnSelect(InputAction.CallbackContext context)
+        {
+            if (!menuActive) return; // Ignore input if the menu is not active
+
+            if (isReading)
+            {
+                // Switch back to Main Panel
+                StartCoroutine(SwitchPanels(readPanel, mainPanel));
+                isReading = false;
             }
             else
             {
-                Debug.LogError("Parent EmptyCradle not found!");
+                string selectedOption = menuOptions[selectedIndex].text;
+
+                switch (selectedOption)
+                {
+                    case "Rest":
+                        StartCoroutine(HandleRest());
+                        break;
+
+                    case "Read":
+                        // Switch to Read Panel
+                        StartCoroutine(SwitchPanels(mainPanel, readPanel));
+                        isReading = true;
+                        break;
+
+                    case "Leave":
+                        StartCoroutine(FadeOutUIAndClose());
+                        break;
+                }
+
+                uiSelected.Invoke();
             }
-            restStarted.Invoke();
-
-        }
-        else
-        {
-            Debug.LogError("PlayerInfo ScriptableObject is not assigned.");
         }
 
-        // Lerp in the "Saved Text"
-        if (savedText != null)
+
+        private IEnumerator HandleRest()
         {
-            yield return StartCoroutine(LerpTextAlpha(savedText, 0f, 1f, savedTextLerpDuration));
-        }
+            menuActive = false; // Lock menu interaction
 
-        // Wait for the rest duration
-        yield return new WaitForSeconds(restDuration);
-
-        // Lerp out the "Saved Text"
-        if (savedText != null)
-        {
-            yield return StartCoroutine(LerpTextAlpha(savedText, 1f, 0f, savedTextLerpDuration));
-        }
-
-        // Fade out the rest panel
-        while (alpha > 0f)
-        {
-            alpha -= Time.deltaTime / veilDuration;
-            SetImageAlpha(restImage, alpha);
-            yield return null;
-        }
-        SetImageAlpha(restImage, 0f);
-
-        restPanel.SetActive(false);
-        menuActive = true; // Unlock menu interaction
-    }
-
-
-    private IEnumerator LerpTextAlpha(TMP_Text text, float fromAlpha, float toAlpha, float duration)
-    {
-        float elapsed = 0f;
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float alpha = Mathf.Lerp(fromAlpha, toAlpha, elapsed / duration);
-            SetTextAlpha(text, alpha);
-            yield return null;
-        }
-        SetTextAlpha(text, toAlpha); // Ensure the final alpha is set
-    }
-
-    private void SetTextAlpha(TMP_Text text, float alpha)
-    {
-        if (text != null)
-        {
-            Color color = text.color;
-            text.color = new Color(color.r, color.g, color.b, Mathf.Clamp01(alpha));
-        }
-    }
-
-
-
-
-
-
-private IEnumerator SwitchPanels(GameObject outgoingPanel, GameObject incomingPanel)
-{
-    CanvasGroup outgoingGroup = outgoingPanel.GetComponent<CanvasGroup>();
-    CanvasGroup incomingGroup = incomingPanel.GetComponent<CanvasGroup>();
-
-    TMP_Text[] outgoingTexts = outgoingPanel.GetComponentsInChildren<TMP_Text>();
-    TMP_Text[] incomingTexts = incomingPanel.GetComponentsInChildren<TMP_Text>();
-
-    float alpha = 1f;
-
-    // Fade out outgoing panel
-    while (alpha > 0f)
-    {
-        alpha -= Time.deltaTime * fadeSpeed;
-
-        if (outgoingGroup != null)
-            outgoingGroup.alpha = alpha;
-
-        SetTextAlpha(outgoingTexts, alpha);
-        SetImageAlpha(uiImages, alpha); // Use the class field for UI images
-        yield return null;
-    }
-
-    if (outgoingGroup != null)
-        outgoingGroup.alpha = 0f;
-
-    SetTextAlpha(outgoingTexts, 0f);
-    SetImageAlpha(uiImages, 0f); // Ensure the UI images are fully transparent
-    outgoingPanel.SetActive(false);
-
-    // Activate incoming panel and fade it in
-    incomingPanel.SetActive(true);
-    alpha = 0f;
-    while (alpha < 1f)
-    {
-        alpha += Time.deltaTime * fadeSpeed;
-
-        if (incomingGroup != null)
-            incomingGroup.alpha = alpha;
-
-        SetTextAlpha(incomingTexts, alpha);
-        SetImageAlpha(uiImages, alpha); // Use the class field for UI images
-        yield return null;
-    }
-
-    if (incomingGroup != null)
-        incomingGroup.alpha = 1f;
-
-    SetTextAlpha(incomingTexts, 1f);
-    SetImageAlpha(uiImages, 1f); // Ensure the UI images are fully visible
-}
-
-
-
-
-
-    private void UpdateMenu()
-    {
-        for (int i = 0; i < menuOptions.Length; i++)
-        {
-            if (i == selectedIndex)
+            Image restImage = restPanel.GetComponent<Image>();
+            if (restImage == null)
             {
-                menuOptions[i].color = selectedColor;
-                menuOptions[i].fontStyle = FontStyles.Underline;
+                Debug.LogError("Rest panel is missing an Image component!");
+                yield break;
+            }
+
+            restPanel.SetActive(true);
+
+            // Fade in the rest panel
+            float alpha = 0f;
+            while (alpha < 1f)
+            {
+                alpha += Time.deltaTime / veilDuration;
+                SetImageAlpha(restImage, alpha);
+                yield return null;
+            }
+            SetImageAlpha(restImage, 1f);
+
+            // Restore player stats
+            if (playerInfo != null)
+            {
+                playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
+                playerInfo.SetTotemPower(100); // Fully restore totem power
+                Debug.Log("Player stats restored: Health and Totem Power set to maximum.");
+
+                // Get the parent EmptyCradle component
+                EmptyCradle parentCradle = GetComponentInParent<EmptyCradle>();
+
+                if (parentCradle != null)
+                {
+                    playerInfo.SetCheckpoint(parentCradle.checkpointScene, parentCradle.checkpointLocation);
+                    Debug.Log($"Checkpoint updated: Scene - {parentCradle.checkpointScene}, Location - {parentCradle.checkpointLocation}");
+                }
+                else
+                {
+                    Debug.LogError("Parent EmptyCradle not found!");
+                }
+                restStarted.Invoke();
+
             }
             else
             {
-                menuOptions[i].color = defaultColor;
-                menuOptions[i].fontStyle = FontStyles.Normal;
+                Debug.LogError("PlayerInfo ScriptableObject is not assigned.");
+            }
+
+            // Lerp in the "Saved Text"
+            if (savedText != null)
+            {
+                yield return StartCoroutine(LerpTextAlpha(savedText, 0f, 1f, savedTextLerpDuration));
+            }
+
+            // Wait for the rest duration
+            yield return new WaitForSeconds(restDuration);
+
+            // Lerp out the "Saved Text"
+            if (savedText != null)
+            {
+                yield return StartCoroutine(LerpTextAlpha(savedText, 1f, 0f, savedTextLerpDuration));
+            }
+
+            // Fade out the rest panel
+            while (alpha > 0f)
+            {
+                alpha -= Time.deltaTime / veilDuration;
+                SetImageAlpha(restImage, alpha);
+                yield return null;
+            }
+            SetImageAlpha(restImage, 0f);
+
+            restPanel.SetActive(false);
+            menuActive = true; // Unlock menu interaction
+        }
+
+
+        private IEnumerator LerpTextAlpha(TMP_Text text, float fromAlpha, float toAlpha, float duration)
+        {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float alpha = Mathf.Lerp(fromAlpha, toAlpha, elapsed / duration);
+                SetTextAlpha(text, alpha);
+                yield return null;
+            }
+            SetTextAlpha(text, toAlpha); // Ensure the final alpha is set
+        }
+
+        private void SetTextAlpha(TMP_Text text, float alpha)
+        {
+            if (text != null)
+            {
+                Color color = text.color;
+                text.color = new Color(color.r, color.g, color.b, Mathf.Clamp01(alpha));
             }
         }
-    }
 
-    private void SetTextAlpha(TMP_Text[] texts, float alpha)
-    {
-        foreach (var text in texts)
+
+
+
+
+
+        private IEnumerator SwitchPanels(GameObject outgoingPanel, GameObject incomingPanel)
         {
-            var currentColor = text.color;
-            text.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
-        }
-    }
+            CanvasGroup outgoingGroup = outgoingPanel.GetComponent<CanvasGroup>();
+            CanvasGroup incomingGroup = incomingPanel.GetComponent<CanvasGroup>();
 
-    private void SetImageAlpha(Image[] images, float alpha)
-    {
-        foreach (var image in images)
-        {
-            var currentColor = image.color;
-            image.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
-        }
-    }
+            TMP_Text[] outgoingTexts = outgoingPanel.GetComponentsInChildren<TMP_Text>();
+            TMP_Text[] incomingTexts = incomingPanel.GetComponentsInChildren<TMP_Text>();
 
-    private void SetImageAlpha(Image image, float alpha)
-    {
-        Color color = image.color;
-        image.color = new Color(color.r, color.g, color.b, Mathf.Clamp01(alpha));
-    }
+            float alpha = 1f;
 
+            // Fade out outgoing panel
+            while (alpha > 0f)
+            {
+                alpha -= Time.deltaTime * fadeSpeed;
 
-    private IEnumerator FadeInUI()
-    {
-        yield return new WaitForSeconds(startDelay); // Short delay to avoid race conditions
+                if (outgoingGroup != null)
+                    outgoingGroup.alpha = alpha;
 
-        float alpha = 0f;
-        while (alpha < 1f)
-        {
-            alpha += Time.deltaTime * fadeSpeed;
-            SetTextAlpha(menuOptions, alpha);
-            SetTextAlpha(nonMenuTexts, alpha);
-            SetImageAlpha(uiImages, alpha);
-            yield return null;
-        }
+                SetTextAlpha(outgoingTexts, alpha);
+                SetImageAlpha(uiImages, alpha); // Use the class field for UI images
+                yield return null;
+            }
 
-        // Ensure full alpha
-        SetTextAlpha(menuOptions, 1f);
-        SetTextAlpha(nonMenuTexts, 1f);
-        SetImageAlpha(uiImages, 1f);
-    }
+            if (outgoingGroup != null)
+                outgoingGroup.alpha = 0f;
 
-    private IEnumerator FadeOutUIAndClose()
-    {
-        menuActive = false; // Prevent further input during fade-out
+            SetTextAlpha(outgoingTexts, 0f);
+            SetImageAlpha(uiImages, 0f); // Ensure the UI images are fully transparent
+            outgoingPanel.SetActive(false);
 
-        float alpha = 1f;
-        while (alpha > 0f)
-        {
-            alpha -= Time.deltaTime * fadeSpeed;
-            SetTextAlpha(menuOptions, alpha);
-            SetTextAlpha(nonMenuTexts, alpha);
-            SetImageAlpha(uiImages, alpha);
-            yield return null;
+            // Activate incoming panel and fade it in
+            incomingPanel.SetActive(true);
+            alpha = 0f;
+            while (alpha < 1f)
+            {
+                alpha += Time.deltaTime * fadeSpeed;
+
+                if (incomingGroup != null)
+                    incomingGroup.alpha = alpha;
+
+                SetTextAlpha(incomingTexts, alpha);
+                SetImageAlpha(uiImages, alpha); // Use the class field for UI images
+                yield return null;
+            }
+
+            if (incomingGroup != null)
+                incomingGroup.alpha = 1f;
+
+            SetTextAlpha(incomingTexts, 1f);
+            SetImageAlpha(uiImages, 1f); // Ensure the UI images are fully visible
         }
 
-        // Ensure zero alpha
-        SetTextAlpha(menuOptions, 0f);
-        SetTextAlpha(nonMenuTexts, 0f);
-        SetImageAlpha(uiImages, 0f);
 
-        MenuClosed?.Invoke(); // Notify any listeners that the menu is closing
-        Destroy(gameObject); // Destroy the menu object
+
+
+
+        private void UpdateMenu()
+        {
+            for (int i = 0; i < menuOptions.Length; i++)
+            {
+                if (i == selectedIndex)
+                {
+                    menuOptions[i].color = selectedColor;
+                    menuOptions[i].fontStyle = FontStyles.Underline;
+                }
+                else
+                {
+                    menuOptions[i].color = defaultColor;
+                    menuOptions[i].fontStyle = FontStyles.Normal;
+                }
+            }
+        }
+
+        private void SetTextAlpha(TMP_Text[] texts, float alpha)
+        {
+            foreach (var text in texts)
+            {
+                var currentColor = text.color;
+                text.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
+            }
+        }
+
+        private void SetImageAlpha(Image[] images, float alpha)
+        {
+            foreach (var image in images)
+            {
+                var currentColor = image.color;
+                image.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
+            }
+        }
+
+        private void SetImageAlpha(Image image, float alpha)
+        {
+            Color color = image.color;
+            image.color = new Color(color.r, color.g, color.b, Mathf.Clamp01(alpha));
+        }
+
+
+        private IEnumerator FadeInUI()
+        {
+            yield return new WaitForSeconds(startDelay); // Short delay to avoid race conditions
+
+            float alpha = 0f;
+            while (alpha < 1f)
+            {
+                alpha += Time.deltaTime * fadeSpeed;
+                SetTextAlpha(menuOptions, alpha);
+                SetTextAlpha(nonMenuTexts, alpha);
+                SetImageAlpha(uiImages, alpha);
+                yield return null;
+            }
+
+            // Ensure full alpha
+            SetTextAlpha(menuOptions, 1f);
+            SetTextAlpha(nonMenuTexts, 1f);
+            SetImageAlpha(uiImages, 1f);
+        }
+
+        private IEnumerator FadeOutUIAndClose()
+        {
+            menuActive = false; // Prevent further input during fade-out
+
+            float alpha = 1f;
+            while (alpha > 0f)
+            {
+                alpha -= Time.deltaTime * fadeSpeed;
+                SetTextAlpha(menuOptions, alpha);
+                SetTextAlpha(nonMenuTexts, alpha);
+                SetImageAlpha(uiImages, alpha);
+                yield return null;
+            }
+
+            // Ensure zero alpha
+            SetTextAlpha(menuOptions, 0f);
+            SetTextAlpha(nonMenuTexts, 0f);
+            SetImageAlpha(uiImages, 0f);
+
+            MenuClosed?.Invoke(); // Notify any listeners that the menu is closing
+            Destroy(gameObject); // Destroy the menu object
+        }
+
     }
-
 }

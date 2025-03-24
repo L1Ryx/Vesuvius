@@ -1,14 +1,18 @@
+using ScriptableObjects.PlayerInfo;
 using UnityEngine;
 
-public class FinishDoor : MonoBehaviour
+namespace Gameplay._Arch
 {
-    [Header("Data Cubes")]
-    [SerializeField] private PlayerInfo playerInfo;
-    private void OnTriggerEnter2D(Collider2D other)
+    public class FinishDoor : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        [Header("Data Cubes")]
+        [SerializeField] private PlayerInfo playerInfo;
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            playerInfo.hasCompletedDemo = true;
+            if (other.CompareTag("Player"))
+            {
+                playerInfo.hasCompletedDemo = true;
+            }
         }
     }
 }
