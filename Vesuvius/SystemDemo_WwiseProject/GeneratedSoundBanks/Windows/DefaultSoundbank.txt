@@ -46,6 +46,9 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	2924436501	Creakiness			\Default Work Unit\Creakiness	
 	4168635916	Openness			\Default Work Unit\Openness	
 
+Effect plug-ins	ID	Name	Type				Notes
+	1763592331	New_Meter	Wwise Meter			
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7316285	Abileh	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\Abileh_EFE7469B.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_BigBlueVoice\Abileh		96468
 	52759494	Nulla	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\Nulla_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_BigBlueVoice\Nulla		126680
@@ -66,7 +69,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	255775542	SFX_BulbOpen_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_BulbOpen_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_BulbOpen_Random\SFX_BulbOpen_R1_V1		84004
 	275761364	SFX_Heal_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Heal_R1_V1_B5E58104.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Healing_Blend\SFX_Heal_R1_V1		311232
 	297523843	SFX_Slash_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Slash_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Slash_Random\SFX_Slash_R1_V1		32116
-	297668156	MUS_BigBlueTune_NT_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\MUS_BigBlueTune_NT_V1_27EECB96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MUS\MUS_BigBlue_Blend\MUS_BigBlueTune_NT_V1		7609852
+	317449928	MUS_BigBlueTune_Mono_NT_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\MUS_BigBlueTune_Mono_NT_V1_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\MUS\MUS_BigBlue_Blend\MUS_BigBlueTune_Mono_NT_V1		3840096
 	318142682	SFX_GoatAttack_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_GoatAttack_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_WatcherAttack_Random\SFX_GoatAttack_R2_V1		184096
 	354329399	SFX_Slash_R4_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Slash_R4_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Slash_Random\SFX_Slash_R4_V1		28192
 	384139587	SFX_WoodCreak_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\systemdemo\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_WoodCreak_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_RandomCaveSounds\SFX_WoodCreak_R2_V1		546160

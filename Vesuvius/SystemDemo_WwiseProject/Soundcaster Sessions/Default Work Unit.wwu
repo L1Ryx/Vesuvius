@@ -117,20 +117,24 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Windiness" ID="{856B4807-561B-4A1A-A33F-1DF239E7BFBE}"/>
-							<Value>20</Value>
+							<Value>67</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Openness" ID="{5A4F1459-54E7-4B38-BB36-F99804CFF046}"/>
-							<Value>28.454</Value>
+							<Value>67</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Creakiness" ID="{854C9922-2A4C-4D78-A2AC-EBBC51BC08FE}"/>
-							<Value>24.662</Value>
+							<Value>45</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Distance_X" ID="{A048D805-D747-4E54-A1B3-B1BA996DE62B}"/>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Forest" ID="{B444975E-34A7-43A2-B822-54DBF6EBF5C7}"/>
+						<CurrentSwitchRef Name="Ice" ID="{4E5A5B6B-739B-42F9-AB2B-3F9A0B153193}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

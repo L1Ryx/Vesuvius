@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 883150b0f9ef9a40a63c49d8838f5b7c
     GuidInternal: 
-    m_lastTime: -8584647211067067274
+    m_lastTime: -8584604033873033639
     List:
     - name: AMB_Reverb
       guid: 41b1ddbecf765242a598181b8819c571
@@ -318,8 +318,8 @@ MonoBehaviour:
         guid: 6151ba0dde93e64cb6354d064204fccf
       Path: Events/Default Work Unit/Big Blue/Play_BigBlueSolo
       maxAttenuation: 100
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 40
+      minDuration: 40
     - name: Play_BulbOpen
       guid: 950ff6c5fbf0e04c8e7ddab60a20c5e9
       id: 4082933267
@@ -1130,7 +1130,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 0d5354ff6462e54aa4342ab5adea9d21
     GuidInternal: 
-    m_lastTime: -8584647210768106830
+    m_lastTime: -8584598004054419036
     List:
     - name: Creakiness
       guid: 22994c854c2a784da2acebbc51bc08fe
@@ -1160,6 +1160,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: cdb2b7f471d9a04485885289ad7e313f
       Path: Game Parameters/Default Work Unit/Dimension_Blend
+    - name: Distance_X
+      guid: 05d848a047d7544ea1b3b1ba996de62b
+      id: 3600736381
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 0d5354ff6462e54aa4342ab5adea9d21
+      - ElementName: Distance_X
+        ObjectType: 13
+        guid: 05d848a047d7544ea1b3b1ba996de62b
+      Path: Game Parameters/Default Work Unit/Distance_X
     - name: Openness
       guid: 59144f5ae754384bbb36f99804cff046
       id: 4168635916

@@ -33,6 +33,12 @@
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="Distance_X" ID="{A048D805-D747-4E54-A1B3-B1BA996DE62B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-100"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

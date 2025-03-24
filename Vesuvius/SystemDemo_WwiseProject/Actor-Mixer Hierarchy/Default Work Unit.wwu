@@ -34,7 +34,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-7</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -122,6 +122,10 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{69AC1826-65F9-4F96-A006-DF06231CAF8D}"/>
+								<Position Name="" ID="{4F7C76AF-79D5-4790-BACF-6759E1358F69}"/>
+							</PositioningInfo>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
 									<Reference>
@@ -190,7 +194,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -366,7 +370,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -747,7 +751,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-17</Value>
+										<Value>-18</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -1176,7 +1180,7 @@
 																<PointList>
 																	<Point>
 																		<XPos>0</XPos>
-																		<YPos>-0</YPos>
+																		<YPos>0</YPos>
 																		<Flags>5</Flags>
 																	</Point>
 																	<Point>
@@ -1199,7 +1203,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>2</Value>
+										<Value>-3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1533,7 +1537,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1647,9 +1651,21 @@
 						<BlendContainer Name="MUS_BigBlue_Blend" ID="{4DF36D87-8230-4A6B-9EF6-883DB43CD38D}" ShortID="345797258">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="CenterPercentage" Type="int32">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
 										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1668,14 +1684,9 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="MUS_BigBlueTune_NT_V1" ID="{C0B6460E-48EE-4E53-81A5-E6E268995CAC}" ShortID="350150249">
+								<Sound Name="MUS_BigBlueTune_Mono_NT_V1" ID="{D04241D8-86A3-44CA-8A2B-66650441DB5E}" ShortID="963290570">
 									<PropertyList>
 										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-12</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1686,25 +1697,91 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_BigBlueTune_NT_V1" ID="{B432218A-124D-4F20-87CD-D9D49D651537}">
-											<PropertyList>
-												<Property Name="FadeInDuration" Type="Real64" Value="0.853658536585366"/>
-												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimBegin" Type="Real64" Value="0.365853658536585"/>
-											</PropertyList>
+										<AudioFileSource Name="MUS_BigBlueTune_Mono_NT_V1" ID="{E56649D9-1739-482C-9C8F-97019DEA790A}">
 											<Language>SFX</Language>
-											<AudioFile>MUS_BigBlueTune_NT_V1.wav</AudioFile>
+											<AudioFile>MUS_BigBlueTune_Mono_NT_V1.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="297668156"/>
+												<MediaID ID="317449928"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_BigBlueTune_NT_V1" ID="{B432218A-124D-4F20-87CD-D9D49D651537}" Platform="Linked"/>
+										<ActiveSource Name="MUS_BigBlueTune_Mono_NT_V1" ID="{E56649D9-1739-482C-9C8F-97019DEA790A}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{88F0D115-4656-4938-A704-D4A1F4B3F108}">
+									<ObjectLists>
+										<ObjectList Name="RTPC">
+											<Reference>
+												<Local>
+													<RTPC Name="" ID="{9A038B7E-0AB2-430B-A09E-AF44ADA33AAF}" ShortID="86107117">
+														<PropertyList>
+															<Property Name="PropertyName" Type="string" Value="PanX"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="ControlInput">
+																<ObjectRef Name="Distance_X" ID="{A048D805-D747-4E54-A1B3-B1BA996DE62B}" WorkUnitID="{FF54530D-6264-4AE5-A434-2AB5ADEA9D21}"/>
+															</Reference>
+															<Reference Name="Curve">
+																<Custom>
+																	<Curve Name="" ID="{95B05446-12F4-41A9-9F87-97098C5A81EF}">
+																		<PropertyList>
+																			<Property Name="Flags" Type="int32" Value="1"/>
+																		</PropertyList>
+																		<PointList>
+																			<Point>
+																				<XPos>-100</XPos>
+																				<YPos>-200</YPos>
+																				<Flags>5</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>-9.3625498007968</XPos>
+																				<YPos>-3.83142</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>0</XPos>
+																				<YPos>-3.83142</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>10.3585657370518</XPos>
+																				<YPos>-3.43453984063745</YPos>
+																				<Flags>0</Flags>
+																			</Point>
+																			<Point>
+																				<XPos>100</XPos>
+																				<YPos>200</YPos>
+																				<Flags>37</Flags>
+																			</Point>
+																		</PointList>
+																	</Curve>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</RTPC>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</Panner>
+							</PositioningInfo>
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{EEE96508-A8DC-415C-B64F-FDF0B7AEED6B}" ShortID="208829302">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+														<ObjectRef Name="New_Meter" ID="{A915BC85-FCF2-4A84-A7B6-E6FEE1E63DAD}" WorkUnitID="{B0BFFDB2-155D-41AB-A4EF-945C06D038CA}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<Reference>
 										<Local>
@@ -1744,6 +1821,54 @@
 								</ObjectList>
 							</ObjectLists>
 						</BlendContainer>
+						<Sound Name="MUS_BigBlueTune_NT_V1" ID="{C0B6460E-48EE-4E53-81A5-E6E268995CAC}" ShortID="350150249">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="BigBlueAtten" ID="{1E1C5085-031C-433E-8806-73F9C08B36AD}" WorkUnitID="{07B4F2D2-2C86-4C5B-A2E4-EA6022F6C932}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{AA823C3D-5D05-4662-8117-4054B7BDAFBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="AMB_Reverb" ID="{BEDDB141-76CF-4252-A598-181B8819C571}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="MUS_BigBlueTune_NT_V1" ID="{B432218A-124D-4F20-87CD-D9D49D651537}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.853658536585366"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.365853658536585"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>MUS_BigBlueTune_NT_V1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="297668156"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="MUS_BigBlueTune_NT_V1" ID="{B432218A-124D-4F20-87CD-D9D49D651537}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX-P" ID="{EB1FCDB5-61B9-4A02-B7B4-C3B6A471637F}" ShortID="100410850">
@@ -1776,7 +1901,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-2</Value>
+										<Value>-6</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -1917,7 +2042,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-9</Value>
+										<Value>-11</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -2129,7 +2254,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-11</Value>
+										<Value>-15</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -2293,7 +2418,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-12</Value>
+										<Value>-15</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -2456,7 +2581,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2545,6 +2670,11 @@
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
 										<Value>-5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2700,7 +2830,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-13</Value>
+										<Value>-15</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -2961,7 +3091,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-9</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>

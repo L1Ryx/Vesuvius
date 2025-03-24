@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99e3634ab2d4712bae794d9917c073, type: 3}
   m_Name: _PlayerInfo
   m_EditorClassIdentifier: 
-  hasCompletedDemo: 0
-  maximumHealth: 20
+  hasCompletedDemo: 1
+  maximumHealth: 5
   currentHealth: 5
-  totalCurrency: 271
-  totemPower: 9
+  totalCurrency: 0
+  totemPower: 55
   abilityCost: 25
-  lastCurrencyChangeAmount: 8
-  sceneToLoad: 01-02
-  spawnLocation: {x: 60, y: 4}
+  lastCurrencyChangeAmount: -35
+  sceneToLoad: 01-04
+  spawnLocation: {x: 3, y: 4}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []

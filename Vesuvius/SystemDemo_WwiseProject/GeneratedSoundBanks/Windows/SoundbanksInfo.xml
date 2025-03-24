@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{C22119A2-4AB1-FFCB-D332-81708B18EB56}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{68E400BD-D8A6-1252-199D-F47D8FF7409A}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -48,7 +48,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{67BFA1E6-DA8C-2AFB-F55E-E8AD223B6F58}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{0A5CF314-F216-FC92-75C9-06D9EE24CAD6}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -128,9 +128,9 @@
 					<ShortName>SFX_Slash_R1_V1.wav</ShortName>
 					<CachePath>SFX/SFX_Slash_R1_V1_818F3B66.wem</CachePath>
 				</File>
-				<File Id="297668156" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MUS_BigBlueTune_NT_V1.wav</ShortName>
-					<CachePath>SFX/MUS_BigBlueTune_NT_V1_27EECB96.wem</CachePath>
+				<File Id="317449928" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_BigBlueTune_Mono_NT_V1.wav</ShortName>
+					<CachePath>SFX/MUS_BigBlueTune_Mono_NT_V1_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="318142682" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_GoatAttack_R2_V1.wav</ShortName>
@@ -261,6 +261,11 @@
 					<CachePath>SFX/SFX_MidgeWalk_R1_V1_72F1482B.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1763592331" Name="New_Meter" LibName="Wwise Meter" LibId="8454147"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
 				<Event Id="834058527" Name="Play_Abileh" DurationType="OneShot" DurationMin="1.0038698" DurationMax="1.0038698">
 					<MediaRefs>
@@ -280,8 +285,13 @@
 				</Event>
 				<Event Id="2958765961" Name="Play_BigBlueSolo" MaxAttenuation="100" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="297668156"/>
+						<MediaRef Id="317449928"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1763592331"/>
+						</ShareSets>
+					</PluginRefs>
 					<AuxBusRefs>
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
@@ -577,5 +587,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9D198B0D-D8E1-E5EE-410E-16DB53E7311E}</FileHash>
+	<FileHash>{B73B59BE-AD56-0A7D-CF37-1AC7A2DDDB76}</FileHash>
 </SoundBanksInfo>
