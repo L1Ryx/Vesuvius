@@ -1,4 +1,4 @@
-using ScriptableObjects.SceneAudio;
+using _ScriptableObjects.SceneAudio;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;

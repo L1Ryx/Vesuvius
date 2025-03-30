@@ -1,4 +1,4 @@
-using ScriptableObjects.PlayerInfo;
+using _ScriptableObjects.PlayerInfo;
 using UnityEngine;
 using UnityEngine.UI;
 
