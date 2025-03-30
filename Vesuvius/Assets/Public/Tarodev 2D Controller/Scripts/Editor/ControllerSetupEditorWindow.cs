@@ -48,8 +48,7 @@ public class ControllerSetupEditorWindow : EditorWindow
         rootVisualElement.style.paddingTop = 10;
         rootVisualElement.style.paddingBottom = 10;
     }
-
-    [MenuItem("Tarodev Controller/Setup Window")]
+    
     public static void ShowMyEditor() => ShowWindow();
 
     private static void ShowWindow()
