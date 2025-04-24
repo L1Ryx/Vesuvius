@@ -1,0 +1,2002 @@
+fileFormatVersion: 2
+guid: 90e5ea5525ed84ffe8d8e9c93b0a2ee3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5437936630132042591
+    second: Snow-Tunnel-Tileset-8x_0
+  - first:
+      213: -1676177951952601208
+    second: Snow-Tunnel-Tileset-8x_1
+  - first:
+      213: -7516695689541821438
+    second: Snow-Tunnel-Tileset-8x_2
+  - first:
+      213: -301164164727528616
+    second: Snow-Tunnel-Tileset-8x_3
+  - first:
+      213: 7314441198515615104
+    second: Snow-Tunnel-Tileset-8x_4
+  - first:
+      213: -3506696102453319389
+    second: Snow-Tunnel-Tileset-8x_5
+  - first:
+      213: 7650512857507234224
+    second: Snow-Tunnel-Tileset-8x_6
+  - first:
+      213: 4863354876651008441
+    second: Snow-Tunnel-Tileset-8x_7
+  - first:
+      213: 7191945872149972118
+    second: Snow-Tunnel-Tileset-8x_8
+  - first:
+      213: 7732173267733995174
+    second: Snow-Tunnel-Tileset-8x_9
+  - first:
+      213: 8049604035765422054
+    second: Snow-Tunnel-Tileset-8x_10
+  - first:
+      213: 1423583213397353163
+    second: Snow-Tunnel-Tileset-8x_11
+  - first:
+      213: 7535692138673214124
+    second: Snow-Tunnel-Tileset-8x_12
+  - first:
+      213: -3546521936897050953
+    second: Snow-Tunnel-Tileset-8x_13
+  - first:
+      213: -3088049609652145542
+    second: Snow-Tunnel-Tileset-8x_14
+  - first:
+      213: 469073195180659685
+    second: Snow-Tunnel-Tileset-8x_15
+  - first:
+      213: 4897431628902800938
+    second: Snow-Tunnel-Tileset-8x_16
+  - first:
+      213: 1559281056574470925
+    second: Snow-Tunnel-Tileset-8x_17
+  - first:
+      213: 4261983729935743489
+    second: Snow-Tunnel-Tileset-8x_18
+  - first:
+      213: 8444041378663973569
+    second: Snow-Tunnel-Tileset-8x_19
+  - first:
+      213: 1215664302235966185
+    second: Snow-Tunnel-Tileset-8x_20
+  - first:
+      213: -6481704783755643724
+    second: Snow-Tunnel-Tileset-8x_21
+  - first:
+      213: 4937339676925871662
+    second: Snow-Tunnel-Tileset-8x_22
+  - first:
+      213: -2483929780867048554
+    second: Snow-Tunnel-Tileset-8x_23
+  - first:
+      213: -5607836080201767514
+    second: Snow-Tunnel-Tileset-8x_24
+  - first:
+      213: -6061657231472292828
+    second: Snow-Tunnel-Tileset-8x_25
+  - first:
+      213: 2439689140097787616
+    second: Snow-Tunnel-Tileset-8x_26
+  - first:
+      213: -4831836451365712685
+    second: Snow-Tunnel-Tileset-8x_27
+  - first:
+      213: -4651841008325686761
+    second: Snow-Tunnel-Tileset-8x_28
+  - first:
+      213: -8625141216028175280
+    second: Snow-Tunnel-Tileset-8x_29
+  - first:
+      213: -7676593705164134884
+    second: Snow-Tunnel-Tileset-8x_30
+  - first:
+      213: 2099242332012713519
+    second: Snow-Tunnel-Tileset-8x_31
+  - first:
+      213: -1597039600853884118
+    second: Snow-Tunnel-Tileset-8x_32
+  - first:
+      213: 4444276588102309166
+    second: Snow-Tunnel-Tileset-8x_33
+  - first:
+      213: -915026598122149175
+    second: Snow-Tunnel-Tileset-8x_34
+  - first:
+      213: 1587139760236053745
+    second: Snow-Tunnel-Tileset-8x_35
+  - first:
+      213: 3764286962969064143
+    second: Snow-Tunnel-Tileset-8x_36
+  - first:
+      213: -8103082684071802020
+    second: Snow-Tunnel-Tileset-8x_37
+  - first:
+      213: 3428106035500119746
+    second: Snow-Tunnel-Tileset-8x_38
+  - first:
+      213: -930903972291688833
+    second: Snow-Tunnel-Tileset-8x_39
+  - first:
+      213: 186473015626013474
+    second: Snow-Tunnel-Tileset-8x_40
+  - first:
+      213: -5891997987122320335
+    second: Snow-Tunnel-Tileset-8x_41
+  - first:
+      213: 4321713397386183238
+    second: Snow-Tunnel-Tileset-8x_42
+  - first:
+      213: -5983057012109844960
+    second: Snow-Tunnel-Tileset-8x_43
+  - first:
+      213: -7333043393066367034
+    second: Snow-Tunnel-Tileset-8x_44
+  - first:
+      213: -3337643722209584511
+    second: Snow-Tunnel-Tileset-8x_45
+  - first:
+      213: -4465602800294748333
+    second: Snow-Tunnel-Tileset-8x_46
+  - first:
+      213: 1038478969002386365
+    second: Snow-Tunnel-Tileset-8x_47
+  - first:
+      213: 4865746050115727597
+    second: Snow-Tunnel-Tileset-8x_48
+  - first:
+      213: 3934233472591719757
+    second: Snow-Tunnel-Tileset-8x_49
+  - first:
+      213: -4702279698830046869
+    second: Snow-Tunnel-Tileset-8x_50
+  - first:
+      213: 1420808612868723066
+    second: Snow-Tunnel-Tileset-8x_51
+  - first:
+      213: -870921718276058406
+    second: Snow-Tunnel-Tileset-8x_52
+  - first:
+      213: 6032852709845174902
+    second: Snow-Tunnel-Tileset-8x_53
+  - first:
+      213: -8139643539529718884
+    second: Snow-Tunnel-Tileset-8x_54
+  - first:
+      213: -9204259260090198956
+    second: Snow-Tunnel-Tileset-8x_55
+  - first:
+      213: 1687296090255104066
+    second: Snow-Tunnel-Tileset-8x_56
+  - first:
+      213: 6992920222591796855
+    second: Snow-Tunnel-Tileset-8x_57
+  - first:
+      213: -1355844413837770392
+    second: Snow-Tunnel-Tileset-8x_58
+  - first:
+      213: -6312582537093346744
+    second: Snow-Tunnel-Tileset-8x_59
+  - first:
+      213: -5248883905698623493
+    second: Snow-Tunnel-Tileset-8x_60
+  - first:
+      213: 4334413523144866228
+    second: Snow-Tunnel-Tileset-8x_61
+  - first:
+      213: 4016919571407040156
+    second: Snow-Tunnel-Tileset-8x_62
+  - first:
+      213: -855912647787284715
+    second: Snow-Tunnel-Tileset-8x_63
+  - first:
+      213: -7231226253685277810
+    second: Snow-Tunnel-Tileset-8x_64
+  - first:
+      213: 3644993182092665759
+    second: Snow-Tunnel-Tileset-8x_65
+  - first:
+      213: -2322377928812308078
+    second: Snow-Tunnel-Tileset-8x_66
+  - first:
+      213: 7670039071009973844
+    second: Snow-Tunnel-Tileset-8x_67
+  - first:
+      213: 7854822268568095003
+    second: Snow-Tunnel-Tileset-8x_68
+  - first:
+      213: -5876347330961418782
+    second: Snow-Tunnel-Tileset-8x_69
+  - first:
+      213: -6866180064609197801
+    second: Snow-Tunnel-Tileset-8x_70
+  - first:
+      213: -8580203798915711770
+    second: Snow-Tunnel-Tileset-8x_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2303
+        width: 129
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5bea1ebd8e677b40800000000000000
+      internalID: 5437936630132042591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 2175
+        width: 386
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ff58198050db8e0800000000000000
+      internalID: -1676177951952601208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_2
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 2175
+        width: 386
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c562478155fa790800000000000000
+      internalID: -7516695689541821438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_3
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2175
+        width: 130
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853a65ea9cc02dbf0800000000000000
+      internalID: -301164164727528616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_4
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 2303
+        width: 386
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0857108348d128560800000000000000
+      internalID: 7314441198515615104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_5
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 2303
+        width: 114
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329e50e5976b55fc0800000000000000
+      internalID: -3506696102453319389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_6
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 2303
+        width: 98
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b10745e8e41c2a60800000000000000
+      internalID: 7650512857507234224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_7
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 2303
+        width: 98
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b1727f3e7b1e7340800000000000000
+      internalID: 4863354876651008441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1791
+        width: 257
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69406598aaceec360800000000000000
+      internalID: 7191945872149972118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_9
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1791
+        width: 258
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae5e05ce923e4b60800000000000000
+      internalID: 7732173267733995174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_10
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 1991
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e7495ec830f5bf60800000000000000
+      internalID: 8049604035765422054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_11
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 2007
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc222ced36591c310800000000000000
+      internalID: 1423583213397353163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_12
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 2007
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca212560318249860800000000000000
+      internalID: 7535692138673214124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_13
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 1959
+        width: 66
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6fe13b61938cec0800000000000000
+      internalID: -3546521936897050953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_14
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 2023
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7276efbd3b0525d0800000000000000
+      internalID: -3088049609652145542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_15
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 1967
+        width: 42
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e39664f59b728600800000000000000
+      internalID: 469073195180659685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_16
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1991
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e93886e1c27f340800000000000000
+      internalID: 4897431628902800938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_17
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 1919
+        width: 98
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0bfd1a0cdda3a510800000000000000
+      internalID: 1559281056574470925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_18
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1919
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a70551f9b952b30800000000000000
+      internalID: 4261983729935743489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_19
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1919
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c247fb35e24f2570800000000000000
+      internalID: 8444041378663973569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_20
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 1919
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ead5e4fd38eed010800000000000000
+      internalID: 1215664302235966185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_21
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1919
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b47b4937db5c06a0800000000000000
+      internalID: -6481704783755643724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_22
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1919
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26cb9ae644f48440800000000000000
+      internalID: 4937339676925871662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_23
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1919
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69bd764560f478dd0800000000000000
+      internalID: -2483929780867048554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_24
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1919
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a564f0fbc6fc22b0800000000000000
+      internalID: -5607836080201767514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_25
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1919
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c8aef2ddaa0eba0800000000000000
+      internalID: -6061657231472292828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_26
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1919
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e628edc8548bd120800000000000000
+      internalID: 2439689140097787616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_27
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1919
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc009ff85ed1fcb0800000000000000
+      internalID: -4831836451365712685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_28
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1895
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a072bdf37517fb0800000000000000
+      internalID: -4651841008325686761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_29
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 1871
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0545f0113c75d4880800000000000000
+      internalID: -8625141216028175280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_30
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 1879
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1621be82b2477590800000000000000
+      internalID: -7676593705164134884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_31
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1895
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26941957c1022d10800000000000000
+      internalID: 2099242332012713519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_32
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 1871
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a236fdac1fc26d9e0800000000000000
+      internalID: -1597039600853884118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_33
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1887
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e255c65920e3dad30800000000000000
+      internalID: 4444276588102309166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_34
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 1879
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca25e2382c2d43f0800000000000000
+      internalID: -915026598122149175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_35
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1895
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4c4c1f337a60610800000000000000
+      internalID: 1587139760236053745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_36
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1895
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc2b76c7c0f6d3430800000000000000
+      internalID: 3764286962969064143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_37
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 1887
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5b08461b311c8f80800000000000000
+      internalID: -8103082684071802020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_38
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 1879
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c67b52c644139f20800000000000000
+      internalID: 3428106035500119746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_39
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 1919
+        width: 114
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76cd83f4c3c413f0800000000000000
+      internalID: -930903972291688833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_40
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 1919
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b9590483c769200800000000000000
+      internalID: 186473015626013474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_41
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1791
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ce1404c0b6b3ea0800000000000000
+      internalID: -5891997987122320335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_42
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1791
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6420040007fc9fb30800000000000000
+      internalID: 4321713397386183238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_43
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 1791
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e584ad859e7fca0800000000000000
+      internalID: -5983057012109844960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_44
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1791
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c701c9d2ebcb3a90800000000000000
+      internalID: -7333043393066367034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_45
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 1791
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18a92eed7be4ea1d0800000000000000
+      internalID: -3337643722209584511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_46
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 1791
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f1174b9edf602c0800000000000000
+      internalID: -4465602800294748333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_47
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1791
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3e916ce1b696e00800000000000000
+      internalID: 1038478969002386365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_48
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 1791
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de07864b04a968340800000000000000
+      internalID: 4865746050115727597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_49
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1663
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4de745bf74399630800000000000000
+      internalID: 3934233472591719757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_50
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1663
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6944b417852ebeb0800000000000000
+      internalID: -4702279698830046869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_51
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1663
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a711bd7d7e9b7b310800000000000000
+      internalID: 1420808612868723066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_52
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1695
+        width: 386
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad29bf2cf4dd9e3f0800000000000000
+      internalID: -870921718276058406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1407
+        width: 257
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a0390839ff8b350800000000000000
+      internalID: 6032852709845174902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_54
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1407
+        width: 258
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c932704935d2a0f80800000000000000
+      internalID: -8139643539529718884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_55
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 1663
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45459bd18f6e34080800000000000000
+      internalID: -9204259260090198956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_56
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1663
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2489f8abada7a6710800000000000000
+      internalID: 1687296090255104066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_57
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1663
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776ca3274e7db0160800000000000000
+      internalID: 6992920222591796855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_58
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 1279
+        width: 66
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861808e60b21f2de0800000000000000
+      internalID: -1355844413837770392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_59
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 1535
+        width: 98
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a8735c0a33568a0800000000000000
+      internalID: -6312582537093346744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_60
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1535
+        width: 130
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff8195c5e73827b0800000000000000
+      internalID: -5248883905698623493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_61
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 1407
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9f2b4722ee62c30800000000000000
+      internalID: 4334413523144866228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_62
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 1311
+        width: 130
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ee7015117feb730800000000000000
+      internalID: 4016919571407040156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_63
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 1279
+        width: 98
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517ffdd4bff2f14f0800000000000000
+      internalID: -855912647787284715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_64
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 663
+        width: 466
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b3c92f80685ab90800000000000000
+      internalID: -7231226253685277810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_65
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 799
+        width: 82
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93aa53bcfd959230800000000000000
+      internalID: 3644993182092665759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_66
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 911
+        width: 234
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2995fe6049145cfd0800000000000000
+      internalID: -2322377928812308078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_67
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 911
+        width: 234
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456aae0c5e3717a60800000000000000
+      internalID: 7670039071009973844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 385
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1944d39c3fe10d60800000000000000
+      internalID: 7854822268568095003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_69
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 535
+        width: 234
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5da399c35037ea0800000000000000
+      internalID: -5876347330961418782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_70
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 535
+        width: 234
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711a91d1c9d66b0a0800000000000000
+      internalID: -6866180064609197801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Snow-Tunnel-Tileset-8x_71
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 399
+        width: 338
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecfb21da1efce880800000000000000
+      internalID: -8580203798915711770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Snow-Tunnel-Tileset-8x_0: 5437936630132042591
+      Snow-Tunnel-Tileset-8x_1: -1676177951952601208
+      Snow-Tunnel-Tileset-8x_10: 8049604035765422054
+      Snow-Tunnel-Tileset-8x_11: 1423583213397353163
+      Snow-Tunnel-Tileset-8x_12: 7535692138673214124
+      Snow-Tunnel-Tileset-8x_13: -3546521936897050953
+      Snow-Tunnel-Tileset-8x_14: -3088049609652145542
+      Snow-Tunnel-Tileset-8x_15: 469073195180659685
+      Snow-Tunnel-Tileset-8x_16: 4897431628902800938
+      Snow-Tunnel-Tileset-8x_17: 1559281056574470925
+      Snow-Tunnel-Tileset-8x_18: 4261983729935743489
+      Snow-Tunnel-Tileset-8x_19: 8444041378663973569
+      Snow-Tunnel-Tileset-8x_2: -7516695689541821438
+      Snow-Tunnel-Tileset-8x_20: 1215664302235966185
+      Snow-Tunnel-Tileset-8x_21: -6481704783755643724
+      Snow-Tunnel-Tileset-8x_22: 4937339676925871662
+      Snow-Tunnel-Tileset-8x_23: -2483929780867048554
+      Snow-Tunnel-Tileset-8x_24: -5607836080201767514
+      Snow-Tunnel-Tileset-8x_25: -6061657231472292828
+      Snow-Tunnel-Tileset-8x_26: 2439689140097787616
+      Snow-Tunnel-Tileset-8x_27: -4831836451365712685
+      Snow-Tunnel-Tileset-8x_28: -4651841008325686761
+      Snow-Tunnel-Tileset-8x_29: -8625141216028175280
+      Snow-Tunnel-Tileset-8x_3: -301164164727528616
+      Snow-Tunnel-Tileset-8x_30: -7676593705164134884
+      Snow-Tunnel-Tileset-8x_31: 2099242332012713519
+      Snow-Tunnel-Tileset-8x_32: -1597039600853884118
+      Snow-Tunnel-Tileset-8x_33: 4444276588102309166
+      Snow-Tunnel-Tileset-8x_34: -915026598122149175
+      Snow-Tunnel-Tileset-8x_35: 1587139760236053745
+      Snow-Tunnel-Tileset-8x_36: 3764286962969064143
+      Snow-Tunnel-Tileset-8x_37: -8103082684071802020
+      Snow-Tunnel-Tileset-8x_38: 3428106035500119746
+      Snow-Tunnel-Tileset-8x_39: -930903972291688833
+      Snow-Tunnel-Tileset-8x_4: 7314441198515615104
+      Snow-Tunnel-Tileset-8x_40: 186473015626013474
+      Snow-Tunnel-Tileset-8x_41: -5891997987122320335
+      Snow-Tunnel-Tileset-8x_42: 4321713397386183238
+      Snow-Tunnel-Tileset-8x_43: -5983057012109844960
+      Snow-Tunnel-Tileset-8x_44: -7333043393066367034
+      Snow-Tunnel-Tileset-8x_45: -3337643722209584511
+      Snow-Tunnel-Tileset-8x_46: -4465602800294748333
+      Snow-Tunnel-Tileset-8x_47: 1038478969002386365
+      Snow-Tunnel-Tileset-8x_48: 4865746050115727597
+      Snow-Tunnel-Tileset-8x_49: 3934233472591719757
+      Snow-Tunnel-Tileset-8x_5: -3506696102453319389
+      Snow-Tunnel-Tileset-8x_50: -4702279698830046869
+      Snow-Tunnel-Tileset-8x_51: 1420808612868723066
+      Snow-Tunnel-Tileset-8x_52: -870921718276058406
+      Snow-Tunnel-Tileset-8x_53: 6032852709845174902
+      Snow-Tunnel-Tileset-8x_54: -8139643539529718884
+      Snow-Tunnel-Tileset-8x_55: -9204259260090198956
+      Snow-Tunnel-Tileset-8x_56: 1687296090255104066
+      Snow-Tunnel-Tileset-8x_57: 6992920222591796855
+      Snow-Tunnel-Tileset-8x_58: -1355844413837770392
+      Snow-Tunnel-Tileset-8x_59: -6312582537093346744
+      Snow-Tunnel-Tileset-8x_6: 7650512857507234224
+      Snow-Tunnel-Tileset-8x_60: -5248883905698623493
+      Snow-Tunnel-Tileset-8x_61: 4334413523144866228
+      Snow-Tunnel-Tileset-8x_62: 4016919571407040156
+      Snow-Tunnel-Tileset-8x_63: -855912647787284715
+      Snow-Tunnel-Tileset-8x_64: -7231226253685277810
+      Snow-Tunnel-Tileset-8x_65: 3644993182092665759
+      Snow-Tunnel-Tileset-8x_66: -2322377928812308078
+      Snow-Tunnel-Tileset-8x_67: 7670039071009973844
+      Snow-Tunnel-Tileset-8x_68: 7854822268568095003
+      Snow-Tunnel-Tileset-8x_69: -5876347330961418782
+      Snow-Tunnel-Tileset-8x_7: 4863354876651008441
+      Snow-Tunnel-Tileset-8x_70: -6866180064609197801
+      Snow-Tunnel-Tileset-8x_71: -8580203798915711770
+      Snow-Tunnel-Tileset-8x_8: 7191945872149972118
+      Snow-Tunnel-Tileset-8x_9: 7732173267733995174
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
