@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c5e5b14821ac48d983ca780433dc58c
+guid: e0198695ae0a9134587e64f6340dbde6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7578531924060614361
-    second: Chinchilla-Descend_0
+      213: -371094484400313324
+    second: eye fire1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chinchilla-Descend_0
+      name: eye fire1_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 98
-        height: 128
+        x: 0
+        y: 5
+        width: 32
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9de2794d1aa5c2960800000000000000
-      internalID: 7578531924060614361
+      spriteID: 41c6637588b99daf0800000000000000
+      internalID: -371094484400313324
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Chinchilla-Descend_0: 7578531924060614361
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

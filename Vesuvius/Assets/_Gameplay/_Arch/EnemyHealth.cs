@@ -14,6 +14,7 @@ namespace _Gameplay._Arch
         public bool giveUpwardsForce = false;
         public bool canBeKnockedBack = true;
         public bool isLiveEnemy = true;
+        public bool destroyImmediately = false;
 
         [Header("Flash Settings")]
         [SerializeField] private bool shouldFlashOnDamage = true; // Toggle for flashing
@@ -84,6 +85,11 @@ namespace _Gameplay._Arch
             damageable = false; // Make the enemy unhittable
 
             gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+            if(destroyImmediately)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
 
             // Change sprite appearance
             if (sr != null)
