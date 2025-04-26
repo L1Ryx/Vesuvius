@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using _ScriptableObjects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace _Gameplay._Arch
 {
@@ -22,12 +24,55 @@ namespace _Gameplay._Arch
 
         private Queue<IEnumerator> tutorialQueue = new Queue<IEnumerator>();
         private bool isPlaying = false;
+        private InputEventListener inputEventListener;
 
         public void PlayMoveText() => EnqueueTutorial("Move", moveText);
         public void PlayJumpText() => EnqueueTutorial("Jump", jumpText);
         public void PlayInteractionText() => EnqueueTutorial("Interaction", interactionText);
         public void PlaySlashText() => EnqueueTutorial("Slash", slashText);
         public void PlayRebalanceText() => EnqueueTutorial("Rebalance", rebalanceText);
+
+        //Hacky context switching for tutorials based on input
+        private InputDevice lastDevice = null;
+        private InputControl lastControl = null;
+
+        public void OnEnable()
+        {
+            InputSystem.onActionChange += (obj, change) =>
+            {
+                
+                if (change == InputActionChange.ActionPerformed)
+                {
+                    var inputAction = (InputAction) obj;
+                    lastControl = inputAction.activeControl;
+                    if(lastDevice == null)
+                    {
+                        lastDevice = lastControl.device;
+                    }
+                   
+                }
+
+                if(lastDevice != lastControl.device)
+                {
+                    lastDevice = lastControl.device;
+                    if(lastDevice.displayName == "Xbox Controller")
+                    {
+                        jumpText.text = "A - Jump";
+                        interactionText.text = "A - Interact";
+                        slashText.text = "X - Slash";
+                        rebalanceText.text = "B - Rebalance";
+                    }
+                    else
+                    {
+                        jumpText.text = "SPACE - Jump";
+                        interactionText.text = "SPACE - Interact";
+                        slashText.text = "Z - Slash";
+                        rebalanceText.text = "X - Rebalance";
+                    }
+                }
+            };
+        }
+        //end hack
 
         private void EnqueueTutorial(string id, TextMeshProUGUI text)
         {

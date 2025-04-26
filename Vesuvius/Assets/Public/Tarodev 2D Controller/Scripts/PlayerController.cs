@@ -213,7 +213,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
         public bool IsWalking()
         {
             // Check if the player is moving (left or right) and is grounded
-            return this.Input.x != 0 && this.IsGrounded();
+            return Math.Abs(this.Input.x) > 0.5 && this.IsGrounded();
         }
 
         public bool HasLanded()
@@ -381,7 +381,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
             Right = new Vector2(Up.y, -Up.x);
             _framePosition = _rb.position;
 
-            _hasInputThisFrame = _frameInput.Move.x != 0;
+            _hasInputThisFrame = Math.Abs(_frameInput.Move.x) > 0.5;
 
             Velocity = _rb.linearVelocity;
             _trimmedFrameVelocity = new Vector2(Velocity.x, 0);
