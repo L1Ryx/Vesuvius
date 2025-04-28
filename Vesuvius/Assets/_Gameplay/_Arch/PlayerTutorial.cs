@@ -63,7 +63,7 @@ namespace _Gameplay._Arch
                         jumpText.text = "A - Jump";
                         interactionText.text = "A - Interact";
                         slashText.text = "X - Slash";
-                        rebalanceText.text = "B - Rebalance";
+                        rebalanceText.text = "B - Heal";
                     }
                     else if(lastDevice.displayName == "DualSense Wireless Controller")
                     {
@@ -71,7 +71,7 @@ namespace _Gameplay._Arch
                         jumpText.text = "X - Jump";
                         interactionText.text = "X - Interact";
                         slashText.text = "Square - Slash";
-                        rebalanceText.text = "Circle - Rebalance";
+                        rebalanceText.text = "Circle - Heal";
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace _Gameplay._Arch
                         jumpText.text = "SPACE - Jump";
                         interactionText.text = "SPACE - Interact";
                         slashText.text = "Z - Slash";
-                        rebalanceText.text = "X - Rebalance";
+                        rebalanceText.text = "X - Heal";
                     }
                 }
             };

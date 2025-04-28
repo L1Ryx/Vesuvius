@@ -37977,10 +37977,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2521961792184658340, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      propertyPath: m_positionOffsetData.positionOffset.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_Name
       value: Player
