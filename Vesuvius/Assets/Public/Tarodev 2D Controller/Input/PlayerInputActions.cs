@@ -42,7 +42,7 @@ namespace TarodevController
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""0c02acad-80d1-4a54-949e-baefddab88d5"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -161,17 +161,6 @@ namespace TarodevController
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""9d168e6e-7713-4ae3-b372-87fc73a539cc"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },

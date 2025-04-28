@@ -31260,12 +31260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7851868927020025900, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      propertyPath: m_text
-      value: 'SPACE - Interact
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4

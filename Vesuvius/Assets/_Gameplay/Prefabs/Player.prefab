@@ -25112,7 +25112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'F - Interact
+  m_text: 'SPACE - Interact
 
 '
   m_isRightToLeft: 0
@@ -25250,7 +25250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: L <-     -> R
+  m_text: '"<- Arrow Keys ->"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}

@@ -49,6 +49,8 @@ namespace _Gameplay._Arch
                     {
                         lastDevice = lastControl.device;
                     }
+
+                    //print(lastDevice.displayName);
                    
                 }
 
@@ -57,13 +59,23 @@ namespace _Gameplay._Arch
                     lastDevice = lastControl.device;
                     if(lastDevice.displayName == "Xbox Controller")
                     {
+                        moveText.text = "<- Left Stick ->";
                         jumpText.text = "A - Jump";
                         interactionText.text = "A - Interact";
                         slashText.text = "X - Slash";
                         rebalanceText.text = "B - Rebalance";
                     }
+                    else if(lastDevice.displayName == "DualSense Wireless Controller")
+                    {
+                        moveText.text = "<- Left Stick ->";
+                        jumpText.text = "X - Jump";
+                        interactionText.text = "X - Interact";
+                        slashText.text = "Square - Slash";
+                        rebalanceText.text = "Circle - Rebalance";
+                    }
                     else
                     {
+                        moveText.text = "<- Arrow Keys ->";
                         jumpText.text = "SPACE - Jump";
                         interactionText.text = "SPACE - Interact";
                         slashText.text = "Z - Slash";
