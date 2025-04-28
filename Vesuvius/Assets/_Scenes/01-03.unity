@@ -16431,7 +16431,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.31126, y: 17.883999, z: -10}
+  m_LocalPosition: {x: 9.333333, y: 17.883999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17726,11 +17726,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2468330018570116006, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.052998
+      value: -16.92
       objectReference: {fileID: 0}
     - target: {fileID: 2468330018570116006, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3190002
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2468330018570116006, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38425,7 +38425,7 @@ MonoBehaviour:
   costImage: {fileID: 1270278181}
   cost: 35
   enoughCurrencyColor: {r: 1, g: 1, b: 1, a: 1}
-  notEnoughCurrencyColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+  notEnoughCurrencyColor: {r: 0.9433962, g: 0.33374867, b: 0.33374867, a: 1}
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
   currencyChanged:
     m_PersistentCalls:
