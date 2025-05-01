@@ -38409,6 +38409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gateSwitchCanvas: {fileID: 8158281918605014792}
   interactPromptText: {fileID: 6239908600202936690}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   gate: {fileID: 1315691382}
   switchSpriteRenderer: {fileID: 7578462543051038618}
   lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}
