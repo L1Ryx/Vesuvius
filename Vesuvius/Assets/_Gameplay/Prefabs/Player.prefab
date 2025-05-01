@@ -51447,7 +51447,6 @@ GameObject:
   - component: {fileID: 7517684629864872955}
   - component: {fileID: 5988330557899355980}
   - component: {fileID: 8960616431485743352}
-  - component: {fileID: 4806598059031504698}
   - component: {fileID: 8528751291747480479}
   - component: {fileID: 3426251327303424372}
   m_Layer: 7
@@ -51641,34 +51640,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1629669531993419507}
         m_TargetAssemblyTypeName: PlayerTutorial, Assembly-CSharp
         m_MethodName: PlaySlashText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4806598059031504698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8669438076522541016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e89426149fe184bf4acf1adcb76b9efa, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1629669531993419507}
-        m_TargetAssemblyTypeName: PlayerTutorial, Assembly-CSharp
-        m_MethodName: PlayInteractionText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
