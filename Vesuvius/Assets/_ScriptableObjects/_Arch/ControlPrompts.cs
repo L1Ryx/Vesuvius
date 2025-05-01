@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace _ScriptableObjects
 {
+    /// <summary>
+    /// SO that holds all prompts containing a control button, for use with text replacement
+    /// New prompts will need new entries here.          
+    /// </summary>
     [CreateAssetMenu(fileName = "ControlPrompts", menuName = "ScriptableObjects/ControlPrompts", order = 2)]
     public class ControlPrompts : ScriptableObject
     {

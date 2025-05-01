@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cradleCanvas: {fileID: 6137447546697416062}
   promptText: {fileID: 6948507484954812593}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   activationRadius: 2
   menuPrefab: {fileID: 4450901592428683310, guid: 773eaf7f2614446ea8abd819311b1f78, type: 3}
   checkpointScene: 01-02

@@ -38,30 +38,20 @@ namespace _Gameplay._Arch
 
         public void OnControlsChanged()
         {
-            print("Controls Changed");
-            UpdateUIHints(regenerate: true); // Force re-generation of our cached text strings to pick up new bindings.
+            UpdateUIHints();
         }
 
-        private void UpdateUIHints(bool regenerate = false)
+        //TODO: We can eventually consider trimming down these tutorial text components to just one that we replace given the situation.
+        //maybe a switch case depending on which tutorial is active
+        private void UpdateUIHints()
         {
-            controlPrompts.movePrompt = controlPrompts.movePromptTemplate.Replace("{Move}",
-                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Move"]));
             moveText.text = controlPrompts.movePrompt;
            
-            controlPrompts.jumpPrompt = controlPrompts.jumpPromptTemplate.Replace("{Jump}",
-                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Jump"]));
             jumpText.text = controlPrompts.jumpPrompt;
             
-            controlPrompts.swingPrompt = controlPrompts.swingPromptTemplate.Replace("{Swing}",
-                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Swing"]));
             slashText.text = controlPrompts.swingPrompt;
 
-            controlPrompts.healPrompt = controlPrompts.healPromptTemplate.Replace("{Heal}",
-                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Heal"]));
             rebalanceText.text = controlPrompts.healPrompt;
-
-            controlPrompts.interactPrompt = controlPrompts.interactPromptTemplate.Replace("{Interact}",
-                GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Interact"]));
         }
 
         string GetBindingDisplayStringOrCompositeName(InputAction action)

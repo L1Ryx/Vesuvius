@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13a8b62befd37d46814966cde89ea32, type: 3}
   m_Name: ControlPrompts
   m_EditorClassIdentifier: 
-  moveTutorial: <- {Move} ->
-  swingTutorial: '{Swing} - Slash'
-  jumpTutorial: '{Jump} - Jump'
-  healTutorial: '{Heal} - Heal'
-  interactTutorial: Use \n {Interact}
+  movePromptTemplate: <- {Move} ->
+  swingPromptTemplate: '{Swing} - Slash'
+  jumpPromptTemplate: '{Jump} - Jump'
+  healPromptTemplate: '{Heal} - Heal'
+  interactPromptTemplate: Use\n{Interact}
   movePrompt: 
   swingPrompt: 
   jumpPrompt: 
