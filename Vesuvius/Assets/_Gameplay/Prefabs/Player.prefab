@@ -40365,6 +40365,7 @@ GameObject:
   - component: {fileID: 2521961792184658340}
   - component: {fileID: 4775113112952438693}
   - component: {fileID: 6067522800381180651}
+  - component: {fileID: 7697747633833973207}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -40938,6 +40939,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+--- !u!114 &7697747633833973207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069206293709486742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4200c45eb07fd4fdca0650c5c4fcf07e, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16f4a67b-c091-47ce-873b-c48bb1e9128b
+    m_ActionName: 'Player/Interact[/Keyboard/f,/XInputControllerWindows/buttonSouth,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fa0b10fc-78d1-46d6-b53e-e075f5384580
+    m_ActionName: 'Player/Heal[/Keyboard/x,/XInputControllerWindows/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f44b7bf9-3f56-4d82-9b20-46907f6c3694
+    m_ActionName: 'Player/Swing[/Keyboard/z,/XInputControllerWindows/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d43877b-54f4-4426-8a1c-8011c8535dba
+    m_ActionName: 'Player/Navigate[/Keyboard/downArrow,/Keyboard/upArrow,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/up]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a1fbe71b-c346-4201-8902-a76a41be00db
+    m_ActionName: 'Player/Confirm[/Keyboard/space,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 59a083a6-ca2d-46b9-8a99-2252c7670890
+    m_ActionName: 'Player/Quit[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 459c5922-055a-4ed6-900c-a4fa88d1e035
+    m_ActionName: 'Player/Move[/XInputControllerWindows/leftStick,/DualSenseGamepadHID/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/dpad,/DualSenseGamepadHID/dpad]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3c2ffbd5-4d60-4d2e-ac57-7b8ec4fad8ec
+    m_ActionName: 'Player/Jump[/XInputControllerWindows/buttonSouth,/DualSenseGamepadHID/buttonSouth,/Keyboard/space]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &6079751377557621919
 GameObject:
   m_ObjectHideFlags: 0
@@ -51344,6 +51419,7 @@ GameObject:
   - component: {fileID: 8960616431485743352}
   - component: {fileID: 4806598059031504698}
   - component: {fileID: 8528751291747480479}
+  - component: {fileID: 3426251327303424372}
   m_Layer: 7
   m_Name: Tutorial Canvas
   m_TagString: Untagged
@@ -51458,6 +51534,7 @@ MonoBehaviour:
   tutorialData: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
   fadeRate: 0.7
   displayTime: 5
+  m_PlayerInput: {fileID: 7697747633833973207}
 --- !u!114 &7517684629864872955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51589,6 +51666,34 @@ MonoBehaviour:
       - m_Target: {fileID: 1629669531993419507}
         m_TargetAssemblyTypeName: PlayerTutorial, Assembly-CSharp
         m_MethodName: PlayRebalanceText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3426251327303424372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669438076522541016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1629669531993419507}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.PlayerTutorial, Assembly-CSharp
+        m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

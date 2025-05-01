@@ -32,59 +32,53 @@ namespace _Gameplay._Arch
         public void PlaySlashText() => EnqueueTutorial("Slash", slashText);
         public void PlayRebalanceText() => EnqueueTutorial("Rebalance", rebalanceText);
 
-        //Hacky context switching for tutorials based on input
-        private InputDevice lastDevice = null;
-        private InputControl lastControl = null;
+        //new attempt
+        private const string kLookAtObjectHelpTextFormat = "Press {pickup} to pick object up";
+        public PlayerInput m_PlayerInput;
+        //cached help texts
+        private string m_MoveText;
+        private string m_JumpText;
+        private string m_SlashText;
+        private string m_HealText;
 
-        public void OnEnable()
+        public void OnControlsChanged()
         {
-            InputSystem.onActionChange += (obj, change) =>
-            {
-                
-                if (change == InputActionChange.ActionPerformed)
-                {
-                    var inputAction = (InputAction) obj;
-                    lastControl = inputAction.activeControl;
-                    if(lastDevice == null)
-                    {
-                        lastDevice = lastControl.device;
-                    }
-
-                    //print(lastDevice.displayName);
-                   
-                }
-
-                if(lastDevice != lastControl.device)
-                {
-                    lastDevice = lastControl.device;
-                    if(lastDevice.displayName == "Xbox Controller")
-                    {
-                        moveText.text = "<- Left Stick ->";
-                        jumpText.text = "A - Jump";
-                        interactionText.text = "A - Interact";
-                        slashText.text = "X - Slash";
-                        rebalanceText.text = "B - Heal";
-                    }
-                    else if(lastDevice.displayName == "DualSense Wireless Controller")
-                    {
-                        moveText.text = "<- Left Stick ->";
-                        jumpText.text = "X - Jump";
-                        interactionText.text = "X - Interact";
-                        slashText.text = "Square - Slash";
-                        rebalanceText.text = "Circle - Heal";
-                    }
-                    else
-                    {
-                        moveText.text = "<- Arrow Keys ->";
-                        jumpText.text = "SPACE - Jump";
-                        interactionText.text = "SPACE - Interact";
-                        slashText.text = "Z - Slash";
-                        rebalanceText.text = "X - Heal";
-                    }
-                }
-            };
+            print("Controls Changed");
+            UpdateUIHints(regenerate: true); // Force re-generation of our cached text strings to pick up new bindings.
         }
-        //end hack
+
+        private void UpdateUIHints(bool regenerate = false)
+        {
+            m_MoveText = tutorialData.moveTutorial.Replace("{Move}",
+                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Move"]));
+            moveText.text = m_MoveText;
+           
+            m_JumpText = tutorialData.jumpTutorial.Replace("{Jump}",
+                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Jump"]));
+            jumpText.text = m_JumpText;
+            
+            m_SlashText = tutorialData.swingTutorial.Replace("{Swing}",
+                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Swing"]));
+            slashText.text = m_SlashText;
+
+            m_HealText = tutorialData.healTutorial.Replace("{Heal}",
+                            GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Heal"]));
+            rebalanceText.text = m_HealText;
+        }
+
+        string GetBindingDisplayStringOrCompositeName(InputAction action)
+        {
+            // if composite action / can't use binding index or need to specify
+            int bindingIndex = action.GetBindingIndex(group: m_PlayerInput.currentControlScheme);
+
+            if (action.bindings[bindingIndex].isPartOfComposite)
+            {
+                // hard coded logic - assumes that if you found a part of a composite, that it's the first one.
+                // And that the one preceeding it, must be the 'Composite head' that contains the parts
+                return action.bindings[bindingIndex-1].name;
+            }
+            else { return action.GetBindingDisplayString(); } // if not a composite, bindingId can just be updated
+        }
 
         private void EnqueueTutorial(string id, TextMeshProUGUI text)
         {
@@ -109,6 +103,7 @@ namespace _Gameplay._Arch
         private IEnumerator PlayTextCoroutine(TextMeshProUGUI text)
         {
             text.gameObject.SetActive(true);
+            //text.text = m_SlashText;
             CanvasGroup canvasGroup = text.GetComponent<CanvasGroup>();
 
             if (canvasGroup == null)

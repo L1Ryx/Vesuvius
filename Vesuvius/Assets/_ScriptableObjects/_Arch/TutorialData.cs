@@ -10,6 +10,13 @@ namespace _ScriptableObjects
         [Tooltip("List of tutorial IDs that have been shown.")]
         public List<string> shownTutorials = new List<string>();
 
+        [Header("Tutorial Text")]
+        //[Tooltip("List of tutorial IDs that have been shown.")]
+        public string moveTutorial;
+        public string swingTutorial;
+        public string jumpTutorial;
+        public string healTutorial;
+
         /// <summary>
         /// Marks a tutorial as shown by adding its ID to the list.
         /// </summary>
