@@ -33,13 +33,7 @@ namespace _Gameplay._Arch
         public void PlayRebalanceText() => EnqueueTutorial("Rebalance", rebalanceText);
 
         //new attempt
-        private const string kLookAtObjectHelpTextFormat = "Press {pickup} to pick object up";
         public PlayerInput m_PlayerInput;
-        //cached help texts
-        private string m_MoveText;
-        private string m_JumpText;
-        private string m_SlashText;
-        private string m_HealText;
 
         public void OnControlsChanged()
         {
@@ -49,21 +43,24 @@ namespace _Gameplay._Arch
 
         private void UpdateUIHints(bool regenerate = false)
         {
-            m_MoveText = tutorialData.moveTutorial.Replace("{Move}",
+            tutorialData.movePrompt = tutorialData.moveTutorial.Replace("{Move}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Move"]));
-            moveText.text = m_MoveText;
+            moveText.text = tutorialData.movePrompt;
            
-            m_JumpText = tutorialData.jumpTutorial.Replace("{Jump}",
+            tutorialData.jumpPrompt = tutorialData.jumpTutorial.Replace("{Jump}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Jump"]));
-            jumpText.text = m_JumpText;
+            jumpText.text = tutorialData.jumpPrompt;
             
-            m_SlashText = tutorialData.swingTutorial.Replace("{Swing}",
+            tutorialData.swingPrompt = tutorialData.swingTutorial.Replace("{Swing}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Swing"]));
-            slashText.text = m_SlashText;
+            slashText.text = tutorialData.swingPrompt;
 
-            m_HealText = tutorialData.healTutorial.Replace("{Heal}",
+            tutorialData.healPrompt = tutorialData.healTutorial.Replace("{Heal}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Heal"]));
-            rebalanceText.text = m_HealText;
+            rebalanceText.text = tutorialData.healPrompt;
+
+            tutorialData.interactPrompt = tutorialData.interactTutorial.Replace("{Interact}",
+                GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Interact"]));
         }
 
         string GetBindingDisplayStringOrCompositeName(InputAction action)

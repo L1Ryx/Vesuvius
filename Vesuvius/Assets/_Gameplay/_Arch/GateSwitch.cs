@@ -1,3 +1,4 @@
+using _ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ namespace _Gameplay._Arch
         [Header("UI References")]
         public Canvas gateSwitchCanvas;
         public TMP_Text interactPromptText;
+        public TutorialData tutorialData;
 
         [Header("Gate Reference")]
         public Gate gate;
@@ -50,6 +52,18 @@ namespace _Gameplay._Arch
             playerControls.Disable();
         }
 
+        //possible race condition currently, need to fix.
+        public void OnControlsChanged()
+        {
+            print("Controls Changed");
+            UpdateUIHints(regenerate: true); // Force re-generation of our cached text strings to pick up new bindings.
+        }
+
+        private void UpdateUIHints(bool regenerate = false)
+        {
+            interactPromptText.text = tutorialData.interactPrompt;
+        }
+
         private void Start()
         {
             player = FindObjectOfType<PlayerSpawner>()?.GetRuntimePlayer();
@@ -75,7 +89,6 @@ namespace _Gameplay._Arch
                 // Skip logic if the gate is unlocked or required references are missing
                 return;
             }
-
             HandleSwitchProximityLogic();
         }
 

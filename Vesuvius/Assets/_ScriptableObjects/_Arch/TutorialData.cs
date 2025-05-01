@@ -10,12 +10,21 @@ namespace _ScriptableObjects
         [Tooltip("List of tutorial IDs that have been shown.")]
         public List<string> shownTutorials = new List<string>();
 
-        [Header("Tutorial Text")]
+        [Header("Template Tutorial Text")]
         //[Tooltip("List of tutorial IDs that have been shown.")]
         public string moveTutorial;
         public string swingTutorial;
         public string jumpTutorial;
         public string healTutorial;
+        public string interactTutorial;
+
+        [Header("Scheme Tutorial Text")]
+        [Tooltip("Text replaced tutorial templates for current control scheme")]
+        public string movePrompt;
+        public string swingPrompt;
+        public string jumpPrompt;
+        public string healPrompt;
+        public string interactPrompt;
 
         /// <summary>
         /// Marks a tutorial as shown by adding its ID to the list.

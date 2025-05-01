@@ -92471,6 +92471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1160112996}
     m_Modifications:
+    - target: {fileID: 995893228548447997, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
+      propertyPath: tutorialData
+      value: 
+      objectReference: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
     - target: {fileID: 1798314019868974981, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.3
@@ -92531,12 +92535,54 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4633703831318630004, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 785997492}
+    - targetCorrespondingSourceObject: {fileID: 4633703831318630004, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2361741502831617224}
   m_SourcePrefab: {fileID: 100100000, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
 --- !u!4 &2361741502831617222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1798314019868974981, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
   m_PrefabInstance: {fileID: 2361741502831617221}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2361741502831617223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 995893228548447997, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
+  m_PrefabInstance: {fileID: 2361741502831617221}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785997491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a35bbe9a19c804adeb4ff2e63cd1e495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2361741502831617224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785997491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2361741502831617223}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.EmptyCradle, Assembly-CSharp
+        m_MethodName: OnControlsChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2995594732750335431
 PrefabInstance:
   m_ObjectHideFlags: 0

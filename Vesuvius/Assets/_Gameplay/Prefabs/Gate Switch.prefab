@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gateSwitchCanvas: {fileID: 2192820783302551296}
   interactPromptText: {fileID: 4165520709346808186}
+  tutorialData: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
   gate: {fileID: 0}
   switchSpriteRenderer: {fileID: 466799085841485714}
   lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}
@@ -206,7 +207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.11}
+  m_AnchoredPosition: {x: 0, y: 1.22}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1302606605359944102

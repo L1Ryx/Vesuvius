@@ -1,3 +1,4 @@
+using _ScriptableObjects;
 using Public.Tarodev_2D_Controller.Scripts;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace _Gameplay._Arch
         [Header("UI References")]
         public Canvas cradleCanvas;
         public TMP_Text promptText;
+        public TutorialData tutorialData;
 
         [Header("Settings")]
         public float activationRadius = 2f; // Distance for interaction
@@ -44,6 +46,17 @@ namespace _Gameplay._Arch
         {
             playerControls.Player.Interact.performed -= OnInteractPerformed;
             playerControls.Disable();
+        }
+
+        //possible race condition currently, need to fix.
+        public void OnControlsChanged()
+        {
+            UpdateUIHints(regenerate: true); // Force re-generation of our cached text strings to pick up new bindings.
+        }
+
+        private void UpdateUIHints(bool regenerate = false)
+        {
+            promptText.text = tutorialData.interactPrompt;
         }
 
         private void Start()
