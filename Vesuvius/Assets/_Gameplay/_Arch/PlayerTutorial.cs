@@ -34,6 +34,7 @@ namespace _Gameplay._Arch
 
         //new attempt
         public PlayerInput m_PlayerInput;
+        public ControlPrompts controlPrompts;
 
         public void OnControlsChanged()
         {
@@ -43,23 +44,23 @@ namespace _Gameplay._Arch
 
         private void UpdateUIHints(bool regenerate = false)
         {
-            tutorialData.movePrompt = tutorialData.moveTutorial.Replace("{Move}",
+            controlPrompts.movePrompt = controlPrompts.movePromptTemplate.Replace("{Move}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Move"]));
-            moveText.text = tutorialData.movePrompt;
+            moveText.text = controlPrompts.movePrompt;
            
-            tutorialData.jumpPrompt = tutorialData.jumpTutorial.Replace("{Jump}",
+            controlPrompts.jumpPrompt = controlPrompts.jumpPromptTemplate.Replace("{Jump}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Jump"]));
-            jumpText.text = tutorialData.jumpPrompt;
+            jumpText.text = controlPrompts.jumpPrompt;
             
-            tutorialData.swingPrompt = tutorialData.swingTutorial.Replace("{Swing}",
+            controlPrompts.swingPrompt = controlPrompts.swingPromptTemplate.Replace("{Swing}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Swing"]));
-            slashText.text = tutorialData.swingPrompt;
+            slashText.text = controlPrompts.swingPrompt;
 
-            tutorialData.healPrompt = tutorialData.healTutorial.Replace("{Heal}",
+            controlPrompts.healPrompt = controlPrompts.healPromptTemplate.Replace("{Heal}",
                             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Heal"]));
-            rebalanceText.text = tutorialData.healPrompt;
+            rebalanceText.text = controlPrompts.healPrompt;
 
-            tutorialData.interactPrompt = tutorialData.interactTutorial.Replace("{Interact}",
+            controlPrompts.interactPrompt = controlPrompts.interactPromptTemplate.Replace("{Interact}",
                 GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Interact"]));
         }
 

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gateSwitchCanvas: {fileID: 2192820783302551296}
   interactPromptText: {fileID: 4165520709346808186}
-  tutorialData: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   gate: {fileID: 0}
   switchSpriteRenderer: {fileID: 466799085841485714}
   lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}

@@ -10,7 +10,7 @@ namespace _Gameplay._Arch
         [Header("UI References")]
         public Canvas gateSwitchCanvas;
         public TMP_Text interactPromptText;
-        public TutorialData tutorialData;
+        public ControlPrompts controlPrompts;
 
         [Header("Gate Reference")]
         public Gate gate;
@@ -61,7 +61,7 @@ namespace _Gameplay._Arch
 
         private void UpdateUIHints(bool regenerate = false)
         {
-            interactPromptText.text = tutorialData.interactPrompt;
+            interactPromptText.text = controlPrompts.interactPrompt;
         }
 
         private void Start()

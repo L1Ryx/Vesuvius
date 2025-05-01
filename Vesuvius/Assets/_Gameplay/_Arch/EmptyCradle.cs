@@ -11,7 +11,7 @@ namespace _Gameplay._Arch
         [Header("UI References")]
         public Canvas cradleCanvas;
         public TMP_Text promptText;
-        public TutorialData tutorialData;
+        public ControlPrompts controlPrompts;
 
         [Header("Settings")]
         public float activationRadius = 2f; // Distance for interaction
@@ -56,7 +56,7 @@ namespace _Gameplay._Arch
 
         private void UpdateUIHints(bool regenerate = false)
         {
-            promptText.text = tutorialData.interactPrompt;
+            promptText.text = controlPrompts.interactPrompt;
         }
 
         private void Start()

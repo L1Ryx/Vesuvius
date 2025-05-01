@@ -51535,6 +51535,7 @@ MonoBehaviour:
   fadeRate: 0.7
   displayTime: 5
   m_PlayerInput: {fileID: 7697747633833973207}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
 --- !u!114 &7517684629864872955
 MonoBehaviour:
   m_ObjectHideFlags: 0

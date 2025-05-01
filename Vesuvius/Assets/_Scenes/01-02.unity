@@ -92475,6 +92475,10 @@ PrefabInstance:
       propertyPath: tutorialData
       value: 
       objectReference: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
+    - target: {fileID: 995893228548447997, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
+      propertyPath: controlPrompts
+      value: 
+      objectReference: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
     - target: {fileID: 1798314019868974981, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.3
