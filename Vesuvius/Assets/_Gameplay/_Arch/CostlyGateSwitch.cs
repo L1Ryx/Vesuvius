@@ -134,7 +134,7 @@ namespace _Gameplay._Arch
 
             // Check if the player has enough currency
             bool hasEnoughCurrency = playerInfo.GetTotalCurrency() >= cost;
-            print("Cost color");
+            //print("Cost color");
             // Set target color based on currency status
             costTargetColor = hasEnoughCurrency ? enoughCurrencyColor : notEnoughCurrencyColor;
             interactPromptText.text = hasEnoughCurrency ? controlPrompts.interactPrompt : "Not enough Clink";

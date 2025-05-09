@@ -71,7 +71,8 @@ namespace _Gameplay._Arch
         private void OnEnable()
         {
             playerControls.Enable();
-            StartCoroutine(FadeInUI());
+            StartCoroutine(HandleRest());
+            //StartCoroutine(FadeInUI());
             menuActive = true; // Menu is now active
 
             // Disable the Interact action
@@ -237,6 +238,7 @@ namespace _Gameplay._Arch
             SetImageAlpha(restImage, 0f);
 
             restPanel.SetActive(false);
+            StartCoroutine(FadeInUI());
             menuActive = true; // Unlock menu interaction
         }
 

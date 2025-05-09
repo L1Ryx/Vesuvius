@@ -11,6 +11,7 @@ namespace _Gameplay._Arch
         [Header("UI References")]
         public Canvas cradleCanvas;
         public TMP_Text promptText;
+        public TMP_Text epitaphText;
         public ControlPrompts controlPrompts;
 
         [Header("Settings")]
@@ -150,6 +151,11 @@ namespace _Gameplay._Arch
                 new Color(currentColor.r, currentColor.g, currentColor.b, targetColor.a),
                 Time.deltaTime * lerpSpeed
             );
+            epitaphText.color = Color.Lerp(     
+                currentColor,
+                new Color(currentColor.r, currentColor.g, currentColor.b, targetColor.a),
+                Time.deltaTime * lerpSpeed
+            );
         }
 
         private void SetTargetAlpha(float alpha)
@@ -165,6 +171,7 @@ namespace _Gameplay._Arch
         private void SetTextAlpha(float alpha)
         {
             promptText.color = new Color(promptText.color.r, promptText.color.g, promptText.color.b, alpha);
+            epitaphText.color = new Color(promptText.color.r, promptText.color.g, promptText.color.b, alpha);
         }
 
         private void OnInteractPerformed(InputAction.CallbackContext context)
