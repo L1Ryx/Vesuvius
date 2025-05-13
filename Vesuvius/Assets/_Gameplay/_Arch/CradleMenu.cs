@@ -18,6 +18,9 @@ namespace _Gameplay._Arch
         [Header("Other Text Elements")]
         public TMP_Text[] nonMenuTexts; // Texts not used as options (e.g., titles or descriptions)
 
+        [Header("Lore Text")]
+        public TMP_Text loreText;
+
         [Header("UI Images")]
         public Image[] uiImages; // UI images to be faded in and out
         [Header("Panels")]
@@ -153,6 +156,24 @@ namespace _Gameplay._Arch
                         StartCoroutine(SwitchPanels(mainPanel, readPanel));
                         isReading = true;
                         break;
+
+                    case "Lore":
+                        for (int i = 0; i < menuOptions.Length; i++)
+                        {
+                            if (i == selectedIndex)
+                            {
+                                menuOptions[i].color = selectedColor;
+                                menuOptions[i].fontStyle = FontStyles.Bold;
+                            }
+                            else
+                            {
+                                menuOptions[i].color = defaultColor;
+                                menuOptions[i].fontStyle = FontStyles.Normal;
+                            }
+                        }
+                        loreText.gameObject.SetActive(!loreText.gameObject.activeSelf);
+                        break;
+
 
                     case "Leave":
                         StartCoroutine(FadeOutUIAndClose());

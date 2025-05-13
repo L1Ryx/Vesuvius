@@ -72,7 +72,10 @@ public class SpriteRenderer_RealityShift : MonoBehaviour,IRealityShiftable
         {
             StopCoroutine(currentTransition);
         }
-        currentTransition = StartCoroutine(CrossfadeSprites(isAltReality, crossfadeDuration));
+        if(this.gameObject.activeSelf)
+        {
+            currentTransition = StartCoroutine(CrossfadeSprites(isAltReality, crossfadeDuration));
+        }
     }
 
     public void RealityShiftInstantly(bool isAltReality)
