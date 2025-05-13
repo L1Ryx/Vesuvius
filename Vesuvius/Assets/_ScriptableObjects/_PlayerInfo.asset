@@ -18,11 +18,11 @@ MonoBehaviour:
   totalCurrency: 0
   totemPower: 50
   abilityCost: 25
-  lastCurrencyChangeAmount: -35
-  sceneToLoad: 01-02
+  lastCurrencyChangeAmount: 13
+  sceneToLoad: 01-04
   spawnLocation: {x: 60, y: 4}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []
-  currencyChangedGameEvent: {fileID: 11400000, guid: 4cce6411f850248269d8d357003fd500, type: 2}
+  currencyChangedGameEvent: {fileID: 0}
   currencyChangedEventPath: Assets/GameEvents/CurrencyChanged.asset

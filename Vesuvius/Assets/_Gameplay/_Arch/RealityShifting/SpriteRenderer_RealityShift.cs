@@ -18,6 +18,7 @@ public class SpriteRenderer_RealityShift : MonoBehaviour,IRealityShiftable
 
     private IEnumerator CrossfadeSprites(bool isNewRealityAlternate, float crossfadeDuration)
     {
+        Debug.Log(Application.persistentDataPath);
         NormalRealityLayer.SetActive(true);
         AlteredRealityLayer.SetActive(true);
         // Perform the crossfade

@@ -36,6 +36,7 @@ namespace _Gameplay._Arch
         public UnityEvent uiNavigated;
         public UnityEvent uiSelected;
         public UnityEvent restStarted;
+        public UnityEvent gameSaved;
 
 
 
@@ -206,6 +207,7 @@ namespace _Gameplay._Arch
                     Debug.LogError("Parent EmptyCradle not found!");
                 }
                 restStarted.Invoke();
+                gameSaved.Invoke();
 
             }
             else

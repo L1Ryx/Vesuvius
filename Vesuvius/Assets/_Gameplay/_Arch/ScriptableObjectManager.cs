@@ -144,5 +144,20 @@ namespace _Gameplay._Arch
 
             Debug.Log("All ScriptableObjects loaded.");
         }
+
+        public bool CheckSaveDataExists()
+        {
+            return ES3.FileExists(SaveFileName);
+        }
+
+        public bool DeleteSaveData()
+        {
+            if(CheckSaveDataExists())
+            {
+                ES3.DeleteFile(SaveFileName);
+                return true;
+            }
+            else return false;
+        }
     }
 }

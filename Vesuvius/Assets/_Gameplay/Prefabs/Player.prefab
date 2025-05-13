@@ -40364,7 +40364,6 @@ GameObject:
   - component: {fileID: 6619660168378645275}
   - component: {fileID: 2521961792184658340}
   - component: {fileID: 4775113112952438693}
-  - component: {fileID: 6067522800381180651}
   - component: {fileID: 7697747633833973207}
   - component: {fileID: 191667072688475384}
   m_Layer: 7
@@ -40927,19 +40926,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultListener: 1
   listenerId: 0
---- !u!114 &6067522800381180651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069206293709486742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0441161fbad00e244aaabe587e9f003e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
 --- !u!114 &7697747633833973207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41009,6 +40995,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 3c2ffbd5-4d60-4d2e-ac57-7b8ec4fad8ec
     m_ActionName: 'Player/Jump[/XInputControllerWindows/buttonSouth,/DualSenseGamepadHID/buttonSouth,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 30876610-c98c-4f6d-8c39-451141f67a22
+    m_ActionName: 'Player/RealityChange[/Keyboard/shift,/XInputControllerWindows/rightTrigger]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
