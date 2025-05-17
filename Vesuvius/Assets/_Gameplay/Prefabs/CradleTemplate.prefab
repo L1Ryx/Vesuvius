@@ -5305,6 +5305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5285689697639472371}
   - component: {fileID: 5573351038581365002}
+  - component: {fileID: 6837296861503293137}
   - component: {fileID: 154244507783541155}
   - component: {fileID: 1082602429627879375}
   - component: {fileID: 2282028128122387714}
@@ -5348,14 +5349,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a35bbe9a19c804adeb4ff2e63cd1e495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cradleCanvas: {fileID: 5961750497865976380}
-  promptText: {fileID: 5869291357479654901}
-  epitaphText: {fileID: 2862942825495819797}
-  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
-  activationRadius: 2
   menuPrefab: {fileID: 0}
+  unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
   checkpointScene: 
   checkpointLocation: {x: 0, y: 0}
+--- !u!114 &6837296861503293137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179069277585008113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962644f9bc3f70f4f85b63d3d2f906ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 5961750497865976380}
+  interactPromptText: {fileID: 5869291357479654901}
+  otherTexts:
+  - {fileID: 2862942825495819797}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
+  activationRadius: 2
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5573351038581365002}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.EmptyCradle, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
   lerpSpeed: 2
 --- !u!114 &154244507783541155
 MonoBehaviour:
@@ -5471,8 +5502,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5573351038581365002}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.EmptyCradle, Assembly-CSharp
+      - m_Target: {fileID: 6837296861503293137}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
