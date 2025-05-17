@@ -100,7 +100,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RealityChange"",
+                    ""name"": ""RealityShift"",
                     ""type"": ""Button"",
                     ""id"": ""30876610-c98c-4f6d-8c39-451141f67a22"",
                     ""expectedControlType"": """",
@@ -425,7 +425,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
-                    ""action"": ""RealityChange"",
+                    ""action"": ""RealityShift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -436,7 +436,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""RealityChange"",
+                    ""action"": ""RealityShift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -478,7 +478,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Navigate = m_Player.FindAction("Navigate", throwIfNotFound: true);
         m_Player_Confirm = m_Player.FindAction("Confirm", throwIfNotFound: true);
         m_Player_Quit = m_Player.FindAction("Quit", throwIfNotFound: true);
-        m_Player_RealityChange = m_Player.FindAction("RealityChange", throwIfNotFound: true);
+        m_Player_RealityShift = m_Player.FindAction("RealityShift", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -553,7 +553,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Navigate;
     private readonly InputAction m_Player_Confirm;
     private readonly InputAction m_Player_Quit;
-    private readonly InputAction m_Player_RealityChange;
+    private readonly InputAction m_Player_RealityShift;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -566,7 +566,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Navigate => m_Wrapper.m_Player_Navigate;
         public InputAction @Confirm => m_Wrapper.m_Player_Confirm;
         public InputAction @Quit => m_Wrapper.m_Player_Quit;
-        public InputAction @RealityChange => m_Wrapper.m_Player_RealityChange;
+        public InputAction @RealityShift => m_Wrapper.m_Player_RealityShift;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -600,9 +600,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Quit.started += instance.OnQuit;
             @Quit.performed += instance.OnQuit;
             @Quit.canceled += instance.OnQuit;
-            @RealityChange.started += instance.OnRealityChange;
-            @RealityChange.performed += instance.OnRealityChange;
-            @RealityChange.canceled += instance.OnRealityChange;
+            @RealityShift.started += instance.OnRealityShift;
+            @RealityShift.performed += instance.OnRealityShift;
+            @RealityShift.canceled += instance.OnRealityShift;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -631,9 +631,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Quit.started -= instance.OnQuit;
             @Quit.performed -= instance.OnQuit;
             @Quit.canceled -= instance.OnQuit;
-            @RealityChange.started -= instance.OnRealityChange;
-            @RealityChange.performed -= instance.OnRealityChange;
-            @RealityChange.canceled -= instance.OnRealityChange;
+            @RealityShift.started -= instance.OnRealityShift;
+            @RealityShift.performed -= instance.OnRealityShift;
+            @RealityShift.canceled -= instance.OnRealityShift;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -679,6 +679,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnNavigate(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
-        void OnRealityChange(InputAction.CallbackContext context);
+        void OnRealityShift(InputAction.CallbackContext context);
     }
 }

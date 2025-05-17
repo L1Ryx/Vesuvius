@@ -78,7 +78,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RealityChange",
+                    "name": "RealityShift",
                     "type": "Button",
                     "id": "30876610-c98c-4f6d-8c39-451141f67a22",
                     "expectedControlType": "",
@@ -403,7 +403,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard",
-                    "action": "RealityChange",
+                    "action": "RealityShift",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -414,7 +414,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "RealityChange",
+                    "action": "RealityShift",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

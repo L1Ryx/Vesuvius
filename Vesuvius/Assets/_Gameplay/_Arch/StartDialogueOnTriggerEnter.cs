@@ -1,6 +1,7 @@
 using _Gameplay._Arch;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class StartDialogueOnTriggerEnter : MonoBehaviour
 {
     public Dialogue dialogue;

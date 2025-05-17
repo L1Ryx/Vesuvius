@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
+[RequireComponent(typeof(Collider2D))]
 public class StartCutsceneOnTriggerEnter : MonoBehaviour
 {
     public PlayableDirector playableDirector;

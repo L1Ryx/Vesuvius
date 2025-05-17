@@ -38,6 +38,12 @@ public class ControlPromptUpdater : MonoBehaviour
             controlPrompts.interactPrompt = controlPrompts.interactPromptTemplate.Replace("{Interact}",
                 GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Interact"]));
 
+            controlPrompts.doubleJumpPrompt = controlPrompts.doubleJumpPromptTemplate.Replace("{Jump}",
+                GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Jump"]));
+
+            controlPrompts.realityShiftPrompt = controlPrompts.realityShiftPromptTemplate.Replace("{RealityShift}",
+                GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["RealityShift"]));
+
             ControlsChanged.Invoke();
         }
 

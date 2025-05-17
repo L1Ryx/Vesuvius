@@ -17,13 +17,13 @@ public class PlayerRealityShift : MonoBehaviour
 
         private void OnEnable()
         {
-            swingControls.Player.RealityChange.performed += OnRealityShift;
+            swingControls.Player.RealityShift.performed += OnRealityShift;
             swingControls.Player.Enable();
         }
 
         private void OnDisable()
         {
-            swingControls.Player.RealityChange.performed -= OnRealityShift;
+            swingControls.Player.RealityShift.performed -= OnRealityShift;
             swingControls.Player.Disable();
         }
 

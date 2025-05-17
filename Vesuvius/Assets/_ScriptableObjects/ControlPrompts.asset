@@ -17,8 +17,12 @@ MonoBehaviour:
   jumpPromptTemplate: '{Jump} - Jump'
   healPromptTemplate: '{Heal} - Heal'
   interactPromptTemplate: Use\n{Interact}
+  doubleJumpPromptTemplate: '{Jump} Twice - Double Jump'
+  realityShiftPromptTemplate: '{RealityShift} - Reality Shift'
   movePrompt: 
   swingPrompt: 
   jumpPrompt: 
   healPrompt: 
   interactPrompt: 
+  doubleJumpPrompt: 
+  realityShiftPrompt: 

@@ -18,6 +18,8 @@ namespace _ScriptableObjects
         public string jumpPromptTemplate;
         public string healPromptTemplate;
         public string interactPromptTemplate;
+        public string doubleJumpPromptTemplate;
+        public string realityShiftPromptTemplate;
 
         [Header("Scheme Prompt Text")]
         [Tooltip("Text replaced prompt templates for current control scheme")]
@@ -26,5 +28,7 @@ namespace _ScriptableObjects
         public string jumpPrompt;
         public string healPrompt;
         public string interactPrompt;
+        public string doubleJumpPrompt;
+        public string realityShiftPrompt;
     }
 }

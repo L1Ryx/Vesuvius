@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30df7ee0b7d7943428417d3f84c2138a, type: 3}
-  m_Name: InteractTutorialNeeded
+  m_Name: RealityShiftTutorialNeeded
   m_EditorClassIdentifier: 

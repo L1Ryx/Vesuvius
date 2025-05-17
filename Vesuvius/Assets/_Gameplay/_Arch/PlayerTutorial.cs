@@ -16,6 +16,8 @@ namespace _Gameplay._Arch
         public TextMeshProUGUI interactionText;
         public TextMeshProUGUI slashText;
         public TextMeshProUGUI rebalanceText;
+        public TextMeshProUGUI doubleJumpText;
+        public TextMeshProUGUI realityShiftText;
 
         [Header("Tutorial Configuration")]
         public TutorialData tutorialData;
@@ -31,6 +33,8 @@ namespace _Gameplay._Arch
         public void PlayInteractionText() => EnqueueTutorial("Interaction", interactionText);
         public void PlaySlashText() => EnqueueTutorial("Slash", slashText);
         public void PlayRebalanceText() => EnqueueTutorial("Rebalance", rebalanceText);
+        public void PlayDoubleJumpText() => EnqueueTutorial("DoubleJump", doubleJumpText);
+        public void PlayRealityShiftText() => EnqueueTutorial("RealityShift", realityShiftText);
 
         //new attempt
         public PlayerInput m_PlayerInput;
@@ -52,6 +56,10 @@ namespace _Gameplay._Arch
             slashText.text = controlPrompts.swingPrompt;
 
             rebalanceText.text = controlPrompts.healPrompt;
+
+            doubleJumpText.text = controlPrompts.doubleJumpPrompt;
+
+            realityShiftText.text = controlPrompts.realityShiftPrompt;
         }
 
         string GetBindingDisplayStringOrCompositeName(InputAction action)
