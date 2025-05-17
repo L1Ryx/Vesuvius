@@ -21,6 +21,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
         #region Interface
 
         [field: SerializeField] public PlayerStats Stats { get; private set; }
+        [field: SerializeField] public PlayerUnlocks playerUnlocks{ get; private set; }
         public ControllerState State { get; private set; }
         public event Action<JumpType> Jumped;
         public event Action<bool, float> GroundedChanged;
@@ -711,7 +712,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
                 if (CanWallJump) ExecuteJump(JumpType.WallJump);
                 else if (_grounded || ClimbingLadder) ExecuteJump(JumpType.Jump);
                 else if (CanUseCoyote) ExecuteJump(JumpType.Coyote);
-                else if (CanAirJump) ExecuteJump(JumpType.AirJump);
+                else if (CanAirJump && playerUnlocks.canDoubleJump) ExecuteJump(JumpType.AirJump);
             }
 
             if ((!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && Velocity.y > 0) || Velocity.y < 0) _endedJumpEarly = true; // Early end detection

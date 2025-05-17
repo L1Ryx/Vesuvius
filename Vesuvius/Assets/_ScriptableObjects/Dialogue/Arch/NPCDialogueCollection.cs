@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _ScriptableObjects.Dialogue.Arch
 {
@@ -13,6 +14,7 @@ namespace _ScriptableObjects.Dialogue.Arch
             [TextArea] public List<string> dialogues; // Ordered dialogues for the tree
             public List<string> wwiseEvents; // List of optional Wwise events corresponding to dialogues
             public string nextTreeID; // ID of the next dialogue tree to transition to
+            public UnityEvent eventsOnDialogueEnd;
         }
 
         [Header("Dialogue Trees")]

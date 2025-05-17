@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03221ce64ac804aac876c997f49bd6ae, type: 3}
+  m_Name: TransformCutsceneDialogue
+  m_EditorClassIdentifier: 
+  dialogueTrees:
+  - treeID: CallName
+    dialogues:
+    - Pignus...
+    wwiseEvents: []
+    nextTreeID: Welcome
+    eventsOnDialogueEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: d103b932452f4f141a6d35edbb936538, type: 2}
+          m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - treeID: Welcome
+    dialogues:
+    - Receperint meam rem (Welcome to my reality)...
+    wwiseEvents: []
+    nextTreeID: 
+    eventsOnDialogueEnd:
+      m_PersistentCalls:
+        m_Calls: []

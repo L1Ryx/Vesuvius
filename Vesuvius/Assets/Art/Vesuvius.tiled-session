@@ -13,43 +13,54 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Tilesets/Snow-Tunnel-Tileset-Alt.tsx": {
+            "scaleInDock": 1
+        },
         "Tilesets/Snow-Tunnel-Tileset.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Tilesets/level.tmx": {
-            "scale": 0.91140625,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 239.73941368078175,
-                "y": 159.64340819475404
+                "x": 476.6666666666667,
+                "y": 138.66666666666669
             }
         },
         "Tilesets/level1_alt.tmx": {
             "scale": 0.91140625,
-            "selectedLayer": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": -109.72055546031203,
-                "y": 29.075947196982725
+                "x": 177.19869706840393,
+                "y": 44.985427738727935
             }
         },
         "Tilesets/level1_alt.tmx#Snow-Tunnel-Tileset-Alt": {
             "scaleInDock": 1
         },
         "Tilesets/level2.tmx": {
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -0.5,
-                "y": -0.5
+                "x": -179.33333333333331,
+                "y": 54.666666666666686
+            }
+        },
+        "Tilesets/test.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -47.5,
+                "y": -177
             }
         },
         "Tilesets/untitled.tmx": {
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -0.5,
-                "y": 127.5
+                "x": -244.66666666666663,
+                "y": -77.33333333333331
             }
         }
     },

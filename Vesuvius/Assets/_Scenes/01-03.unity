@@ -2023,7 +2023,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.332566, y: 8.5, z: -10}
+  m_LocalPosition: {x: 9.333333, y: 8.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2259,10 +2259,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceWall_Vine
       objectReference: {fileID: 0}
-    - target: {fileID: 4828248330114555259, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5238185575942994714, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.18
@@ -2306,13 +2302,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4829719240456574746, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1520464152}
-    - targetCorrespondingSourceObject: {fileID: 4829719240456574746, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1520464153}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
 --- !u!4 &577989935 stripped
 Transform:
@@ -5226,50 +5216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1520464149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4829719240456574746, guid: f3398eacb2a9fd448ab3558c741678bc, type: 3}
-  m_PrefabInstance: {fileID: 577989934}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1520464152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520464149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfda8b81b4d54fa0b4ae23cbccdfb46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &1520464153
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520464149}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1526718740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2171570829947837791, guid: dcb41873a3c4041f48bbe0be787ea89b, type: 3}
@@ -34408,33 +34354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc12872da48b405a8a8ece5bbcfdd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5731089695622297512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3054942121358642240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00cbfb4f11fb310439657c7cd3a3851f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRealityChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: db8c6071b083b3840bee51fd5d71d559, type: 2}
-        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &5768742348382516502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34446,18 +34365,6 @@ PrefabInstance:
     - target: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7697747633833973207, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7697747633833973207, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
-      value: 30876610-c98c-4f6d-8c39-451141f67a22
-      objectReference: {fileID: 0}
-    - target: {fileID: 7697747633833973207, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
-      value: 'Player/RealityChange[/Keyboard/shift,/XInputControllerWindows/rightTrigger]'
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34502,10 +34409,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5731089695622297512}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
 --- !u!4 &5855832335388681829
 Transform:

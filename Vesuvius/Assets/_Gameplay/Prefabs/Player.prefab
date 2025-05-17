@@ -40366,6 +40366,7 @@ GameObject:
   - component: {fileID: 4775113112952438693}
   - component: {fileID: 7697747633833973207}
   - component: {fileID: 191667072688475384}
+  - component: {fileID: 8979900638528978415}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -40404,6 +40405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Stats>k__BackingField: {fileID: 11400000, guid: 894dfe33661263b42a8e1490d64c0424, type: 2}
+  <playerUnlocks>k__BackingField: {fileID: 11400000, guid: bf0bedd462caa024281b49f68a94898f, type: 2}
   fallingGracePeriod: 0.05
   fallThreshold: 1
   playerJumped:
@@ -41022,6 +41024,34 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8979900638528978415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069206293709486742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00cbfb4f11fb310439657c7cd3a3851f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerUnlocks: {fileID: 11400000, guid: bf0bedd462caa024281b49f68a94898f, type: 2}
+  playerRealityChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: db8c6071b083b3840bee51fd5d71d559, type: 2}
         m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

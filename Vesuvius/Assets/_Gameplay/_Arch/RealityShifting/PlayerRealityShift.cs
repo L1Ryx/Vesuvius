@@ -4,9 +4,10 @@ using UnityEngine.Events;
 
 //Handles playerinput of reality shifting. Calls event that reality shifts, which is heard by listeners elsewhere.
 //Reality shifting not done here so that other mechanics can also trigger it more naturally.
-public class PlayerRealityChange : MonoBehaviour
+public class PlayerRealityShift : MonoBehaviour
 {
         private PlayerControls swingControls;
+        public PlayerUnlocks playerUnlocks;
         public UnityEvent playerRealityChanged;
 
         private void Awake()
@@ -28,6 +29,9 @@ public class PlayerRealityChange : MonoBehaviour
 
         private void OnRealityShift(InputAction.CallbackContext context)
         {
-            playerRealityChanged.Invoke();
+            if(playerUnlocks.canRealityShift)
+            {
+                playerRealityChanged.Invoke();
+            }
         }
 }
