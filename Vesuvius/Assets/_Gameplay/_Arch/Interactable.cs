@@ -3,10 +3,12 @@ using _Gameplay._Arch;
 using _ScriptableObjects;
 using Public.Tarodev_2D_Controller.Scripts;
 using TMPro;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(GuidComponent))]
 public class Interactable : MonoBehaviour
 {
     [Header("UI References")]
@@ -27,16 +29,13 @@ public class Interactable : MonoBehaviour
     private PlayerControls playerControls;
     private bool isPlayerNear = false; // Tracks if the player is near
     private Color targetColor;
-    private Guid guid;
-    [SerializeField]
-    private string _guid = System.Guid.NewGuid().ToString();
+    private GuidComponent guidComponent;
     public float lerpSpeed = 2f;
 
     private void Awake()
     {
         playerControls = new PlayerControls();
-        guid = Guid.NewGuid();
-        interactableID = guid.ToString();
+        guidComponent = GetComponent<GuidComponent>();
     }
 
     private void OnEnable()
@@ -81,6 +80,13 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
+        if(interactOnce && blockedInteractables.isInteractableBlocked(guidComponent.GetGuid().ToString()))
+        {
+            print("blocked");
+            canvas.gameObject.SetActive(false);
+            this.enabled = false;
+        }
+
         if (unsavedPlayerInfo.isInMenuMode)
         {
             HandlePromptLerpOut(); // Smoothly lerp the prompt out when the menu is active
@@ -187,9 +193,8 @@ public class Interactable : MonoBehaviour
             OnInteract.Invoke();
             if(interactOnce)
             {
-                blockedInteractables.Add(interactableID);
+                blockedInteractables.Add(guidComponent.GetGuid().ToString());
                 HandlePromptLerpOut();
-                this.enabled = false;
             }
         }
     }

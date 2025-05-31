@@ -20759,6 +20759,7 @@ GameObject:
   - component: {fileID: 3757282682267560385}
   - component: {fileID: 3757282682267560387}
   - component: {fileID: 3757282682267560386}
+  - component: {fileID: 3757282682267560388}
   m_Layer: 0
   m_Name: FakeMirrorAltar
   m_TagString: Untagged
@@ -25197,6 +25198,19 @@ MonoBehaviour:
   interactableID: MirrorUnlock
   interactOnce: 1
   lerpSpeed: 2
+--- !u!114 &3757282682267560388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875549297193530462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 625a0bb6837e484690cede9323bbaa9d
 --- !u!1 &3768878769963636829
 GameObject:
   m_ObjectHideFlags: 0
