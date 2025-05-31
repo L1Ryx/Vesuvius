@@ -1,6 +1,7 @@
 using _ScriptableObjects.PlayerInfo;
 using Public.Tarodev_2D_Controller.Scripts;
 using TarodevController;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -123,12 +124,12 @@ namespace _Gameplay._Arch
                 Quaternion swingRotation;
 
                 // Determine swing direction based on input
-                if (inputDirection.y > 0)
+                if (inputDirection.y > 0 && math.abs(inputDirection.y) > math.abs(inputDirection.x))
                 {
                     swingPosition = playerSprite.position + (Vector3)upSwingOffset;
                     swingRotation = Quaternion.Euler(0, 0, 90);
                 }
-                else if (inputDirection.y < 0)
+                else if (inputDirection.y < 0 && math.abs(inputDirection.y) > math.abs(inputDirection.x))
                 {
                     swingPosition = playerSprite.position + (Vector3)downSwingOffset;
                     swingRotation = Quaternion.Euler(0, 0, -90);

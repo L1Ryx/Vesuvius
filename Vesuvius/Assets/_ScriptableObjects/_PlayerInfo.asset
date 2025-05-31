@@ -15,14 +15,14 @@ MonoBehaviour:
   hasCompletedDemo: 0
   maximumHealth: 5
   currentHealth: 5
-  totalCurrency: 35
+  totalCurrency: 5
   totemPower: 100
   abilityCost: 25
-  lastCurrencyChangeAmount: 20
-  sceneToLoad: 01-04
-  spawnLocation: {x: 3, y: 4}
+  lastCurrencyChangeAmount: 5
+  sceneToLoad: 01-02
+  spawnLocation: {x: 60, y: 4}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []
-  currencyChangedGameEvent: {fileID: 11400000, guid: 4cce6411f850248269d8d357003fd500, type: 2}
+  currencyChangedGameEvent: {fileID: 0}
   currencyChangedEventPath: Assets/GameEvents/CurrencyChanged.asset

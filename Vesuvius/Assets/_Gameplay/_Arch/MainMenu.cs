@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using _ScriptableObjects;
 using _ScriptableObjects.PlayerInfo;
 using Events._Arch;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -26,6 +28,7 @@ namespace _Gameplay._Arch
 
         [Header("Settings")]
         public string bugReportURL = "https://www.google.com";
+        public GameObject startingCradle;
         public string startScene = "01-01";
         public int startingX = 4;
         public int startingY = -3;
@@ -38,6 +41,9 @@ namespace _Gameplay._Arch
         public float switchToStartSceneDelay = 2f;
         [Header("Completion Text")]
         public TMP_Text completionText; // Reference to the completion text
+        [Header("Saved Data References")]
+        public TMP_Text continueText;
+        public ScriptableObjectManager scriptableObjectManager;
 
         [Header("Data Cubes")] 
         [SerializeField] private PlayerInfo playerInfo;
@@ -66,9 +72,11 @@ namespace _Gameplay._Arch
             playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
             playerInfo.SetTotalCurrency(0);
             playerInfo.SetTotemPower(50);
+            playerInfo.SetCheckpoint(startingCradle.GetComponent<EmptyCradle>().checkpointScene, 
+                startingCradle.GetComponent<EmptyCradle>().checkpointLocation);
 
-            spawnData.spawnLocation.x = startingX;
-            spawnData.spawnLocation.y = startingY;
+            spawnData.spawnLocation.x = playerInfo.GetSpawnLocation().x;
+            spawnData.spawnLocation.y = playerInfo.GetSpawnLocation().y;
 
             gateData.ResetGates();
             bulbData.ResetBulbs();
@@ -83,9 +91,17 @@ namespace _Gameplay._Arch
 
         }
 
+        private void LoadExistingGameState()
+        {
+            gameLoaded.Invoke();
+            spawnData.spawnLocation.x = playerInfo.GetSpawnLocation().x;
+            spawnData.spawnLocation.y = playerInfo.GetSpawnLocation().y;
+            StartCoroutine(SwitchToStartScene());
+        }
+
         private IEnumerator SwitchToStartScene() {
             yield return new WaitForSeconds(switchToStartSceneDelay);
-            SceneManager.LoadScene(startScene);
+            SceneManager.LoadScene(playerInfo.GetSceneToLoad());
         }
 
         private void Awake()
@@ -130,6 +146,24 @@ namespace _Gameplay._Arch
             // Set info panel texts and options to alpha 0
             SetTextAlpha(infoTexts, 0);
             SetTextAlpha(infoOptions, 0);
+
+            if(scriptableObjectManager.CheckSaveDataExists())
+            {
+                continueText.gameObject.SetActive(true);
+            }
+            else
+            {
+                continueText.gameObject.SetActive(false);
+            }
+
+            if(continueText.gameObject.activeSelf)
+            {
+                SetTextAlpha(new TMP_Text[] { continueText }, 0);
+                //Prepend the continue text to the menu options if it's active so it's the first thing underlined
+                Array.Resize(ref menuOptions, menuOptions.Length + 1);
+                Array.Copy(menuOptions, 0, menuOptions, 0 + 1, menuOptions.Length - 0 - 1);
+                menuOptions[0] = continueText;
+            }
 
             // Check if the demo has been completed
             if (playerInfo.hasCompletedDemo)
@@ -207,6 +241,9 @@ namespace _Gameplay._Arch
 
                 switch (selectedOption)
                 {
+                    case "Continue":
+                        LoadExistingGameState();
+                        break;
                     case "Play":
                         Debug.Log("Play selected. Starting info panel sequence.");
                         StartCoroutine(SwitchToInfoPanel());

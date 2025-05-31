@@ -19920,6 +19920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Stats>k__BackingField: {fileID: 11400000, guid: 894dfe33661263b42a8e1490d64c0424, type: 2}
+  <playerUnlocks>k__BackingField: {fileID: 0}
   fallingGracePeriod: 0.05
   fallThreshold: 1
   playerJumped:

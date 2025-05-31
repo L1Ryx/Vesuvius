@@ -85,7 +85,8 @@ namespace _Gameplay._Arch
                 var currentColor = costImage.color;
                 costImage.color = Color.Lerp(
                     currentColor,
-                    new Color(costTargetColor.r, costTargetColor.g, costTargetColor.b, costImageAlphaTarget),
+                    new Color(currentColor.r, currentColor.g, currentColor.b, costImageAlphaTarget),
+                    //new Color(costTargetColor.r, costTargetColor.g, costTargetColor.b, costImageAlphaTarget),
                     Time.deltaTime * lerpSpeed
                 );
             }
@@ -133,9 +134,10 @@ namespace _Gameplay._Arch
 
             // Check if the player has enough currency
             bool hasEnoughCurrency = playerInfo.GetTotalCurrency() >= cost;
-
+            //print("Cost color");
             // Set target color based on currency status
             costTargetColor = hasEnoughCurrency ? enoughCurrencyColor : notEnoughCurrencyColor;
+            interactPromptText.text = hasEnoughCurrency ? controlPrompts.interactPrompt : "Not enough Clink";
         }
 
         protected override void OnInteract(InputAction.CallbackContext context)

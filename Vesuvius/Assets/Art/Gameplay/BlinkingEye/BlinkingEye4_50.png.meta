@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BlinkingEye4_50_0: -5621949803760915333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

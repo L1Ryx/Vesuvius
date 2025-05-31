@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3233228702308335065}
   - component: {fileID: 3095956403527559279}
   - component: {fileID: 1936567400303899600}
+  - component: {fileID: 6998864868895075596}
   m_Layer: 0
   m_Name: ScriptableObjectSaveSystem
   m_TagString: Untagged
@@ -148,3 +149,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6998864868895075596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756412928608207065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0441161fbad00e244aaabe587e9f003e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+  scriptableObjectManager: {fileID: 6297571828951732299}
