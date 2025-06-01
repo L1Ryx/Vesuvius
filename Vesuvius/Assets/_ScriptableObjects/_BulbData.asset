@@ -40,3 +40,9 @@ MonoBehaviour:
   - bulbID: 01-03-01
     isAlive: 1
     clinkAmount: 8
+  - bulbID: 01-06-01
+    isAlive: 1
+    clinkAmount: 12
+  - bulbID: 01-06-02
+    isAlive: 1
+    clinkAmount: 9
