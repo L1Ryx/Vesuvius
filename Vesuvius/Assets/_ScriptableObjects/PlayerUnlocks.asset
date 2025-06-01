@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerUnlocks
   m_EditorClassIdentifier: 
   canDoubleJump: 1
-  canRealityShift: 0
+  canRealityShift: 1
