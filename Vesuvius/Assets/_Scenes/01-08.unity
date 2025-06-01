@@ -24035,7 +24035,7 @@ PrefabInstance:
     - target: {fileID: 237336425137965945, guid: 77a7d95f9fad34be39289b2a746aa830, type: 3}
       propertyPath: transitionData
       value: 
-      objectReference: {fileID: 11400000, guid: 0e4f5c6ad76144465b0c900306835a0e, type: 2}
+      objectReference: {fileID: 11400000, guid: b2fccbe3a9f794b218637f5cdb99a589, type: 2}
     - target: {fileID: 5871046933598660599, guid: 77a7d95f9fad34be39289b2a746aa830, type: 3}
       propertyPath: m_Name
       value: Door X (END DEMO)
