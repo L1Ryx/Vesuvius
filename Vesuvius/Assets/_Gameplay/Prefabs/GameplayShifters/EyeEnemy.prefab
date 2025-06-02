@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 7996573148739773211}
   - component: {fileID: 3391696260283383207}
   - component: {fileID: 9127186795040025533}
+  - component: {fileID: 2341009153129139644}
   m_Layer: 11
   m_Name: ActiveEye
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1122491069149904327
 Transform:
   m_ObjectHideFlags: 0
@@ -48,11 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: 1
-  healthAmount: 100
+  healthAmount: 20
   iFramesTime: 0.2
   giveUpwardsForce: 0
   canBeKnockedBack: 1
   isLiveEnemy: 1
+  destroyImmediately: 1
   shouldFlashOnDamage: 1
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
@@ -134,6 +136,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.469419}
   m_Size: {x: 0.85077477, y: 0.85077477}
   m_Direction: 0
+--- !u!114 &2341009153129139644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489377378377331004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8411b2605befe488dda4074dceffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeProjectilePrefab: {fileID: 2552884312059601329, guid: 6e35cc36635be7842b67dc9074c23eb6, type: 3}
+  fireRate: 2
+  detectionRadius: 5
 --- !u!1 &8111466016145648335
 GameObject:
   m_ObjectHideFlags: 0
