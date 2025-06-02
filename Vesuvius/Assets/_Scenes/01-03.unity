@@ -7067,8 +7067,16 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7772364453860889162, guid: 5de91869b196b834c84e515e361367b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7759380849972607095}
+    - targetCorrespondingSourceObject: {fileID: 9179740250897300857, guid: 5de91869b196b834c84e515e361367b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3054942121358642251}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5de91869b196b834c84e515e361367b8, type: 3}
+--- !u!4 &2082532787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9179740250897300857, guid: 5de91869b196b834c84e515e361367b8, type: 3}
+  m_PrefabInstance: {fileID: 2082532786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2082532788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7772364453860889162, guid: 5de91869b196b834c84e515e361367b8, type: 3}
@@ -32795,7 +32803,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2082532787}
     m_Modifications:
     - target: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_Name
@@ -32819,15 +32827,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -56245,7 +56253,6 @@ SceneRoots:
   - {fileID: 669457807}
   - {fileID: 877869388}
   - {fileID: 1846957549}
-  - {fileID: 5768742348382516502}
   - {fileID: 1302918987}
   - {fileID: 1347238807}
   - {fileID: 299302154}
