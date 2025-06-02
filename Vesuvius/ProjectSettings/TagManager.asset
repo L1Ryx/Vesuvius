@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerSpawner
   - Enemy
+  - Hazard
   layers:
   - Default
   - TransparentFX

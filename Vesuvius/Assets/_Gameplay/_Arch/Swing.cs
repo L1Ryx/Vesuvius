@@ -81,7 +81,7 @@ namespace _Gameplay._Arch
             knockbackDirection = Vector2.ClampMagnitude(knockbackDirection, knockbackForce);
 
             // Apply knockback immediately (overriding any previous knockback)
-            rb.AddForce(knockbackDirection, ForceMode2D.Impulse);
+            //rb.AddForce(knockbackDirection, ForceMode2D.Impulse);
 
             // Continue with attack logic as normal
             int enemyHealthBefore = objHealth.GetCurrentHealth();

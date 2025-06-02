@@ -103,7 +103,7 @@ namespace _Gameplay._Arch
             {
                 timeStopMaxDuration -= Time.unscaledDeltaTime;
                 if (timeStopMaxDuration <= 0)
-                {
+                { 
                     ResumeTimeEffect();
                 }
             }
@@ -135,9 +135,11 @@ namespace _Gameplay._Arch
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
+
             if (collision.gameObject == null) return;
             if (collision.gameObject.CompareTag("Enemy"))
             {
+                print("colliding");
                 EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>()
                                           ?? collision.gameObject.GetComponentInChildren<EnemyHealth>();
 
@@ -145,6 +147,16 @@ namespace _Gameplay._Arch
                 {
                     HandleCollisionWithEnemy(enemyHealth, collision);
                 }
+            }
+        }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+
+            if (collision.gameObject.CompareTag("Hazard"))
+            {
+                print("take damage");
+                HandleCollisionWithHazard(collision);
             }
         }
 
@@ -164,6 +176,35 @@ namespace _Gameplay._Arch
                 if (useTimeStop) StartCoroutine(StartStopTimeEffectCoroutine());
 
                 Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+
+                if (useParticles && damageBurst != null && !damageBurst.isPlaying) damageBurst.Play();
+                if (!isFlashing) StartCoroutine(FlashPlayer());
+                StartCoroutine(ResetInvincibilityCoroutine());
+
+                // **Enable velocity clamping for a short period**
+                velocityClampEndTime = Time.time + velocityClampDuration;
+
+                Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+                pendingKnockback = knockbackDirection * Mathf.Min(playerKnockbackVelocity, finalMaxKnockbackVelocity);
+
+                ApplyKnockback();
+            }
+        }
+
+        private void HandleCollisionWithHazard( Collider2D collision)
+        {
+            if (playerInfo.GetCurrentHealth() <= 0) return;
+            if (!isInvincible)
+            {
+                playerHealing?.CancelHeal();
+                isInvincible = true;
+                playerDamaged.Invoke();
+
+                playerRb.linearVelocity = Vector2.zero;
+
+                if (useTimeStop) StartCoroutine(StartStopTimeEffectCoroutine());
+
+                Physics2D.IgnoreLayerCollision(playerLayer, 14, true);
 
                 if (useParticles && damageBurst != null && !damageBurst.isPlaying) damageBurst.Play();
                 if (!isFlashing) StartCoroutine(FlashPlayer());
@@ -206,7 +247,7 @@ namespace _Gameplay._Arch
         private IEnumerator ResetInvincibilityCoroutine()
         {
             yield return new WaitForSecondsRealtime(playerIFrames);
-            Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+            Physics2D.IgnoreLayerCollision(playerLayer, 14, false);
             ResetInvincibility();
         }
 
