@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasCompletedDemo: 0
   maximumHealth: 5
-  currentHealth: 5
+  currentHealth: 1
   totalCurrency: 5
   totemPower: 100
   abilityCost: 25

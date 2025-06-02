@@ -5388,7 +5388,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
-  blockedInteractables: {fileID: 0}
+  blockedInteractables: {fileID: 11400000, guid: eee453743b9672d439cafc4bb597256d, type: 2}
   interactableID: 
   interactOnce: 0
   lerpSpeed: 2

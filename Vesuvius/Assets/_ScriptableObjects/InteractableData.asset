@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18139b27009e23141a8b6438e9ab4cd8, type: 3}
   m_Name: InteractableData
   m_EditorClassIdentifier: 
+  shownGuids: []
