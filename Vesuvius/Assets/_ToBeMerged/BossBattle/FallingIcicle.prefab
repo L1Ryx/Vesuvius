@@ -150,6 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3873955746526500407}
   - component: {fileID: 3454840965550767718}
+  - component: {fileID: 3317741872398555088}
   - component: {fileID: 7928505886694911965}
   m_Layer: 0
   m_Name: FallingIcicle
@@ -191,6 +192,34 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &3317741872398555088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933976438208991838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3dc2593935d2889479396ef39d8759fa, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3454840965550767718}
+        m_TargetAssemblyTypeName: FallingIcicleBehavior, Assembly-CSharp
+        m_MethodName: ShowIcicles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7928505886694911965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +238,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3454840965550767718}
         m_TargetAssemblyTypeName: FallingIcicleBehavior, Assembly-CSharp
-        m_MethodName: StartFallingCycle
+        m_MethodName: DropIcicles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

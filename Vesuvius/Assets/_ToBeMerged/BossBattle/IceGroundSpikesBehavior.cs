@@ -6,13 +6,24 @@ public class IceGroundSpikesBehavior : MonoBehaviour
     public float spikeSpeed = 3f;
     private Vector3 spikePos;
     Vector3 initalSpikesPos;
+    private Collider2D hazardCollider;
+
+    void Awake()
+    {
+        hazardCollider = GetComponentInChildren<Collider2D>();
+    }
 
     void Start()
     {
         initalSpikesPos = this.gameObject.transform.position;
     }
 
-    public IEnumerator SpikesEmerge()
+    public void ShowSpikes()
+    {
+        StartCoroutine(SpikesEmerge());
+    }
+
+    IEnumerator SpikesEmerge()
     {
         //Push spikes out a little bit without colliders as a warning
         spikePos = this.gameObject.transform.position;
@@ -23,15 +34,18 @@ public class IceGroundSpikesBehavior : MonoBehaviour
             this.gameObject.transform.position = spikePos;
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSeconds(.25f);
+    }
+
+    public void AttackSpikes()
+    {
+        StartCoroutine(SpikesAttack());
+    }
+
+    IEnumerator SpikesAttack()
+    {
         //activate colliders
-        Collider2D[] colChildren = this.gameObject.GetComponentsInChildren<Collider2D>();
-        foreach (var collider in colChildren)
-        {
-            collider.enabled = true;
-        }
-
-
+        hazardCollider.enabled = true;
+        
         //emerge spikes fully
         while (spikePos.y <= initalSpikesPos.y + 1.25)
         {
@@ -54,10 +68,6 @@ public class IceGroundSpikesBehavior : MonoBehaviour
             this.gameObject.transform.position = spikePos;
             yield return new WaitForEndOfFrame();
         }
-        Collider2D[] colChildren = this.gameObject.GetComponentsInChildren<Collider2D>();
-        foreach (var collider in colChildren) 
-        {
-            collider.enabled = false;
-        }
+        hazardCollider.enabled = false;
     }
 }

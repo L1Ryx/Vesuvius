@@ -42,11 +42,22 @@ public class GauntletManager : MonoBehaviour
 
     private void TriggerAttacks()
     {
-        triggerAttacks.Invoke();
-        StartCoroutine(spikesCollection.SpikesEmerge());
-        if (stage == 3)
+        switch (stage)
         {
-            StartCoroutine(cultistBehavior.Beam());
+            case 1:
+                cultistBehavior.SlamUp();
+                break;
+
+            case 2:
+                cultistBehavior.SlamDown();
+                break;
+
+            case 3:
+                StartCoroutine(cultistBehavior.Beam());
+                break;
+
+            default:
+                break;
         }
         timeSinceLastAttack = 0f;
     }

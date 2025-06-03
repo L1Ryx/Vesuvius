@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CultistBossBehavior : MonoBehaviour
 {
@@ -69,6 +70,14 @@ public class CultistBossBehavior : MonoBehaviour
     bool isCastingSpecial = false;
     bool isSpecialDone = false;
 
+    bool isSlammingUpwards;
+    public UnityEvent startSlamUp;
+    public UnityEvent startSlamDown;
+    public UnityEvent slamHitCeiling;
+    public UnityEvent slamHitGround;
+    public LayerMask terrainLayer;
+    private Vector3 initialPosition;
+
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -82,6 +91,84 @@ public class CultistBossBehavior : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void SlamUp()
+    {
+        isSlammingUpwards = true;
+        StartCoroutine(Slam());
+    }
+
+    public void SlamDown()
+    {
+        isSlammingUpwards = false;
+        StartCoroutine(Slam());
+    }
+
+    public IEnumerator Slam()
+    {
+        initialPosition = transform.position;
+        animator.SetTrigger("QueueSpecial");
+        if (isSlammingUpwards)
+        {
+            startSlamUp.Invoke();
+        }
+        else
+        {
+            startSlamDown.Invoke();
+        }  
+        yield return new WaitForSeconds(0.5f);
+        animator.SetTrigger("Slamming");
+        if (isSlammingUpwards)
+        {
+            rb.linearVelocity = new Vector2(0, slamSpeed);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, -slamSpeed);
+        }    
+    }
+
+    //Used to determine when the slam has hit the ceiling or floor
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == Mathf.Log(terrainLayer.value, 2))
+        {
+            rb.linearVelocity = new Vector2(0, 0);
+            if (isSlammingUpwards)
+            {
+                slamHitCeiling.Invoke();
+            }
+            else
+            {
+                slamHitGround.Invoke();
+            }
+            StartCoroutine(SlamRecover());
+        }
+    }
+
+    public IEnumerator SlamRecover()
+    {
+        animator.SetTrigger("DoneSlam");
+        //recovery from slamming up
+        if (isSlammingUpwards)
+        {
+            rb.linearVelocity = new Vector2(0, -slamSpeed);
+            while (transform.position.y > initialPosition.y)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(0, slamSpeed);
+            while (transform.position.y < initialPosition.y)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        rb.linearVelocity = new Vector2(0, 0);
     }
 
     public IEnumerator Beam()

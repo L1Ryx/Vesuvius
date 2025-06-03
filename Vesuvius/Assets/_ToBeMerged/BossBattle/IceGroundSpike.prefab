@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3873955746526500407}
   - component: {fileID: 6533707161289105322}
   - component: {fileID: 6258712937421967351}
+  - component: {fileID: 8226528943453058023}
+  - component: {fileID: 4548079271826402395}
+  - component: {fileID: 1803940928523835514}
   m_Layer: 0
   m_Name: IceGroundSpike
   m_TagString: Hazard
@@ -141,3 +144,72 @@ PolygonCollider2D:
       - {x: 0.375, y: 1.875}
       - {x: 0.25, y: 1.9375}
   m_UseDelaunayMesh: 0
+--- !u!114 &8226528943453058023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933976438208991838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b988894aa000207468e4ae4e0a207194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikeSpeed: 3
+--- !u!114 &4548079271826402395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933976438208991838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 93451cbe2bce3f84784d064536f967a8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226528943453058023}
+        m_TargetAssemblyTypeName: IceGroundSpikesBehavior, Assembly-CSharp
+        m_MethodName: ShowSpikes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1803940928523835514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933976438208991838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d679b0882e4679243a2fcbe28bdc52b9, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8226528943453058023}
+        m_TargetAssemblyTypeName: IceGroundSpikesBehavior, Assembly-CSharp
+        m_MethodName: AttackSpikes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

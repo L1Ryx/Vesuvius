@@ -57,12 +57,12 @@ public class FallingIcicleBehavior : MonoBehaviour
         this.gameObject.transform.position = initialPosition;
     }
 
-    public void StartFallingCycle()
+    public void ShowIcicles()
     {
         StartCoroutine(IciclesEmerge());
     }
 
-    public IEnumerator IciclesEmerge()
+    IEnumerator IciclesEmerge()
     {
         //Push icicles out a little bit without colliders as a warning
         currentPosition = this.gameObject.transform.position;
@@ -71,11 +71,6 @@ public class FallingIcicleBehavior : MonoBehaviour
             Fall();
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSeconds(.25f);
-        //activate colliders
-        hazardCollider.enabled = true;
-
-        DropIcicles();
     }
 
     void Fall()
@@ -85,8 +80,10 @@ public class FallingIcicleBehavior : MonoBehaviour
         this.gameObject.transform.position = currentPosition;
     }
 
-    void DropIcicles()
+    public void DropIcicles()
     {
+        //activate colliders
+        hazardCollider.enabled = true;
         isFalling = true;
     }
 }
