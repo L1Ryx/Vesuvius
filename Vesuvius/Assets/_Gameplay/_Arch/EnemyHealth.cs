@@ -23,6 +23,8 @@ namespace _Gameplay._Arch
         [SerializeField] private int flashCount = 2; // Number of flashes
 
         [Header("Death Settings")]
+        public bool usesAlternateDeath;
+        public UnityEvent onDeathEvents;
         [SerializeField] private Color deathColor = Color.gray; // Color to turn upon death
         [SerializeField] private float upwardForce = 5f; // Force to project upwards
         [SerializeField] private float fadeDuration = 10f; // Time before fading out
@@ -148,7 +150,11 @@ namespace _Gameplay._Arch
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                Death(knockbackForce); // Pass knockback force to Death
+                if (!usesAlternateDeath)
+                {
+                    Death(knockbackForce); // Pass knockback force to Death
+                }
+                onDeathEvents.Invoke();
             }
             else
             {

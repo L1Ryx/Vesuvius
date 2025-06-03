@@ -1,4 +1,6 @@
 using System.Collections;
+using _Gameplay._Arch;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -121,7 +123,7 @@ public class CultistBossBehavior : MonoBehaviour
         else
         {
             startSlamDown.Invoke();
-        }  
+        }
         yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Slamming");
         if (isSlammingUpwards)
@@ -131,7 +133,7 @@ public class CultistBossBehavior : MonoBehaviour
         else
         {
             rb.linearVelocity = new Vector2(0, -slamSpeed);
-        }    
+        }
     }
 
     //Used to determine when the slam has hit the ceiling or floor
@@ -248,7 +250,7 @@ public class CultistBossBehavior : MonoBehaviour
 
         preBeamBall.SetActive(false);
         BeamSprite.SetActive(false);
-        
+
 
         //recovering (float up and down for a few seconds)
 
@@ -280,5 +282,29 @@ public class CultistBossBehavior : MonoBehaviour
     public void FaceLeft()
     {
         transform.Rotate(0, -180, 0);
+    }
+
+    public Dialogue dialogue;
+
+    public void Death()
+    {
+        animator.SetTrigger("Death");
+        //fall to the ground
+        rb.gravityScale = 1;
+        dialogue.StartDialogue();
+    }
+
+    public CinemachineConfiner2D confiner2D;
+    public CinemachineCamera cinemachineCamera;
+    public CinemachineCamera bossCamera;
+    public Collider2D bossRoomCollider;
+    public GameObject middleOfRoom;
+    public void UseBossCam()
+    {
+        bossCamera.Priority = 20;
+        cinemachineCamera.Priority = 10;
+        //cinemachineCamera.ForceCameraPosition(middleOfRoom.transform.position,middleOfRoom.transform.rotation);
+        //confiner2D.OversizeWindow.Enabled = true;
+        //confiner2D.BoundingShape2D = bossRoomCollider;
     }
 }

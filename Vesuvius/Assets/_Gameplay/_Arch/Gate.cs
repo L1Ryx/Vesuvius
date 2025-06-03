@@ -104,6 +104,17 @@ namespace _Gameplay._Arch
             }
         }
 
+        public float GateSlideDownDuration;
+        //But don't lock it - used for cultist boss fight
+        public void CloseGate()
+        {
+            StartCoroutine(SlideGateDown());
+            if (gateAudio != null)
+            {
+                gateAudio.PlayGateOpen();
+            }
+        }
+
         private System.Collections.IEnumerator SlideGateUp()
         {
             Vector3 startPosition = transform.position;
@@ -114,6 +125,29 @@ namespace _Gameplay._Arch
             {
                 elapsedTime += Time.deltaTime;
                 float normalizedTime = Mathf.Clamp01(elapsedTime / gateSlideDuration);
+
+                // Programmatic easing: start slow, accelerate, then decelerate
+                float easedTime = EaseInOut(normalizedTime);
+
+                // Interpolate position based on eased time
+                transform.position = Vector3.Lerp(startPosition, targetPosition, easedTime);
+                yield return null;
+            }
+
+            transform.position = targetPosition; // Ensure exact final position
+            Debug.Log($"Gate {gateID} is now fully open.");
+        }
+
+        private System.Collections.IEnumerator SlideGateDown()
+        {
+            Vector3 startPosition = transform.position;
+            Vector3 targetPosition = startPosition - new Vector3(0, targetHeight, 0);
+            float elapsedTime = 0f;
+
+            while (elapsedTime < GateSlideDownDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float normalizedTime = Mathf.Clamp01(elapsedTime / GateSlideDownDuration);
 
                 // Programmatic easing: start slow, accelerate, then decelerate
                 float easedTime = EaseInOut(normalizedTime);
