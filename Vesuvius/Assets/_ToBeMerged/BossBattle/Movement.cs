@@ -176,6 +176,20 @@ public class Movement : MonoBehaviour
             StartCoroutine(Beam());
         }
     }
+    public IEnumerator TeleportTo(Vector3 location)
+    {
+        animator.SetTrigger("Teleporting");
+        //animator.SetFloat("TeleportDirection", -1);
+        float length = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        yield return new WaitForSeconds(length);
+        //print("Test");
+        pos = location;
+        transform.position = pos;
+        //yield return new WaitForSeconds(.25f);
+        //sprite.enabled = true;
+        animator.SetTrigger("TeleportExit");
+        yield return new WaitForSeconds( length);
+    }
 
     IEnumerator Slam()
     {
