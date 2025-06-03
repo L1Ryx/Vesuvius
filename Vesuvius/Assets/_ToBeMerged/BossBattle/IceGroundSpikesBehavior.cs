@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class IceGroundSpikesBehavior : MonoBehaviour
 {
     public float spikeSpeed = 3f;
+    public UnityEvent spikesDoneAttack;
     private Vector3 spikePos;
     Vector3 initalSpikesPos;
     private Collider2D hazardCollider;
@@ -61,7 +63,7 @@ public class IceGroundSpikesBehavior : MonoBehaviour
     {
         spikePos = this.gameObject.transform.position;
         //submerge spikes back underground
-        while (spikePos.y >= initalSpikesPos.y - 1)
+        while (spikePos.y > initalSpikesPos.y - 1)
         {
             spikePos = this.gameObject.transform.position;
             spikePos -= transform.up * Time.deltaTime * spikeSpeed;
@@ -69,5 +71,6 @@ public class IceGroundSpikesBehavior : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         hazardCollider.enabled = false;
+        spikesDoneAttack.Invoke();
     }
 }

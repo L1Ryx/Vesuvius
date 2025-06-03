@@ -191,7 +191,7 @@ namespace _Gameplay._Arch
             }
         }
 
-        private void HandleCollisionWithHazard( Collider2D collision)
+        public void HandleCollisionWithHazard( Collider2D collision)
         {
             if (playerInfo.GetCurrentHealth() <= 0) return;
             if (!isInvincible)

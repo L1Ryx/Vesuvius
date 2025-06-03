@@ -1,4 +1,5 @@
 using System;
+using AK.Wwise;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,7 +9,6 @@ public class GauntletManager : MonoBehaviour
     [Header("Cultist")]
     public GameObject[] cultistTeleportPoints;
     public GameObject cultist;
-    public float timeBetweenAttacks = 2f;
     [Header("Ice Ground Spikes")]
     public UnityEvent triggerAttacks;
     [Header("Ice Ground Spikes")]
@@ -18,7 +18,6 @@ public class GauntletManager : MonoBehaviour
     public UnityEvent OnGauntletCompleted;
 
     private CultistBossBehavior cultistBehavior;
-    private float timeSinceLastAttack = 0f;
 
     void Awake()
     {
@@ -29,18 +28,10 @@ public class GauntletManager : MonoBehaviour
     {
         StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
         cultistBehavior.FaceRight();
+        TriggerAttacks();
     }
 
-    void Update()
-    {
-        timeSinceLastAttack += Time.deltaTime;
-        if (timeSinceLastAttack >= timeBetweenAttacks)
-        {
-            TriggerAttacks();
-        }
-    }
-
-    private void TriggerAttacks()
+    public void TriggerAttacks()
     {
         switch (stage)
         {
@@ -59,7 +50,6 @@ public class GauntletManager : MonoBehaviour
             default:
                 break;
         }
-        timeSinceLastAttack = 0f;
     }
 
     public void ResetStage()

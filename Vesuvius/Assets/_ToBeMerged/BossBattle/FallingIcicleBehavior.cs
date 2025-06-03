@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FallingIcicleBehavior : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class FallingIcicleBehavior : MonoBehaviour
     private Vector3 currentPosition;
     public float raycastDistance = 0.5f; // Distance to check for ground
     public LayerMask groundLayer;
+    public UnityEvent icicleHitGround;
     Vector3 initialPosition;
     private bool isFalling = false;
     private Collider2D hazardCollider;
@@ -38,6 +40,7 @@ public class FallingIcicleBehavior : MonoBehaviour
 
             if (hit)
             {
+                icicleHitGround.Invoke();
                 ResetIcicle();
             }
         }

@@ -75,14 +75,19 @@ public class CultistBossBehavior : MonoBehaviour
     public UnityEvent startSlamDown;
     public UnityEvent slamHitCeiling;
     public UnityEvent slamHitGround;
+    public UnityEvent beamDoneAttack;
     public LayerMask terrainLayer;
     private Vector3 initialPosition;
 
     Rigidbody2D rb;
+    private SpriteRenderer beamSpriteRenderer;
+    private CollisionDamageIfSameReality beamDamage;
     // Start is called before the first frame update
     void Start()
     {
-        rb = rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        beamSpriteRenderer = BeamSprite.GetComponent<SpriteRenderer>();
+        beamDamage = BeamSprite.GetComponent<CollisionDamageIfSameReality>();
         pos = transform.position;
         if (!animator) print("animator not set");
     }
@@ -171,6 +176,14 @@ public class CultistBossBehavior : MonoBehaviour
         rb.linearVelocity = new Vector2(0, 0);
     }
 
+    [Header("Beam Variables")]
+    public float warningMinAlpha = 0.25f;
+    public float warningMaxAlpha = 0.5f;
+    public float warningTime = 1f;
+    public float beamStayTime = 0.5f;
+    public float beamFadeOutTime = 0.25f;
+    private Color beamColor;
+
     public IEnumerator Beam()
     {
         print("beam");
@@ -179,17 +192,69 @@ public class CultistBossBehavior : MonoBehaviour
         //transform.position = pos;
         yield return new WaitForSeconds(.25f);
         preBeamBall.SetActive(true);
+        beamDamage.StoreRealityState();
         yield return new WaitForSeconds(.5f);
+
+        //set warning color
+        beamColor = beamSpriteRenderer.color;
+        beamColor.a = warningMinAlpha;
+        beamSpriteRenderer.color = beamColor;
         BeamSprite.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        float elapsedTime = 0f;
+        // warning: Fade in Beam
+        while (elapsedTime < warningTime / 2)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = (warningMaxAlpha - warningMinAlpha) * (elapsedTime / (warningTime / 2));
+
+            beamColor = beamSpriteRenderer.color;
+            beamColor.a = warningMinAlpha + alpha;
+            beamSpriteRenderer.color = beamColor;
+            yield return new WaitForEndOfFrame();
+        }
+        elapsedTime = 0f;
+        //warning: Fade out Beam
+        while (elapsedTime < warningTime / 2)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = (warningMaxAlpha - warningMinAlpha) * (elapsedTime / (warningTime / 2));
+
+            beamColor = beamSpriteRenderer.color;
+            beamColor.a = warningMaxAlpha - alpha;
+            beamSpriteRenderer.color = beamColor;
+            yield return new WaitForEndOfFrame();
+        }
+
+        //Beam Attack Active
+        beamDamage.Activate();
+        beamColor.a = 1f;
+        beamSpriteRenderer.color = beamColor;
+        yield return new WaitForSeconds(beamStayTime);
+
+        //FadeOutBeam
+        beamDamage.Deactivate();
+        elapsedTime = 0f;
+        while (elapsedTime < beamFadeOutTime)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = elapsedTime / beamFadeOutTime;
+
+            beamColor = beamSpriteRenderer.color;
+            beamColor.a = 1 - alpha;
+            beamSpriteRenderer.color = beamColor;
+            yield return new WaitForEndOfFrame();
+        }
+
 
         preBeamBall.SetActive(false);
         BeamSprite.SetActive(false);
+        
 
         //recovering (float up and down for a few seconds)
 
         isSpecialDone = true;
         nextSpecial = Specials.Slam;
+        beamDoneAttack.Invoke();
     }
 
     public IEnumerator TeleportTo(Vector3 location)
