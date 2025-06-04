@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2303874201505594422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 575084525700293792, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_Name
+      value: StoneEyeSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1489377378377331004, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 55.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.5100007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5245223978494334739, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720025175893722111, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_Name
+      value: ActiveEyeSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_Name
+      value: MirrorShardCutsceneEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183289827312280835, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2341009153129139644, guid: 7405eb063443542028e690975a429de5, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7673315432586502374}
+    - targetCorrespondingSourceObject: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6078358536732349177}
+    - targetCorrespondingSourceObject: {fileID: 1489377378377331004, guid: 7405eb063443542028e690975a429de5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6946622254709316763}
+  m_SourcePrefab: {fileID: 100100000, guid: 7405eb063443542028e690975a429de5, type: 3}
+--- !u!1 &815808716728405258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1489377378377331004, guid: 7405eb063443542028e690975a429de5, type: 3}
+  m_PrefabInstance: {fileID: 2303874201505594422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6946622254709316763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815808716728405258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc2d24b153acb244b217986c304330c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2753690522220918853}
+  startFadedOut: 0
+  fadeDuration: 0.5
+--- !u!212 &2753690522220918853 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4165288221233316979, guid: 7405eb063443542028e690975a429de5, type: 3}
+  m_PrefabInstance: {fileID: 2303874201505594422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5399542562615795482 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6131094795092517676, guid: 7405eb063443542028e690975a429de5, type: 3}
+  m_PrefabInstance: {fileID: 2303874201505594422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8027866707822302969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
+  m_PrefabInstance: {fileID: 2303874201505594422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7673315432586502374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027866707822302969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: f34782fdb607b1144a06805ad4c341bc, type: 2}
+    - {fileID: 11400000, guid: d5d2a246cf3db5d4e86d1b27af884168, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6946622254709316763}
+          m_TargetAssemblyTypeName: Fader, Assembly-CSharp
+          m_MethodName: CallFadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6946622254709316763}
+          m_TargetAssemblyTypeName: Fader, Assembly-CSharp
+          m_MethodName: CallFadeOutAndDisable
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &6078358536732349177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8027866707822302969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc2d24b153acb244b217986c304330c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5399542562615795482}
+  startFadedOut: 0
+  fadeDuration: 0.5

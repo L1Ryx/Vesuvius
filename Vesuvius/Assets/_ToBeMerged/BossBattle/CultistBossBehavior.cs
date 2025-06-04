@@ -228,10 +228,21 @@ public class CultistBossBehavior : MonoBehaviour
         }
 
         //Beam Attack Active
-        beamDamage.Activate();
+        //beamDamage.Activate();
         beamColor.a = 1f;
         beamSpriteRenderer.color = beamColor;
-        yield return new WaitForSeconds(beamStayTime);
+        BeamSprite.transform.localScale = Vector2.zero;
+        while (elapsedTime < 2f)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = elapsedTime / 2f;
+
+            Vector2 scale = new Vector2(alpha, alpha);
+            BeamSprite.transform.localScale = scale;
+            yield return new WaitForEndOfFrame();
+        }
+
+        //yield return new WaitForSeconds(beamStayTime);
 
         //FadeOutBeam
         beamDamage.Deactivate();

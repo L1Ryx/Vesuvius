@@ -1,6 +1,7 @@
 using _Gameplay._Arch;
 using Public.Tarodev_2D_Controller.Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class KeyItemAcquisition : MonoBehaviour
@@ -18,12 +19,15 @@ public class KeyItemAcquisition : MonoBehaviour
     private PlayerController playerController; // Dynamically fetched PlayerController
     private GameObject menuInstance;
 
+    public UnityEvent menuClosed;
+
     private void Awake()
     {
         playerControls = new PlayerControls();
 
         // Subscribe to navigation and selection actions
-        playerControls.Player.Confirm.performed += CloseMenu;
+        //playerControls.Player.Confirm.performed += CloseMenu;
+        playerControls.Player.RealityShift.performed += CloseMenu;
     }
 
     private void OnEnable()
@@ -86,6 +90,7 @@ public class KeyItemAcquisition : MonoBehaviour
             // Unfreeze player movement
             playerController.SetFreezeMode(false);
             Destroy(menuInstance);
+            menuClosed.Invoke();
 
             Debug.Log("Menu closed and player unfrozen.");
         }

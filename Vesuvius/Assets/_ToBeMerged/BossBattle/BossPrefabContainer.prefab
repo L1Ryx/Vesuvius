@@ -361,6 +361,7 @@ MonoBehaviour:
   warningTime: 1.5
   beamStayTime: 0.5
   beamFadeOutTime: 0.25
+  dialogue: {fileID: 0}
 --- !u!61 &1751348890777400817
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -463,7 +464,7 @@ Transform:
   m_GameObject: {fileID: 4227790946173890500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.9, y: -2.51, z: 0}
+  m_LocalPosition: {x: -0.71, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,7 +562,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5125448, y: 0}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 34.875, y: 5}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5

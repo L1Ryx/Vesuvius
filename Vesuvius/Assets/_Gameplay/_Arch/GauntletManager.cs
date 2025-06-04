@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class GauntletManager : MonoBehaviour
 {
-    public int stage = 0;
+    public int stage = -1;
     [Header("Cultist")]
     public GameObject[] cultistTeleportPoints;
     public GameObject cultist;
@@ -26,9 +26,9 @@ public class GauntletManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
-        cultistBehavior.FaceRight();
-        TriggerAttacks();
+        //StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
+        //cultistBehavior.FaceRight();
+        //TriggerAttacks();
     }
 
     public void TriggerAttacks()
@@ -60,20 +60,35 @@ public class GauntletManager : MonoBehaviour
     public void AdvanceStage()
     {
         stage++;
-        //final stage
-        if (stage == 4)
+        switch (stage)
         {
-            CompleteGauntlet();
-        }
-        else if (stage == 2)
-        {
-            StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
-            cultistBehavior.FaceRight();
-        }
-        else
-        {
-            StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
-            cultistBehavior.FaceLeft();
+            case 0:
+                StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
+                cultistBehavior.FaceRight();
+                break;
+
+            case 1:
+                StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
+                cultistBehavior.FaceRight();
+                TriggerAttacks();
+                break;
+
+            case 2:
+                StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
+                cultistBehavior.FaceLeft();
+                break;
+
+            case 3:
+                StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
+                cultistBehavior.FaceRight();
+                break;
+
+            case 4:
+                CompleteGauntlet();
+                break;
+
+            default:
+                break;
         }
     }
 

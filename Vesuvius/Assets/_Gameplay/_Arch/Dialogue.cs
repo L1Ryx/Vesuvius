@@ -29,12 +29,14 @@ namespace _Gameplay._Arch
         public float dialoguePulseSpeed = 0.5f;
         public float dialoguePulseIntensity = 0.02f;
         public bool isForMainMenu = false;
+        public bool waitForSignalBeforeContinue = false;
 
         public string currentDialogueTreeID;
 
         private bool isPlayerNear = false;
         private bool isTalking = false;
         private bool isTyping = false;
+        private bool canContinue = false;
         private int currentDialogueIndex = 0;
         private Color targetColor;
         private PlayerControls _controls;
@@ -69,7 +71,8 @@ namespace _Gameplay._Arch
 
         private void FindPlayer()
         {
-            if (isForMainMenu) {
+            if (isForMainMenu)
+            {
                 return;
             }
             playerSpawner = FindFirstObjectByType<PlayerSpawner>();
@@ -118,7 +121,7 @@ namespace _Gameplay._Arch
                     string wwiseEvent = dialogueTree.wwiseEvents[currentDialogueIndex];
                     if (!string.IsNullOrEmpty(wwiseEvent))
                     {
-                    
+
                     }
                 }
 
@@ -164,7 +167,7 @@ namespace _Gameplay._Arch
             dialogueCanvas.gameObject.SetActive(false);
             dialogueTree.eventsOnDialogueEnd.Invoke();
 
-    
+
             player.GetComponent<PlayerController>().FreezeMode = false; // Unfreeze player movement
         }
 
@@ -191,9 +194,23 @@ namespace _Gameplay._Arch
                 }
                 else
                 {
-                    DisplayNextDialogue(); // Go to next dialogue if not typing
+                    if (!waitForSignalBeforeContinue)
+                    {
+                        DisplayNextDialogue(); // Go to next dialogue if not typing
+                    }
+                    else if (canContinue)
+                    {
+                        DisplayNextDialogue();
+                        canContinue = false;
+                    }
+
                 }
             }
+        }
+
+        public void SignalContinue()
+        {
+            canContinue = true;
         }
     }
 }

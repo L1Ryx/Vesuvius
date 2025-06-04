@@ -21,7 +21,7 @@ public class InvokeUnityEventsOnTriggerEnter : MonoBehaviour
             Debug.LogWarning($"{gameObject.name} collider is not set as a trigger. Setting it now.");
             triggerCollider.isTrigger = true;
         }
-        if (blockedTriggers.isInteractableBlocked(guidComponent.GetGuid().ToString()))
+        if (blockedTriggers != null && blockedTriggers.isInteractableBlocked(guidComponent.GetGuid().ToString()))
         {
             triggerCollider.enabled = false;
         }
