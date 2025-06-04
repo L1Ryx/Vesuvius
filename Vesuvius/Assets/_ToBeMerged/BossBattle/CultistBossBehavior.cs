@@ -186,6 +186,11 @@ public class CultistBossBehavior : MonoBehaviour
     public float beamFadeOutTime = 0.25f;
     private Color beamColor;
 
+    public void CastBeam()
+    {
+        StartCoroutine(Beam());
+    }
+
     public IEnumerator Beam()
     {
         print("beam");

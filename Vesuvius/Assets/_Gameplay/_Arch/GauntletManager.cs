@@ -9,10 +9,8 @@ public class GauntletManager : MonoBehaviour
     [Header("Cultist")]
     public GameObject[] cultistTeleportPoints;
     public GameObject cultist;
-    [Header("Ice Ground Spikes")]
-    public UnityEvent triggerAttacks;
-    [Header("Ice Ground Spikes")]
-    public IceGroundSpikesBehavior spikesCollection;
+
+    public CutsceneEyeManager cutscene;
 
     [Header("Completion")]
     public UnityEvent OnGauntletCompleted;
@@ -26,9 +24,12 @@ public class GauntletManager : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
-        //cultistBehavior.FaceRight();
-        //TriggerAttacks();
+        //if player has gotten the mirror then move the gauntlet into place
+        if (cutscene.isBlocked())
+        {
+            stage = 0;
+            AdvanceStage();
+        }
     }
 
     public void TriggerAttacks()
@@ -44,7 +45,7 @@ public class GauntletManager : MonoBehaviour
                 break;
 
             case 3:
-                StartCoroutine(cultistBehavior.Beam());
+                cultistBehavior.CastBeam();
                 break;
 
             default:

@@ -192,6 +192,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1024
+  icicleHitGround:
+    m_PersistentCalls:
+      m_Calls: []
+  fadeDuration: 0.5
 --- !u!114 &3317741872398555088
 MonoBehaviour:
   m_ObjectHideFlags: 0
