@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8db34bea3caed354b8269c13bf2c0b49, type: 3}
-  m_Name: GameState
+  m_Script: {fileID: 11500000, guid: 18139b27009e23141a8b6438e9ab4cd8, type: 3}
+  m_Name: DefeatedBosses
   m_EditorClassIdentifier: 
-  isAltReality: 1
+  shownGuids: []

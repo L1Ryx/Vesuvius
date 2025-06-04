@@ -293,18 +293,4 @@ public class CultistBossBehavior : MonoBehaviour
         rb.gravityScale = 1;
         dialogue.StartDialogue();
     }
-
-    public CinemachineConfiner2D confiner2D;
-    public CinemachineCamera cinemachineCamera;
-    public CinemachineCamera bossCamera;
-    public Collider2D bossRoomCollider;
-    public GameObject middleOfRoom;
-    public void UseBossCam()
-    {
-        bossCamera.Priority = 20;
-        cinemachineCamera.Priority = 10;
-        //cinemachineCamera.ForceCameraPosition(middleOfRoom.transform.position,middleOfRoom.transform.rotation);
-        //confiner2D.OversizeWindow.Enabled = true;
-        //confiner2D.BoundingShape2D = bossRoomCollider;
-    }
 }

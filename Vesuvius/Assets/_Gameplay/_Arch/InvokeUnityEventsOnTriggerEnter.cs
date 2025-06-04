@@ -3,18 +3,27 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(GuidComponent))]
 public class InvokeUnityEventsOnTriggerEnter : MonoBehaviour
 {
     public UnityEvent OnTriggerEnter; //actions to execute on valid interaction
+    public BinaryStateStorage blockedTriggers;
+    private GuidComponent guidComponent;
+    private Collider2D triggerCollider;
 
     private void Start()
     {
         // Ensure the Collider is set as a trigger
-        Collider2D collider = GetComponent<Collider2D>();
-        if (!collider.isTrigger)
+        triggerCollider = GetComponent<Collider2D>();
+        guidComponent = GetComponent<GuidComponent>();
+        if (!triggerCollider.isTrigger)
         {
             Debug.LogWarning($"{gameObject.name} collider is not set as a trigger. Setting it now.");
-            collider.isTrigger = true;
+            triggerCollider.isTrigger = true;
+        }
+        if (blockedTriggers.isInteractableBlocked(guidComponent.GetGuid().ToString()))
+        {
+            triggerCollider.enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,7 +31,12 @@ public class InvokeUnityEventsOnTriggerEnter : MonoBehaviour
         if (other.CompareTag("Player")) // Check if the collider is the player
         {
             OnTriggerEnter.Invoke();
-            GetComponent<BoxCollider2D>().enabled = false;
+            triggerCollider.enabled = false;
         }
+    }
+
+    public void AddTriggerToBlockedList()
+    {
+        blockedTriggers.Add(guidComponent.GetGuid().ToString());
     }
 }

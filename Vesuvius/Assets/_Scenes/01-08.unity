@@ -124,50 +124,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9098371419975897547, guid: ab2ae063fce3f4372ac1a20887435a97, type: 3}
   m_PrefabInstance: {fileID: 118779331}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &48981666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2514394405271634994, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
-  m_PrefabInstance: {fileID: 701249017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &48981668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2803254104341836995, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
   m_PrefabInstance: {fileID: 701249017}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48981666}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cc1911b2993d40a8b67dfea437bb3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &48981671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48981666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 4fef3788130026d4eb9f0a00002e39f8, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 48981668}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
-        m_MethodName: UnlockGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &98170580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -643,7 +610,7 @@ GameObject:
   - component: {fileID: 310316570}
   - component: {fileID: 310316573}
   m_Layer: 0
-  m_Name: CinemachineCamera
+  m_Name: PlayerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -805,6 +772,9 @@ GameObject:
   - component: {fileID: 401041687}
   - component: {fileID: 401041686}
   - component: {fileID: 401041685}
+  - component: {fileID: 401041688}
+  - component: {fileID: 401041689}
+  - component: {fileID: 401041690}
   m_Layer: 0
   m_Name: BossFightTrigger
   m_TagString: Untagged
@@ -839,8 +809,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1276272082}
-        m_TargetAssemblyTypeName: CultistBossBehavior, Assembly-CSharp
+      - m_Target: {fileID: 401041690}
+        m_TargetAssemblyTypeName: BossRoomCameraSwitcher, Assembly-CSharp
         m_MethodName: UseBossCam
         m_Mode: 1
         m_Arguments:
@@ -851,6 +821,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  blockedTriggers: {fileID: 11400000, guid: ef52deee15512ca44a425b52346c7ad5, type: 2}
 --- !u!61 &401041686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -912,6 +883,109 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &401041688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401041684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4fef3788130026d4eb9f0a00002e39f8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 401041685}
+        m_TargetAssemblyTypeName: InvokeUnityEventsOnTriggerEnter, Assembly-CSharp
+        m_MethodName: AddTriggerToBlockedList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 48981668}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
+        m_MethodName: UnlockGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1381609931}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
+        m_MethodName: UnlockGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 401041690}
+        m_TargetAssemblyTypeName: BossRoomCameraSwitcher, Assembly-CSharp
+        m_MethodName: UsePlayerCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1276272089}
+        m_TargetAssemblyTypeName: BossRespawnBlocker, Assembly-CSharp
+        m_MethodName: AddBossToBlockedList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &401041689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401041684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 894496d7aa817f449700921e4d556e15
+--- !u!114 &401041690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401041684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df82f08250949e246bd51244a5340dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 310316571}
+  bossCamera: {fileID: 1300225296}
 --- !u!1 &409247026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,10 +1816,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2514394405271634994, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 48981671}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
 --- !u!1 &701784506
 GameObject:
@@ -19958,6 +20029,32 @@ MonoBehaviour:
   RebalanceTutorialNeeded:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1276272089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276272079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76608a8309d8d8e46858f69418f351da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defeatedBosses: {fileID: 11400000, guid: 895a27412b9ce514d99262e3aebe9fb6, type: 2}
+--- !u!114 &1276272090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276272079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: edd65618adbf8e4bba14901cc1ae8c80
 --- !u!1001 &1294508919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20048,7 +20145,7 @@ GameObject:
   - component: {fileID: 1300225295}
   - component: {fileID: 1300225294}
   m_Layer: 0
-  m_Name: CinemachineCamera (1)
+  m_Name: BossFightCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20536,50 +20633,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1381609929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2514394405271634994, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
-  m_PrefabInstance: {fileID: 2069415441}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1381609931 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2803254104341836995, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
   m_PrefabInstance: {fileID: 2069415441}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381609929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cc1911b2993d40a8b67dfea437bb3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1381609934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381609929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 4fef3788130026d4eb9f0a00002e39f8, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1381609931}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
-        m_MethodName: UnlockGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1406872491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2468330018570116006, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
@@ -21065,6 +21129,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276272084}
+    - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1276272090}
+    - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1276272089}
   m_SourcePrefab: {fileID: 100100000, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
 --- !u!1 &1656055146
 GameObject:
@@ -21423,10 +21493,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2514394405271634994, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1381609934}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bad1432efa6749c5894b3fb6dd8b722, type: 3}
 --- !u!1 &174868995540201449
 GameObject:

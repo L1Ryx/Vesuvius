@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6fa2d92fc1b3f34da284357edf89c3b, type: 3}
-  m_Name: UnlockAbility
+  m_Script: {fileID: 11500000, guid: 18139b27009e23141a8b6438e9ab4cd8, type: 3}
+  m_Name: BlockedTriggers
   m_EditorClassIdentifier: 
+  shownGuids:
+  - 1c864e60-93b7-4e9e-9834-62e4b906d27e

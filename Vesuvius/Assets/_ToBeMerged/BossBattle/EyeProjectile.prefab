@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5250419813252050819}
   - component: {fileID: 6699707740565447158}
-  - component: {fileID: 2792998273695021517}
   - component: {fileID: 4903456735960220557}
+  - component: {fileID: 952409554972849216}
   - component: {fileID: 5263266875100735486}
   m_Layer: 11
   m_Name: EyeProjectile
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2552884312059601329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.02, y: 5.038, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 34.41, y: 5.038, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6576022264724152870}
@@ -64,7 +64,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2792998273695021517
+--- !u!114 &4903456735960220557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552884312059601329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b200bc86ee3454e9aea66c5760f6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
+  speed: 5
+  rotationSpeed: 3
+  timeToHome: 0.5
+--- !u!58 &952409554972849216
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,22 +116,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &4903456735960220557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552884312059601329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b200bc86ee3454e9aea66c5760f6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 6069206293709486742, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
-  speed: 5
-  rotationSpeed: 3
-  timeToHome: 0.5
 --- !u!114 &5263266875100735486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +139,10 @@ MonoBehaviour:
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
   flashCount: 2
+  usesAlternateDeath: 0
+  onDeathEvents:
+    m_PersistentCalls:
+      m_Calls: []
   deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   upwardForce: 5
   fadeDuration: 10
@@ -179,7 +183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5250419813252050819}
