@@ -18,7 +18,7 @@
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SwitchOpen" ID="{3F1FA469-E723-472C-80BB-07AF41D6F62E}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Play_BohrmanTunnels" ID="{12F39695-F836-413D-BA34-8C87056E8D88}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
@@ -42,7 +42,7 @@
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_GateOpen" ID="{4D888C9D-54F2-42EE-A4BF-38460A830AF4}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Stop_BohrmanTunnels" ID="{07889D9D-6CA1-48E4-BEBA-4CF7821E4C37}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="1" Y="3"/>
 						</Module>
 						<Module>
@@ -60,10 +60,6 @@
 						<Module>
 							<ObjectRef Name="Stop_ForestAmbienceBlend" ID="{3FDF8614-1282-4012-902D-0E61E80D768D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="2" Y="1"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Play_GateOpenSequence" ID="{536DB0EF-072C-4FA0-82BC-D8632C8EB292}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
-							<Position X="2" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_Landing" ID="{F0C012EC-025C-4BC9-BC60-55405F852DD0}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
@@ -113,7 +109,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="Dimension_Blend" ID="{F4B7B2CD-D971-44A0-8588-5289AD7E313F}"/>
-							<Value>0</Value>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Windiness" ID="{856B4807-561B-4A1A-A33F-1DF239E7BFBE}"/>
@@ -134,7 +130,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Ice" ID="{4E5A5B6B-739B-42F9-AB2B-3F9A0B153193}"/>
+						<CurrentSwitchRef Name="Forest" ID="{B444975E-34A7-43A2-B822-54DBF6EBF5C7}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

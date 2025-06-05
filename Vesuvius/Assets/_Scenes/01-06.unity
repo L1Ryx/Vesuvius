@@ -283,6 +283,7 @@ MonoBehaviour:
   dialoguePulseSpeed: 0.5
   dialoguePulseIntensity: 0.02
   isForMainMenu: 0
+  waitForSignalBeforeContinue: 0
   currentDialogueTreeID: CallName
 --- !u!114 &247196368
 MonoBehaviour:
@@ -36678,6 +36679,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1589849153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467965968858802444, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_Name
+      value: Music Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
 --- !u!4 &1591691771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2468330018570116006, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
@@ -72608,6 +72666,7 @@ SceneRoots:
   - {fileID: 6905136821616487142}
   - {fileID: 1411748015}
   - {fileID: 559584743}
+  - {fileID: 1589849153}
   - {fileID: 756618189}
   - {fileID: 1846957549}
   - {fileID: 1981386164}

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{68E400BD-D8A6-1252-199D-F47D8FF7409A}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4BBE39F5-6902-AE10-165B-F1834B739401}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,6 +22,8 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="3004847309" Name="AMB_Main"/>
+				<Bus Id="3031508118" Name="MUS_Main"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<AuxBusses>
@@ -37,6 +39,7 @@
 				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
+				<GameParameter Id="3600736381" Name="Distance_X"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 			<SwitchGroups>
@@ -48,13 +51,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{0A5CF314-F216-FC92-75C9-06D9EE24CAD6}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{3EB469FF-C776-76F9-17DC-4C16EA2D4B89}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
 				<File Id="7316285" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Abileh.wav</ShortName>
 					<CachePath>SFX/Abileh_EFE7469B.wem</CachePath>
+				</File>
+				<File Id="30527012" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BohrmanTunnels_144_4-4_v1.wav</ShortName>
+					<CachePath>SFX/BohrmanTunnels_144_4-4_v1_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="52759494" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Nulla.wav</ShortName>
@@ -295,6 +302,11 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="2726383372" Name="Play_BohrmanTunnels" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="30527012"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="4082933267" Name="Play_BulbOpen" DurationType="OneShot" DurationMin="0.3782665" DurationMax="0.7445887">
 					<MediaRefs>
@@ -572,6 +584,7 @@
 					</AuxBusRefs>
 				</Event>
 				<Event Id="1210756211" Name="Stop_BigBlueSolo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3701069102" Name="Stop_BohrmanTunnels" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3411346464" Name="Stop_CaveAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3927559978" Name="Stop_Footstep" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1262204860" Name="Stop_ForestAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -583,9 +596,10 @@
 				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
+				<GameParameter Id="3600736381" Name="Distance_X"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B73B59BE-AD56-0A7D-CF37-1AC7A2DDDB76}</FileHash>
+	<FileHash>{1BDE0C0D-F17A-8F8C-7345-2B68C86DE8DD}</FileHash>
 </SoundBanksInfo>

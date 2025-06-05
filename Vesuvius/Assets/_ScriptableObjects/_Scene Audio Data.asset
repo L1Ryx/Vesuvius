@@ -18,43 +18,59 @@ MonoBehaviour:
       Windiness: 10
       Openness: 20
       Creakiness: 45
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-02
     audioInfo:
       Windiness: 60
       Openness: 40
       Creakiness: 55
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-03
     audioInfo:
       Windiness: 75.1
       Openness: 75.6
       Creakiness: 57
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-04
     audioInfo:
       Windiness: 10
       Openness: 7.7
       Creakiness: 43.9
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-05
     audioInfo:
       Windiness: 16.7
       Openness: 6.4
       Creakiness: 49.6
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 00-01
     audioInfo:
       Windiness: 16.5
       Openness: 6.4
       Creakiness: 49.6
+      musicTracks: []
   - sceneName: 01-06
     audioInfo:
       Windiness: 58.5
       Openness: 60
       Creakiness: 18.5
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-07
     audioInfo:
       Windiness: 33
       Openness: 34
       Creakiness: 60.5
+      musicTracks:
+      - BohrmanTunnels
   - sceneName: 01-08
     audioInfo:
       Windiness: 37
       Openness: 35.5
       Creakiness: 31
+      musicTracks: []

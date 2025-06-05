@@ -658,6 +658,41 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="BohrmanTunnels" ID="{89F62FF8-D15F-4685-9C85-B76CBAE2E8DF}" ShortID="427606179">
+					<ChildrenList>
+						<Event Name="Play_BohrmanTunnels" ID="{12F39695-F836-413D-BA34-8C87056E8D88}">
+							<ChildrenList>
+								<Action Name="" ID="{AA4D2FBE-CFDA-4365-A4E0-DD09D0EE83FD}" ShortID="97691681">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_BohrmanTunnels_Playlist" ID="{64E4DAC3-BBF2-4A15-962F-792860FBABF1}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_BohrmanTunnels" ID="{07889D9D-6CA1-48E4-BEBA-4CF7821E4C37}">
+							<ChildrenList>
+								<Action Name="" ID="{F4393B20-6C2D-4F83-B06C-8E0A60099C0B}" ShortID="934243072">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_BohrmanTunnels_Playlist" ID="{64E4DAC3-BBF2-4A15-962F-792860FBABF1}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

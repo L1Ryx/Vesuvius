@@ -4,13 +4,6 @@
 		<WorkUnit Name="Default Work Unit" ID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}" PersistMode="Standalone">
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
-					<PropertyList>
-						<Property Name="BusVolume" Type="Real64">
-							<ValueList>
-								<Value>6</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
 							<ObjectRef Name="System" ID="{2F8BDD4C-1910-4450-8B3F-780009FEAFB8}" WorkUnitID="{F00F75C1-2166-4172-A441-87E59BAF5EEB}"/>
@@ -106,6 +99,20 @@
 								</ObjectList>
 							</ObjectLists>
 						</AuxBus>
+						<Bus Name="AMB_Main" ID="{1838F7F8-6E68-48BA-B755-998C35F9AA98}"/>
+						<Bus Name="MUS_Main" ID="{12CD0210-A4DF-4C01-8FA1-D3876DBA50C1}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="AMB_Main" ID="{1838F7F8-6E68-48BA-B755-998C35F9AA98}"/>
+									<DuckingParam>
+										<Volume>-12</Volume>
+										<FadeInTime>1</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

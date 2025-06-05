@@ -5,6 +5,7 @@ namespace _ScriptableObjects.SceneAudio
 {
     [System.Serializable]
     public class AudioInfo {
+        [Header("Ambience Settings")]
         [Range(0, 100)]
         public float Windiness;
 
@@ -12,6 +13,8 @@ namespace _ScriptableObjects.SceneAudio
         public float Openness;
         [Range(0, 100)]
         public float Creakiness;
+        [Header("Music Events (Playlist Name Only)")]
+        public List<string> musicTracks = new List<string>(); // e.g., "BohrmanTunnels"
     }
 
     [CreateAssetMenu(fileName = "SceneAudioData", menuName = "Audio/Scene Audio Data")]
