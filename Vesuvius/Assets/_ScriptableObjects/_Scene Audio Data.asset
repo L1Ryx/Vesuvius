@@ -39,8 +39,7 @@ MonoBehaviour:
       Windiness: 10
       Openness: 7.7
       Creakiness: 43.9
-      musicTracks:
-      - BohrmanTunnels
+      musicTracks: []
   - sceneName: 01-05
     audioInfo:
       Windiness: 16.7
