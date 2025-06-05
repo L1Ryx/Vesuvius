@@ -6,11 +6,11 @@ using UnityEngine.Events;
 
 public class CultistBossBehavior : MonoBehaviour
 {
-    public enum EnemyState { Idle, AttackPlayer, Special }
-    public enum Specials { Slam, Beam }
+    public enum EnemyState { Idle, AttackPlayer, Special, NotEngaged, Teleporting, Dead }
+    public enum Specials { SlamUp, Beam , SlamDown}
 
-    public EnemyState currentState = EnemyState.Idle;
-    public Specials nextSpecial = Specials.Slam;
+    public EnemyState currentState = EnemyState.NotEngaged;
+    public Specials nextSpecial = Specials.SlamUp;
 
     [Header("Movement")]
     [SerializeField]
@@ -22,24 +22,19 @@ public class CultistBossBehavior : MonoBehaviour
     [SerializeField]
     float magnitude = 0.5f;
     [SerializeField]
-    Vector3 idleTeleportPosition;
+    GameObject idleTeleportPosition;
 
     [Header("Behavior")]
     [SerializeField]
     float timeBetweenSpecials = 5f;
 
-    //[Header("Slam")]
-    [SerializeField]
-    GameObject spikes;
     [SerializeField]
     float slamSpeed = 2f;
-    [SerializeField]
-    float spikeSpeed = 3f;
-    [SerializeField] Vector3 slamTeleportPosition;
+    [SerializeField] GameObject slamTeleportPosition;
 
     //[Header("Beam")]
     [SerializeField]
-    Vector3 beamTeleportPosition;
+    GameObject beamTeleportPosition;
     [SerializeField]
     GameObject preBeamBall;
     [SerializeField]
@@ -59,7 +54,6 @@ public class CultistBossBehavior : MonoBehaviour
 
     Vector3 pos;
 
-    Vector3 spikePos;
 
     float accumulator = 0f;
 
@@ -80,6 +74,7 @@ public class CultistBossBehavior : MonoBehaviour
     public UnityEvent beamDoneAttack;
     public LayerMask terrainLayer;
     private Vector3 initialPosition;
+    private Coroutine currentAttack;
 
     Rigidbody2D rb;
     private SpriteRenderer beamSpriteRenderer;
@@ -93,11 +88,95 @@ public class CultistBossBehavior : MonoBehaviour
         pos = transform.position;
         if (!animator) print("animator not set");
     }
-
+    #region Controller
     // Update is called once per frame
     void Update()
     {
+        if (currentState == EnemyState.Idle) { Idle(); }
+        else if (currentState == EnemyState.Special) { Special(); }
+    }
 
+    #endregion
+
+    public void BeginFight()
+    {
+        currentState = EnemyState.Idle;
+    }
+
+    void Idle()
+    {
+        timeSinceEyeSummon += Time.deltaTime;
+        timeSinceLastSpecial += Time.deltaTime;
+        Move();
+        if(timeSinceEyeSummon >= timeBeforeEyeSummon)
+        {
+            SummonEye();
+        }
+        if (timeSinceLastSpecial >= timeBetweenSpecials)
+        {
+            currentState = EnemyState.Special;
+        }
+    }
+    public float amplitude = 5f;      // Size of the figure 8
+    public float speed = 1f;          // Speed of movement
+    public Vector3 center; // Center position of the figure 8
+    private float timeCounter;
+    void Move()
+    {
+        center = idleTeleportPosition.transform.position;
+        //accumulator += direction * Time.deltaTime;
+        //pos += direction * transform.right * Time.deltaTime * MoveSpeed;
+        //transform.position = pos + direction * transform.up * Mathf.Sin(accumulator * frequency) * magnitude;
+
+
+        //if (accumulator >= Mathf.PI || accumulator <= -Mathf.PI)
+        //{
+        //    direction *= -1;
+        //}
+
+        timeCounter += Time.deltaTime * speed;
+
+        // Lissajous figure-8 pattern in XY
+        float x = amplitude * Mathf.Sin(timeCounter);
+        float y = amplitude * Mathf.Sin(timeCounter) * Mathf.Cos(timeCounter);
+
+        transform.position = center + new Vector3(x, y, 0f);
+    }
+
+    void SummonEye()
+    {
+        //eye.SetActive(true);
+        timeSinceEyeSummon = 0f;
+    }
+
+    void Special()
+    {
+        if (!isCastingSpecial && !isSpecialDone)
+        {
+            isCastingSpecial = true;
+            //StartCoroutine(Teleport());
+            if (nextSpecial == Specials.SlamUp || nextSpecial == Specials.SlamDown)
+            {
+                //animator.SetTrigger("Teleporting");
+                //StartCoroutine(Slam());
+                StartCoroutine(Teleport(slamTeleportPosition.transform.position));
+            }
+            else if (nextSpecial == Specials.Beam)
+            {
+                //StartCoroutine(Beam());
+                StartCoroutine(Teleport(beamTeleportPosition.transform.position));
+            }
+
+        }
+        //return boss back to idle state
+        if (isSpecialDone)
+        {
+            isCastingSpecial = false;
+            isSpecialDone = false;
+            timeSinceLastSpecial = 0f;
+            currentState = EnemyState.Teleporting;
+            StartCoroutine(Teleport(idleTeleportPosition.transform.position));
+        }
     }
 
     public void SlamUp()
@@ -111,7 +190,41 @@ public class CultistBossBehavior : MonoBehaviour
         isSlammingUpwards = false;
         StartCoroutine(Slam());
     }
+    #region Behaviors
 
+    IEnumerator Teleport(Vector3 location)
+    {
+        animator.SetTrigger("Teleporting");
+        //animator.SetFloat("TeleportDirection", -1);
+        float length = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        yield return new WaitForSeconds(length);
+        //print("Test");
+        pos = location;
+        transform.position = pos;
+        //yield return new WaitForSeconds(.25f);
+        //sprite.enabled = true;
+        animator.SetTrigger("TeleportExit");
+        //sprite.enabled = true;
+        yield return new WaitForSeconds(length);
+        if (isCastingSpecial == true && nextSpecial == Specials.SlamUp)
+        {
+            SlamUp();
+        }
+        else if (isCastingSpecial == true && nextSpecial == Specials.SlamDown)
+        {
+            SlamDown();
+        }
+        else if (isCastingSpecial == true && nextSpecial == Specials.Beam)
+        {
+            FaceLeft();
+            currentAttack = StartCoroutine(Beam());
+        }
+        else
+        {
+            currentState = EnemyState.Idle;
+            timeCounter = 0f;
+        }
+    }
     public IEnumerator Slam()
     {
         initialPosition = transform.position;
@@ -125,13 +238,14 @@ public class CultistBossBehavior : MonoBehaviour
             startSlamDown.Invoke();
         }
         yield return new WaitForSeconds(0.5f);
-        animator.SetTrigger("Slamming");
         if (isSlammingUpwards)
         {
+            animator.SetTrigger("SlammingUp");
             rb.linearVelocity = new Vector2(0, slamSpeed);
         }
         else
         {
+            animator.SetTrigger("SlammingDown");
             rb.linearVelocity = new Vector2(0, -slamSpeed);
         }
     }
@@ -176,6 +290,11 @@ public class CultistBossBehavior : MonoBehaviour
         }
 
         rb.linearVelocity = new Vector2(0, 0);
+        //wait at bottom of recovery for a second
+        animator.SetTrigger("RecoveryDone");
+        yield return new WaitForSeconds(1f);
+        isSpecialDone = true;
+        nextSpecial = Specials.Beam;
     }
 
     [Header("Beam Variables")]
@@ -194,6 +313,7 @@ public class CultistBossBehavior : MonoBehaviour
     public IEnumerator Beam()
     {
         print("beam");
+        animator.SetTrigger("ChargeBeam");
         isCastingSpecial = true;
         //pos = beamTeleportPosition;
         //transform.position = pos;
@@ -233,6 +353,7 @@ public class CultistBossBehavior : MonoBehaviour
         }
 
         //Beam Attack Active
+        animator.SetTrigger("UnleashBeam");
         //beamDamage.Activate();
         beamColor.a = 1f;
         beamSpriteRenderer.color = beamColor;
@@ -269,9 +390,19 @@ public class CultistBossBehavior : MonoBehaviour
 
 
         //recovering (float up and down for a few seconds)
+        animator.SetTrigger("RecoveryDone");
+        yield return new WaitForSeconds(2f);
 
         isSpecialDone = true;
-        nextSpecial = Specials.Slam;
+        if (isSlammingUpwards)
+        {
+            nextSpecial = Specials.SlamDown;
+        }
+        else
+        {
+            nextSpecial = Specials.SlamUp;
+        }
+        
         beamDoneAttack.Invoke();
     }
 
@@ -292,21 +423,27 @@ public class CultistBossBehavior : MonoBehaviour
 
     public void FaceRight()
     {
-        transform.Rotate(0, 180, 0);
+        transform.rotation = Quaternion.Euler(0f, 180f, 0f);
     }
 
     public void FaceLeft()
     {
-        transform.Rotate(0, -180, 0);
+        transform.rotation = Quaternion.Euler(0f, 0, 0f);
     }
 
     public Dialogue dialogue;
 
     public void Death()
     {
+        if (currentAttack != null)
+        {
+            StopCoroutine(currentAttack);
+        }
         animator.SetTrigger("Death");
+        currentState = EnemyState.Dead;
         //fall to the ground
         rb.gravityScale = 1;
         dialogue.StartDialogue();
     }
+    #endregion
 }

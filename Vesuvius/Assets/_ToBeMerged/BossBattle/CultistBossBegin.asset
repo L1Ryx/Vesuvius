@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18139b27009e23141a8b6438e9ab4cd8, type: 3}
-  m_Name: BlockedTriggers
+  m_Script: {fileID: 11500000, guid: 30df7ee0b7d7943428417d3f84c2138a, type: 3}
+  m_Name: CultistBossBegin
   m_EditorClassIdentifier: 
-  shownGuids: []

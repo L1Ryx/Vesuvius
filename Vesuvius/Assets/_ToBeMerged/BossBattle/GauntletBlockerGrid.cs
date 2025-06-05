@@ -26,7 +26,6 @@ public class GauntletBlockerGrid : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Collision");
         //is beam attack
         if (collision.gameObject.GetComponent<CollisionDamageIfSameReality>())
         {

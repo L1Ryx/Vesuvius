@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,18 +260,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb569c487ed896448980c8fdc525c1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
+  currentState: 3
   nextSpecial: 0
   MoveSpeed: 2
   frequency: 20
   magnitude: 0.5
-  idleTeleportPosition: {x: 0, y: 0, z: 0}
+  idleTeleportPosition: {fileID: 0}
   timeBetweenSpecials: 5
-  spikes: {fileID: 0}
   slamSpeed: 2
-  spikeSpeed: 3
-  slamTeleportPosition: {x: 0, y: 0, z: 0}
-  beamTeleportPosition: {x: 0, y: 0, z: 0}
+  slamTeleportPosition: {fileID: 0}
+  beamTeleportPosition: {fileID: 0}
   preBeamBall: {fileID: 920805614302646229}
   BeamSprite: {fileID: 4227790946173890500}
   timeBeforeEyeSummon: 5
@@ -356,6 +354,9 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 1024
+  amplitude: 5
+  speed: 1
+  center: {x: 0, y: 0, z: 0}
   warningMinAlpha: 0
   warningMaxAlpha: 0.5
   warningTime: 1.5
@@ -445,8 +446,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8260193875467847561}
   - component: {fileID: 6981263338766126419}
-  - component: {fileID: 4155381435554327455}
   - component: {fileID: 5328950504085287428}
+  - component: {fileID: 7598948196679526579}
   - component: {fileID: 3741111436676114422}
   m_Layer: 0
   m_Name: GauntletBeam
@@ -463,13 +464,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4227790946173890500}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.86, y: 0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2329074109273751922}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &6981263338766126419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -493,7 +494,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -516,7 +517,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: -1682375262870204897, guid: b4bdb9be9c95a431f828e01d00023f11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -525,7 +526,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4155381435554327455
+--- !u!114 &5328950504085287428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227790946173890500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60eb3cbeb80a14dc1b0e6a10cf51fa3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1e1fb795f22b54847a0072febdc43128, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  selectedEventIndex: 0
+--- !u!60 &7598948196679526579
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -571,48 +600,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -14.8125, y: 5}
-      - {x: -16.661385, y: 5.005598}
-      - {x: -16.948544, y: 3.9203892}
-      - {x: -16.996758, y: 1.4658623}
-      - {x: -16.61267, y: -0.011188507}
-      - {x: -14.6875, y: 0}
-      - {x: 13.579472, y: -0.013847351}
-      - {x: 16.293816, y: 0.6384678}
-      - {x: 17.538507, y: 1.5573406}
-      - {x: 17.93659, y: 2.5055523}
-      - {x: 17.263266, y: 3.6968422}
-      - {x: 16.11381, y: 4.430767}
-      - {x: 14.10527, y: 4.972307}
+    - - {x: 3.0625, y: 2.5}
+      - {x: 1.5625, y: 2.125}
+      - {x: 0.75, y: 1.6875}
+      - {x: 0, y: 0.6875}
+      - {x: 0, y: -0.6875}
+      - {x: 0.75, y: -1.625}
+      - {x: 2.0625, y: -2.25}
+      - {x: 3.1875, y: -2.5}
+      - {x: 34.75, y: -2.5}
+      - {x: 34.875, y: -2}
+      - {x: 34.875, y: 2}
+      - {x: 34.625, y: 2.5}
   m_UseDelaunayMesh: 0
---- !u!114 &5328950504085287428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4227790946173890500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60eb3cbeb80a14dc1b0e6a10cf51fa3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutorialEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1e1fb795f22b54847a0072febdc43128, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  selectedEventIndex: 0
 --- !u!114 &3741111436676114422
 MonoBehaviour:
   m_ObjectHideFlags: 0
