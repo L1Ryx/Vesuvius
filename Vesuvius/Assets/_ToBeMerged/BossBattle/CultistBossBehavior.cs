@@ -78,12 +78,17 @@ public class CultistBossBehavior : MonoBehaviour
 
     Rigidbody2D rb;
     private SpriteRenderer beamSpriteRenderer;
+    private SpriteRenderer ballSpriteRenderer;
     private CollisionDamageIfSameReality beamDamage;
+
+    public UnityEvent doneSlamRecovery;
+    public UnityEvent teleportDone;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         beamSpriteRenderer = BeamSprite.GetComponent<SpriteRenderer>();
+        ballSpriteRenderer = preBeamBall.GetComponent<SpriteRenderer>();
         beamDamage = BeamSprite.GetComponent<CollisionDamageIfSameReality>();
         pos = transform.position;
         if (!animator) print("animator not set");
@@ -182,13 +187,13 @@ public class CultistBossBehavior : MonoBehaviour
     public void SlamUp()
     {
         isSlammingUpwards = true;
-        StartCoroutine(Slam());
+        currentAttack = StartCoroutine(Slam());
     }
 
     public void SlamDown()
     {
         isSlammingUpwards = false;
-        StartCoroutine(Slam());
+        currentAttack = StartCoroutine(Slam());
     }
     #region Behaviors
 
@@ -228,7 +233,6 @@ public class CultistBossBehavior : MonoBehaviour
     public IEnumerator Slam()
     {
         initialPosition = transform.position;
-        animator.SetTrigger("QueueSpecial");
         if (isSlammingUpwards)
         {
             startSlamUp.Invoke();
@@ -295,6 +299,7 @@ public class CultistBossBehavior : MonoBehaviour
         yield return new WaitForSeconds(1f);
         isSpecialDone = true;
         nextSpecial = Specials.Beam;
+        doneSlamRecovery.Invoke();
     }
 
     [Header("Beam Variables")]
@@ -304,10 +309,12 @@ public class CultistBossBehavior : MonoBehaviour
     public float beamStayTime = 0.5f;
     public float beamFadeOutTime = 0.25f;
     private Color beamColor;
+    private Color ballColor;
 
     public void CastBeam()
     {
-        StartCoroutine(Beam());
+        if (!isCastingSpecial)
+            currentAttack = StartCoroutine(Beam());
     }
 
     public IEnumerator Beam()
@@ -315,19 +322,30 @@ public class CultistBossBehavior : MonoBehaviour
         print("beam");
         animator.SetTrigger("ChargeBeam");
         isCastingSpecial = true;
-        //pos = beamTeleportPosition;
-        //transform.position = pos;
+        float elapsedTime = 0f;
         yield return new WaitForSeconds(.25f);
         preBeamBall.SetActive(true);
         beamDamage.StoreRealityState();
-        yield return new WaitForSeconds(.5f);
+        ballColor = ballSpriteRenderer.color; 
+        //yield return new WaitForSeconds(.5f);
+        while (elapsedTime < .5f)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = elapsedTime / .5f;
 
+            ballColor = ballSpriteRenderer.color;
+            ballColor.a = 1 - alpha;
+            ballSpriteRenderer.color = ballColor;
+            yield return new WaitForEndOfFrame();
+        }
+
+        preBeamBall.SetActive(false);
         //set warning color
         beamColor = beamSpriteRenderer.color;
         beamColor.a = warningMinAlpha;
         beamSpriteRenderer.color = beamColor;
         BeamSprite.SetActive(true);
-        float elapsedTime = 0f;
+        elapsedTime = 0f;
         // warning: Fade in Beam
         while (elapsedTime < warningTime / 2)
         {
@@ -354,9 +372,10 @@ public class CultistBossBehavior : MonoBehaviour
 
         //Beam Attack Active
         animator.SetTrigger("UnleashBeam");
-        //beamDamage.Activate();
+        beamDamage.Activate();
         beamColor.a = 1f;
         beamSpriteRenderer.color = beamColor;
+        elapsedTime = 0f;
         BeamSprite.transform.localScale = Vector2.zero;
         while (elapsedTime < 2f)
         {
@@ -394,6 +413,7 @@ public class CultistBossBehavior : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         isSpecialDone = true;
+        isCastingSpecial = false;
         if (isSlammingUpwards)
         {
             nextSpecial = Specials.SlamDown;
@@ -408,17 +428,16 @@ public class CultistBossBehavior : MonoBehaviour
 
     public IEnumerator TeleportTo(Vector3 location)
     {
+        if(currentAttack != null)
+            StopCoroutine(currentAttack);
         animator.SetTrigger("Teleporting");
-        //animator.SetFloat("TeleportDirection", -1);
         float length = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
         yield return new WaitForSeconds(length);
-        //print("Test");
         pos = location;
         transform.position = pos;
-        //yield return new WaitForSeconds(.25f);
-        //sprite.enabled = true;
         animator.SetTrigger("TeleportExit");
         yield return new WaitForSeconds(length);
+        teleportDone.Invoke();
     }
 
     public void FaceRight()

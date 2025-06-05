@@ -1,4 +1,5 @@
 using _Gameplay._Arch;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,7 @@ public class InvokeUnityEventsOnTriggerEnter : MonoBehaviour
     public BinaryStateStorage blockedTriggers;
     private GuidComponent guidComponent;
     private Collider2D triggerCollider;
+    private bool triggered = false;
 
     private void Start()
     {
@@ -28,8 +30,9 @@ public class InvokeUnityEventsOnTriggerEnter : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Check if the collider is the player
+        if (other.CompareTag("Player") && !triggered) // Check if the collider is the player
         {
+            triggered = true;
             OnTriggerEnter.Invoke();
             triggerCollider.enabled = false;
         }

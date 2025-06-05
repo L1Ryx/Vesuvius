@@ -71,7 +71,6 @@ public class GauntletManager : MonoBehaviour
             case 1:
                 StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
                 cultistBehavior.FaceRight();
-                TriggerAttacks();
                 break;
 
             case 2:

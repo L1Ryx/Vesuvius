@@ -5,7 +5,9 @@ using UnityEngine.Tilemaps;
 public class GauntletBlockerGrid : MonoBehaviour
 {
     public CutsceneEyeManager cutscene;
+    public TilemapRenderer altRealityTilemap;
     private TilemapRenderer tilemapRenderer;
+    
     void Start()
     {
         tilemapRenderer = GetComponent<TilemapRenderer>();
@@ -15,19 +17,10 @@ public class GauntletBlockerGrid : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-
-    void OnEnable()
-    {
-        //if player has gotten the mirror then disable
-        if (cutscene.isBlocked())
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         //is beam attack
-        if (collision.gameObject.GetComponent<CollisionDamageIfSameReality>())
+        if (collision.gameObject.GetComponent<CollisionDamageIfSameReality>().isActive)
         {
             StartCoroutine(FadeOut());
         }
@@ -51,5 +44,6 @@ public class GauntletBlockerGrid : MonoBehaviour
         tilemapRenderer.material.color = originalColor;
 
         this.gameObject.SetActive(false);
+        altRealityTilemap.gameObject.SetActive(false);
     }
 }
