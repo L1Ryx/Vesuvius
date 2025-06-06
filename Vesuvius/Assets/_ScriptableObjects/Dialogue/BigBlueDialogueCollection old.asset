@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03221ce64ac804aac876c997f49bd6ae, type: 3}
-  m_Name: BigBlueDialogueCollection
+  m_Name: BigBlueDialogueCollection old
   m_EditorClassIdentifier: 
   dialogueTrees:
   - treeID: Intro
@@ -18,17 +18,18 @@ MonoBehaviour:
     - 'Well, well... '
     - Don't remember the last time we had a visitor here.
     - ...
-    - But you don't look like you're from this place...
+    - Ha. I'm speaking like I'm not a visitor myself.
+    - I suppose I frequent these catacombs far too often.
+    - 'But who can blame me? Something about this place wards off the beasts. '
+    - With that thing on your back, I don't suppose you came here for refuge though.
+    - ...
     - The name's Big Blue. I was found with no recollection of my past life by a
       vagrant warrior in golden armor. They gave me this name and quickly left.
-    - I've heard legends of an artifact deeper in this cave that can allow you to
-      see your true self. Maybe that can help you get back home.
-    - ...
-    - 'I have no interest myself of course... I have felt only a single calling since
-      I reawoke. '
+    - 'I know, I know. I truly don''t remember anything from my past life, but I
+      have felt only a single calling since I reawoke. '
     - The melodies that appeared in my head... I must perform them for the souls
       nested deep within the many catacombs of Vesuvius.
-    - This is the only place I've ever known, and I am happy here.
+    - This is the only place I've ever known, so I must embark on my journey soon.
     - ...
     - You're holding up my performance. Perhaps we'll talk again some other day.
     wwiseEvents:
@@ -47,15 +48,9 @@ MonoBehaviour:
     - 
     - Play_Abileh
     nextTreeID: IntroBrief
-    eventsOnDialogueEnd:
-      m_PersistentCalls:
-        m_Calls: []
   - treeID: IntroBrief
     dialogues:
     - You're holding up my performance. Perhaps we'll talk again some other day.
     wwiseEvents:
     - Play_Abileh
     nextTreeID: IntroBrief
-    eventsOnDialogueEnd:
-      m_PersistentCalls:
-        m_Calls: []
