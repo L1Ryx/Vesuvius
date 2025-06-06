@@ -22,27 +22,24 @@ namespace _Gameplay._Arch
         [SerializeField] private float overlayAlpha = 0.5f; // Target alpha for the overlay
         [SerializeField] private float overlayLerpSpeed = 5f; // Speed of the lerp
 
-        private PlayerControls playerControls;
 
         private bool isHealing = false; // Tracks if the player is currently healing
         private bool overlayActive = false; // Tracks if overlay lerp is active
 
         private void Awake()
         {
-            playerControls = new PlayerControls();
 
-            // Map the Heal action to the OnHealInput method
-            playerControls.Player.Heal.performed += OnHealInput;
         }
 
         private void OnEnable()
         {
-            playerControls.Player.Enable();
+
+            PlayerControlManager.Instance.controls.Player.Heal.performed += OnHealInput;
         }
 
         private void OnDisable()
         {
-            playerControls.Player.Disable();
+            PlayerControlManager.Instance.controls.Player.Heal.performed -= OnHealInput;
         }
 
         public void OnHealInput(InputAction.CallbackContext context)

@@ -44,26 +44,25 @@ namespace _Gameplay._Arch
         private bool isTyping = false;
         private int currentDialogueIndex = 0;
         private Color targetColor;
-        private PlayerControls _controls;
+
         private string talkTemplate;
 
         private void Awake()
         {
-            _controls = new PlayerControls();
             bigBlueAudio = this.gameObject.GetComponent<BigBlueAudio>();
         }
 
         private void OnEnable()
         {
-            _controls.Player.Interact.performed += OnInteractPerformed;
-            _controls.Enable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteractPerformed;
+
             bigBlueAudio.PlayBigBlueSolo();
         }
 
         private void OnDisable()
         {
-            _controls.Player.Interact.performed -= OnInteractPerformed;
-            _controls.Disable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteractPerformed;
+
             bigBlueAudio.StopBigBlueSolo();
         }
 

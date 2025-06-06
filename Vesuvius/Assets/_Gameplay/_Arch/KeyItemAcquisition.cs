@@ -9,8 +9,6 @@ public class KeyItemAcquisition : MonoBehaviour
     public GameObject menuPrefab;
     public PlayerUnlocks playerUnlocks;
     public UnsavedPlayerInfo unsavedPlayerInfo;
-    private PlayerControls playerControls;
-
 
     public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
     public event OnMenuClosed MenuClosed;
@@ -23,21 +21,26 @@ public class KeyItemAcquisition : MonoBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
 
-        // Subscribe to navigation and selection actions
-        //playerControls.Player.Confirm.performed += CloseMenu;
-        playerControls.Player.RealityShift.performed += CloseMenu;
     }
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        PlayerControlManager.Instance.controls.Player.RealityShift.performed += CloseMenu;
+
+        // Disable the Interact action
+        PlayerControlManager.Instance.controls.Player.Interact.Disable();
+        PlayerControlManager.Instance.controls.Player.Swing.Disable();
+        PlayerControlManager.Instance.controls.Player.Heal.Disable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        PlayerControlManager.Instance.controls.Player.RealityShift.performed -= CloseMenu;
+
+        PlayerControlManager.Instance.controls.Player.Interact.Enable();
+        PlayerControlManager.Instance.controls.Player.Swing.Enable();
+        PlayerControlManager.Instance.controls.Player.Heal.Enable();
     }
 
     private void Start()

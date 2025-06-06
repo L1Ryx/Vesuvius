@@ -46,7 +46,6 @@ namespace _Gameplay._Arch
 
         public bool IsSwinging { get; private set; }
 
-        private PlayerControls swingControls;
         private PlayerInputActions moveControls;
         private float lastSwingTime;
         private Vector2 inputDirection;
@@ -59,7 +58,6 @@ namespace _Gameplay._Arch
 
         private void Awake()
         {
-            swingControls = new PlayerControls();
             moveControls = new PlayerInputActions();
             playerRb = playerParent.GetComponent<Rigidbody2D>();
             spriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
@@ -70,8 +68,7 @@ namespace _Gameplay._Arch
 
         private void OnEnable()
         {
-            swingControls.Player.Swing.performed += OnSwing;
-            swingControls.Player.Enable();
+            PlayerControlManager.Instance.controls.Player.Swing.performed += OnSwing;
 
             moveControls.Player.Move.performed += OnMove;
             moveControls.Player.Move.canceled += ctx => inputDirection = Vector2.zero;
@@ -80,8 +77,7 @@ namespace _Gameplay._Arch
 
         private void OnDisable()
         {
-            swingControls.Player.Swing.performed -= OnSwing;
-            swingControls.Player.Disable();
+            PlayerControlManager.Instance.controls.Player.Swing.performed -= OnSwing;
 
             moveControls.Player.Move.performed -= OnMove;
             moveControls.Disable();

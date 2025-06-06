@@ -39,23 +39,21 @@ namespace _Gameplay._Arch
         private bool canContinue = false;
         private int currentDialogueIndex = 0;
         private Color targetColor;
-        private PlayerControls _controls;
+
 
         private void Awake()
         {
-            _controls = new PlayerControls();
+
         }
 
         private void OnEnable()
         {
-            _controls.Player.Interact.performed += OnInteractPerformed;
-            _controls.Enable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteractPerformed;
         }
 
         private void OnDisable()
         {
-            _controls.Player.Interact.performed -= OnInteractPerformed;
-            _controls.Disable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteractPerformed;
         }
 
         private void Start()
@@ -103,6 +101,9 @@ namespace _Gameplay._Arch
 
             // Freeze player movement immediately
             player.GetComponent<PlayerController>().FreezeMode = true;
+            PlayerControlManager.Instance.controls.Player.Swing.Disable();
+            PlayerControlManager.Instance.controls.Player.Heal.Disable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.Disable();
 
             dialogueCanvas.gameObject.SetActive(true); // Show the dialogue canvas
             currentDialogueIndex = 0; // Reset dialogue index
@@ -169,6 +170,9 @@ namespace _Gameplay._Arch
 
 
             player.GetComponent<PlayerController>().FreezeMode = false; // Unfreeze player movement
+            PlayerControlManager.Instance.controls.Player.Swing.Enable();
+            PlayerControlManager.Instance.controls.Player.Heal.Enable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.Enable();
         }
 
         private void ApplyDialogueTextEffects()

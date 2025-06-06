@@ -31,25 +31,21 @@ namespace _Gameplay._Arch
         protected bool gateUnlocked = false;
         private GameObject player;
 
-        private PlayerControls playerControls;
         private SwitchAudio switchAudio;
 
         private void Awake()
         {
-            playerControls = new PlayerControls();
             switchAudio = GetComponent<SwitchAudio>();
         }
 
         private void OnEnable()
         {
-            playerControls.Player.Interact.performed += OnInteract;
-            playerControls.Enable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteract;
         }
 
         private void OnDisable()
         {
-            playerControls.Player.Interact.performed -= OnInteract;
-            playerControls.Disable();
+            PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteract;
         }
 
         public void OnControlsChanged()

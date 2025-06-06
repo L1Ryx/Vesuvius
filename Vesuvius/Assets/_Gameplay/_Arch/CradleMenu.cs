@@ -52,7 +52,7 @@ namespace _Gameplay._Arch
     
 
         private int selectedIndex = 0;
-        private PlayerControls playerControls;
+
         private bool isReading = false; // False = Main Panel, True = Read Panel
         private bool menuActive = true; // Start as true since the menu is active initially
 
@@ -63,33 +63,34 @@ namespace _Gameplay._Arch
 
         private void Awake()
         {
-            playerControls = new PlayerControls();
-
-            // Subscribe to navigation and selection actions
-            playerControls.Player.Navigate.performed += OnNavigate;
-            playerControls.Player.Confirm.performed += OnSelect;
-
 
         }
 
         private void OnEnable()
         {
-            playerControls.Enable();
+            PlayerControlManager.Instance.controls.Player.Navigate.performed += OnNavigate;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed += OnSelect;
             StartCoroutine(HandleRest());
             //StartCoroutine(FadeInUI());
             menuActive = true; // Menu is now active
 
             // Disable the Interact action
-            playerControls.Player.Interact.Disable();
+            PlayerControlManager.Instance.controls.Player.Interact.Disable();
+            PlayerControlManager.Instance.controls.Player.Swing.Disable();
+            PlayerControlManager.Instance.controls.Player.Heal.Disable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.Disable();
         }
 
         private void OnDisable()
         {
-            playerControls.Disable();
+            PlayerControlManager.Instance.controls.Player.Navigate.performed -= OnNavigate;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed -= OnSelect;
             menuActive = false; // Menu is no longer active
 
-            // Re-enable the Interact action
-            playerControls.Player.Interact.Enable();
+            PlayerControlManager.Instance.controls.Player.Interact.Enable();
+            PlayerControlManager.Instance.controls.Player.Swing.Enable();
+            PlayerControlManager.Instance.controls.Player.Heal.Enable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.Enable();
         }
 
         private void Start()

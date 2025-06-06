@@ -26,7 +26,6 @@ public class Interactable : MonoBehaviour
     public bool interactOnce;
 
     private GameObject player;
-    private PlayerControls playerControls;
     private bool isPlayerNear = false; // Tracks if the player is near
     private Color targetColor;
     private GuidComponent guidComponent;
@@ -34,20 +33,17 @@ public class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
         guidComponent = GetComponent<GuidComponent>();
     }
 
     private void OnEnable()
     {
-        playerControls.Player.Interact.performed += OnInteractPerformed;
-        playerControls.Player.Enable();
+        PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteractPerformed;
     }
 
     private void OnDisable()
     {
-        playerControls.Player.Interact.performed -= OnInteractPerformed;
-        playerControls.Player.Disable();
+        PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteractPerformed;
     }
 
     public void OnControlsChanged()

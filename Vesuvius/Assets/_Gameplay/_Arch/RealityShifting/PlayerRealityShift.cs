@@ -6,25 +6,18 @@ using UnityEngine.Events;
 //Reality shifting not done here so that other mechanics can also trigger it more naturally.
 public class PlayerRealityShift : MonoBehaviour
 {
-        private PlayerControls swingControls;
         public PlayerUnlocks playerUnlocks;
         public UnityEvent playerRealityChanged;
 
-        private void Awake()
-        {
-            swingControls = new PlayerControls();
-        }
 
         private void OnEnable()
         {
-            swingControls.Player.RealityShift.performed += OnRealityShift;
-            swingControls.Player.Enable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.performed += OnRealityShift;
         }
 
         private void OnDisable()
         {
-            swingControls.Player.RealityShift.performed -= OnRealityShift;
-            swingControls.Player.Disable();
+            PlayerControlManager.Instance.controls.Player.RealityShift.performed -= OnRealityShift;
         }
 
         private void OnRealityShift(InputAction.CallbackContext context)
