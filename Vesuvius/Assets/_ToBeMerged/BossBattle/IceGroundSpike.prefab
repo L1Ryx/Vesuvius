@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8226528943453058023}
   - component: {fileID: 4548079271826402395}
   - component: {fileID: 1803940928523835514}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: IceGroundSpike
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -158,6 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spikeSpeed: 3
+  spikesDoneAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4548079271826402395
 MonoBehaviour:
   m_ObjectHideFlags: 0

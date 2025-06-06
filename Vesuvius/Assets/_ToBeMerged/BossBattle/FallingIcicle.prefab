@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5047501522494464055}
   - component: {fileID: 5014148119469347954}
   - component: {fileID: 3179037626564853580}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 3454840965550767718}
   - component: {fileID: 3317741872398555088}
   - component: {fileID: 7928505886694911965}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FallingIcicle
   m_TagString: Hazard
   m_Icon: {fileID: 0}
