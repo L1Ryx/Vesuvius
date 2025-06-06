@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 2419483815631988418}
   - component: {fileID: 7717773664866960996}
   - component: {fileID: 8924419233062624757}
+  - component: {fileID: 4995852562530747178}
   m_Layer: 0
   m_Name: Big Blue (NPC)
   m_TagString: Untagged
@@ -267,6 +268,7 @@ MonoBehaviour:
   npcTalkText: {fileID: 8100844501265517593}
   dialogueCanvas: {fileID: 1017740038698358835}
   dialogueText: {fileID: 7232327488926127036}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   playerSpawner: {fileID: 0}
   dialogueCollection: {fileID: 11400000, guid: c811459c0de4149ec9237f0a1aa8ab4c, type: 2}
   bigBlueAudio: {fileID: 0}
@@ -336,6 +338,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2419483815631988418}
         m_TargetAssemblyTypeName: BigBlueAudio, Assembly-CSharp
         m_MethodName: StopBigBlueSolo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4995852562530747178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747749749922084995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8017170214293421726}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.BigBlue, Assembly-CSharp
+        m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -596,7 +626,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Talk\n\xB0\n"
+  m_text: 'Talk ({Interact})
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}

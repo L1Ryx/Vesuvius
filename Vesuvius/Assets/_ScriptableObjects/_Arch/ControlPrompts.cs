@@ -34,5 +34,6 @@ namespace _ScriptableObjects
         [Header("Scheme Control Text")]
         [Tooltip("Text replaced prompt templates for current control scheme")]
         public string realityShiftKeybind;
+        public string interactKeybind;
     }
 }

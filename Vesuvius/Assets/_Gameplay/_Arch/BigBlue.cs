@@ -1,5 +1,7 @@
 using System.Collections;
+using _ScriptableObjects;
 using _ScriptableObjects.Dialogue.Arch;
+using ES3Types;
 using Public.Tarodev_2D_Controller.Scripts;
 using TMPro;
 using UnityEngine;
@@ -14,6 +16,7 @@ namespace _Gameplay._Arch
         public TMP_Text npcTalkText;
         public Canvas dialogueCanvas;
         public TMP_Text dialogueText;
+        public ControlPrompts controlPrompts;
 
         [Header("Component References")]
         [SerializeField] private PlayerSpawner playerSpawner;
@@ -42,6 +45,7 @@ namespace _Gameplay._Arch
         private int currentDialogueIndex = 0;
         private Color targetColor;
         private PlayerControls _controls;
+        private string talkTemplate;
 
         private void Awake()
         {
@@ -65,9 +69,15 @@ namespace _Gameplay._Arch
 
         private void Start()
         {
+            talkTemplate = npcTalkText.text;
+            OnControlsChanged();
             FindPlayer();
             InitializeUI();
             animator.Play("Playing"); // Start with the "Playing" animation
+        }
+        public void OnControlsChanged()
+        {
+            npcTalkText.text = talkTemplate.Replace("{Interact}", controlPrompts.interactKeybind);
         }
 
         private void InitializeUI()

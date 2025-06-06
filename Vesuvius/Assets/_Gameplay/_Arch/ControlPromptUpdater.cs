@@ -45,6 +45,7 @@ public class ControlPromptUpdater : MonoBehaviour
             GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["RealityShift"]));
 
         controlPrompts.realityShiftKeybind = GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["RealityShift"]);
+        controlPrompts.interactKeybind = GetBindingDisplayStringOrCompositeName(m_PlayerInput.actions["Interact"]);
 
         ControlsChanged.Invoke();
     }
