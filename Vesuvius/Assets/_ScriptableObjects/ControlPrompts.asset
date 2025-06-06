@@ -16,13 +16,14 @@ MonoBehaviour:
   swingPromptTemplate: '{Swing} - Slash'
   jumpPromptTemplate: '{Jump} - Jump'
   healPromptTemplate: '{Heal} - Heal'
-  interactPromptTemplate: Use\n{Interact}
+  interactPromptTemplate: Use ({Interact})
   doubleJumpPromptTemplate: '{Jump} Twice - Double Jump'
   realityShiftPromptTemplate: '{RealityShift} - Reality Shift'
-  movePrompt: 
-  swingPrompt: 
-  jumpPrompt: 
-  healPrompt: 
-  interactPrompt: 
-  doubleJumpPrompt: 
-  realityShiftPrompt: 
+  movePrompt: <- Arrow Keys ->
+  swingPrompt: Z - Slash
+  jumpPrompt: Space - Jump
+  healPrompt: X - Heal
+  interactPrompt: Use\nF
+  doubleJumpPrompt: Space Twice - Double Jump
+  realityShiftPrompt: Shift - Reality Shift
+  realityShiftKeybind: Shift

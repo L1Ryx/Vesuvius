@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2862942825495819797, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_text
-      value: Here lies Great Bohrman...
+      value: Here lies Brutus...
       objectReference: {fileID: 0}
     - target: {fileID: 5179069277585008113, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_Name
-      value: Cradle 01-04
+      value: Cradle 01-08
       objectReference: {fileID: 0}
     - target: {fileID: 5285689697639472371, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59,18 +59,18 @@ PrefabInstance:
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: menuPrefab
       value: 
-      objectReference: {fileID: 8938706110159917420, guid: 814d1300fcfae42d5a01ae6dba54e83f, type: 3}
+      objectReference: {fileID: 728873715288338279, guid: 4cb9c4004b3046f45be50f1cc6a74f6b, type: 3}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointScene
-      value: 01-04
+      value: 01-08
       objectReference: {fileID: 0}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointLocation.x
-      value: 3
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointLocation.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

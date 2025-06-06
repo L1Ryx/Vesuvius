@@ -104,7 +104,7 @@ namespace _Gameplay._Arch
             // Temporarily activate readPanel to gather its TMP_Text components
             readPanel.SetActive(true);
             readPanelTexts = readPanel.GetComponentsInChildren<TMP_Text>();
-            SetTextAlpha(readPanelTexts, 0); // Set initial alpha to 0 for read panel texts
+           // SetTextAlpha(readPanelTexts, 0); // Set initial alpha to 0 for read panel texts
             readPanel.SetActive(false); // Deactivate readPanel again
 
             if (savedText != null)
@@ -157,21 +157,29 @@ namespace _Gameplay._Arch
                         isReading = true;
                         break;
 
-                    case "Lore":
+                    case "Read Inscription":
                         for (int i = 0; i < menuOptions.Length; i++)
                         {
                             if (i == selectedIndex)
                             {
-                                menuOptions[i].color = selectedColor;
-                                menuOptions[i].fontStyle = FontStyles.Bold;
+                                if (menuOptions[i].fontStyle.HasFlag(FontStyles.Bold))
+                                {
+                                    menuOptions[i].color = selectedColor;
+                                    menuOptions[i].fontStyle = menuOptions[i].fontStyle & ~FontStyles.Bold;
+                                }
+                                else
+                                {
+                                    menuOptions[i].color = selectedColor;
+                                    menuOptions[i].fontStyle = menuOptions[i].fontStyle | FontStyles.Bold;
+                                }
                             }
                             else
                             {
-                                menuOptions[i].color = defaultColor;
-                                menuOptions[i].fontStyle = FontStyles.Normal;
+                                //menuOptions[i].color = defaultColor;
+                                //menuOptions[i].fontStyle = FontStyles.Normal;
                             }
                         }
-                        loreText.gameObject.SetActive(!loreText.gameObject.activeSelf);
+                        readPanel.SetActive(!readPanel.activeSelf);
                         break;
 
 
@@ -356,12 +364,12 @@ namespace _Gameplay._Arch
                 if (i == selectedIndex)
                 {
                     menuOptions[i].color = selectedColor;
-                    menuOptions[i].fontStyle = FontStyles.Underline;
+                    menuOptions[i].fontStyle = menuOptions[i].fontStyle | FontStyles.Underline;
                 }
                 else
                 {
                     menuOptions[i].color = defaultColor;
-                    menuOptions[i].fontStyle = FontStyles.Normal;
+                    menuOptions[i].fontStyle = menuOptions[i].fontStyle & ~FontStyles.Underline;
                 }
             }
         }

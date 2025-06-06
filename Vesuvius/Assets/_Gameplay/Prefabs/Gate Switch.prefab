@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2618347045991476217}
   - component: {fileID: 2486319220769366040}
   - component: {fileID: 2533256360013025993}
+  - component: {fileID: 7142084228014992540}
   m_Layer: 0
   m_Name: Gate Switch
   m_TagString: Untagged
@@ -71,6 +72,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneAudioData: {fileID: 11400000, guid: 7c2c2efbba98848d191e29c32774138e, type: 2}
+--- !u!114 &7142084228014992540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753783748582913638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2486319220769366040}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
+        m_MethodName: OnControlsChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1552225393884197294
 GameObject:
   m_ObjectHideFlags: 0

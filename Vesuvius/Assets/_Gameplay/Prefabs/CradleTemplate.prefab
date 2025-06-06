@@ -5352,8 +5352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPrefab: {fileID: 0}
   unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
-  checkpointScene: 
-  checkpointLocation: {x: 0, y: 0}
+  checkpointScene: 01-06
+  checkpointLocation: {x: 33, y: 2}
 --- !u!114 &6837296861503293137
 MonoBehaviour:
   m_ObjectHideFlags: 0

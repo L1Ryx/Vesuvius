@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: menuPrefab
       value: 
-      objectReference: {fileID: 4450901592428683310, guid: 773eaf7f2614446ea8abd819311b1f78, type: 3}
+      objectReference: {fileID: 3400404439076642252, guid: c2148c33a61bd78429b09116c7653227, type: 3}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointScene
       value: 01-02

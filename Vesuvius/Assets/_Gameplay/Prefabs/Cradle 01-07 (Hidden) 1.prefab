@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5179069277585008113, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_Name
-      value: Cradle 01-01 (Hidden)
+      value: Cradle 01-07 (Hidden) 1
       objectReference: {fileID: 0}
     - target: {fileID: 5285689697639472371, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointScene
-      value: 01-01
+      value: 01-07
       objectReference: {fileID: 0}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointLocation.x
-      value: 4
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5573351038581365002, guid: 6ad61ebb95c854af1abaab3cced740f3, type: 3}
       propertyPath: checkpointLocation.y
-      value: -3
+      value: -10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
