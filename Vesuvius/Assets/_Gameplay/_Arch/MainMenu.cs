@@ -59,6 +59,7 @@ namespace _Gameplay._Arch
         public UnityEvent uiSelected;
         public UnityEvent gameSaved;
         public UnityEvent gameLoaded;
+        public UnityEvent mainMenuLoaded;
 
         private int selectedIndex = 0;
         private PlayerControls playerControls;
@@ -106,6 +107,7 @@ namespace _Gameplay._Arch
 
         private void Awake()
         {
+            mainMenuLoaded.Invoke();
             playerControls = new PlayerControls();
 
             playerControls.Player.Navigate.performed += OnNavigate;

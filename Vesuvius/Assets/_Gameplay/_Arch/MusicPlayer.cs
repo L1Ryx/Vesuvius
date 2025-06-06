@@ -9,8 +9,8 @@ namespace Audio._Arch
     public class MusicPlayer : MonoBehaviour
     {
         public SceneAudioData sceneAudioData;
+        public bool shouldPlayMusic = false;
 
-        // Singleton instance
         public static MusicPlayer Instance { get; private set; }
 
         // Tracks currently playing (base names only, e.g., "BohrmanTunnels")
@@ -42,7 +42,20 @@ namespace Audio._Arch
 
         public void UpdateMusicState()
         {
-            StartCoroutine(DelayedMusicUpdate());
+            if (shouldPlayMusic)
+            {
+                StartCoroutine(DelayedMusicUpdate());
+            }
+        }
+
+        public void EnableMusic()
+        {
+            shouldPlayMusic = true;
+        }
+        
+        public void DisableMusic()
+        {
+            shouldPlayMusic = false;
         }
 
         private IEnumerator DelayedMusicUpdate()

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99e3634ab2d4712bae794d9917c073, type: 3}
   m_Name: _PlayerInfo
   m_EditorClassIdentifier: 
-  hasCompletedDemo: 0
+  hasCompletedDemo: 1
   maximumHealth: 5
   currentHealth: 5
-  totalCurrency: 29
-  totemPower: 0
+  totalCurrency: 53
+  totemPower: 38
   abilityCost: 25
   lastCurrencyChangeAmount: 24
   sceneToLoad: 01-07

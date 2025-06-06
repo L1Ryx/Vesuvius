@@ -24801,6 +24801,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  mainMenuLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1cf2d392884b24822b444f8a2a73b199, type: 2}
+        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438054352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25858,6 +25873,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d0a8c4ac07d4bbd8692cd683c83875, type: 3}
+--- !u!1001 &1805463305
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3026026444886522410, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467965968858802444, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
+      propertyPath: m_Name
+      value: Music Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62ba4e8c10bc848daa9cf45b318293f3, type: 3}
 --- !u!1 &1846957548
 GameObject:
   m_ObjectHideFlags: 8
@@ -26942,6 +27014,7 @@ MonoBehaviour:
   nonMenuTexts:
   - {fileID: 6698583562002965905}
   - {fileID: 4004339102010477832}
+  loreText: {fileID: 0}
   uiImages:
   - {fileID: 4506307154034623081}
   mainPanel: {fileID: 6747225145958527942}
@@ -51337,6 +51410,7 @@ SceneRoots:
   - {fileID: 1438054349}
   - {fileID: 1411748015}
   - {fileID: 559584743}
+  - {fileID: 1805463305}
   - {fileID: 756618189}
   - {fileID: 1846957549}
   - {fileID: 1292539440}
