@@ -51,7 +51,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{3BBC66B0-4087-20FD-81AB-7B623C346A74}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{582E33C4-448E-DF9C-6005-6C4245B9AA1E}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -219,6 +219,10 @@
 					<ShortName>SFX_Footstep_R1_V1.wav</ShortName>
 					<CachePath>SFX/SFX_Footstep_R1_V1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="777663843" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Boss_124_12-8_v1.wav</ShortName>
+					<CachePath>SFX/Boss_124_12-8_v1_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="779518494" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_PlayerAttackKill_R2_V1.wav</ShortName>
 					<CachePath>SFX/SFX_PlayerAttackKill_R2_V1_818F3B66.wem</CachePath>
@@ -333,6 +337,11 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="2729959470" Name="Play_Cultist" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="777663843"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1602358412" Name="Play_Footstep" DurationType="OneShot" DurationMin="0.42080733" DurationMax="0.5978665">
 					<MediaRefs>
@@ -586,6 +595,7 @@
 				<Event Id="1210756211" Name="Stop_BigBlueSolo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3701069102" Name="Stop_BohrmanTunnels" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3411346464" Name="Stop_CaveAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3375565856" Name="Stop_Cultist" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3927559978" Name="Stop_Footstep" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1262204860" Name="Stop_ForestAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3286627841" Name="Stop_Landing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -601,5 +611,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{489B3245-14E7-FD47-ECFA-83395CBAF7DD}</FileHash>
+	<FileHash>{A6E52E51-2F08-F95B-56F4-89BDF8BD43CF}</FileHash>
 </SoundBanksInfo>

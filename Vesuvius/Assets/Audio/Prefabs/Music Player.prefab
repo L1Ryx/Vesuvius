@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 5893342529871383735}
   - component: {fileID: 8874081544980611335}
   - component: {fileID: 7522513206152461854}
+  - component: {fileID: 6376411764934773970}
+  - component: {fileID: 5705481959967367557}
+  - component: {fileID: 2166977099118090316}
   m_Layer: 0
   m_Name: Music Player
   m_TagString: Untagged
@@ -48,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneAudioData: {fileID: 11400000, guid: 7c2c2efbba98848d191e29c32774138e, type: 2}
-  shouldPlayMusic: 0
+  shouldPlayMusic: 1
   activeTracks: []
   eventDelay: 1
 --- !u!114 &5893342529871383735
@@ -126,6 +129,102 @@ MonoBehaviour:
       - m_Target: {fileID: 1974139103153932263}
         m_TargetAssemblyTypeName: Audio._Arch.MusicPlayer, Assembly-CSharp
         m_MethodName: DisableMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6376411764934773970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467965968858802444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 5709c1e8cf2a54db597952c2ee739a4a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1974139103153932263}
+        m_TargetAssemblyTypeName: Audio._Arch.MusicPlayer, Assembly-CSharp
+        m_MethodName: StopAllTracks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1974139103153932263}
+        m_TargetAssemblyTypeName: Audio._Arch.MusicPlayer, Assembly-CSharp
+        m_MethodName: StopBossMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5705481959967367557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467965968858802444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3701ff404a00404488efefab74e729aa, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1974139103153932263}
+        m_TargetAssemblyTypeName: Audio._Arch.MusicPlayer, Assembly-CSharp
+        m_MethodName: PlayBossMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2166977099118090316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467965968858802444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4fef3788130026d4eb9f0a00002e39f8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1974139103153932263}
+        m_TargetAssemblyTypeName: Audio._Arch.MusicPlayer, Assembly-CSharp
+        m_MethodName: StopBossMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

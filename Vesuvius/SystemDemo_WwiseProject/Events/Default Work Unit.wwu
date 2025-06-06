@@ -693,6 +693,36 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Cultist" ID="{8B3B9D4D-B7FD-4355-9A4B-4F62511ABDD6}" ShortID="755286995">
+					<ChildrenList>
+						<Event Name="Play_Cultist" ID="{559D6873-F6AE-4715-9BF5-A2AE53F8A0B8}">
+							<ChildrenList>
+								<Action Name="" ID="{D048A10D-6000-47D3-B872-C2E6C50FFEFE}" ShortID="683514954">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Cultist_Playlist" ID="{6AEDB54C-40D8-484C-9066-7CF6704A3BBB}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Cultist" ID="{DE7C79D1-FF6C-45DC-B94A-6C3D814E6EF8}">
+							<ChildrenList>
+								<Action Name="" ID="{095AF0A3-A0FD-410D-8630-B3ADAA44D2F5}" ShortID="367978886">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Cultist_Playlist" ID="{6AEDB54C-40D8-484C-9066-7CF6704A3BBB}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

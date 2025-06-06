@@ -39,6 +39,7 @@ namespace _Gameplay._Arch
         public bool useParticles = true; // Set this in the Inspector to toggle particle effects
         [Header("Events")]
         public UnityEvent playerDamaged;
+        public UnityEvent playerDied;
 
         private bool isInvincible = false;
         private bool isTimeStopped = false;
@@ -324,6 +325,7 @@ namespace _Gameplay._Arch
 
         private IEnumerator HandlePlayerDeath()
         {
+            playerDied.Invoke();
             // Activate the death overlay
             Image overlayImage = deathOverlayPanel.GetComponent<Image>();
             if (overlayImage != null)

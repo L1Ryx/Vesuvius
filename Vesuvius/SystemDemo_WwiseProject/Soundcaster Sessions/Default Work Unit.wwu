@@ -14,7 +14,7 @@
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_BulbOpen" ID="{C5F60F95-F0FB-4CE0-8E7D-DAB60A20C5E9}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Play_Cultist" ID="{559D6873-F6AE-4715-9BF5-A2AE53F8A0B8}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
@@ -38,7 +38,7 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_ClinkParticles" ID="{981711EB-F542-4B30-A249-2FDB31043191}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Stop_Cultist" ID="{DE7C79D1-FF6C-45DC-B94A-6C3D814E6EF8}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
@@ -109,7 +109,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="Dimension_Blend" ID="{F4B7B2CD-D971-44A0-8588-5289AD7E313F}"/>
-							<Value>100</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Windiness" ID="{856B4807-561B-4A1A-A33F-1DF239E7BFBE}"/>
@@ -130,7 +130,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Forest" ID="{B444975E-34A7-43A2-B822-54DBF6EBF5C7}"/>
+						<CurrentSwitchRef Name="Ice" ID="{4E5A5B6B-739B-42F9-AB2B-3F9A0B153193}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

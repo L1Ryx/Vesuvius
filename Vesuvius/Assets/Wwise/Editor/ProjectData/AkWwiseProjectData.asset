@@ -145,7 +145,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ed84d2cae3faca48be2dd6fa4e4d485c
     GuidInternal: 
-    m_lastTime: -8584525117529057364
+    m_lastTime: -8584524234783761965
     List:
     - name: Big Blue
       guid: 6d3eb5986e02a744915f8ab3d036f459
@@ -212,6 +212,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 57a179dd4cb87f42ab96df366afa333a
       Path: Events/Default Work Unit/Cave Ambience
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Cultist
+      guid: 4d9d3b8bfdb755439a4b4f62511abdd6
+      id: 2381119915
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cultist
+        ObjectType: 4
+        guid: 4d9d3b8bfdb755439a4b4f62511abdd6
+      Path: Events/Default Work Unit/Cultist
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -451,6 +468,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.3103459
       minDuration: 1.0073187
+    - name: Play_Cultist
+      guid: 73689d55aef615479bf5a2ae53f8a0b8
+      id: 2729959470
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cultist
+        ObjectType: 4
+        guid: 4d9d3b8bfdb755439a4b4f62511abdd6
+      - ElementName: Play_Cultist
+        ObjectType: 3
+        guid: 73689d55aef615479bf5a2ae53f8a0b8
+      Path: Events/Default Work Unit/Cultist/Play_Cultist
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Footstep
       guid: 12847260c98fc447b05b56981c159311
       id: 1602358412
@@ -1036,6 +1073,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: ac39ef9ecba79d4298efe201f1eea3f3
       Path: Events/Default Work Unit/Cave Ambience/Stop_CaveAmbienceBlend
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Cultist
+      guid: d1797cde6cffdc45b94a6c3d814e6ef8
+      id: 3375565856
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cultist
+        ObjectType: 4
+        guid: 4d9d3b8bfdb755439a4b4f62511abdd6
+      - ElementName: Stop_Cultist
+        ObjectType: 3
+        guid: d1797cde6cffdc45b94a6c3d814e6ef8
+      Path: Events/Default Work Unit/Cultist/Stop_Cultist
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0

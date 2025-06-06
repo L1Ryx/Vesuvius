@@ -19,6 +19,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2575618364	Play_WatcherDeath			\Default Work Unit\Watcher Voices\Play_WatcherDeath	
 	2584420399	Play_Keeyo			\Default Work Unit\Play_Keeyo	
 	2726383372	Play_BohrmanTunnels			\Default Work Unit\BohrmanTunnels\Play_BohrmanTunnels	
+	2729959470	Play_Cultist			\Default Work Unit\Cultist\Play_Cultist	
 	2957100900	Play_ShovelSequence			\Default Work Unit\UI\Play_ShovelSequence	
 	2958765961	Play_BigBlueSolo			\Default Work Unit\Big Blue\Play_BigBlueSolo	
 	3006809981	Stop_MidgeWalk			\Default Work Unit\Midge\Stop_MidgeWalk	
@@ -26,6 +27,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3156981644	Play_PlayerHealed			\Default Work Unit\Healing\Play_PlayerHealed	
 	3286627841	Stop_Landing			\Default Work Unit\Footstep\Stop_Landing	
 	3307826465	Play_UINavigate			\Default Work Unit\UI\Play_UINavigate	
+	3375565856	Stop_Cultist			\Default Work Unit\Cultist\Stop_Cultist	
 	3400760074	Play_SwitchOpen			\Default Work Unit\Gate\Play_SwitchOpen	
 	3411346464	Stop_CaveAmbienceBlend			\Default Work Unit\Cave Ambience\Stop_CaveAmbienceBlend	
 	3419200535	Play_MidgeWalk			\Default Work Unit\Midge\Play_MidgeWalk	
@@ -94,6 +96,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	713841033	SFX_Footstep_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Footstep_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Footsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R2_V1		88780
 	755905113	SFX_GoatDeath_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_GoatDeath_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_WatcherDeath_Random\SFX_GoatDeath_R1_V1		180096
 	769271022	SFX_Footstep_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Footstep_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_WatcherFootsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R1_V1		88776
+	777663843	Boss_124_12-8_v1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\Boss_124_12-8_v1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MUS\MUS_Cultist_Playlist\Boss_124_12-8_v1\Boss_124_12-8_v1		7943384
 	779518494	SFX_PlayerAttackKill_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_PlayerAttackKill_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_PlayerAttackKill_Random\SFX_PlayerAttackKill_R2_V1		234240
 	806091628	AMB_SurrealForest_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\AMB_SurrealForest_R1_V1_21ECBC3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_SurrealForestBlend\ForestSequence\AMB_SurrealForest_R1_V1		8257268
 	812590943	SFX_Footstep_R5_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Windows\SFX\SFX_Footstep_R5_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_WatcherFootsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R5_V1		48136

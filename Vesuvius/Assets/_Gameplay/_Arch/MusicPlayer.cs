@@ -96,12 +96,22 @@ namespace Audio._Arch
             }
         }
 
+        public void PlayBossMusic()
+        {
+            AkSoundEngine.PostEvent("Play_Cultist", gameObject);
+        }
+        
+        public void StopBossMusic()
+        {
+            AkSoundEngine.PostEvent("Stop_Cultist", gameObject);
+        }
+
         private void OnApplicationQuit()
         {
             StopAllTracks();
         }
 
-        private void StopAllTracks()
+        public void StopAllTracks()
         {
             foreach (string track in activeTracks)
             {
