@@ -177,6 +177,7 @@ namespace _Gameplay._Arch
                 if (useTimeStop) StartCoroutine(StartStopTimeEffectCoroutine());
 
                 Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+                Physics2D.IgnoreLayerCollision(playerLayer, 14, true);
 
                 if (useParticles && damageBurst != null && !damageBurst.isPlaying) damageBurst.Play();
                 if (!isFlashing) StartCoroutine(FlashPlayer());
@@ -206,6 +207,7 @@ namespace _Gameplay._Arch
                 if (useTimeStop) StartCoroutine(StartStopTimeEffectCoroutine());
 
                 Physics2D.IgnoreLayerCollision(playerLayer, 14, true);
+                Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
 
                 if (useParticles && damageBurst != null && !damageBurst.isPlaying) damageBurst.Play();
                 if (!isFlashing) StartCoroutine(FlashPlayer());
@@ -249,6 +251,7 @@ namespace _Gameplay._Arch
         {
             yield return new WaitForSecondsRealtime(playerIFrames);
             Physics2D.IgnoreLayerCollision(playerLayer, 14, false);
+            Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
             ResetInvincibility();
         }
 

@@ -16,7 +16,7 @@ MonoBehaviour:
   maximumHealth: 5
   currentHealth: 3
   totalCurrency: 53
-  totemPower: 13
+  totemPower: 0
   abilityCost: 25
   lastCurrencyChangeAmount: 24
   sceneToLoad: 01-07
