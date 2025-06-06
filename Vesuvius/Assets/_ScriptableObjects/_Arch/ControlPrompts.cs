@@ -30,5 +30,9 @@ namespace _ScriptableObjects
         public string interactPrompt;
         public string doubleJumpPrompt;
         public string realityShiftPrompt;
+
+        [Header("Scheme Control Text")]
+        [Tooltip("Text replaced prompt templates for current control scheme")]
+        public string realityShiftKeybind;
     }
 }

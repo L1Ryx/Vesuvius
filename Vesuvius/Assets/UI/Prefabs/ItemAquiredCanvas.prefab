@@ -359,6 +359,8 @@ GameObject:
   - component: {fileID: 3745123155599086526}
   - component: {fileID: 908207024533700657}
   - component: {fileID: 7932456778949561910}
+  - component: {fileID: 6749653517055464115}
+  - component: {fileID: 1646320722728333083}
   m_Layer: 0
   m_Name: ItemAquiredCanvas
   m_TagString: Untagged
@@ -449,6 +451,48 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6749653517055464115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835151964210447710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd465d658ea760241b70ca3e1fe2306e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realityShiftText: {fileID: 73153438230273586}
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
+--- !u!114 &1646320722728333083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6835151964210447710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6749653517055464115}
+        m_TargetAssemblyTypeName: MirrorShardMenuTextReplace, Assembly-CSharp
+        m_MethodName: OnControlsChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &5388940690209175479
 PrefabInstance:
   m_ObjectHideFlags: 0
