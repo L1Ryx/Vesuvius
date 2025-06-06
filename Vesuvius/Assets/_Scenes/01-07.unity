@@ -22504,63 +22504,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7288126160383730143, guid: dcb41873a3c4041f48bbe0be787ea89b, type: 3}
   m_PrefabInstance: {fileID: 746624697}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &751683786
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1861351478502892526, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_Name
-      value: PlayerControlsManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3852373450781950612, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 97d47a688313ac24dad0d54c21d23277, type: 3}
 --- !u!1 &756618187
 GameObject:
   m_ObjectHideFlags: 0
@@ -57868,6 +57811,7 @@ GameObject:
   - component: {fileID: 8513931205399739552}
   - component: {fileID: 3600424615446390283}
   - component: {fileID: 9100798425518672428}
+  - component: {fileID: 9100798425518672429}
   m_Layer: 0
   m_Name: MirrorShardCutscene
   m_TagString: Untagged
@@ -82870,6 +82814,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d5d2a246cf3db5d4e86d1b27af884168, type: 2}
     - {fileID: 11400000, guid: f7b20ced49edbba4e80f9788ce439f4a, type: 2}
     - {fileID: 11400000, guid: 9d201b763b1646e419bc693363470426, type: 2}
+    - {fileID: 11400000, guid: ada52738abb9f084a9818340c7dadd34, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -82963,6 +82908,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 9100798425518672429}
+          m_TargetAssemblyTypeName: PlayerCutsceneControls, Assembly-CSharp
+          m_MethodName: EnableNormalControls
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1514762588}
@@ -82994,6 +82951,20 @@ MonoBehaviour:
         - m_Target: {fileID: 4859780287163569909}
           m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
           m_MethodName: Pause
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9100798425518672429}
+          m_TargetAssemblyTypeName: PlayerCutsceneControls, Assembly-CSharp
+          m_MethodName: DisableNormalControls
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -110174,6 +110145,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9100798425518672429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49604379953129591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ee2127ca2e1284282ffb44959eebc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -110219,4 +110202,3 @@ SceneRoots:
   - {fileID: 1354249235}
   - {fileID: 1925812468}
   - {fileID: 1848232901}
-  - {fileID: 751683786}

@@ -50,6 +50,7 @@ namespace _Gameplay._Arch
         private void Awake()
         {
             bigBlueAudio = this.gameObject.GetComponent<BigBlueAudio>();
+            talkTemplate = npcTalkText.text;
         }
 
         private void OnEnable()
@@ -68,7 +69,7 @@ namespace _Gameplay._Arch
 
         private void Start()
         {
-            talkTemplate = npcTalkText.text;
+            
             OnControlsChanged();
             FindPlayer();
             InitializeUI();

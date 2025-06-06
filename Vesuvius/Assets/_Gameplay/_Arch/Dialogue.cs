@@ -100,10 +100,8 @@ namespace _Gameplay._Arch
             isPlayerNear = false;
 
             // Freeze player movement immediately
-            player.GetComponent<PlayerController>().FreezeMode = true;
-            PlayerControlManager.Instance.controls.Player.Swing.Disable();
-            PlayerControlManager.Instance.controls.Player.Heal.Disable();
-            PlayerControlManager.Instance.controls.Player.RealityShift.Disable();
+            print("Player frozen");
+            PlayerControlManager.Instance.DisableNormalControls();
 
             dialogueCanvas.gameObject.SetActive(true); // Show the dialogue canvas
             currentDialogueIndex = 0; // Reset dialogue index
@@ -169,10 +167,7 @@ namespace _Gameplay._Arch
             dialogueTree.eventsOnDialogueEnd.Invoke();
 
 
-            player.GetComponent<PlayerController>().FreezeMode = false; // Unfreeze player movement
-            PlayerControlManager.Instance.controls.Player.Swing.Enable();
-            PlayerControlManager.Instance.controls.Player.Heal.Enable();
-            PlayerControlManager.Instance.controls.Player.RealityShift.Enable();
+            PlayerControlManager.Instance.EnableNormalControls();
         }
 
         private void ApplyDialogueTextEffects()

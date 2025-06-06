@@ -26,15 +26,10 @@ namespace _Gameplay._Arch
         private bool isHealing = false; // Tracks if the player is currently healing
         private bool overlayActive = false; // Tracks if overlay lerp is active
 
-        private void Awake()
-        {
-
-        }
-
         private void OnEnable()
         {
-
-            PlayerControlManager.Instance.controls.Player.Heal.performed += OnHealInput;
+            PlayerControlManager instance = PlayerControlManager.Instance;
+            PlayerControls controls = PlayerControlManager.Instance.controls;
         }
 
         private void OnDisable()

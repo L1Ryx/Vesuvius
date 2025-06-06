@@ -29,18 +29,14 @@ public class KeyItemAcquisition : MonoBehaviour
         PlayerControlManager.Instance.controls.Player.RealityShift.performed += CloseMenu;
 
         // Disable the Interact action
-        PlayerControlManager.Instance.controls.Player.Interact.Disable();
-        PlayerControlManager.Instance.controls.Player.Swing.Disable();
-        PlayerControlManager.Instance.controls.Player.Heal.Disable();
+
     }
 
     private void OnDisable()
     {
         PlayerControlManager.Instance.controls.Player.RealityShift.performed -= CloseMenu;
 
-        PlayerControlManager.Instance.controls.Player.Interact.Enable();
-        PlayerControlManager.Instance.controls.Player.Swing.Enable();
-        PlayerControlManager.Instance.controls.Player.Heal.Enable();
+
     }
 
     private void Start()
@@ -74,6 +70,9 @@ public class KeyItemAcquisition : MonoBehaviour
 
         // Freeze player movement
         playerController.SetFreezeMode(true);
+        PlayerControlManager.Instance.controls.Player.Interact.Disable();
+        PlayerControlManager.Instance.controls.Player.Swing.Disable();
+        PlayerControlManager.Instance.controls.Player.Heal.Disable();
 
         Debug.Log("Menu opened and player frozen.");
     }
@@ -92,6 +91,9 @@ public class KeyItemAcquisition : MonoBehaviour
 
             // Unfreeze player movement
             playerController.SetFreezeMode(false);
+            PlayerControlManager.Instance.controls.Player.Interact.Enable();
+            PlayerControlManager.Instance.controls.Player.Swing.Enable();
+            PlayerControlManager.Instance.controls.Player.Heal.Enable();
             Destroy(menuInstance);
             menuClosed.Invoke();
 
