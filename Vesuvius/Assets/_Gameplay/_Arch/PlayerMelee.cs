@@ -124,12 +124,12 @@ namespace _Gameplay._Arch
                 Quaternion swingRotation;
 
                 // Determine swing direction based on input
-                if (inputDirection.y > 0 && math.abs(inputDirection.y) > math.abs(inputDirection.x))
+                if (inputDirection.y > 0 && math.abs(inputDirection.y) >= math.abs(inputDirection.x))
                 {
                     swingPosition = playerSprite.position + (Vector3)upSwingOffset;
                     swingRotation = Quaternion.Euler(0, 0, 90);
                 }
-                else if (inputDirection.y < 0 && math.abs(inputDirection.y) > math.abs(inputDirection.x))
+                else if (inputDirection.y < 0 && math.abs(inputDirection.y) >= math.abs(inputDirection.x))
                 {
                     swingPosition = playerSprite.position + (Vector3)downSwingOffset;
                     swingRotation = Quaternion.Euler(0, 0, -90);
