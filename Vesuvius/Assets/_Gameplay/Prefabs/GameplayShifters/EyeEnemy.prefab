@@ -165,8 +165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyeProjectilePrefab: {fileID: 2552884312059601329, guid: 6e35cc36635be7842b67dc9074c23eb6, type: 3}
-  fireRate: 2
-  detectionRadius: 5
+  fireRate: 2.5
+  detectionRadius: 8
+  terrainLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &8111466016145648335
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5245223978494334739}
   - component: {fileID: 8670101777420319670}
+  - component: {fileID: 4865936784894583408}
   m_Layer: 11
   m_Name: EyeEnemy
   m_TagString: Untagged
@@ -193,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 8111466016145648335}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.06, y: 7.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -215,6 +219,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NormalRealityLayer: {fileID: 9183289827312280835}
   AlteredRealityLayer: {fileID: 1489377378377331004}
+--- !u!114 &4865936784894583408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111466016145648335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01dfaed2293c4491aad3dde5ef3e670c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.25
+  frequency: 1
+  enableScalePulse: 1
+  scaleAmplitude: 0.05
+  scaleFrequency: 1.5
 --- !u!1 &9183289827312280835
 GameObject:
   m_ObjectHideFlags: 0

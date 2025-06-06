@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5250419813252050819}
   - component: {fileID: 6699707740565447158}
   - component: {fileID: 4903456735960220557}
-  - component: {fileID: 952409554972849216}
-  - component: {fileID: 5263266875100735486}
+  - component: {fileID: 2293708255854623742}
   m_Layer: 11
   m_Name: EyeProjectile
   m_TagString: Enemy
@@ -80,7 +79,7 @@ MonoBehaviour:
   speed: 5
   rotationSpeed: 3
   timeToHome: 0.5
---- !u!58 &952409554972849216
+--- !u!58 &2293708255854623742
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,47 +114,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &5263266875100735486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2552884312059601329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02a26dfdc2a6486891e815cee92dab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageable: 1
-  healthAmount: 10
-  iFramesTime: 0.2
-  giveUpwardsForce: 0
-  canBeKnockedBack: 1
-  isLiveEnemy: 1
-  destroyImmediately: 1
-  shouldFlashOnDamage: 1
-  flashColor: {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 0.1
-  flashCount: 2
-  usesAlternateDeath: 0
-  onDeathEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  upwardForce: 5
-  fadeDuration: 10
-  deathBurst: {fileID: 0}
-  sr: {fileID: 0}
-  playerInfo: {fileID: 0}
-  minTotemPower: 10
-  maxTotemPower: 20
-  slowdownTime: 0.2
-  slowdownScale: 0.05
-  RebalanceTutorialNeeded:
-    m_PersistentCalls:
-      m_Calls: []
+  m_Radius: 0.2
 --- !u!1 &4998828262968917542
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,4 +269,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.2

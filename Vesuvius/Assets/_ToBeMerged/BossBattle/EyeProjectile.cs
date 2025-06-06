@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using _Gameplay._Arch;
 using UnityEngine;
 
 public class EyeProjectile : MonoBehaviour
@@ -11,6 +12,7 @@ public class EyeProjectile : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private float timeAlive = 0f;
+
 
     void Start()
     {
@@ -24,16 +26,36 @@ public class EyeProjectile : MonoBehaviour
         timeAlive += Time.deltaTime;
         if (target != null && timeAlive <= timeToHome)
         {
-            // Calculate direction and set velocity
-            direction = (target.transform.position - transform.position).normalized;
+            direction = (target.GetComponent<Collider2D>().bounds.center - transform.position).normalized;     
         }
+
 
         rb.linearVelocity = direction * speed;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //if you collide with enemyhealth (which can only happen after volley, damage it)
+        if (collision.gameObject.TryGetComponent(out EnemyHealth enemyHealth))
+        {
+            enemyHealth.Damage(20, Vector2.zero);
+        }
         Destroy(this.gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //player turns it back to the enemy
+        if (other.gameObject.layer == 12)
+        {
+            target = transform.parent.gameObject;
+            timeAlive = 0f;
+            this.gameObject.layer = 12;
+        }
+        if (other.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
     }
     // //When projectile goes offscreen destroy it
     // void OnBecameInvisible() 
