@@ -54776,6 +54776,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: doneSlamRecovery.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -54784,9 +54788,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: teleportDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 11400000, guid: dadaaba3cc1209d48ab3699ca370fb9d, type: 2}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 4859780287163569909}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: doneSlamRecovery.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -54804,6 +54816,14 @@ PrefabInstance:
       value: Raise
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: doneSlamRecovery.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -54816,11 +54836,19 @@ PrefabInstance:
       value: Events._Arch.GameEvent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Playables.PlayableDirector, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: doneSlamRecovery.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Events._Arch.GameEvent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: teleportDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: beamDoneAttack.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
@@ -82722,6 +82750,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 766a84cc8862f514c9aee1ab1cb6111d, type: 2}
     - {fileID: 11400000, guid: d5d2a246cf3db5d4e86d1b27af884168, type: 2}
     - {fileID: 11400000, guid: f7b20ced49edbba4e80f9788ce439f4a, type: 2}
+    - {fileID: 11400000, guid: 9d201b763b1646e419bc693363470426, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -82832,6 +82861,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1514762588}
           m_TargetAssemblyTypeName: CultistBossBehavior, Assembly-CSharp
           m_MethodName: CastBeam
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4859780287163569909}
+          m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+          m_MethodName: Pause
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
