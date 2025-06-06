@@ -23945,6 +23945,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: usesAlternateDeath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1236925842}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996573148739773211, guid: 7405eb063443542028e690975a429de5, type: 3}
+      propertyPath: onDeathEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
       propertyPath: m_Name
       value: EyeEnemy (2)
@@ -26575,6 +26607,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3873955746526500407, guid: 56fb8beb26ea72c43a7dfe4de2ff7abe, type: 3}
   m_PrefabInstance: {fileID: 1354875915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1236925842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8111466016145648335, guid: 7405eb063443542028e690975a429de5, type: 3}
+  m_PrefabInstance: {fileID: 796073124}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1241233404
 GameObject:
