@@ -46,6 +46,7 @@
 						<ObjectRef Name="Play_VineBreak" ID="{95350A55-DB5A-4CCD-A28A-8BA6F3F44C75}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BulbOpen" ID="{C5F60F95-F0FB-4CE0-8E7D-DAB60A20C5E9}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BigBlueSolo" ID="{0DBA5161-93DE-4CE6-B635-4D064204FCCF}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CultistBeam" ID="{08A211D1-E682-4CFB-AAFC-0ECFA0381F19}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ShovelSequence" ID="{6F4E07C2-1DC7-4D22-B347-2F88345B3410}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Hah" ID="{6F590272-0AED-4D81-8EA4-FF9C9B6CF3F3}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UINavigate" ID="{C90D0D9A-83F6-4DBA-B3F9-96A9FF0FCD40}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>

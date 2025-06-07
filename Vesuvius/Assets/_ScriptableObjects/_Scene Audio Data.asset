@@ -69,7 +69,7 @@ MonoBehaviour:
       - BohrmanTunnels
   - sceneName: 01-08
     audioInfo:
-      Windiness: 37
-      Openness: 35.5
-      Creakiness: 31
+      Windiness: 32.1
+      Openness: 53.5
+      Creakiness: 12.3
       musicTracks: []

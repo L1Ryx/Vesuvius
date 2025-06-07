@@ -704,6 +704,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{F0BB28D7-6BC2-42BD-AE90-BDFA4DDC73E5}" ShortID="745098687">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CultistBeam_Blend" ID="{C27C4A54-D180-46E5-94E3-941B1468DE09}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Stop_Cultist" ID="{DE7C79D1-FF6C-45DC-B94A-6C3D814E6EF8}">

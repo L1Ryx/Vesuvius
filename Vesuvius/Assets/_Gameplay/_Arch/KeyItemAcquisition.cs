@@ -58,6 +58,8 @@ public class KeyItemAcquisition : MonoBehaviour
 
     public void OpenMenu()
     {
+        // TEMP AUDIO CODE
+        AkSoundEngine.PostEvent("Play_UISelect", gameObject);
         if (playerController == null)
         {
             Debug.LogWarning("Cannot open menu. PlayerController not assigned.");

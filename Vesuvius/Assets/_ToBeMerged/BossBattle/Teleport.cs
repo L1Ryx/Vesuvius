@@ -12,4 +12,11 @@ public class Teleport : MonoBehaviour
         print("called");
         sprite.enabled = !sprite.enabled;
     }
+    
+    // TEMP AUDIO CODE
+    // ITS IN THIS SCRIPT BECAUSE THIS IS THE ONLY SCRIPT ON THE ANIMATOR GO
+    public void PlaySwingAudio()
+    {
+        AkSoundEngine.PostEvent("Play_Swing", gameObject);
+    }
 }

@@ -52,7 +52,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{7EDB0DA2-7A72-2AEC-2FCE-40782791C755}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{6CC43CDB-D3B4-67B4-F6ED-D50A332D9502}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -381,8 +381,12 @@
 				</Event>
 				<Event Id="2729959470" Name="Play_Cultist" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="16942921"/>
 						<MediaRef Id="777663843"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="3220351423" Name="Play_CultistBeam" DurationType="OneShot" DurationMin="2.1745486" DurationMax="2.4408486">
 					<MediaRefs>
@@ -696,5 +700,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0920FE8F-FD39-9641-DCE7-F366318B172A}</FileHash>
+	<FileHash>{7CDDE61A-38BA-EDAB-1B41-4402998C7587}</FileHash>
 </SoundBanksInfo>

@@ -155,7 +155,7 @@ public class CultistBossBehavior : MonoBehaviour
         //eye.SetActive(true);
         timeSinceEyeSummon = 0f;
     }
-
+    
     void Special()
     {
         if (!isCastingSpecial && !isSpecialDone)
