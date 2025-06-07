@@ -22507,6 +22507,10 @@ PrefabInstance:
       propertyPath: slamTeleportPosition
       value: 
       objectReference: {fileID: 868090066}
+    - target: {fileID: 8328673932491035737, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1751348890777400817, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
     m_RemovedGameObjects: []
@@ -22639,7 +22643,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.31, y: 0.14}
+    oldSize: {x: 0.18, y: 0.3}
     newSize: {x: 0.18, y: 0.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
