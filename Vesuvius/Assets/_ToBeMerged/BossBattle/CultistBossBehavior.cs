@@ -81,13 +81,17 @@ public class CultistBossBehavior : MonoBehaviour
 
     public UnityEvent doneSlamRecovery;
     public UnityEvent teleportDone;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         beamSpriteRenderer = BeamSprite.GetComponent<SpriteRenderer>();
         ballSpriteRenderer = preBeamBall.GetComponent<SpriteRenderer>();
         beamDamage = BeamSprite.GetComponent<CollisionDamageIfSameReality>();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         pos = transform.position;
         if (!animator) print("animator not set");
     }
