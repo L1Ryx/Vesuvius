@@ -14,6 +14,9 @@ namespace _Gameplay._Arch
         public PlayerInfo playerInfo;
         public TutorialData tutorialData;
         public SpawnData spawnData;
+        public BinaryStateStorage[] binaryStateStorages;
+        public PlayerUnlocks playerUnlocks;
+        public GameState gameState;
 
         private static ScriptableObjectManager instance;
         private PlayerControls playerControls;
@@ -69,6 +72,21 @@ namespace _Gameplay._Arch
             }
         }
 
+        public void ResetAllData()
+        {
+            foreach (BinaryStateStorage bss in binaryStateStorages)
+            {
+                bss.Reset();
+            }
+            playerUnlocks.Reset();
+            gameState.Reset();
+            // foreach (Saveable saveable in saveables)
+            // {
+            //     saveable.Reset();
+            // }
+
+        }
+
         public void SaveAllData()
         {
             if (gateData != null)
@@ -85,6 +103,21 @@ namespace _Gameplay._Arch
 
             if (spawnData != null)
                 ES3.Save("SpawnData", spawnData, SaveFileName);
+
+            foreach (BinaryStateStorage bss in binaryStateStorages)
+            {
+                ES3.Save(bss.name, bss, SaveFileName);
+            }
+
+            if (playerUnlocks != null)
+                ES3.Save("PlayerUnlocks", playerUnlocks, SaveFileName);
+
+            if (gameState != null)
+                ES3.Save("GameState", gameState, SaveFileName);
+            // foreach (ScriptableObject SO in saveables)
+            // {
+            //     ES3.Save(SO.name, SO, SaveFileName);
+            // }
 
             Debug.Log("All ScriptableObjects saved.");
         }
@@ -141,6 +174,40 @@ namespace _Gameplay._Arch
             {
                 Debug.LogWarning("No saved data found for SpawnData.");
             }
+            foreach (BinaryStateStorage bss in binaryStateStorages)
+            {
+                if (bss != null && ES3.KeyExists(bss.name, SaveFileName))
+                {
+                    BinaryStateStorage loadedBSS = ES3.Load<BinaryStateStorage>(bss.name, SaveFileName);
+                    JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedBSS), bss);
+                }
+            }
+            if (playerUnlocks != null && ES3.KeyExists("PlayerUnlocks", SaveFileName))
+            {
+                PlayerUnlocks loadedPlayerUnlocks = ES3.Load<PlayerUnlocks>("PlayerUnlocks", SaveFileName);
+                JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedPlayerUnlocks), playerUnlocks);
+            }
+            else
+            {
+                Debug.LogWarning("No saved data found for SpawnData.");
+            }
+            if (gameState != null && ES3.KeyExists("GameState", SaveFileName))
+            {
+                GameState loadedGameState = ES3.Load<GameState>("GameState", SaveFileName);
+                JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedGameState), gameState);
+            }
+            else
+            {
+                Debug.LogWarning("No saved data found for SpawnData.");
+            }
+            // foreach (ScriptableObject SO in saveables)
+            // {
+            //     if (SO != null && ES3.KeyExists(SO.name, SaveFileName))
+            //     {
+            //         ScriptableObject loadedSO = ES3.Load<ScriptableObject>(SO.name, SaveFileName);
+            //         JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedSO), SO);
+            //     }
+            // }
 
             Debug.Log("All ScriptableObjects loaded.");
         }

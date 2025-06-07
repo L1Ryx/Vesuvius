@@ -51,6 +51,7 @@ namespace _Gameplay._Arch
         [SerializeField] private GateData gateData;
         [SerializeField] private BulbData bulbData;
         [SerializeField] private TutorialData tutorialData;
+        public GameState gameState;
 
         [Header("Events")]
         public UnityEvent roomEntered;
@@ -82,6 +83,8 @@ namespace _Gameplay._Arch
             gateData.ResetGates();
             bulbData.ResetBulbs();
             tutorialData.ResetTutorials();
+            scriptableObjectManager.ResetAllData();
+            gameState.Reset();
 
             roomExited.Invoke();
             gameSaved.Invoke();
@@ -95,6 +98,7 @@ namespace _Gameplay._Arch
         private void LoadExistingGameState()
         {
             gameLoaded.Invoke();
+            print("Loading");
             spawnData.spawnLocation.x = playerInfo.GetSpawnLocation().x;
             spawnData.spawnLocation.y = playerInfo.GetSpawnLocation().y;
             StartCoroutine(SwitchToStartScene());

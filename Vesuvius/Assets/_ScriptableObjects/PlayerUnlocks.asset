@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed9c0b173fe28d4a84409f9ba892bf8, type: 3}
   m_Name: PlayerUnlocks
   m_EditorClassIdentifier: 
-  canDoubleJump: 1
-  canRealityShift: 1
+  canDoubleJump: 0
+  canRealityShift: 0

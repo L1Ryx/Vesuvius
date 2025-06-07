@@ -49,10 +49,13 @@ public class PlayerControlManager : MonoBehaviour
     void Start()
     {
         player = FindFirstObjectByType<PlayerSpawner>()?.GetRuntimePlayer();
+        if (player != null)
+        {
+            // Dynamically fetch PlayerController from the player
+            playerController = player.GetComponent<PlayerController>();
+            playerDamage = player.GetComponent<PlayerDamage>(); 
+        }
 
-        // Dynamically fetch PlayerController from the player
-        playerController = player.GetComponent<PlayerController>();
-        playerDamage = player.GetComponent<PlayerDamage>();
     }
 
     private void OnDisable()
@@ -65,7 +68,14 @@ public class PlayerControlManager : MonoBehaviour
     //ex. cutscene disable, dialogue disable, dialogue enable, cutscene enable 
     public void DisableNormalControls()
     {
+        if (playerController == null)
+        {
+            player = FindFirstObjectByType<PlayerSpawner>()?.GetRuntimePlayer();
+            playerController = player.GetComponent<PlayerController>();
+            playerDamage = player.GetComponent<PlayerDamage>(); 
+        }
         overlappingCalls++;
+
         playerController.SetFreezeMode(true);
         playerDamage.SetInvincibility();
         PlayerControlManager.Instance.controls.Player.Swing.Disable();

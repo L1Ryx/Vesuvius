@@ -41,4 +41,11 @@ public class BinaryStateStorage : ScriptableObject
             shownGuids.Add(guid);
         }
     }
+
+    public void Reset()
+    {
+        binaryStateStorage.Clear();
+        shownGuids.Clear();
+        Debug.Log("All bss has been reset.");
+    }
 }

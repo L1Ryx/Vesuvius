@@ -4,4 +4,9 @@ using UnityEngine;
 public class GameState : ScriptableObject
 {
     public bool isAltReality = false;
+
+    public void Reset()
+    {
+        isAltReality = false;
+    }
 }
