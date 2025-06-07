@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using _Gameplay._Arch;
 using UnityEngine;
 using UnityEngine.UIElements;
+using AK.Wwise;
 
 public class EyeAttackBehavior : MonoBehaviour
 {
@@ -59,6 +60,8 @@ public class EyeAttackBehavior : MonoBehaviour
     {
         Instantiate(eyeProjectilePrefab, this.gameObject.GetComponent<Collider2D>().bounds.center, transform.rotation, transform);
         timeSinceLastFire = 0f;
+        // TEMP AUDIO CODE
+        AkSoundEngine.PostEvent("Play_EyeShoot", gameObject);
     }
     
     private void OnDrawGizmos()

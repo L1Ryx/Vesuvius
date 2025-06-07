@@ -6,8 +6,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	747911848	Play_GateOpenSequence			\Default Work Unit\Gate\Play_GateOpenSequence	
 	834058527	Play_Abileh			\Default Work Unit\Play_Abileh	
 	989180208	Play_Swing			\Default Work Unit\Melee\Play_Swing	
+	1024905534	Play_EyeShoot			\Default Work Unit\Eye Enemy\Play_EyeShoot	
 	1210756211	Stop_BigBlueSolo			\Default Work Unit\Big Blue\Stop_BigBlueSolo	
 	1262204860	Stop_ForestAmbienceBlend			\Default Work Unit\Cave Ambience\Stop_ForestAmbienceBlend	
+	1288535984	Play_IceBreak			\Default Work Unit\Icicle\Play_IceBreak	
 	1602358412	Play_Footstep			\Default Work Unit\Footstep\Play_Footstep	
 	1648494590	Play_ForestAmbienceBlend			\Default Work Unit\Cave Ambience\Play_ForestAmbienceBlend	
 	1691293180	Play_Gauntlet			\Default Work Unit\Gauntlet\Play_Gauntlet	
@@ -27,6 +29,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3006809981	Stop_MidgeWalk			\Default Work Unit\Midge\Stop_MidgeWalk	
 	3094886953	Play_Hah			\Default Work Unit\Play_Hah	
 	3156981644	Play_PlayerHealed			\Default Work Unit\Healing\Play_PlayerHealed	
+	3220351423	Play_CultistBeam			\Default Work Unit\Cultist\Play_CultistBeam	
 	3286627841	Stop_Landing			\Default Work Unit\Footstep\Stop_Landing	
 	3307826465	Play_UINavigate			\Default Work Unit\UI\Play_UINavigate	
 	3312265946	Stop_Gauntlet			\Default Work Unit\Gauntlet\Stop_Gauntlet	
@@ -60,6 +63,7 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	7316285	Abileh	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Abileh_EFE7469B.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_BigBlueVoice\Abileh		96468
+	16942921	Main Beam	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Main Beam_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_CultistBeam_Blend\Main Beam		221266
 	30527012	BohrmanTunnels_144_4-4_v1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\BohrmanTunnels_144_4-4_v1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MUS\MUS_BohrmanTunnels_Playlist\BohrmanTunnels_144_4-4_v1\BohrmanTunnels_144_4-4_v1		21780096
 	52759494	Nulla	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Nulla_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_BigBlueVoice\Nulla		126680
 	124681114	AMB_CaveDrone_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\AMB_CaveDrone_R1_V1_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_CaveAmbienceBlend\AMB_CaveDrone_R1_V1		7269216
@@ -84,6 +88,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	354329399	SFX_Slash_R4_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_Slash_R4_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Slash_Random\SFX_Slash_R4_V1		28192
 	384139587	SFX_WoodCreak_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_WoodCreak_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_RandomCaveSounds\SFX_WoodCreak_R2_V1		546160
 	431433393	Beneh	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Beneh_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_BigBlueVoice\Beneh		188804
+	455007172	IceBreak4	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\IceBreak4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_IceBreak_Random\IceBreak4		58414
 	462711438	SFX_UISelect_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_UISelect_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-U\SFX_UISelect_Blend\SFX_UISelect_R1_V1		101340
 	467185361	SFX_PlayerAttackHit_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_PlayerAttackHit_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_PlayerAttackHit_Random\SFX_PlayerAttackHit_R1_V1		184640
 	477952436	SFX_PlayerDamagedImpact_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_PlayerDamagedImpact_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_PlayerDamaged_Blend\SFX_PlayerDamagedImpact_R1_V1		677732
@@ -96,14 +101,18 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	599246346	SFX_WoodCreak_R3_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_WoodCreak_R3_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_RandomCaveSounds\SFX_WoodCreak_R3_V1		686960
 	622349472	SFX_SwitchOpen_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_SwitchOpen_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_SwitchOpen_Blend\SFX_SwitchOpen_R1_V1		60328
 	622842095	SFX_ShovelSequence_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_ShovelSequence_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-U\SFX_ShovelSequence_Blend\SFX_ShovelSequence_R1_V1		445464
+	634247668	IceBreak2	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\IceBreak2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_IceBreak_Random\IceBreak2		369206
 	646559283	SFX_Footstep_R4_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_Footstep_R4_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_WatcherFootsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R4_V1		96380
 	681262107	AMB_CaveColdWinds_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\AMB_CaveColdWinds_R1_V1_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_CaveAmbienceBlend\AMB_CaveColdWinds_R1_V1		15879120
 	709204605	AMB_SoftSnowAmbience_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\AMB_SoftSnowAmbience_R1_V1_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_CaveAmbienceBlend\AMB_SoftSnowAmbience_R1_V1		11849824
 	713841033	SFX_Footstep_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_Footstep_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_Footsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R2_V1		88780
+	731567955	IceBreak3	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\IceBreak3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_IceBreak_Random\IceBreak3		142458
 	755905113	SFX_GoatDeath_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_GoatDeath_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\VO_WatcherDeath_Random\SFX_GoatDeath_R1_V1		180096
 	769271022	SFX_Footstep_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_Footstep_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_WatcherFootsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R1_V1		88776
 	777663843	Boss_124_12-8_v1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Boss_124_12-8_v1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MUS\MUS_Cultist_Playlist\Boss_124_12-8_v1\Boss_124_12-8_v1		7943384
 	779518494	SFX_PlayerAttackKill_R2_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_PlayerAttackKill_R2_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_PlayerAttackKill_Random\SFX_PlayerAttackKill_R2_V1		234240
+	804371342	EyeAttack	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\EyeAttack_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_EyeShoot_Blend\EyeAttack		163160
+	806048397	IceBreak1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\IceBreak1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_IceBreak_Random\IceBreak1		28452
 	806091628	AMB_SurrealForest_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\AMB_SurrealForest_R1_V1_21ECBC3B.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_SurrealForestBlend\ForestSequence\AMB_SurrealForest_R1_V1		8257268
 	812590943	SFX_Footstep_R5_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_Footstep_R5_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_WatcherFootsteps_Blend\SFX_Footsteps_Random\SFX_Footstep_R5_V1		48136
 	832787432	AMB_CaveAmbience_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\AMB_CaveAmbience_R1_V1_FBC78EF0.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_CaveAmbienceBlend\AMB_CaveAmbience_R1_V1		5735520

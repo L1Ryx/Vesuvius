@@ -62,7 +62,7 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_VineBreak" ID="{95350A55-DB5A-4CCD-A28A-8BA6F3F44C75}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<ObjectRef Name="Play_CultistBeam" ID="{08A211D1-E682-4CFB-AAFC-0ECFA0381F19}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
@@ -114,6 +114,10 @@
 							<Position X="4" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_IceBreak" ID="{658C0411-2A6E-4FDE-BC9F-61460C228979}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_PlayerAttackAll" ID="{7A30FF67-5EB0-4E08-B2F4-D95A35E96C12}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}"/>
 							<Position X="4" Y="5"/>
 						</Module>
@@ -125,7 +129,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Dimension_Blend" ID="{F4B7B2CD-D971-44A0-8588-5289AD7E313F}"/>
-							<Value>0</Value>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Windiness" ID="{856B4807-561B-4A1A-A33F-1DF239E7BFBE}"/>
@@ -133,7 +137,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Openness" ID="{5A4F1459-54E7-4B38-BB36-F99804CFF046}"/>
-							<Value>100</Value>
+							<Value>38.8881009439037</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Creakiness" ID="{854C9922-2A4C-4D78-A2AC-EBBC51BC08FE}"/>
@@ -146,7 +150,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Ice" ID="{4E5A5B6B-739B-42F9-AB2B-3F9A0B153193}"/>
+						<CurrentSwitchRef Name="Forest" ID="{B444975E-34A7-43A2-B822-54DBF6EBF5C7}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>

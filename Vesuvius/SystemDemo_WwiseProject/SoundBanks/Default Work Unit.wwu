@@ -50,8 +50,10 @@
 						<ObjectRef Name="Play_Hah" ID="{6F590272-0AED-4D81-8EA4-FF9C9B6CF3F3}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UINavigate" ID="{C90D0D9A-83F6-4DBA-B3F9-96A9FF0FCD40}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerAttackAll" ID="{7A30FF67-5EB0-4E08-B2F4-D95A35E96C12}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_EyeShoot" ID="{CAA44B77-9A53-4ED4-995C-C0D7F228863D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_GateOpenSequence" ID="{536DB0EF-072C-4FA0-82BC-D8632C8EB292}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_WatcherDeath" ID="{E8B17D4D-D463-4FB4-AD79-FF7BEF2E2FE8}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_IceBreak" ID="{658C0411-2A6E-4FDE-BC9F-61460C228979}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

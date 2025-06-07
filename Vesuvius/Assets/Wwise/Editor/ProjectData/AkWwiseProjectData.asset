@@ -117,7 +117,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: df3682325a13ec4eac474172ce78796e
     GuidInternal: 
-    m_lastTime: -8584523364824662869
+    m_lastTime: -8584523314467580607
     List:
     - name: DefaultSoundbank
       guid: b9bec53298baed48b2923c586ee8991f
@@ -145,7 +145,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ed84d2cae3faca48be2dd6fa4e4d485c
     GuidInternal: 
-    m_lastTime: -8584523364824699939
+    m_lastTime: -8584523314467595765
     List:
     - name: Big Blue
       guid: 6d3eb5986e02a744915f8ab3d036f459
@@ -232,6 +232,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Eye Enemy
+      guid: 996e481258a4ef4f964984418943f182
+      id: 4201112004
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Eye Enemy
+        ObjectType: 4
+        guid: 996e481258a4ef4f964984418943f182
+      Path: Events/Default Work Unit/Eye Enemy
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Footstep
       guid: 29ac7625297805498f7f5da40ad1612e
       id: 1866025847
@@ -297,6 +314,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 433ddec7f14c0f49b58be318c5dc42f3
       Path: Events/Default Work Unit/Healing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Icicle
+      guid: 64ede475e5f4d74ba32205a1b5888cd1
+      id: 2339865188
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Icicle
+        ObjectType: 4
+        guid: 64ede475e5f4d74ba32205a1b5888cd1
+      Path: Events/Default Work Unit/Icicle
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -505,6 +539,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_CultistBeam
+      guid: d111a20882e6fb4caafc0ecfa0381f19
+      id: 3220351423
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Cultist
+        ObjectType: 4
+        guid: 4d9d3b8bfdb755439a4b4f62511abdd6
+      - ElementName: Play_CultistBeam
+        ObjectType: 3
+        guid: d111a20882e6fb4caafc0ecfa0381f19
+      Path: Events/Default Work Unit/Cultist/Play_CultistBeam
+      maxAttenuation: 0
+      maxDuration: 2.4408486
+      minDuration: 2.1745486
+    - name: Play_EyeShoot
+      guid: 774ba4ca539ad44e995cc0d7f228863d
+      id: 1024905534
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Eye Enemy
+        ObjectType: 4
+        guid: 996e481258a4ef4f964984418943f182
+      - ElementName: Play_EyeShoot
+        ObjectType: 3
+        guid: 774ba4ca539ad44e995cc0d7f228863d
+      Path: Events/Default Work Unit/Eye Enemy/Play_EyeShoot
+      maxAttenuation: 0
+      maxDuration: 1.009996
+      minDuration: 0.7141751
     - name: Play_Footstep
       guid: 12847260c98fc447b05b56981c159311
       id: 1602358412
@@ -622,6 +696,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.44265264
       minDuration: 0.44265264
+    - name: Play_IceBreak
+      guid: 11048c656e2ade4fbc9f61460c228979
+      id: 1288535984
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Icicle
+        ObjectType: 4
+        guid: 64ede475e5f4d74ba32205a1b5888cd1
+      - ElementName: Play_IceBreak
+        ObjectType: 3
+        guid: 11048c656e2ade4fbc9f61460c228979
+      Path: Events/Default Work Unit/Icicle/Play_IceBreak
+      maxAttenuation: 0
+      maxDuration: 3.8448958
+      minDuration: 0.295375
     - name: Play_Jump
       guid: 7d50f71690b24e4786cbe9813022526f
       id: 3689126666

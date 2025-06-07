@@ -721,6 +721,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_CultistBeam" ID="{08A211D1-E682-4CFB-AAFC-0ECFA0381F19}">
+							<ChildrenList>
+								<Action Name="" ID="{94115404-13C7-469D-B12C-4417EE225576}" ShortID="827819670">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CultistBeam_Blend" ID="{C27C4A54-D180-46E5-94E3-941B1468DE09}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Gauntlet" ID="{9896D686-BEA0-4B1B-B2EF-A6F814042706}" ShortID="543556371">
@@ -797,6 +808,36 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_VineBreak_Blend" ID="{0C6E5549-BB5D-411E-A12F-8827E0C7C822}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Eye Enemy" ID="{12486E99-A458-4FEF-9649-84418943F182}" ShortID="1072865048">
+					<ChildrenList>
+						<Event Name="Play_EyeShoot" ID="{CAA44B77-9A53-4ED4-995C-C0D7F228863D}">
+							<ChildrenList>
+								<Action Name="" ID="{76E2AD86-0436-4D72-A153-4438880D698D}" ShortID="248560619">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_EyeShoot_Blend" ID="{CF1B7E04-7CDD-4A15-9F21-065B4C9E5312}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Icicle" ID="{75E4ED64-F4E5-4BD7-A322-05A1B5888CD1}" ShortID="652004355">
+					<ChildrenList>
+						<Event Name="Play_IceBreak" ID="{658C0411-2A6E-4FDE-BC9F-61460C228979}">
+							<ChildrenList>
+								<Action Name="" ID="{E3FDE025-00FF-4F8B-B35B-7617544A3510}" ShortID="202883269">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_IceBreak_Random" ID="{63E35F87-0101-4204-9A3C-6F2BB3AF51D3}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using AK.Wwise;
 
 public class FallingIcicleBehavior : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class FallingIcicleBehavior : MonoBehaviour
     private bool isFalling = false;
     private Collider2D hazardCollider;
     private SpriteRenderer spriteRenderer;
+    private bool hasHitGround = false;
 
     void Awake()
     {
@@ -44,6 +46,12 @@ public class FallingIcicleBehavior : MonoBehaviour
             if (hit)
             {
                 StartCoroutine(FadeOut());
+                if (!hasHitGround)
+                {
+                    hasHitGround = true;
+                    // TEMP AUDIO CODE
+                    AkSoundEngine.PostEvent("Play_IceBreak", gameObject);
+                }
             }
         }
     }
@@ -64,6 +72,7 @@ public class FallingIcicleBehavior : MonoBehaviour
         finalColor.a = 1f;
         spriteRenderer.color = finalColor;
         icicleHitGround.Invoke();
+        hasHitGround = false;
     }
 
     public void ShowIcicles()

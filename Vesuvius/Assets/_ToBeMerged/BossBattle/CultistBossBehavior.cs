@@ -375,6 +375,8 @@ public class CultistBossBehavior : MonoBehaviour
 
         //Beam Attack Active
         animator.SetTrigger("UnleashBeam");
+        // TEMP AUDIO CODE
+        AkSoundEngine.PostEvent("Play_CultistBeam", gameObject);
         beamDamage.Activate();
         beamColor.a = 1f;
         beamSpriteRenderer.color = beamColor;

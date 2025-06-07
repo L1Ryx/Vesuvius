@@ -51,6 +51,8 @@ public class EyeProjectile : MonoBehaviour
         //player turns it back to the enemy
         if (other.gameObject.layer == 12)
         {
+            // TEMP AUDIO CODE
+            AkSoundEngine.PostEvent("Play_EyeShoot", gameObject);
             target = transform.parent.gameObject;
             timeAlive = 0f;
             this.gameObject.layer = 12;
