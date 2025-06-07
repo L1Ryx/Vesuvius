@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 356492339}
     - target: {fileID: 2618347045991476217, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.4
+      value: 32.69
       objectReference: {fileID: 0}
     - target: {fileID: 2618347045991476217, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663615954253619938, guid: 1443ebeccb08146108e06524d09da7ca, type: 3}
       propertyPath: m_text
-      value: '<- 45th Base Camp
+      value: '<- Pompeii
 
 
         Bohrman Tunnels ->'

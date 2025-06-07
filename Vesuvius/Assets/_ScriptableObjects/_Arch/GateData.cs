@@ -39,6 +39,7 @@ namespace _ScriptableObjects
             {
                 gate.isLocked = true;
             }
+            SetGateLockedState("01-08-01", false);
             Debug.Log("All gates have been reset to locked state.");
         }
     }

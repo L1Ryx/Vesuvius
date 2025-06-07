@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 108012145093400823, guid: 773eaf7f2614446ea8abd819311b1f78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2961476486632729410, guid: 773eaf7f2614446ea8abd819311b1f78, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -97,14 +101,16 @@ PrefabInstance:
       value: 'Here lies Great Bohrman.
 
 
-        Even in death, Bohrman sees all.
+        Bohrman watches over all souls who
+        find rest here, whether they are meek or mighty, burdened by sin or redeemed
+        through repentance. Even in death, Bohrman sees all.
 
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 4450901592428683310, guid: 773eaf7f2614446ea8abd819311b1f78, type: 3}
       propertyPath: m_Name
-      value: Cradle Canvas 01-04 1
+      value: Cradle Canvas 01-04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

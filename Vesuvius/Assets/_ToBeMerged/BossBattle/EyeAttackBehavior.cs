@@ -16,6 +16,7 @@ public class EyeAttackBehavior : MonoBehaviour
     private GameObject player;
 
     private bool isPlayerNear = false;
+    private bool isAlive = true;
 
     float timeSinceLastFire = 0f;
 
@@ -31,7 +32,7 @@ public class EyeAttackBehavior : MonoBehaviour
     void Update()
     {
         timeSinceLastFire += Time.deltaTime;
-        if (timeSinceLastFire >= fireRate)
+        if (isAlive && timeSinceLastFire >= fireRate)
         {
             HandleProximityLogic();
         }
@@ -54,6 +55,11 @@ public class EyeAttackBehavior : MonoBehaviour
                 ShootProjectile();
             }
         }
+    }
+
+    public void Death()
+    {
+        isAlive = false;
     }
 
     private void ShootProjectile()

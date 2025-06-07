@@ -76,6 +76,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2341009153129139644}
+        m_TargetAssemblyTypeName: EyeAttackBehavior, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 9127186795040025533}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   upwardForce: 5
   fadeDuration: 10
@@ -166,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyeProjectilePrefab: {fileID: 2552884312059601329, guid: 6e35cc36635be7842b67dc9074c23eb6, type: 3}
-  fireRate: 2.5
+  fireRate: 3
   detectionRadius: 8
   terrainLayers:
     serializedVersion: 2
