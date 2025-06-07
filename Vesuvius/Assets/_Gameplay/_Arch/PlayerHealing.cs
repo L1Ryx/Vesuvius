@@ -28,8 +28,7 @@ namespace _Gameplay._Arch
 
         private void OnEnable()
         {
-            PlayerControlManager instance = PlayerControlManager.Instance;
-            PlayerControls controls = PlayerControlManager.Instance.controls;
+            PlayerControlManager.Instance.controls.Player.Heal.performed += OnHealInput;
         }
 
         private void OnDisable()

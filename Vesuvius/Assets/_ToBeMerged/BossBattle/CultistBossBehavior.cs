@@ -199,6 +199,7 @@ public class CultistBossBehavior : MonoBehaviour
 
     IEnumerator Teleport(Vector3 location)
     {
+        rb.linearVelocity = new Vector2(0, 0);
         animator.SetTrigger("Teleporting");
         //animator.SetFloat("TeleportDirection", -1);
         float length = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
@@ -428,7 +429,8 @@ public class CultistBossBehavior : MonoBehaviour
 
     public IEnumerator TeleportTo(Vector3 location)
     {
-        if(currentAttack != null)
+        rb.linearVelocity = new Vector2(0, 0);
+        if (currentAttack != null)
             StopCoroutine(currentAttack);
         animator.SetTrigger("Teleporting");
         float length = animator.GetCurrentAnimatorClipInfo(0)[0].clip.length;

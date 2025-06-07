@@ -354,6 +354,12 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 1024
+  doneSlamRecovery:
+    m_PersistentCalls:
+      m_Calls: []
+  teleportDone:
+    m_PersistentCalls:
+      m_Calls: []
   amplitude: 5
   speed: 1
   center: {x: 0, y: 0, z: 0}
@@ -386,7 +392,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65335
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295

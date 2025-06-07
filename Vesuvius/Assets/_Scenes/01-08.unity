@@ -21028,58 +21028,6 @@ MonoBehaviour:
   isForMainMenu: 0
   waitForSignalBeforeContinue: 0
   currentDialogueTreeID: Defeat
---- !u!114 &1276272085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276272079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02a26dfdc2a6486891e815cee92dab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageable: 1
-  healthAmount: 200
-  iFramesTime: 0.2
-  giveUpwardsForce: 0
-  canBeKnockedBack: 1
-  isLiveEnemy: 1
-  destroyImmediately: 0
-  shouldFlashOnDamage: 1
-  flashColor: {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 0.1
-  flashCount: 2
-  usesAlternateDeath: 1
-  onDeathEvents:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1276272082}
-        m_TargetAssemblyTypeName: CultistBossBehavior, Assembly-CSharp
-        m_MethodName: Death
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  upwardForce: 5
-  fadeDuration: 10
-  deathBurst: {fileID: 0}
-  sr: {fileID: 1575705484}
-  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
-  minTotemPower: 10
-  maxTotemPower: 20
-  slowdownTime: 0.2
-  slowdownScale: 0.05
-  RebalanceTutorialNeeded:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1276272089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22419,17 +22367,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386539052665162544, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 386539052665162544, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 920805614302646229, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1751348890777400817, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_Size.y
-      value: 0.92657375
+      value: 1.8078618
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751348890777400817, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751348890777400817, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_Offset.y
-      value: 0.036713123
+      value: 0.021845102
       objectReference: {fileID: 0}
     - target: {fileID: 2329074109273751922, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22478,6 +22438,14 @@ PrefabInstance:
     - target: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_Name
       value: BossPrefabContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4227790946173890500, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_IsActive
@@ -22539,16 +22507,14 @@ PrefabInstance:
       propertyPath: slamTeleportPosition
       value: 
       objectReference: {fileID: 868090066}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1751348890777400817, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2329074109273751922, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1056196593}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1276272085}
     - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276272084}
@@ -22561,6 +22527,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3228076056657378171, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1276272091}
+    - targetCorrespondingSourceObject: {fileID: 386539052665162544, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1619201939}
+    - targetCorrespondingSourceObject: {fileID: 386539052665162544, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1619201940}
   m_SourcePrefab: {fileID: 100100000, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
 --- !u!1001 &1594234042
 PrefabInstance:
@@ -22624,6 +22596,121 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3873955746526500407, guid: fb335620a056eb047bbfa6d5c5fa8626, type: 3}
   m_PrefabInstance: {fileID: 1594234042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1619201935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 386539052665162544, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+  m_PrefabInstance: {fileID: 1588613582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1619201939
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619201935}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 65335
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.005936224}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.31, y: 0.14}
+    newSize: {x: 0.18, y: 0.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.18, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &1619201940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619201935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02a26dfdc2a6486891e815cee92dab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageable: 1
+  healthAmount: 200
+  iFramesTime: 0.2
+  giveUpwardsForce: 0
+  canBeKnockedBack: 1
+  isLiveEnemy: 1
+  destroyImmediately: 0
+  shouldFlashOnDamage: 1
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
+  flashCount: 2
+  usesAlternateDeath: 1
+  onDeathEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1276272082}
+        m_TargetAssemblyTypeName: CultistBossBehavior, Assembly-CSharp
+        m_MethodName: Death
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1619201940}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.EnemyHealth, Assembly-CSharp
+        m_MethodName: SetDeathVariables
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  upwardForce: 5
+  fadeDuration: 10
+  deathBurst: {fileID: 0}
+  sr: {fileID: 1575705484}
+  playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+  minTotemPower: 10
+  maxTotemPower: 20
+  slowdownTime: 0.2
+  slowdownScale: 0.05
+  RebalanceTutorialNeeded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1656055146
 GameObject:
   m_ObjectHideFlags: 0

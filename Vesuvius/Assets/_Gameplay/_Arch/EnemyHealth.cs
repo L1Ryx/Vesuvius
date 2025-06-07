@@ -78,6 +78,15 @@ namespace _Gameplay._Arch
             }
         }
 
+        public void SetDeathVariables()
+        {
+            isDead = true;
+            isLiveEnemy = false; // Mark as no longer a live enemy
+            damageable = false; // Make the enemy unhittable
+
+            gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        }
+
         public void Death(Vector2 knockbackForce)
         {
             if (!isLiveEnemy) return;
@@ -87,7 +96,7 @@ namespace _Gameplay._Arch
             damageable = false; // Make the enemy unhittable
 
             gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
-            if(destroyImmediately)
+            if (destroyImmediately)
             {
                 Destroy(this.gameObject);
                 return;
@@ -125,7 +134,8 @@ namespace _Gameplay._Arch
             // Start fade-out coroutine
             StartCoroutine(FadeOutAndDestroy());
 
-            if (playerInfo.GetCurrentHealth() < playerInfo.GetMaximumHealth()) {
+            if (playerInfo.GetCurrentHealth() < playerInfo.GetMaximumHealth())
+            {
                 RebalanceTutorialNeeded.Invoke();
             }
         }
@@ -154,6 +164,7 @@ namespace _Gameplay._Arch
                 {
                     Death(knockbackForce); // Pass knockback force to Death
                 }
+                
                 onDeathEvents.Invoke();
             }
             else

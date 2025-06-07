@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasCompletedDemo: 1
   maximumHealth: 5
-  currentHealth: 2
-  totalCurrency: 53
-  totemPower: 0
+  currentHealth: 1
+  totalCurrency: 77
+  totemPower: 100
   abilityCost: 25
   lastCurrencyChangeAmount: 24
-  sceneToLoad: 01-07
-  spawnLocation: {x: 54, y: -10}
+  sceneToLoad: 01-08
+  spawnLocation: {x: 39, y: 3}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []
