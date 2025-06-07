@@ -117,7 +117,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: df3682325a13ec4eac474172ce78796e
     GuidInternal: 
-    m_lastTime: -8584523405276578451
+    m_lastTime: -8584523364824662869
     List:
     - name: DefaultSoundbank
       guid: b9bec53298baed48b2923c586ee8991f
@@ -145,7 +145,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ed84d2cae3faca48be2dd6fa4e4d485c
     GuidInternal: 
-    m_lastTime: -8584524234783761965
+    m_lastTime: -8584523364824699939
     List:
     - name: Big Blue
       guid: 6d3eb5986e02a744915f8ab3d036f459
@@ -263,6 +263,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 84b13875a5e9eb44a4d43c27d8d80e0b
       Path: Events/Default Work Unit/Gate
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Gauntlet
+      guid: 86d69698a0be1b4bb2efa6f814042706
+      id: 3501538319
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Gauntlet
+        ObjectType: 4
+        guid: 86d69698a0be1b4bb2efa6f814042706
+      Path: Events/Default Work Unit/Gauntlet
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -568,6 +585,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.514768
       minDuration: 1.3495047
+    - name: Play_Gauntlet
+      guid: 6d9b7107820a714a963889b34e4aa969
+      id: 1691293180
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Gauntlet
+        ObjectType: 4
+        guid: 86d69698a0be1b4bb2efa6f814042706
+      - ElementName: Play_Gauntlet
+        ObjectType: 3
+        guid: 6d9b7107820a714a963889b34e4aa969
+      Path: Events/Default Work Unit/Gauntlet/Play_Gauntlet
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Hah
       guid: 7202596fed0a814d8ea4ff9c9b6cf3f3
       id: 3094886953
@@ -919,6 +956,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5506586
       minDuration: 0.50495625
+    - name: Play_VineBreak
+      guid: 550a35955adbcd4ca28a8ba6f3f44c75
+      id: 278044167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Vine Wall
+        ObjectType: 4
+        guid: 28671207a9c88546a4f68b7c6ade2fa8
+      - ElementName: Play_VineBreak
+        ObjectType: 3
+        guid: 550a35955adbcd4ca28a8ba6f3f44c75
+      Path: Events/Default Work Unit/Vine Wall/Play_VineBreak
+      maxAttenuation: 0
+      maxDuration: 0.6435676
+      minDuration: 0.48213094
     - name: Play_WatcherAlert
       guid: 9cee97d7075d0248918cf8d0b5963a5f
       id: 2287112540
@@ -1136,6 +1193,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_Gauntlet
+      guid: 7724c62a6f27fc41b0cf18ed7cada134
+      id: 3312265946
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Gauntlet
+        ObjectType: 4
+        guid: 86d69698a0be1b4bb2efa6f814042706
+      - ElementName: Stop_Gauntlet
+        ObjectType: 3
+        guid: 7724c62a6f27fc41b0cf18ed7cada134
+      Path: Events/Default Work Unit/Gauntlet/Stop_Gauntlet
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_Landing
       guid: d7517129df09b1498336945723781f8c
       id: 3286627841
@@ -1213,6 +1290,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Vine Wall
+      guid: 28671207a9c88546a4f68b7c6ade2fa8
+      id: 236941239
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed84d2cae3faca48be2dd6fa4e4d485c
+      - ElementName: Vine Wall
+        ObjectType: 4
+        guid: 28671207a9c88546a4f68b7c6ade2fa8
+      Path: Events/Default Work Unit/Vine Wall
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Watcher Voices
       guid: 9a27248bb0ff684e80c0a2bbe56b6d8b
       id: 3432923332
@@ -1278,7 +1372,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 0d5354ff6462e54aa4342ab5adea9d21
     GuidInternal: 
-    m_lastTime: -8584528662948772296
+    m_lastTime: -8584523364824641950
     List:
     - name: Creakiness
       guid: 22994c854c2a784da2acebbc51bc08fe
@@ -1322,6 +1416,20 @@ MonoBehaviour:
         ObjectType: 13
         guid: 05d848a047d7544ea1b3b1ba996de62b
       Path: Game Parameters/Default Work Unit/Distance_X
+    - name: GauntletDanger
+      guid: 7b7dea9330e6e4438be9050e4e2a48fd
+      id: 4100794546
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 0d5354ff6462e54aa4342ab5adea9d21
+      - ElementName: GauntletDanger
+        ObjectType: 13
+        guid: 7b7dea9330e6e4438be9050e4e2a48fd
+      Path: Game Parameters/Default Work Unit/GauntletDanger
     - name: Openness
       guid: 59144f5ae754384bbb36f99804cff046
       id: 4168635916

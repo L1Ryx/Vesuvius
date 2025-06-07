@@ -4129,6 +4129,112 @@
 								</ObjectList>
 							</ObjectLists>
 						</BlendContainer>
+						<BlendContainer Name="SFX_VineBreak_Blend" ID="{0C6E5549-BB5D-411E-A12F-8827E0C7C822}" ShortID="216780497">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>28</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9C5F410B-E3C8-4844-9751-D0AC658AEE70}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{AA823C3D-5D05-4662-8117-4054B7BDAFBC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="AMB_Reverb" ID="{BEDDB141-76CF-4252-A598-181B8819C571}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Grass Crunch" ID="{902526DE-B5C8-4A2E-A229-C07EAD3C3FEE}" ShortID="726330285">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{AA823C3D-5D05-4662-8117-4054B7BDAFBC}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B0503188-EFF9-409A-A63C-49D8838F5B7C}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Grass Crunch" ID="{969F84BA-6C9E-460B-8148-6D065E0EFEE3}">
+											<Language>SFX</Language>
+											<AudioFile>Grass Crunch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="569175710"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Grass Crunch" ID="{969F84BA-6C9E-460B-8148-6D065E0EFEE3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<Reference>
+										<Local>
+											<RTPC Name="" ID="{0C86FE1C-7751-47A7-B4E2-C39424CEDFEE}" ShortID="648546522">
+												<PropertyList>
+													<Property Name="PropertyName" Type="string" Value="UserAuxSendVolume0"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="ControlInput">
+														<ObjectRef Name="Openness" ID="{5A4F1459-54E7-4B38-BB36-F99804CFF046}" WorkUnitID="{FF54530D-6264-4AE5-A434-2AB5ADEA9D21}"/>
+													</Reference>
+													<Reference Name="Curve">
+														<Custom>
+															<Curve Name="" ID="{75228BAC-39B3-4D8D-810E-29E8C7574B6B}">
+																<PropertyList>
+																	<Property Name="Flags" Type="int32" Value="3"/>
+																</PropertyList>
+																<PointList>
+																	<Point>
+																		<XPos>0</XPos>
+																		<YPos>-17.45284</YPos>
+																		<Flags>5</Flags>
+																	</Point>
+																	<Point>
+																		<XPos>100</XPos>
+																		<YPos>2.71164</YPos>
+																		<Flags>37</Flags>
+																	</Point>
+																</PointList>
+															</Curve>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</RTPC>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</BlendContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX-U" ID="{8F98A9E9-3F05-49CD-9033-8E54B849FB02}" ShortID="706083158">

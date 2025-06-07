@@ -723,6 +723,87 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Gauntlet" ID="{9896D686-BEA0-4B1B-B2EF-A6F814042706}" ShortID="543556371">
+					<ChildrenList>
+						<Event Name="Play_Gauntlet" ID="{07719B6D-0A82-4A71-9638-89B34E4AA969}">
+							<ChildrenList>
+								<Action Name="" ID="{76DAF001-AFAA-4BBA-A824-007C7D74FB71}" ShortID="85921116">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet1_Playlist" ID="{1581BADA-E3C9-4FC2-84F4-0D1C407ED66A}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3F1B4416-27AA-4E3F-9A9D-7000B370AE23}" ShortID="182375289">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet2_Playlist" ID="{652BBE17-A530-4AD4-807B-849F64C3FDB5}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4AD66C17-CDB2-4749-B0D7-541670EF3CA9}" ShortID="86701772">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet3_Playlist" ID="{4736E110-C255-46FA-99C2-A7CAF3637144}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Gauntlet" ID="{2AC62477-276F-41FC-B0CF-18ED7CADA134}">
+							<ChildrenList>
+								<Action Name="" ID="{D2064E90-DCE6-4C35-B6D9-4CD86C141B94}" ShortID="708910560">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet1_Playlist" ID="{1581BADA-E3C9-4FC2-84F4-0D1C407ED66A}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{04841B75-5E37-4EE7-8FC0-7214DE0B2C06}" ShortID="700583247">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet2_Playlist" ID="{652BBE17-A530-4AD4-807B-849F64C3FDB5}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E6E7C452-4453-40CC-A8D1-5578F83EC633}" ShortID="530664554">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Gauntlet3_Playlist" ID="{4736E110-C255-46FA-99C2-A7CAF3637144}" WorkUnitID="{9C5315D7-7A28-41BA-A81D-817707161131}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Vine Wall" ID="{07126728-C8A9-4685-A4F6-8B7C6ADE2FA8}" ShortID="245472603">
+					<ChildrenList>
+						<Event Name="Play_VineBreak" ID="{95350A55-DB5A-4CCD-A28A-8BA6F3F44C75}">
+							<ChildrenList>
+								<Action Name="" ID="{8D5A6DC7-2F45-4803-A549-937B0FE58939}" ShortID="960577497">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_VineBreak_Blend" ID="{0C6E5549-BB5D-411E-A12F-8827E0C7C822}" WorkUnitID="{966B30A4-026B-4C83-9BEA-94AC1EF38323}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

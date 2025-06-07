@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	278044167	Play_VineBreak			\Default Work Unit\Vine Wall\Play_VineBreak	
 	556581638	Play_PlayerAttackAll			\Default Work Unit\Melee\Play_PlayerAttackAll	
 	574786360	Play_PlayerAttackHit			\Default Work Unit\Melee\Play_PlayerAttackHit	
 	721707010	Stop_RandomCaveSounds			\Default Work Unit\Random Cave Sounds\Stop_RandomCaveSounds	
@@ -90,6 +91,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	523849822	SFX_WoodCreak_R5_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_WoodCreak_R5_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_RandomCaveSounds\SFX_WoodCreak_R5_V1		252000
 	552693655	GauntletLevel3_120_4-4_v1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\GauntletLevel3_120_4-4_v1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\MUS\MUS_Gauntlet3_Playlist\GauntletLevel3_120_4-4_v1\GauntletLevel3_120_4-4_v1		8160096
 	561669147	SFX_ClinkParticles_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_ClinkParticles_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_ClinkParticles_Random\SFX_ClinkParticles_R1_V1		217184
+	569175710	Grass Crunch	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\Grass Crunch_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_VineBreak_Blend\Grass Crunch		107044
 	597216465	SFX_PlayerAttackHit_R2_V2	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_PlayerAttackHit_R2_V2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-P\SFX_PlayerAttackHit_Random\SFX_PlayerAttackHit_R2_V2		215660
 	599246346	SFX_WoodCreak_R3_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_WoodCreak_R3_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\AMB\AMB_RandomCaveSounds\SFX_WoodCreak_R3_V1		686960
 	622349472	SFX_SwitchOpen_R1_V1	Y:\Desktop\Desktop - MacBook Pro (2)\GameMaking\Vesuvius\Vesuvius\SystemDemo_WwiseProject\.cache\Mac\SFX\SFX_SwitchOpen_R1_V1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX-W\SFX_SwitchOpen_Blend\SFX_SwitchOpen_R1_V1		60328

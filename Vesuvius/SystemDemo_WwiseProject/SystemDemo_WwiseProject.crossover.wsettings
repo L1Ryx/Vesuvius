@@ -3,6 +3,7 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{9BE4C43A-2940-4F6A-898E-CAEB801E7499}">
 			<PropertyList>
+				<Property Name="Event Action List\{07719B6D-0A82-4A71-9638-89B34E4AA969}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{07889D9D-6CA1-48E4-BEBA-4CF7821E4C37}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{084301A1-3323-47D9-BDA4-07889F22337F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{0DBA5161-93DE-4CE6-B635-4D064204FCCF}\x64_Expand States" Type="string" Value=""/>
@@ -10,6 +11,7 @@
 				<Property Name="Event Action List\{147AE3F4-CA75-4970-A1F9-B496C57AB538}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{16F7507D-B290-474E-86CB-E9813022526F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{297151D7-09DF-49B1-8336-945723781F8C}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{2AC62477-276F-41FC-B0CF-18ED7CADA134}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{34EC8016-C99B-41A6-BCE4-B8F751803D74}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{38044521-FCE1-4120-88E2-DC5D2F713034}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{3F1FA469-E723-472C-80BB-07AF41D6F62E}\x64_Expand States" Type="string" Value=""/>
@@ -28,6 +30,7 @@
 				<Property Name="Event Action List\{7A30FF67-5EB0-4E08-B2F4-D95A35E96C12}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7AF920EA-6B92-4484-8EB3-439CB2037220}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{7E35622E-F968-4048-A147-C5E98B0BEDE0}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{95350A55-DB5A-4CCD-A28A-8BA6F3F44C75}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{960B4DFD-CA80-4B66-BB8C-FA01CCB076D6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{97D1FB14-9EB5-470E-942E-7D01DD8124D4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{981711EB-F542-4B30-A249-2FDB31043191}\x64_Expand States" Type="string" Value=""/>
@@ -70,8 +73,13 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value=""/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="ub7FMpi67UiykjxYbuiZHw=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
+				<Property Name="Interactive Music\x64_{1392A188-9EDD-40BD-9483-20C6D43CC563} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxgYGBgYGDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{640FBD76-C266-4C63-B62D-47FA02DE70C2} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxgYGBgYGDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{8A85F616-55A4-4A18-A636-B44473155C85} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxgYGBgYGDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{8D9BF452-36E5-40A5-8331-8A3A8361E8C3} - SegmentEditorZoomInfo" Type="string" Value="ap5T3LB2GEAAAAAAAADwPwXI8tKBljJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{A74128BF-4B56-40CF-847E-FB338A133998} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAACG1AAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{EF148BB7-6E86-4F5F-873C-2663A59A77D7} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxgYGBgYGDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{EFC9BCE1-1631-445F-8B40-9D55756092E1} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPxgYGBgYGDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{FC82F682-E172-4857-85C9-D9187408408E} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP4k6R5EWoBdAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
@@ -87,8 +95,14 @@
 				<Property Name="Music Transition List\{03322235-B8E7-429A-96A4-792D8400E7BE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{090E3F84-9950-4C03-8CCA-CBBE6F19419A}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{090E3F84-9950-4C03-8CCA-CBBE6F19419A}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{1581BADA-E3C9-4FC2-84F4-0D1C407ED66A}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{1581BADA-E3C9-4FC2-84F4-0D1C407ED66A}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{4736E110-C255-46FA-99C2-A7CAF3637144}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{4736E110-C255-46FA-99C2-A7CAF3637144}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{64E4DAC3-BBF2-4A15-962F-792860FBABF1}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{64E4DAC3-BBF2-4A15-962F-792860FBABF1}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{652BBE17-A530-4AD4-807B-849F64C3FDB5}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{652BBE17-A530-4AD4-807B-849F64C3FDB5}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{6AEDB54C-40D8-484C-9066-7CF6704A3BBB}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{6AEDB54C-40D8-484C-9066-7CF6704A3BBB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{F44815A8-5EF8-446D-B407-62038A3459A2}\Scroll Position" Type="int32" Value="0"/>

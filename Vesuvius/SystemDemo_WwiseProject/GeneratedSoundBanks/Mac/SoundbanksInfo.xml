@@ -52,7 +52,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{EF9C7BEC-1D86-F134-3634-A75F7F8C9429}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{0547132D-AA78-EF26-96FD-5FEDFA3E0782}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -183,6 +183,10 @@
 				<File Id="561669147" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_ClinkParticles_R1_V1.wav</ShortName>
 					<CachePath>SFX/SFX_ClinkParticles_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="569175710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grass Crunch.wav</ShortName>
+					<CachePath>SFX/Grass Crunch_818F3B66.wem</CachePath>
 				</File>
 				<File Id="597216465" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_PlayerAttackHit_R2_V2.wav</ShortName>
@@ -573,6 +577,14 @@
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
 				</Event>
+				<Event Id="278044167" Name="Play_VineBreak" DurationType="OneShot" DurationMin="0.48213094" DurationMax="0.6435676">
+					<MediaRefs>
+						<MediaRef Id="569175710"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="2287112540" Name="Play_WatcherAlert" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.41294497" DurationMax="0.7283809">
 					<MediaRefs>
 						<MediaRef Id="129695355"/>
@@ -633,5 +645,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F7F963E4-1CCA-9432-3A70-C6BEE946E8A8}</FileHash>
+	<FileHash>{779A838E-273B-A368-A7DE-A6339200FA7C}</FileHash>
 </SoundBanksInfo>

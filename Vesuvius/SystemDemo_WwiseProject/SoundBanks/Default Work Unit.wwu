@@ -15,6 +15,7 @@
 						<ObjectRef Name="Play_BohrmanTunnels" ID="{12F39695-F836-413D-BA34-8C87056E8D88}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_BigBlueSolo" ID="{CFEE7731-FF1B-41A0-8B53-45F283FB4B8D}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Footstep" ID="{34EC8016-C99B-41A6-BCE4-B8F751803D74}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Gauntlet" ID="{2AC62477-276F-41FC-B0CF-18ED7CADA134}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_CaveAmbienceBlend" ID="{9EEF39AC-A7CB-429D-98EF-E201F1EEA3F3}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_GateOpen" ID="{4D888C9D-54F2-42EE-A4BF-38460A830AF4}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_RandomCaveSounds" ID="{5E6A0103-FF68-4316-8AF5-22241A547E87}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
@@ -35,12 +36,14 @@
 						<ObjectRef Name="Stop_BohrmanTunnels" ID="{07889D9D-6CA1-48E4-BEBA-4CF7821E4C37}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerDamaged" ID="{147AE3F4-CA75-4970-A1F9-B496C57AB538}" WorkUnitID="{43064D9A-EBE4-418D-86D8-A189332600FB}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Landing" ID="{297151D7-09DF-49B1-8336-945723781F8C}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Gauntlet" ID="{07719B6D-0A82-4A71-9638-89B34E4AA969}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_WatcherFootstep" ID="{AF743BC0-0E80-4B18-81F8-C66062F0C267}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ClinkParticles" ID="{981711EB-F542-4B30-A249-2FDB31043191}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_UISelect" ID="{960B4DFD-CA80-4B66-BB8C-FA01CCB076D6}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Landing" ID="{F0C012EC-025C-4BC9-BC60-55405F852DD0}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PlayerAttackKill" ID="{661BCD30-5763-4BE8-9D67-CE7E0698CA38}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CaveAmbienceBlend" ID="{BBA49366-3F87-4C6B-8E75-5F41DFC02DEF}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VineBreak" ID="{95350A55-DB5A-4CCD-A28A-8BA6F3F44C75}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BulbOpen" ID="{C5F60F95-F0FB-4CE0-8E7D-DAB60A20C5E9}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BigBlueSolo" ID="{0DBA5161-93DE-4CE6-B635-4D064204FCCF}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ShovelSequence" ID="{6F4E07C2-1DC7-4D22-B347-2F88345B3410}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
