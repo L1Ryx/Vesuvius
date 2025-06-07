@@ -81,9 +81,11 @@ public class CultistBossBehavior : MonoBehaviour
 
     public UnityEvent doneSlamRecovery;
     public UnityEvent teleportDone;
+    private GameObject player;
 
     void Awake()
     {
+        player = FindFirstObjectByType<PlayerSpawner>()?.GetRuntimePlayer();
         rb = GetComponent<Rigidbody2D>();
         beamSpriteRenderer = BeamSprite.GetComponent<SpriteRenderer>();
         ballSpriteRenderer = preBeamBall.GetComponent<SpriteRenderer>();
@@ -115,7 +117,8 @@ public class CultistBossBehavior : MonoBehaviour
         timeSinceEyeSummon += Time.deltaTime;
         timeSinceLastSpecial += Time.deltaTime;
         Move();
-        if(timeSinceEyeSummon >= timeBeforeEyeSummon)
+        FacePlayer();
+        if (timeSinceEyeSummon >= timeBeforeEyeSummon)
         {
             SummonEye();
         }
@@ -186,6 +189,18 @@ public class CultistBossBehavior : MonoBehaviour
         }
     }
 
+    void FacePlayer()
+    {
+        if (transform.position.x < player.transform.position.x)
+        {
+            FaceRight();
+        }
+        else
+        {
+            FaceLeft();
+        }
+    }
+
     public void SlamUp()
     {
         isSlammingUpwards = true;
@@ -229,6 +244,7 @@ public class CultistBossBehavior : MonoBehaviour
         }
         else
         {
+            FacePlayer();
             currentState = EnemyState.Idle;
             timeCounter = 0f;
         }
@@ -464,6 +480,9 @@ public class CultistBossBehavior : MonoBehaviour
         {
             StopCoroutine(currentAttack);
         }
+        //in case of being beam attack
+        BeamSprite.SetActive(false);
+        animator.StopPlayback();
         animator.SetTrigger("Death");
         currentState = EnemyState.Dead;
         //fall to the ground
