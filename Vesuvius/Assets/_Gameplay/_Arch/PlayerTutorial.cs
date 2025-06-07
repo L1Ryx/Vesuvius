@@ -40,6 +40,8 @@ namespace _Gameplay._Arch
         public PlayerInput m_PlayerInput;
         public ControlPrompts controlPrompts;
 
+        private int healTutorialShown = 0;
+
         public void OnControlsChanged()
         {
             UpdateUIHints();
@@ -80,7 +82,14 @@ namespace _Gameplay._Arch
         {
             if (!tutorialData.HasTutorialBeenShown(id))
             {
-                tutorialData.MarkTutorialAsShown(id);
+                if ("Rebalance".Equals(id) && healTutorialShown <= 2)
+                {
+                    healTutorialShown++;
+                }
+                else
+                {
+                    tutorialData.MarkTutorialAsShown(id);
+                }
                 tutorialQueue.Enqueue(PlayTextCoroutine(text));
                 if (!isPlaying) StartCoroutine(ProcessQueue());
             }
