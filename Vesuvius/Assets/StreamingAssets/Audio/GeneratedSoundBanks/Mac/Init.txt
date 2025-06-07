@@ -1,0 +1,18 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1692948755	Dimension_Blend			\Default Work Unit\Dimension_Blend	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3004847309	AMB_Main			\Default Work Unit\Master Audio Bus\AMB_Main	
+	3031508118	MUS_Main			\Default Work Unit\Master Audio Bus\MUS_Main	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	3329309366	AMB_Reverb			\Default Work Unit\Master Audio Bus\AMB_Reverb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	3216246379	Space_Dreaming	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

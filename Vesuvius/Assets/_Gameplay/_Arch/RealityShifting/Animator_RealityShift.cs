@@ -1,11 +1,10 @@
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Animator_RealityShift : MonoBehaviour, IRealityShiftable
 {
-    public AnimatorController NormalRealityController;
-    public AnimatorController AlteredRealityController;
+    public RuntimeAnimatorController NormalRealityController;
+    public RuntimeAnimatorController AlteredRealityController;
     public Animator animator;
     public void RealityShiftCrossFade(bool isAltReality, float crossfadeDuration)
     {
