@@ -48,12 +48,12 @@ namespace _Gameplay._Arch
 
         private void OnEnable()
         {
-            PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteractPerformed;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed += OnInteractPerformed;
         }
 
         private void OnDisable()
         {
-            PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteractPerformed;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed -= OnInteractPerformed;
         }
 
         private void Start()

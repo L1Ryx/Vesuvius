@@ -56,6 +56,7 @@ namespace _Gameplay._Arch
         private void OnEnable()
         {
             PlayerControlManager.Instance.controls.Player.Interact.performed += OnInteractPerformed;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed += AdvanceDialogue;
 
             bigBlueAudio.PlayBigBlueSolo();
         }
@@ -63,6 +64,7 @@ namespace _Gameplay._Arch
         private void OnDisable()
         {
             PlayerControlManager.Instance.controls.Player.Interact.performed -= OnInteractPerformed;
+            PlayerControlManager.Instance.controls.Player.Confirm.performed -= AdvanceDialogue;
 
             bigBlueAudio.StopBigBlueSolo();
         }
@@ -273,7 +275,11 @@ namespace _Gameplay._Arch
             {
                 StartDialogue();
             }
-            else if (isTalking)
+        }
+
+        private void AdvanceDialogue(InputAction.CallbackContext context)
+        {
+            if (isTalking)
             {
                 if (isTyping) // If still typing, skip to end of current dialogue
                 {
