@@ -65,6 +65,10 @@ public class GauntletManager : MonoBehaviour
 
     public void AdvanceStage()
     {
+        if (!gameObject.activeSelf)
+        {
+            return;
+        }
         stage++;
         switch (stage)
         {
