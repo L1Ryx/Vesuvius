@@ -106,6 +106,31 @@ namespace Audio._Arch
             AkSoundEngine.PostEvent("Stop_Cultist", gameObject);
         }
 
+        public void PlayGauntletMusic()
+        {
+            AkSoundEngine.PostEvent("Play_Gauntlet", gameObject);
+        }
+
+        public void StopGauntletMusic()
+        {
+            AkSoundEngine.PostEvent("Stop_Gauntlet", gameObject);
+        }
+
+        public void SetGauntletIntensityToLow()
+        {
+            AkSoundEngine.SetRTPCValue("GauntletDanger", 0);
+        }
+        
+        public void SetGauntletIntensityToMedium()
+        {
+            AkSoundEngine.SetRTPCValue("GauntletDanger", 50);
+        }
+        
+        public void SetGauntletIntensityToHigh()
+        {
+            AkSoundEngine.SetRTPCValue("GauntletDanger", 100);
+        }
+
         private void OnApplicationQuit()
         {
             StopAllTracks();

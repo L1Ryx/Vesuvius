@@ -23,7 +23,9 @@
 						<ObjectRef Name="Play_ForestAmbienceBlend" ID="{7AF920EA-6B92-4484-8EB3-439CB2037220}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Beneh" ID="{CA8C702E-E338-4508-810D-D85B7B34C866}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Abileh" ID="{98447895-C871-4523-BDE7-795A0471571A}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Cultist" ID="{DE7C79D1-FF6C-45DC-B94A-6C3D814E6EF8}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Swing" ID="{97D1FB14-9EB5-470E-942E-7D01DD8124D4}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Cultist" ID="{559D6873-F6AE-4715-9BF5-A2AE53F8A0B8}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SwitchOpen" ID="{3F1FA469-E723-472C-80BB-07AF41D6F62E}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Jump" ID="{16F7507D-B290-474E-86CB-E9813022526F}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Footstep" ID="{60728412-8FC9-47C4-B05B-56981C159311}" WorkUnitID="{CAD284ED-FAE3-48CA-BE2D-D6FA4E4D485C}" Origin="Manual" Filter="7"/>

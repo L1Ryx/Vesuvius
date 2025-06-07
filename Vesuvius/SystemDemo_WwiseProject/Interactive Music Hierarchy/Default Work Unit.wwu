@@ -450,7 +450,7 @@
 							<ChildrenList>
 								<MusicSegment Name="Boss_124_12-8_v1" ID="{8D9BF452-36E5-40A5-8331-8A3A8361E8C3}" ShortID="10605234">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="45725.8064516129"/>
+										<Property Name="EndPosition" Type="Real64" Value="47101.8979462319"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -497,10 +497,10 @@
 																			<Local>
 																				<MusicClip Name="Boss_124_12-8_v1" ID="{8342FAF3-113B-494A-9844-4337CF24AB21}">
 																					<PropertyList>
-																						<Property Name="BeginTrimOffset" Type="Real64" Value="483.870967741935"/>
+																						<Property Name="BeginTrimOffset" Type="Real64" Value="657.61750506613"/>
 																						<Property Name="EndTrimOffset" Type="Real64" Value="42096.7741935484"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																						<Property Name="PlayAt" Type="Real64" Value="-483.870967741935"/>
+																						<Property Name="PlayAt" Type="Real64" Value="-657.61750506613"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="Boss_124_12-8_v1" ID="{5AA3666B-9CDF-4468-9C0F-8191F97C49C6}"/>
 																					<PropertyCurveList>
@@ -511,7 +511,7 @@
 																								</PropertyList>
 																								<PointList>
 																									<Point>
-																										<XPos>0.48387</XPos>
+																										<XPos>0.65762</XPos>
 																										<YPos>0</YPos>
 																										<Flags>5</Flags>
 																									</Point>
@@ -530,7 +530,7 @@
 																								</PropertyList>
 																								<PointList>
 																									<Point>
-																										<XPos>0.48387</XPos>
+																										<XPos>0.65762</XPos>
 																										<YPos>-10.88188</YPos>
 																										<Flags>5</Flags>
 																									</Point>
@@ -549,7 +549,7 @@
 																								</PropertyList>
 																								<PointList>
 																									<Point>
-																										<XPos>0.48387</XPos>
+																										<XPos>0.65762</XPos>
 																										<YPos>0</YPos>
 																										<Flags>5</Flags>
 																									</Point>
@@ -580,7 +580,7 @@
 												<Local>
 													<MusicCue Name="Entry Cue" ID="{99CB4EAC-C7AF-4549-8D87-3259C47F2FDD}">
 														<PropertyList>
-															<Property Name="TimeMs" Type="Real64" Value="6048.38709677419"/>
+															<Property Name="TimeMs" Type="Real64" Value="5874.64055945"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>
@@ -590,7 +590,7 @@
 													<MusicCue Name="Exit Cue" ID="{7B90143B-B527-4AE3-8DB5-A19944ADB866}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="33629.0322580645"/>
+															<Property Name="TimeMs" Type="Real64" Value="33455.2857207403"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>

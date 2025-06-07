@@ -12,8 +12,13 @@ public class GauntletManager : MonoBehaviour
 
     public CutsceneEyeManager cutscene;
 
-    [Header("Completion")]
+    [Header("Events")]
     public UnityEvent OnGauntletCompleted;
+
+    public UnityEvent OnGauntletCutsceneBegin;
+    public UnityEvent OnGauntletLayerOneBegin;
+    public UnityEvent OnGauntletLayerTwoBegin;
+    public UnityEvent OnGauntletLayerThreeBegin;
 
     private CultistBossBehavior cultistBehavior;
 
@@ -63,27 +68,31 @@ public class GauntletManager : MonoBehaviour
         stage++;
         switch (stage)
         {
-            case 0:
+            case 0: // mirror cutscene
                 StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
                 cultistBehavior.FaceRight();
+                OnGauntletCutsceneBegin.Invoke();
                 break;
 
-            case 1:
+            case 1: // first layer
                 StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
                 cultistBehavior.FaceRight();
+                OnGauntletLayerOneBegin.Invoke();
                 break;
 
-            case 2:
+            case 2: // second layer
                 StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
                 cultistBehavior.FaceLeft();
+                OnGauntletLayerTwoBegin.Invoke();
                 break;
 
-            case 3:
+            case 3: // third layer
                 StartCoroutine(cultistBehavior.TeleportTo(cultistTeleportPoints[stage].transform.position));
                 cultistBehavior.FaceRight();
+                OnGauntletLayerThreeBegin.Invoke();
                 break;
 
-            case 4:
+            case 4: // finish
                 CompleteGauntlet();
                 break;
 

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{4BBE39F5-6902-AE10-165B-F1834B739401}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0242C2C2-EB78-8FA5-4DDE-53507760CAAA}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -40,6 +40,7 @@
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
 				<GameParameter Id="3600736381" Name="Distance_X"/>
+				<GameParameter Id="4100794546" Name="GauntletDanger"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 			<SwitchGroups>
@@ -51,7 +52,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{582E33C4-448E-DF9C-6005-6C4245B9AA1E}">
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{EF9C7BEC-1D86-F134-3634-A75F7F8C9429}">
 			<ShortName>DefaultSoundbank</ShortName>
 			<Path>DefaultSoundbank.bnk</Path>
 			<Media>
@@ -175,6 +176,10 @@
 					<ShortName>SFX_WoodCreak_R5_V1.wav</ShortName>
 					<CachePath>SFX/SFX_WoodCreak_R5_V1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="552693655" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel3_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel3_120_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="561669147" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_ClinkParticles_R1_V1.wav</ShortName>
 					<CachePath>SFX/SFX_ClinkParticles_R1_V1_818F3B66.wem</CachePath>
@@ -243,9 +248,17 @@
 					<ShortName>SFX_WoodCreak_R4_V1.wav</ShortName>
 					<CachePath>SFX/SFX_WoodCreak_R4_V1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="876174030" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel2_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel2_120_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="906310925" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_GoatAttack_R3_V1.wav</ShortName>
 					<CachePath>SFX/SFX_GoatAttack_R3_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="915775243" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel1_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel1_120_4-4_v1_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="921526463" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_PlayerDamaged_R1_V1.wav</ShortName>
@@ -375,6 +388,13 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="1691293180" Name="Play_Gauntlet" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="552693655"/>
+						<MediaRef Id="876174030"/>
+						<MediaRef Id="915775243"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="3094886953" Name="Play_Hah" DurationType="OneShot" DurationMin="0.44265264" DurationMax="0.44265264">
 					<MediaRefs>
@@ -598,6 +618,7 @@
 				<Event Id="3375565856" Name="Stop_Cultist" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3927559978" Name="Stop_Footstep" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1262204860" Name="Stop_ForestAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3312265946" Name="Stop_Gauntlet" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3286627841" Name="Stop_Landing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="3006809981" Name="Stop_MidgeWalk" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="721707010" Name="Stop_RandomCaveSounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -607,9 +628,10 @@
 				<GameParameter Id="2163227897" Name="Windiness"/>
 				<GameParameter Id="2924436501" Name="Creakiness"/>
 				<GameParameter Id="3600736381" Name="Distance_X"/>
+				<GameParameter Id="4100794546" Name="GauntletDanger"/>
 				<GameParameter Id="4168635916" Name="Openness"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A6E52E51-2F08-F95B-56F4-89BDF8BD43CF}</FileHash>
+	<FileHash>{F0851BD8-FC06-4D00-74E8-023F0270B76D}</FileHash>
 </SoundBanksInfo>
