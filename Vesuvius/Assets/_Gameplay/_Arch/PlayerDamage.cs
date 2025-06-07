@@ -300,9 +300,14 @@ namespace _Gameplay._Arch
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
         }
 
-        private void ResetInvincibility()
+        public void ResetInvincibility()
         {
             isInvincible = false;
+        }
+
+        public void SetInvincibility()
+        {
+            isInvincible = true;
         }
 
         private void ResumeTimeEffect()
@@ -312,7 +317,8 @@ namespace _Gameplay._Arch
             Time.fixedDeltaTime = 0.02f;
 
             RevertToOriginalColor();
-            if (playerInfo.DecrementHealth()) {
+            if (playerInfo.DecrementHealth())
+            {
                 StartCoroutine(HandlePlayerDeath());
                 return; // Prevent further processing
             }

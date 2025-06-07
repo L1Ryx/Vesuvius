@@ -55,8 +55,6 @@ public class CultistBossBehavior : MonoBehaviour
     Vector3 pos;
 
 
-    float accumulator = 0f;
-
     float timeSinceLastSpecial = 0f;
 
     float timeSinceEyeSummon = 0f;
@@ -258,7 +256,7 @@ public class CultistBossBehavior : MonoBehaviour
     //Used to determine when the slam has hit the ceiling or floor
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == Mathf.Log(terrainLayer.value, 2))
+        if (currentState != EnemyState.Dead && collision.gameObject.layer == Mathf.Log(terrainLayer.value, 2))
         {
             rb.linearVelocity = new Vector2(0, 0);
             if (isSlammingUpwards)

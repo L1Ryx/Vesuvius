@@ -38,6 +38,7 @@ public class PlayerControlManager : MonoBehaviour
 
     private GameObject player;
     private PlayerController playerController; // Dynamically fetched PlayerController
+    private PlayerDamage playerDamage;
 
     private int overlappingCalls = 0; 
     private void Awake()
@@ -51,6 +52,7 @@ public class PlayerControlManager : MonoBehaviour
 
         // Dynamically fetch PlayerController from the player
         playerController = player.GetComponent<PlayerController>();
+        playerDamage = player.GetComponent<PlayerDamage>();
     }
 
     private void OnDisable()
@@ -65,6 +67,7 @@ public class PlayerControlManager : MonoBehaviour
     {
         overlappingCalls++;
         playerController.SetFreezeMode(true);
+        playerDamage.SetInvincibility();
         PlayerControlManager.Instance.controls.Player.Swing.Disable();
         PlayerControlManager.Instance.controls.Player.Heal.Disable();
         PlayerControlManager.Instance.controls.Player.RealityShift.Disable();
@@ -76,6 +79,7 @@ public class PlayerControlManager : MonoBehaviour
         overlappingCalls--;
         if (overlappingCalls == 0)
         {
+            playerDamage.ResetInvincibility();
             playerController.SetFreezeMode(false);
             PlayerControlManager.Instance.controls.Player.Swing.Enable();
             PlayerControlManager.Instance.controls.Player.Heal.Enable();
