@@ -22664,7 +22664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: 1
-  healthAmount: 200
+  healthAmount: 400
   iFramesTime: 0.2
   giveUpwardsForce: 0
   canBeKnockedBack: 1
