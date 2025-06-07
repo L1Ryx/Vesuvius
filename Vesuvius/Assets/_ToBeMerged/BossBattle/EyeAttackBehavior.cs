@@ -13,6 +13,7 @@ public class EyeAttackBehavior : MonoBehaviour
     public LayerMask terrainLayers;
 
     private GameObject player;
+
     private bool isPlayerNear = false;
 
     float timeSinceLastFire = 0f;
@@ -46,11 +47,11 @@ public class EyeAttackBehavior : MonoBehaviour
         //Player must be nearby and not out of Line of sight
         if (isPlayerNear)
         {
-            print("Near");
             RaycastHit2D result = Physics2D.Linecast(transform.position, player.GetComponent<Collider2D>().bounds.center, terrainLayers);
             if (!result)
-                print("Shoot");
+            {
                 ShootProjectile();
+            }
         }
     }
 

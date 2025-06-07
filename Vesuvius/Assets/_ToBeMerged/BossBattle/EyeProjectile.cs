@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Gameplay._Arch;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EyeProjectile : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class EyeProjectile : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private float timeAlive = 0f;
+
+    public UnityEvent projectileDeath;
 
 
     void Start()
@@ -26,7 +29,7 @@ public class EyeProjectile : MonoBehaviour
         timeAlive += Time.deltaTime;
         if (target != null && timeAlive <= timeToHome)
         {
-            direction = (target.GetComponent<Collider2D>().bounds.center - transform.position).normalized;     
+            direction = (target.GetComponent<Collider2D>().bounds.center - transform.position).normalized;
         }
 
 
@@ -40,7 +43,7 @@ public class EyeProjectile : MonoBehaviour
         {
             enemyHealth.Damage(20, Vector2.zero);
         }
-        Destroy(this.gameObject);
+        projectileDeath.Invoke();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -54,8 +57,13 @@ public class EyeProjectile : MonoBehaviour
         }
         if (other.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            projectileDeath.Invoke();
         }
+    }
+
+    public void DestroyProjectile()
+    {
+        Destroy(this.gameObject);
     }
     // //When projectile goes offscreen destroy it
     // void OnBecameInvisible() 
