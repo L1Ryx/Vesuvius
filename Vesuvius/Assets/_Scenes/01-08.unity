@@ -7829,6 +7829,8 @@ MonoBehaviour:
   isInAltReality: 0
   gameState: {fileID: 11400000, guid: a74d58717d8acc64d8ddce496b01df2e, type: 2}
   playerDamage: {fileID: 5731089695622297507}
+  material: {fileID: 0}
+  grayscaleAmount: 0
 --- !u!212 &1056196596
 SpriteRenderer:
   m_ObjectHideFlags: 0
