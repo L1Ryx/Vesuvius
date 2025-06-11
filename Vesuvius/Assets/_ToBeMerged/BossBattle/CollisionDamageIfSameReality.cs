@@ -19,13 +19,13 @@ public class CollisionDamageIfSameReality : MonoBehaviour
     public void Deactivate()
     {
         isActive = false;
-        grayscaleAmount = 0;
-        material.SetFloat("_GrayscaleAmount", grayscaleAmount);
+        //grayscaleAmount = 0;
+        //material.SetFloat("_GrayscaleAmount", grayscaleAmount);
     }
 
     void Start()
     {
-        material.SetFloat("_GrayscaleAmount", grayscaleAmount);
+        //material.SetFloat("_GrayscaleAmount", grayscaleAmount);
     }
 
     public void StoreRealityState()
@@ -35,15 +35,15 @@ public class CollisionDamageIfSameReality : MonoBehaviour
 
     public void PlayerRealityShifted()
     {
-        if (isInAltReality != gameState.isAltReality)
-        {
-            StartCoroutine(Beam());
+       // if (isInAltReality != gameState.isAltReality)
+       // {
+        //    StartCoroutine(Beam());
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
             
-        }
+       // }
     }
 
     IEnumerator Beam()
