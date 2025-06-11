@@ -7735,6 +7735,7 @@ GameObject:
   - component: {fileID: 1056196596}
   - component: {fileID: 1056196595}
   - component: {fileID: 1056196594}
+  - component: {fileID: 1056196597}
   m_Layer: 0
   m_Name: BossFightBeam
   m_TagString: Untagged
@@ -7829,8 +7830,9 @@ MonoBehaviour:
   isInAltReality: 0
   gameState: {fileID: 11400000, guid: a74d58717d8acc64d8ddce496b01df2e, type: 2}
   playerDamage: {fileID: 5731089695622297507}
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 900845580cbcb5e4da89cb395d0c9580, type: 2}
   grayscaleAmount: 0
+  BeamSprite: {fileID: 1056196596}
 --- !u!212 &1056196596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7854,7 +7856,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 900845580cbcb5e4da89cb395d0c9580, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7886,6 +7888,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1056196597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056196592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 015f93d72415a6343a3937844a40fc4f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1056196595}
+        m_TargetAssemblyTypeName: CollisionDamageIfSameReality, Assembly-CSharp
+        m_MethodName: PlayerRealityShifted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1114840139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22449,10 +22479,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3741111436676114422, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 2100000, guid: 900845580cbcb5e4da89cb395d0c9580, type: 2}
+    - target: {fileID: 3741111436676114422, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: BeamSprite
+      value: 
+      objectReference: {fileID: 1588613583}
+    - target: {fileID: 3741111436676114422, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: playerDamage
+      value: 
+      objectReference: {fileID: 5731089695622297507}
     - target: {fileID: 4227790946173890500, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6981263338766126419, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 900845580cbcb5e4da89cb395d0c9580, type: 2}
     - target: {fileID: 7609164145106905619, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
       propertyPath: dialogue
       value: 
@@ -22540,6 +22586,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1619201940}
   m_SourcePrefab: {fileID: 100100000, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+--- !u!212 &1588613583 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6981263338766126419, guid: de93b795fef3f2d4daee3edd02e33231, type: 3}
+  m_PrefabInstance: {fileID: 1588613582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1594234042
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -427,6 +427,7 @@ public class CultistBossBehavior : MonoBehaviour
 
         preBeamBall.SetActive(false);
         BeamSprite.SetActive(false);
+        beamDamage.ResetBetweenAttacks();
 
 
         //recovering (float up and down for a few seconds)

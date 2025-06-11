@@ -10,6 +10,7 @@ public class CollisionDamageIfSameReality : MonoBehaviour
     public PlayerDamage playerDamage;
     public Material material;
     [Range(0, 1)] public float grayscaleAmount = 0;
+    public SpriteRenderer BeamSprite;
 
     public void Activate()
     {
@@ -19,13 +20,18 @@ public class CollisionDamageIfSameReality : MonoBehaviour
     public void Deactivate()
     {
         isActive = false;
-        //grayscaleAmount = 0;
-        //material.SetFloat("_GrayscaleAmount", grayscaleAmount);
+    }
+
+    public void ResetBetweenAttacks()
+    {
+        grayscaleAmount = 0;
+        BeamSprite.sortingOrder = 2;
+        material.SetFloat("_GrayscaleAmount", grayscaleAmount);
     }
 
     void Start()
     {
-        //material.SetFloat("_GrayscaleAmount", grayscaleAmount);
+        material.SetFloat("_GrayscaleAmount", grayscaleAmount);
     }
 
     public void StoreRealityState()
@@ -35,18 +41,17 @@ public class CollisionDamageIfSameReality : MonoBehaviour
 
     public void PlayerRealityShifted()
     {
-       // if (isInAltReality != gameState.isAltReality)
-       // {
-        //    StartCoroutine(Beam());
-
-        //}
-        //else
-        //{
-            
-       // }
+        if (isInAltReality != gameState.isAltReality)
+        {
+            StartCoroutine(SafeFromBeam());
+        }
+        else
+        {
+            StartCoroutine(ReverseSafe());
+        }
     }
 
-    IEnumerator Beam()
+    IEnumerator SafeFromBeam()
     {
         float elapsedTime = 0f;
         //yield return new WaitForSeconds(.5f);
@@ -58,6 +63,22 @@ public class CollisionDamageIfSameReality : MonoBehaviour
             material.SetFloat("_GrayscaleAmount", grayscaleAmount);
             yield return new WaitForEndOfFrame();
         }
+        BeamSprite.sortingOrder = 0;
+    }
+
+    IEnumerator ReverseSafe()
+    {
+        float elapsedTime = 0f;
+        //yield return new WaitForSeconds(.5f);
+        while (elapsedTime < .5f)
+        {
+            elapsedTime += Time.deltaTime;
+            grayscaleAmount = 1 - elapsedTime / .5f;
+
+            material.SetFloat("_GrayscaleAmount", grayscaleAmount);
+            yield return new WaitForEndOfFrame();
+        }
+        BeamSprite.sortingOrder = 2;
     }
 
 

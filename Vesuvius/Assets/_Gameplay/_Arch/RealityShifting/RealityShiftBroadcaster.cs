@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 //Middle man broadcaster to gather shiftables in scene and then shift them.
@@ -9,6 +10,7 @@ public class RealityShiftBroadcaster : MonoBehaviour
     public GameState gameState;
 
     public float crossfadeDuration = 2f;
+    public UnityEvent RealityShiftBroadcast;
 
     void Awake()
     {
@@ -27,9 +29,10 @@ public class RealityShiftBroadcaster : MonoBehaviour
     public void Shift()
     {
         gameState.isAltReality = !gameState.isAltReality;
-        foreach(var realityShiftable in realityShiftables)
+        RealityShiftBroadcast.Invoke();
+        foreach (var realityShiftable in realityShiftables)
         {
-            realityShiftable.RealityShiftCrossFade(gameState.isAltReality,crossfadeDuration);
+            realityShiftable.RealityShiftCrossFade(gameState.isAltReality, crossfadeDuration);
         }  
     }
 }
