@@ -12,10 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6399289f1feb48a78bc246c3592f42d, type: 3}
   m_Name: _TutorialData
   m_EditorClassIdentifier: 
-  shownTutorials:
-  - Move
-  - Jump
-  - Slash
-  - Rebalance
-  - DoubleJump
-  - RealityShift
+  shownTutorials: []

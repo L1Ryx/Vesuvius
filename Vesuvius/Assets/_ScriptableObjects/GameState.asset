@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db34bea3caed354b8269c13bf2c0b49, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  isAltReality: 1
+  isAltReality: 0
