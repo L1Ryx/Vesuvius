@@ -5,14 +5,27 @@ using System.Collections.Generic;
 
 public class SimpleMinimapGenerator : MonoBehaviour {
     [Header("Tilemap Sources")]
-    public List<Tilemap> sourceTilemaps;
+    public List<Tilemap> dimension1Tilemaps;
+    public List<Tilemap> dimension2Tilemaps;
+
+    private List<Tilemap> sourceTilemaps = new List<Tilemap>();
+    [Header("UI References")]
+    public GameObject minimapCanvas; 
+    
+    [Header("Data Cubes")]
+    public GameState gameState;
+
 
     [Header("Output")]
     public RawImage minimapDisplay;
 
-    [Header("Colors")]
-    public Color tileColor = Color.white;
-    public Color emptyColor = Color.black;
+    [Header("Dimension 1 Colors")]
+    public Color tileColor1 = Color.white;
+    public Color emptyColor1 = Color.black;
+
+    [Header("Dimension 2 Colors")]
+    public Color tileColor2 = Color.cyan;
+    public Color emptyColor2 = Color.gray;
     [Header("Player Tracking")]
     public Transform player; // public for debugging rn
     public RectTransform playerDot;
@@ -20,18 +33,44 @@ public class SimpleMinimapGenerator : MonoBehaviour {
     public Color flickerColorB = Color.yellow;
     public float flickerRate = 0.5f; // seconds between color switches
 
+    private bool lastRealityState = false;
     private float flickerTimer = 0f;
     private bool useColorA = true;
+    private CanvasGroup canvasGroup;
 
     private Vector2Int textureOrigin;
     private Vector2Int textureSize;
+    private Color currentTileColor;
+    private Color currentEmptyColor;
+    private Color targetTileColor;
+    private Color targetEmptyColor;
+    private float colorLerpTime = 0f;
+    private bool isTransitioning = false;
+    private float targetAlpha = 0f;
+    private float currentAlpha = 0f;
 
     [Header("Visuals")]
+    public float minimapPixelsPerTile = 4f;
     public float baseMapSize = 100f; 
     public Vector2 playerDotOffset = Vector2.zero; // pixels
-    void Start() {
-        GenerateMinimap();
+    public float transitionDuration = 1f; // Seconds
+    public float showMapFadeSpeed = 5f; 
+
+    void Awake()
+    {
+        minimapCanvas.SetActive(true);
+        canvasGroup = minimapCanvas.GetComponent<CanvasGroup>();
+        if (!canvasGroup)
+        {
+            Debug.LogWarning("no canvasGroup");
+        }
+    }
+    void Start() 
+    {
         AutoAssignPlayer();
+        currentTileColor = tileColor1;
+        currentEmptyColor = emptyColor1;
+        EnterFirstDimension();
     }
 
     void AutoAssignPlayer()
@@ -76,7 +115,7 @@ public class SimpleMinimapGenerator : MonoBehaviour {
                     }
                 }
 
-                Color pixel = tileExists ? tileColor : emptyColor;
+                Color pixel = tileExists ? currentTileColor : currentEmptyColor; 
                 tex.SetPixel(x - combinedBounds.xMin, y - combinedBounds.yMin, pixel);
             }
         }
@@ -85,13 +124,11 @@ public class SimpleMinimapGenerator : MonoBehaviour {
         minimapDisplay.texture = tex;
         RectTransform rt = minimapDisplay.rectTransform;
 
-        float aspectRatio = (float)width / height;
+        float uiWidth = width * minimapPixelsPerTile;
+        float uiHeight = height * minimapPixelsPerTile;
 
-        if (aspectRatio >= 1f) {
-            rt.sizeDelta = new Vector2(baseMapSize, baseMapSize / aspectRatio);
-        } else {
-            rt.sizeDelta = new Vector2(baseMapSize * aspectRatio, baseMapSize);
-        }
+        rt.sizeDelta = new Vector2(uiWidth, uiHeight);
+
         
         // position mapping bounds
         textureOrigin = new Vector2Int(combinedBounds.xMin, combinedBounds.yMin);
@@ -106,6 +143,33 @@ public class SimpleMinimapGenerator : MonoBehaviour {
     }
     
     void Update() {
+        if (isTransitioning)
+        {
+            colorLerpTime += Time.deltaTime;
+            float t = Mathf.Clamp01(colorLerpTime / transitionDuration);
+            currentTileColor = Color.Lerp(currentTileColor, targetTileColor, t);
+            currentEmptyColor = Color.Lerp(currentEmptyColor, targetEmptyColor, t);
+            GenerateMinimap(); 
+
+            if (t >= 1f)
+            {
+                isTransitioning = false;
+                currentTileColor = targetTileColor;
+                currentEmptyColor = targetEmptyColor;
+            }
+        }
+        if (gameState != null && gameState.isAltReality != lastRealityState)
+        {
+            lastRealityState = gameState.isAltReality;
+            if (gameState.isAltReality)
+            {
+                EnterSecondDimension();
+            }
+            else
+            {
+                EnterFirstDimension();
+            }
+        }
         if (player == null || playerDot == null || textureSize == Vector2Int.zero)
             return;
 
@@ -136,11 +200,39 @@ public class SimpleMinimapGenerator : MonoBehaviour {
         
         Debug.DrawLine(player.position, player.position + Vector3.up * 2f, Color.red);
 
-        
-        
-
-
-
-
+        RevealWithTabKey();
     }
+
+    private void RevealWithTabKey()
+    {
+        targetAlpha = Input.GetKey(KeyCode.Tab) ? 1f : 0f;
+
+        // Smoothly lerp the alpha
+        currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, Time.deltaTime * showMapFadeSpeed);
+        canvasGroup.alpha = currentAlpha;
+
+        // Optional: disable interaction + raycasts when invisible
+        canvasGroup.blocksRaycasts = currentAlpha > 0.01f;
+        canvasGroup.interactable = currentAlpha > 0.01f;
+    }
+    public void EnterFirstDimension()
+    {
+        sourceTilemaps = dimension1Tilemaps;
+        SetTargetColors(tileColor1, emptyColor1);
+    }
+
+    public void EnterSecondDimension()
+    {
+        sourceTilemaps = dimension2Tilemaps;
+        SetTargetColors(tileColor2, emptyColor2);
+    }
+
+    void SetTargetColors(Color tile, Color empty)
+    {
+        targetTileColor = tile;
+        targetEmptyColor = empty;
+        colorLerpTime = 0f;
+        isTransitioning = true;
+    }
+
 }
