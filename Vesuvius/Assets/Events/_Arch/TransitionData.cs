@@ -4,9 +4,11 @@ using UnityEngine;
 namespace Events._Arch
 {
     [CreateAssetMenu(fileName = "TransitionData", menuName = "Scene Management/Transition Data")]
-    public class TransitionData : ScriptableObject {
+    public class TransitionData : ScriptableObject
+    {
         public string sceneToLoad;
         public Vector2 spawnPosition;
+        public bool isVerticalUpTransition;
     
     }
 }

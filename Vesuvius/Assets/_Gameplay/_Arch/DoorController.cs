@@ -1,4 +1,6 @@
+using System;
 using Events._Arch;
+using Public.Tarodev_2D_Controller.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -24,6 +26,12 @@ namespace _Gameplay._Arch
             {
                 isTransitioning = true; // Mark as transitioning to prevent re-trigger
                 spawnData.spawnLocation = transitionData.spawnPosition; // Update the spawn location
+                //special case of entering a load door from below
+                if (transitionData.isVerticalUpTransition)
+                {
+                    spawnData.needsUpwardForce = true;
+                    other.GetComponent<PlayerController>().RemoveGravity();
+                }
                 roomExited.Invoke(); // Immediately invoke the roomExited event
                 StartCoroutine(TransitionSceneAfterDelay()); // Begin the scene transition after a delay
             }

@@ -21,7 +21,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
         #region Interface
 
         [field: SerializeField] public PlayerStats Stats { get; private set; }
-        [field: SerializeField] public PlayerUnlocks playerUnlocks{ get; private set; }
+        [field: SerializeField] public PlayerUnlocks playerUnlocks { get; private set; }
         public ControllerState State { get; private set; }
         public event Action<JumpType> Jumped;
         public event Action<bool, float> GroundedChanged;
@@ -42,10 +42,11 @@ namespace Public.Tarodev_2D_Controller.Scripts
         private bool wasGrounded; // Tracks the player's grounded state in the previous frame
         private bool wasFalling;
         private float fallingGraceTimer; // Timer for the grace period
+        private bool isVerticallyTransitioning;
         [SerializeField] private float fallingGracePeriod = 0.05f; // Grace period duration
         [SerializeField] private float fallThreshold = 1f;
         [SerializeField] private UnityEvent playerJumped;
-        
+
         [Header("Player State")]
         private bool _freezeMode;
         public bool FreezeMode
@@ -67,31 +68,37 @@ namespace Public.Tarodev_2D_Controller.Scripts
         // Returns true if the player is facing right// Add a reference to the player's SpriteRenderer
         [SerializeField] public SpriteRenderer playerSpriteRenderer;
 
-        public SpriteRenderer getPlayerSpriteRenderer() {
+        public SpriteRenderer getPlayerSpriteRenderer()
+        {
             return playerSpriteRenderer;
         }
 
         // Returns true if the player is facing right
-        public bool IsFacingRight() {
+        public bool IsFacingRight()
+        {
             return !playerSpriteRenderer.flipX; // Not flipped means facing right
         }
 
         // Returns true if the player is facing left
-        public bool IsFacingLeft() {
+        public bool IsFacingLeft()
+        {
             return playerSpriteRenderer.flipX; // Flipped means facing left
         }
 
 
         // SAVE INFO
-        public void SavePlayerTransform() {
+        public void SavePlayerTransform()
+        {
             ES3.Save("PlayerTransform", this.transform);
         }
-        
-        public void ClearPlayerTransformSave() {
-            if (ES3.KeyExists("PlayerTransform")) {
+
+        public void ClearPlayerTransformSave()
+        {
+            if (ES3.KeyExists("PlayerTransform"))
+            {
                 ES3.DeleteKey("PlayerTransform");
             }
-        }       
+        }
 
         public void AddFrameForce(Vector2 force, bool resetVelocity = false)
         {
@@ -185,13 +192,16 @@ namespace Public.Tarodev_2D_Controller.Scripts
             SaveCharacterState();
 
             CheckIfZeroIsPressed(); // DEBUG ONLY
+            CheckTransition();
         }
 
-         // TEST BEGIN
+        // TEST BEGIN
         public UnityEvent onZeroPressed;
 
-        private void CheckIfZeroIsPressed() {
-            if (UnityEngine.Input.GetKey(KeyCode.L)) {
+        private void CheckIfZeroIsPressed()
+        {
+            if (UnityEngine.Input.GetKey(KeyCode.L))
+            {
                 onZeroPressed.Invoke();
             }
         }
@@ -207,7 +217,8 @@ namespace Public.Tarodev_2D_Controller.Scripts
         private const float GRAVITY_SCALE = 1;
 
         // SHAWN CUSTOM
-        public bool IsGrounded() {
+        public bool IsGrounded()
+        {
             return _grounded;
         }
 
@@ -227,7 +238,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
             }
 
             bool isGroundedNow = IsGrounded(); // Check if the player is grounded
-            bool isFallingNow = rb.linearVelocity.y < - fallThreshold; // Check if the player is falling (adjusted velocity threshold)
+            bool isFallingNow = rb.linearVelocity.y < -fallThreshold; // Check if the player is falling (adjusted velocity threshold)
 
             // Update grace timer if falling
             if (isFallingNow)
@@ -325,7 +336,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
             _collider.hideFlags = HideFlags.NotEditable;
             _collider.sharedMaterial = _rb.sharedMaterial;
             _collider.enabled = true;
-            
+
             // Airborne collider
             _airborneCollider = GetComponent<CapsuleCollider2D>();
             _airborneCollider.hideFlags = HideFlags.NotEditable;
@@ -340,7 +351,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
 
         #region Input
 
-       
+
 
         private FrameInput _frameInput;
 
@@ -354,7 +365,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
 
             // Regular input gathering logic
             _frameInput = _playerInput.Gather();
-            
+
             if (_frameInput.JumpDown)
             {
                 _jumpToConsume = true;
@@ -536,7 +547,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
 
         private Vector2 _frameDirection;
 
-        
+
 
         private void CalculateDirection()
         {
@@ -775,7 +786,7 @@ namespace Public.Tarodev_2D_Controller.Scripts
         private float _startedDashing;
         private float _nextDashTime;
 
-       private void CalculateDash()
+        private void CalculateDash()
         {
             if (!Stats.AllowDash) return;
 
@@ -1130,7 +1141,39 @@ namespace Public.Tarodev_2D_Controller.Scripts
         }
 
         #endregion
+        #region Brett
+        //called in player spawner for scene transitions that the player enters from below
+        //gives them a boost out onto nearby ledge
+        public void VerticalTransition(bool isFacingLeft)
+        {
+            isVerticallyTransitioning = true;
+            SetFreezeMode(true);
+            Vector2 movement = new Vector2();
+            movement.x = isFacingLeft ? -12 : 12;
+            movement.y = Stats.JumpPower;
+
+            _rb.linearVelocity = movement;
+            Velocity = movement;
+        }
+
+        //called in update, removes freeze mode if the player has landed after the transition
+        public void CheckTransition()
+        {
+            if (isVerticallyTransitioning && IsGrounded())
+            {
+                SetFreezeMode(false);
+                isVerticallyTransitioning = false;
+            }
+        }
+
+        public void RemoveGravity()
+        {
+            _rb.gravityScale = 0;
+        }
+        #endregion
     }
+
+
 
     public enum JumpType
     {

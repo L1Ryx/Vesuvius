@@ -137,7 +137,7 @@ public class SimpleMinimapGenerator : MonoBehaviour {
         LayoutRebuilder.ForceRebuildLayoutImmediate(minimapDisplay.rectTransform);
 
         RectTransform mapRT = minimapDisplay.rectTransform;
-        Debug.Log($"Minimap sizeDelta: {mapRT.sizeDelta}, rect: {mapRT.rect.size}");
+        //Debug.Log($"Minimap sizeDelta: {mapRT.sizeDelta}, rect: {mapRT.rect.size}");
 
 
     }

@@ -57,6 +57,9 @@ namespace _Gameplay._Arch
                 // Set player facing direction based on the spawnFacingLeft field
                 FlipPlayerIfNecessary(player);
 
+                print("New player");
+                player.GetComponent<PlayerController>().VerticalTransition(spawnFacingLeft);
+
                 return player;
             }
             else
@@ -64,8 +67,15 @@ namespace _Gameplay._Arch
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 player.transform.position = spawnLocation;
 
+                print("existing player");
                 // Set player facing direction if necessary
                 FlipPlayerIfNecessary(player);
+
+                if (spawnData.needsUpwardForce)
+                {
+                    player.GetComponent<PlayerController>().VerticalTransition(spawnFacingLeft);
+                    spawnData.needsUpwardForce = false;
+                }
 
                 return player;
             }
