@@ -9,13 +9,13 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(GuidComponent))]
+[RequireComponent(typeof(ControlsTextReplacement))]
 public class Interactable : MonoBehaviour
 {
     [Header("UI References")]
     public Canvas canvas; //canvas with interact text object in it
     public TMP_Text interactPromptText;
     public TMP_Text[] otherTexts;
-    public ControlPrompts controlPrompts;
 
     [Header("Settings")]
     public float activationRadius = 2f; // Distance for interaction
@@ -29,11 +29,13 @@ public class Interactable : MonoBehaviour
     protected bool isPlayerNear = false; // Tracks if the player is near
     private Color targetColor;
     private GuidComponent guidComponent;
+    private ControlsTextReplacement controlsTextReplacement;
     public float lerpSpeed = 2f;
 
     private void Awake()
     {
         guidComponent = GetComponent<GuidComponent>();
+        controlsTextReplacement = GetComponent<ControlsTextReplacement>();
     }
 
     private void OnEnable()
@@ -48,12 +50,7 @@ public class Interactable : MonoBehaviour
 
     public void OnControlsChanged()
     {
-        UpdateUIHints(); // Force re-generation of our cached text strings to pick up new bindings.
-    }
-
-    private void UpdateUIHints()
-    {
-        interactPromptText.text = controlPrompts.interactPrompt;
+        controlsTextReplacement.OnControlsChanged(); // Force re-generation of our cached text strings to pick up new bindings.
     }
 
     private void Start()
@@ -71,6 +68,7 @@ public class Interactable : MonoBehaviour
     protected virtual void InitializeUI()
     {
         canvas.gameObject.SetActive(false);
+        controlsTextReplacement.Initialize(new TMP_Text[] { interactPromptText });
         SetTextAlpha(0);
     }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5169101012962228522}
   - component: {fileID: 2969973549662030460}
   - component: {fileID: 1612238603085633919}
+  - component: {fileID: 1482359145444751327}
   m_Layer: 0
   m_Name: Gate Switch
   m_TagString: Untagged
@@ -198,6 +199,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1482359145444751327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753783748582913638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
 --- !u!1 &1552225393884197294
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use\n\xB0"
+  m_text: Use ({Interact})
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}

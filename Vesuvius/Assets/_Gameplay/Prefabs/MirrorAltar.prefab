@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 46608651407619018}
   - component: {fileID: 3578625051476536407}
   m_Layer: 0
-  m_Name: Switch Prompt Text
+  m_Name: Interact Prompt Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use\n\xB0"
+  m_text: Take Mirror Shard ({Interact})
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 9139919011656657224}
   - component: {fileID: 4703127129678389255}
   m_Layer: 0
-  m_Name: Switch Canvas
+  m_Name: Interact Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 6438815601293474093}
   - component: {fileID: 2570854607736829653}
   - component: {fileID: 876281868194931534}
+  - component: {fileID: 8896591448797890685}
   m_Layer: 0
   m_Name: MirrorAltar
   m_TagString: Untagged
@@ -564,6 +565,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8896591448797890685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757943492529451844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
 --- !u!1 &4891227781710728981
 GameObject:
   m_ObjectHideFlags: 0

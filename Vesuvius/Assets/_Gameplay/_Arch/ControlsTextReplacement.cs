@@ -10,7 +10,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(GameEventListener))] //call OnControlsChanged with ControlsChanged Game Event
 public class ControlsTextReplacement : MonoBehaviour
 {
-    public TextMeshProUGUI[] textsNeedingReplacement;
+    public TMP_Text[] textsNeedingReplacement;
     private string[] textTemplates; //caches text before replacement so we can reuse it
     private string pattern = "{((.|\n|\r)*)}"; //text to be replaced must be enclosed in {}
 
@@ -49,6 +49,17 @@ public class ControlsTextReplacement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //some texts have been set in the inspector. This doesn't always have to be the case (ie it is initialized by interactable)
+        if (textsNeedingReplacement.Length > 0)
+        {
+            Initialize(textsNeedingReplacement);
+        }
+    }
+
+    // class can be set up from an external class (such as interactable)
+    public void Initialize(TMP_Text[] textsToReplace)
+    {
+        textsNeedingReplacement = textsToReplace;
         r = new Regex(pattern);
         textTemplates = new string[textsNeedingReplacement.Length];
         for (int i = 0; i < textsNeedingReplacement.Length; i++)

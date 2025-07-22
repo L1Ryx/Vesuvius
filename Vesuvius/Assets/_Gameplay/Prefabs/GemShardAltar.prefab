@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 6804368391893001464}
   - component: {fileID: 7856756974669438140}
   - component: {fileID: 4623734958527752427}
+  - component: {fileID: 1777980264048646618}
   m_Layer: 0
   m_Name: GemShardAltar
   m_TagString: Untagged
@@ -388,6 +389,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
+--- !u!114 &1777980264048646618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086786684791117505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
 --- !u!1 &6254198846926897916
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use\n\xB0"
+  m_text: Take Gem Fragment ({Interact})
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}

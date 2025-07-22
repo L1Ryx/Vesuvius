@@ -168,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use\n\xB0"
+  m_text: Rest ({Interact})
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
@@ -5312,6 +5312,7 @@ GameObject:
   - component: {fileID: 6268450369974382785}
   - component: {fileID: 2211618709123356294}
   - component: {fileID: 5310976662761220510}
+  - component: {fileID: 5017926503319470852}
   m_Layer: 7
   m_Name: CradleTemplate
   m_TagString: Untagged
@@ -5531,6 +5532,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedGuid: 
+--- !u!114 &5017926503319470852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5179069277585008113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
 --- !u!1 &7309752495672184123
 GameObject:
   m_ObjectHideFlags: 0
