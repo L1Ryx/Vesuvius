@@ -16,7 +16,7 @@ MonoBehaviour:
   - gateID: 01-02-01
     isLocked: 1
   - gateID: 01-02-02
-    isLocked: 1
+    isLocked: 0
   - gateID: 01-03-01
     isLocked: 1
   - gateID: 01-02-03

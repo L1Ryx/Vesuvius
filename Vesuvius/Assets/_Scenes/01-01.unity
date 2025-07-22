@@ -224,11 +224,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1101c73bd452646ec9d79b53e4ed223b, type: 3}
---- !u!1 &97146932 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 753783748582913638, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
-  m_PrefabInstance: {fileID: 416205107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &146265895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7438855630561078474, guid: 77a7d95f9fad34be39289b2a746aa830, type: 3}
@@ -567,58 +562,92 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2969973549662030460, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 356492339}
+    - target: {fileID: 2969973549662030460, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnlockGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: serializedGuid.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[0]'
+      value: 219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[1]'
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[2]'
+      value: 244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[3]'
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[4]'
+      value: 194
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[5]'
+      value: 161
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[6]'
+      value: 222
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[7]'
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[8]'
+      value: 148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[9]'
+      value: 142
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[10]'
+      value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[11]'
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[12]'
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[13]'
+      value: 218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[14]'
+      value: 226
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169101012962228522, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
+      propertyPath: 'serializedGuid.Array.data[15]'
+      value: 162
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 753783748582913638, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 416205111}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
 --- !u!4 &416205108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2618347045991476217, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
   m_PrefabInstance: {fileID: 416205107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &416205110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2486319220769366040, guid: dbbd2e27fce984a99b30713b8402b0d5, type: 3}
-  m_PrefabInstance: {fileID: 416205107}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97146932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 970c9ca8c75134e42849821d4a0e869d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &416205111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97146932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 416205110}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
-        m_MethodName: OnControlsChanged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &501375033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,7 +784,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.803326, y: 1.5599499, z: -10}
+  m_LocalPosition: {x: 9.813679, y: 1.5599499, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

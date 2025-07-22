@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2486319220769366040}
   - component: {fileID: 2533256360013025993}
   - component: {fileID: 7142084228014992540}
+  - component: {fileID: 5169101012962228522}
+  - component: {fileID: 2969973549662030460}
+  - component: {fileID: 1612238603085633919}
   m_Layer: 0
   m_Name: Gate Switch
   m_TagString: Untagged
@@ -48,17 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970c9ca8c75134e42849821d4a0e869d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateSwitchCanvas: {fileID: 2192820783302551296}
-  interactPromptText: {fileID: 4165520709346808186}
-  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
-  gate: {fileID: 0}
   switchSpriteRenderer: {fileID: 466799085841485714}
   lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}
   unlockedSprite: {fileID: 7315337992993308776, guid: 41b968b5d9baa41a8bf64089a982d18a, type: 3}
-  activationRadius: 2
-  lerpSpeed: 2
-  pulseSpeed: 1.2
-  pulseIntensity: 0.06
 --- !u!114 &2533256360013025993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,9 +83,112 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2969973549662030460}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: OnControlsChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5169101012962228522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753783748582913638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 
+--- !u!114 &2969973549662030460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753783748582913638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962644f9bc3f70f4f85b63d3d2f906ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 2192820783302551296}
+  interactPromptText: {fileID: 4165520709346808186}
+  otherTexts: []
+  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
+  activationRadius: 2
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2533256360013025993}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.SwitchAudio, Assembly-CSharp
+        m_MethodName: PlaySwitchOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2486319220769366040}
         m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
-        m_MethodName: OnControlsChanged
+        m_MethodName: UpdateSwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
+  blockedInteractables: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
+  interactableID: 
+  interactOnce: 1
+  lerpSpeed: 2
+--- !u!114 &1612238603085633919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753783748582913638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82224a3f52c79b8468404f4083736a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateStorage: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
+  callEventsIfInStorage: 1
+  eventsToCallOnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2486319220769366040}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
+        m_MethodName: UpdateSwitchSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

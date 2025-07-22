@@ -26,7 +26,7 @@ public class Interactable : MonoBehaviour
     public bool interactOnce;
 
     private GameObject player;
-    private bool isPlayerNear = false; // Tracks if the player is near
+    protected bool isPlayerNear = false; // Tracks if the player is near
     private Color targetColor;
     private GuidComponent guidComponent;
     public float lerpSpeed = 2f;
@@ -68,7 +68,7 @@ public class Interactable : MonoBehaviour
         InitializeUI();
     }
 
-    private void InitializeUI()
+    protected virtual void InitializeUI()
     {
         canvas.gameObject.SetActive(false);
         SetTextAlpha(0);
@@ -76,11 +76,12 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if(interactOnce && blockedInteractables.isInteractableBlocked(guidComponent.GetGuid().ToString()))
+        if (interactOnce && blockedInteractables.isInteractableBlocked(guidComponent.GetGuid().ToString()))
         {
             print("blocked");
             canvas.gameObject.SetActive(false);
             this.enabled = false;
+            return;
         }
 
         if (unsavedPlayerInfo.isInMenuMode)
@@ -92,7 +93,7 @@ public class Interactable : MonoBehaviour
         HandleProximityLogic();
     }
 
-    private void HandleProximityLogic()
+    protected virtual void HandleProximityLogic()
     {
         if (player == null) return;
 
@@ -178,7 +179,7 @@ public class Interactable : MonoBehaviour
         interactPromptText.color = new Color(interactPromptText.color.r, interactPromptText.color.g, interactPromptText.color.b, alpha);
     }
 
-    private void OnInteractPerformed(InputAction.CallbackContext context)
+    protected virtual void OnInteractPerformed(InputAction.CallbackContext context)
     {
         if(unsavedPlayerInfo.isInMenuMode)
         {
@@ -186,6 +187,7 @@ public class Interactable : MonoBehaviour
         }
         else if (isPlayerNear)
         {
+            print("Free");
             OnInteract.Invoke();
             if(interactOnce)
             {

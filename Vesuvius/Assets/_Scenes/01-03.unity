@@ -1420,7 +1420,7 @@ Transform:
   m_GameObject: {fileID: 310316569}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 5.3640003, z: -10}
+  m_LocalPosition: {x: 17.08, y: 20.283998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2036,7 +2036,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.322975, y: 8.5, z: -10}
+  m_LocalPosition: {x: 17.08, y: 20.283998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32990,11 +32990,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.71
+      value: 17.08
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.38
+      value: 19.3
       objectReference: {fileID: 0}
     - target: {fileID: 8120424225891626698, guid: 218b040f16eb14de0a6fafab8ac4737f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40279,6 +40279,9 @@ GameObject:
   - component: {fileID: 5404389957360286705}
   - component: {fileID: 7287816639617771119}
   - component: {fileID: 7287816639617771120}
+  - component: {fileID: 7287816639617771122}
+  - component: {fileID: 7287816639617771121}
+  - component: {fileID: 7287816639617771123}
   m_Layer: 0
   m_Name: Costly Gate Switch
   m_TagString: Untagged
@@ -40298,17 +40301,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01e9e9417fd8450e909f3e4ee866936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateSwitchCanvas: {fileID: 8158281918605014792}
+  canvas: {fileID: 8158281918605014792}
   interactPromptText: {fileID: 6239908600202936690}
+  otherTexts: []
   controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
-  gate: {fileID: 1315691382}
-  switchSpriteRenderer: {fileID: 7578462543051038618}
-  lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}
-  unlockedSprite: {fileID: 7315337992993308776, guid: 41b968b5d9baa41a8bf64089a982d18a, type: 3}
   activationRadius: 2
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7287816639617771120}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.SwitchAudio, Assembly-CSharp
+        m_MethodName: PlaySwitchOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7287816639617771121}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
+        m_MethodName: UpdateSwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1315691382}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.Gate, Assembly-CSharp
+        m_MethodName: UnlockGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unsavedPlayerInfo: {fileID: 11400000, guid: 488c36c6b6f708d44bbd76f4cf0e996a, type: 2}
+  blockedInteractables: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
+  interactableID: 
+  interactOnce: 1
   lerpSpeed: 2
-  pulseSpeed: 1.2
-  pulseIntensity: 0.06
   costText: {fileID: 1284473860}
   costImage: {fileID: 1270278181}
   cost: 35
@@ -40343,6 +40384,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneAudioData: {fileID: 11400000, guid: 7c2c2efbba98848d191e29c32774138e, type: 2}
+--- !u!114 &7287816639617771121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287816639617771118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970c9ca8c75134e42849821d4a0e869d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchSpriteRenderer: {fileID: 7578462543051038618}
+  lockedSprite: {fileID: -8396838693231910008, guid: 301241b8ea11f443caef47ada6ceb7c7, type: 3}
+  unlockedSprite: {fileID: 7315337992993308776, guid: 41b968b5d9baa41a8bf64089a982d18a, type: 3}
+--- !u!114 &7287816639617771122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287816639617771118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: f3f176a08909594eb8beef69bff4065c
+--- !u!114 &7287816639617771123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287816639617771118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82224a3f52c79b8468404f4083736a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateStorage: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
+  callEventsIfInStorage: 1
+  eventsToCallOnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7287816639617771121}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
+        m_MethodName: UpdateSwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!483693784 &7316860673476068308
 TilemapRenderer:
   m_ObjectHideFlags: 0
