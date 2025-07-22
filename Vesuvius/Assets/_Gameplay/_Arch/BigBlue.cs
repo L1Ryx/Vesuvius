@@ -16,7 +16,6 @@ namespace _Gameplay._Arch
         public TMP_Text npcTalkText;
         public Canvas dialogueCanvas;
         public TMP_Text dialogueText;
-        public ControlPrompts controlPrompts;
 
         [Header("Component References")]
         [SerializeField] private PlayerSpawner playerSpawner;
@@ -46,10 +45,12 @@ namespace _Gameplay._Arch
         private Color targetColor;
 
         private string talkTemplate;
+        private ControlsTextReplacement controlsTextReplacement;
 
         private void Awake()
         {
             bigBlueAudio = this.gameObject.GetComponent<BigBlueAudio>();
+            controlsTextReplacement = GetComponent<ControlsTextReplacement>();
             talkTemplate = npcTalkText.text;
         }
 
@@ -72,14 +73,14 @@ namespace _Gameplay._Arch
         private void Start()
         {
             
-            OnControlsChanged();
+            controlsTextReplacement.Initialize(new TMP_Text[] { npcTalkText });
             FindPlayer();
             InitializeUI();
             animator.Play("Playing"); // Start with the "Playing" animation
         }
         public void OnControlsChanged()
         {
-            npcTalkText.text = talkTemplate.Replace("{Interact}", controlPrompts.interactKeybind);
+            controlsTextReplacement.OnControlsChanged();
         }
 
         private void InitializeUI()

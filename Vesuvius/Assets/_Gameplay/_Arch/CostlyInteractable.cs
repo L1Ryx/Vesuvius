@@ -147,7 +147,15 @@ namespace _Gameplay._Arch
             //print("Cost color");
             // Set target color based on currency status
             costTargetColor = hasEnoughCurrency ? enoughCurrencyColor : notEnoughCurrencyColor;
-            interactPromptText.text = hasEnoughCurrency ? controlPrompts.interactPrompt : "Not enough Clink";
+            if (hasEnoughCurrency)
+            {
+                controlsTextReplacement.OnControlsChanged();
+            }
+            else
+            {
+                interactPromptText.text = "Not enough Clink";
+            }
+            //interactPromptText.text = hasEnoughCurrency ? controlsTextReplacement.OnControlsChanged() : "Not enough Clink";
         }
 
         protected override void OnInteractPerformed(InputAction.CallbackContext context)

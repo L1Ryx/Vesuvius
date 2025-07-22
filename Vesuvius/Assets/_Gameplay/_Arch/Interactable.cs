@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
     protected bool isPlayerNear = false; // Tracks if the player is near
     private Color targetColor;
     private GuidComponent guidComponent;
-    private ControlsTextReplacement controlsTextReplacement;
+    protected ControlsTextReplacement controlsTextReplacement;
     public float lerpSpeed = 2f;
 
     private void Awake()

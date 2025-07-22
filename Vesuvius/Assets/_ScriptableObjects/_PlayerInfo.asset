@@ -15,9 +15,9 @@ MonoBehaviour:
   hasCompletedDemo: 0
   maximumHealth: 5
   currentHealth: 5
-  gemFragments: 0
+  gemFragments: 1
   totalCurrency: 0
-  totemPower: 50
+  totemPower: 59
   abilityCost: 25
   lastCurrencyChangeAmount: -35
   sceneToLoad: 01-01

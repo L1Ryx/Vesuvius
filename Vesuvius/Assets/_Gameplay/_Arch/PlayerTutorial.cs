@@ -8,6 +8,7 @@ using UnityEngine.InputSystem.LowLevel;
 
 namespace _Gameplay._Arch
 {
+    [RequireComponent(typeof(ControlsTextReplacement))]
     public class PlayerTutorial : MonoBehaviour
     {
         [Header("Tutorial Text References")]
@@ -36,46 +37,22 @@ namespace _Gameplay._Arch
         public void PlayDoubleJumpText() => EnqueueTutorial("DoubleJump", doubleJumpText);
         public void PlayRealityShiftText() => EnqueueTutorial("RealityShift", realityShiftText);
 
-        //new attempt
-        public PlayerInput m_PlayerInput;
-        public ControlPrompts controlPrompts;
 
         private int healTutorialShown = 0;
+        private ControlsTextReplacement controlsTextReplacement;
+
+        private void Awake()
+        {
+            controlsTextReplacement = GetComponent<ControlsTextReplacement>();
+        }
+        void Start()
+        {
+            controlsTextReplacement.Initialize(new TMP_Text[] { moveText,jumpText,interactionText,slashText,rebalanceText,doubleJumpText,realityShiftText });
+        }
 
         public void OnControlsChanged()
         {
-            UpdateUIHints();
-        }
-
-        //TODO: We can eventually consider trimming down these tutorial text components to just one that we replace given the situation.
-        //maybe a switch case depending on which tutorial is active
-        private void UpdateUIHints()
-        {
-            moveText.text = controlPrompts.movePrompt;
-           
-            jumpText.text = controlPrompts.jumpPrompt;
-            
-            slashText.text = controlPrompts.swingPrompt;
-
-            rebalanceText.text = controlPrompts.healPrompt;
-
-            doubleJumpText.text = controlPrompts.doubleJumpPrompt;
-
-            realityShiftText.text = controlPrompts.realityShiftPrompt;
-        }
-
-        string GetBindingDisplayStringOrCompositeName(InputAction action)
-        {
-            // if composite action / can't use binding index or need to specify
-            int bindingIndex = action.GetBindingIndex(group: m_PlayerInput.currentControlScheme);
-
-            if (action.bindings[bindingIndex].isPartOfComposite)
-            {
-                // hard coded logic - assumes that if you found a part of a composite, that it's the first one.
-                // And that the one preceeding it, must be the 'Composite head' that contains the parts
-                return action.bindings[bindingIndex-1].name;
-            }
-            else { return action.GetBindingDisplayString(); } // if not a composite, bindingId can just be updated
+            controlsTextReplacement.OnControlsChanged();
         }
 
         private void EnqueueTutorial(string id, TextMeshProUGUI text)

@@ -11,6 +11,7 @@ using UnityEngine.Rendering;
 public class ControlsTextReplacement : MonoBehaviour
 {
     public TMP_Text[] textsNeedingReplacement;
+    public bool isExternallyInitialized = true;
     private string[] textTemplates; //caches text before replacement so we can reuse it
     private string pattern = "{((.|\n|\r)*)}"; //text to be replaced must be enclosed in {}
 
@@ -50,7 +51,7 @@ public class ControlsTextReplacement : MonoBehaviour
     void Start()
     {
         //some texts have been set in the inspector. This doesn't always have to be the case (ie it is initialized by interactable)
-        if (textsNeedingReplacement.Length > 0)
+        if (!isExternallyInitialized)
         {
             Initialize(textsNeedingReplacement);
         }

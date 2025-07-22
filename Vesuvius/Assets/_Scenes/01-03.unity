@@ -34832,7 +34832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use\n\xB0"
+  m_text: Use ({Interact})
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
@@ -40282,6 +40282,8 @@ GameObject:
   - component: {fileID: 7287816639617771122}
   - component: {fileID: 7287816639617771121}
   - component: {fileID: 7287816639617771123}
+  - component: {fileID: 7287816639617771125}
+  - component: {fileID: 7287816639617771124}
   m_Layer: 0
   m_Name: Costly Gate Switch
   m_TagString: Untagged
@@ -40304,7 +40306,6 @@ MonoBehaviour:
   canvas: {fileID: 8158281918605014792}
   interactPromptText: {fileID: 6239908600202936690}
   otherTexts: []
-  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   activationRadius: 2
   OnInteract:
     m_PersistentCalls:
@@ -40432,6 +40433,48 @@ MonoBehaviour:
       - m_Target: {fileID: 7287816639617771121}
         m_TargetAssemblyTypeName: _Gameplay._Arch.GateSwitch, Assembly-CSharp
         m_MethodName: UpdateSwitchSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7287816639617771124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287816639617771118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
+  isExternallyInitialized: 1
+--- !u!114 &7287816639617771125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287816639617771118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2058a83dc4722493aa51e37ee43d6ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7287816639617771119}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textsNeedingReplacement:
   - {fileID: 73153438230273586}
+  isExternallyInitialized: 0
 --- !u!114 &1646320722728333083
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 7717773664866960996}
   - component: {fileID: 8924419233062624757}
   - component: {fileID: 4995852562530747178}
+  - component: {fileID: 672459778067460315}
   m_Layer: 0
   m_Name: Big Blue (NPC)
   m_TagString: Untagged
@@ -268,7 +269,6 @@ MonoBehaviour:
   npcTalkText: {fileID: 8100844501265517593}
   dialogueCanvas: {fileID: 1017740038698358835}
   dialogueText: {fileID: 7232327488926127036}
-  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
   playerSpawner: {fileID: 0}
   dialogueCollection: {fileID: 11400000, guid: c811459c0de4149ec9237f0a1aa8ab4c, type: 2}
   bigBlueAudio: {fileID: 0}
@@ -375,6 +375,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &672459778067460315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747749749922084995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement: []
+  isExternallyInitialized: 1
 --- !u!1 &2131307498568448481
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +610,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -0.42}
-  m_SizeDelta: {x: 3, y: 50}
+  m_SizeDelta: {x: 5, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &367747506632808647
 CanvasRenderer:
