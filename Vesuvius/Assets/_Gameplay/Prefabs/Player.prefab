@@ -171,7 +171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'X - Heal
+  m_text: '{Jump} Twice - Double Jump
 
 
 '
@@ -10034,7 +10034,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SPACE - Jump
+  m_text: '{Jump} - Jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
@@ -20192,7 +20192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'X - Heal
+  m_text: '{Heal} - Heal
 
 
 '
@@ -25251,7 +25251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SPACE - Interact
+  m_text: '{Interact} - Interact
 
 '
   m_isRightToLeft: 0
@@ -25389,7 +25389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <- Arrow Keys ->
+  m_text: <- {move} ->
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
   m_sharedMaterial: {fileID: 4499611114467058474, guid: e428b4999c466468db2848b336c0c1c0, type: 2}
@@ -40606,7 +40606,6 @@ GameObject:
   - component: {fileID: 2521961792184658340}
   - component: {fileID: 4775113112952438693}
   - component: {fileID: 7697747633833973207}
-  - component: {fileID: 191667072688475384}
   - component: {fileID: 8979900638528978415}
   m_Layer: 7
   m_Name: Player
@@ -41209,9 +41208,9 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 191667072688475384}
-        m_TargetAssemblyTypeName: ControlPromptUpdater, Assembly-CSharp
-        m_MethodName: OnControlsChanged
+      - m_Target: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
+        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41263,35 +41262,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &191667072688475384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069206293709486742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 910d53bf56343104d8841f83d3b0e835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlayerInput: {fileID: 7697747633833973207}
-  controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
-  ControlsChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: ce0efc694b0042849975086f49d4f610, type: 2}
-        m_TargetAssemblyTypeName: Events._Arch.GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8979900638528978415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41417,7 +41387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'X - Heal
+  m_text: '{RealityShift} - Reality Shift
 
 
 '
@@ -46554,7 +46524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Z - Slash
+  m_text: '{Swing} - Slash
 
 '
   m_isRightToLeft: 0
@@ -51876,6 +51846,7 @@ GameObject:
   - component: {fileID: 7158258526899989979}
   - component: {fileID: 2849533095766499064}
   - component: {fileID: 1629669531993419507}
+  - component: {fileID: 1590176532051443849}
   - component: {fileID: 7517684629864872955}
   - component: {fileID: 5988330557899355980}
   - component: {fileID: 8960616431485743352}
@@ -52003,6 +51974,26 @@ MonoBehaviour:
   displayTime: 5
   m_PlayerInput: {fileID: 7697747633833973207}
   controlPrompts: {fileID: 11400000, guid: 0381023d675d11942a3d289d7cb3646e, type: 2}
+--- !u!114 &1590176532051443849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669438076522541016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d495288d374c44ab0e77742f7838ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsNeedingReplacement:
+  - {fileID: 2177080482035793091}
+  - {fileID: 1214291388482317458}
+  - {fileID: 7851868927020025900}
+  - {fileID: 2760108872057345523}
+  - {fileID: 7978440682593133297}
+  - {fileID: 2349548044305505843}
+  - {fileID: 7737625329914370063}
 --- !u!114 &7517684629864872955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52187,8 +52178,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629669531993419507}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.PlayerTutorial, Assembly-CSharp
+      - m_Target: {fileID: 1590176532051443849}
+        m_TargetAssemblyTypeName: ControlsTextReplacement, Assembly-CSharp
         m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
