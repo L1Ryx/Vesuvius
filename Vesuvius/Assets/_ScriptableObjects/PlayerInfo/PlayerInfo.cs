@@ -36,6 +36,7 @@ namespace _ScriptableObjects.PlayerInfo
         public bool hasCompletedDemo = false;
         [SerializeField] private int maximumHealth = 5;
         [SerializeField] private int currentHealth = 5;
+        [SerializeField] private int gemFragments = 0;
         [SerializeField] private int totalCurrency = 0;
         [SerializeField] [Range(0, 100)] private int totemPower = 0;
         [SerializeField] private int abilityCost = 30; // Required totems to use the ability
@@ -62,6 +63,7 @@ namespace _ScriptableObjects.PlayerInfo
         // Getters
         public int GetMaximumHealth() => maximumHealth;
         public int GetCurrentHealth() => currentHealth;
+        public int GetGemFragments() => gemFragments;
         public int GetTotalCurrency() => totalCurrency;
         public int GetTotemPower() => totemPower;
         public string GetSceneToLoad() => sceneToLoad;
@@ -169,9 +171,22 @@ namespace _ScriptableObjects.PlayerInfo
             currencyChanged.Invoke();
         }
 
-        public bool DecrementHealth() {
+        public void AddGemFragment()
+        {
+            gemFragments += 1;
+            if (gemFragments == 4)
+            {
+                maximumHealth += 1;
+                currentHealth += 1;
+                gemFragments = 0;
+            }
+        }
+
+        public bool DecrementHealth()
+        {
             currentHealth -= 1;
-            if (currentHealth <= 0) {
+            if (currentHealth <= 0)
+            {
                 Debug.Log("Player Death");
                 return true; // Indicates the player is dead
             }
@@ -207,6 +222,13 @@ namespace _ScriptableObjects.PlayerInfo
         public float GetLastDamageTime()
         {
             return lastDamageTime;
+        }
+
+        //reset all stats back to base starting value for new games
+        //TODO: finish this
+        public void ResetStats()
+        {
+            gemFragments = 0;
         }
 
 

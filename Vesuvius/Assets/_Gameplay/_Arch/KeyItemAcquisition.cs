@@ -13,9 +13,9 @@ public class KeyItemAcquisition : MonoBehaviour
     public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
     public event OnMenuClosed MenuClosed;
 
-    private GameObject player;
-    private PlayerController playerController; // Dynamically fetched PlayerController
-    private GameObject menuInstance;
+    protected GameObject player;
+    protected PlayerController playerController; // Dynamically fetched PlayerController
+    protected GameObject menuInstance;
 
     public UnityEvent menuClosed;
 
@@ -24,19 +24,14 @@ public class KeyItemAcquisition : MonoBehaviour
 
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
-        PlayerControlManager.Instance.controls.Player.RealityShift.performed += CloseMenu;
-
-        // Disable the Interact action
-
+        PlayerControlManager.Instance.controls.Player.Interact.performed += CloseMenu;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
-        PlayerControlManager.Instance.controls.Player.RealityShift.performed -= CloseMenu;
-
-
+        PlayerControlManager.Instance.controls.Player.Interact.performed -= CloseMenu;
     }
 
     private void Start()
@@ -70,18 +65,14 @@ public class KeyItemAcquisition : MonoBehaviour
 
         unsavedPlayerInfo.isInMenuMode = true;
 
-        // Freeze player movement
-        playerController.SetFreezeMode(true);
-        PlayerControlManager.Instance.controls.Player.Interact.Disable();
-        PlayerControlManager.Instance.controls.Player.Swing.Disable();
-        PlayerControlManager.Instance.controls.Player.Heal.Disable();
+        DisableControls();
 
         Debug.Log("Menu opened and player frozen.");
     }
 
-    private void CloseMenu(InputAction.CallbackContext context)
+    protected void CloseMenu(InputAction.CallbackContext context)
     {
-        if(unsavedPlayerInfo.isInMenuMode == true)
+        if (unsavedPlayerInfo.isInMenuMode == true)
         {
             unsavedPlayerInfo.isInMenuMode = false;
 
@@ -92,15 +83,31 @@ public class KeyItemAcquisition : MonoBehaviour
             }
 
             // Unfreeze player movement
-            playerController.SetFreezeMode(false);
-            PlayerControlManager.Instance.controls.Player.Interact.Enable();
-            PlayerControlManager.Instance.controls.Player.Swing.Enable();
-            PlayerControlManager.Instance.controls.Player.Heal.Enable();
+            EnableControls();
             Destroy(menuInstance);
             menuClosed.Invoke();
 
             Debug.Log("Menu closed and player unfrozen.");
         }
+    }
+
+    //virtual methods incase inheritors want to change which controls are enabled/disabled
+    protected virtual void DisableControls()
+    {
+        // Freeze player movement
+        playerController.SetFreezeMode(true);
+        PlayerControlManager.Instance.controls.Player.RealityShift.Disable();
+        PlayerControlManager.Instance.controls.Player.Swing.Disable();
+        PlayerControlManager.Instance.controls.Player.Heal.Disable();
+    }
+
+    protected virtual void EnableControls()
+    {
+        // Unfreeze player movement
+        playerController.SetFreezeMode(false);
+        PlayerControlManager.Instance.controls.Player.RealityShift.Enable();
+        PlayerControlManager.Instance.controls.Player.Swing.Enable();
+        PlayerControlManager.Instance.controls.Player.Heal.Enable();
     }
 
 }

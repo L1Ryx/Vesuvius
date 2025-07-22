@@ -74,6 +74,7 @@ namespace _Gameplay._Arch
             playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
             playerInfo.SetTotalCurrency(0);
             playerInfo.SetTotemPower(50);
+            playerInfo.ResetStats();
             playerInfo.SetCheckpoint(startingCradle.GetComponent<EmptyCradle>().checkpointScene, 
                 startingCradle.GetComponent<EmptyCradle>().checkpointLocation);
 
