@@ -1,25 +1,25 @@
 {
     "maps": [
         {
-            "fileName": "level2.tmx",
-            "height": 512,
-            "width": 512,
-            "x": -336,
-            "y": -304
-        },
-        {
             "fileName": "level.tmx",
             "height": 320,
             "width": 480,
-            "x": -992,
-            "y": -416
+            "x": -640,
+            "y": 192
         },
         {
-            "fileName": "untitled.tmx",
-            "height": 256,
-            "width": 512,
-            "x": -96,
-            "y": -304
+            "fileName": "01-01.tmx",
+            "height": 512,
+            "width": 768,
+            "x": -1440,
+            "y": -240
+        },
+        {
+            "fileName": "01-02.tmx",
+            "height": 16,
+            "width": 16,
+            "x": -528,
+            "y": -128
         }
     ],
     "onlyShowAdjacentMaps": false,

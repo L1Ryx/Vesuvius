@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0242C2C2-EB78-8FA5-4DDE-53507760CAAA}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="3216246379" Name="Space_Dreaming" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3004847309" Name="AMB_Main"/>
+				<Bus Id="3031508118" Name="MUS_Main"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<AuxBusses>
+				<AuxBus Id="3329309366" Name="AMB_Reverb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="3216246379"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
+			<GameParameters>
+				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
+				<GameParameter Id="2163227897" Name="Windiness"/>
+				<GameParameter Id="2924436501" Name="Creakiness"/>
+				<GameParameter Id="3600736381" Name="Distance_X"/>
+				<GameParameter Id="4100794546" Name="GauntletDanger"/>
+				<GameParameter Id="4168635916" Name="Openness"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="3846126883" Name="Dimension">
+					<Switches>
+						<Switch Id="344481046" Name="Ice"/>
+						<Switch Id="491961918" Name="Forest"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1675065207" Type="User" Language="SFX" Hash="{6CC43CDB-D3B4-67B4-F6ED-D50A332D9502}">
+			<ShortName>DefaultSoundbank</ShortName>
+			<Path>DefaultSoundbank.bnk</Path>
+			<Media>
+				<File Id="7316285" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Abileh.wav</ShortName>
+					<CachePath>SFX/Abileh_EFE7469B.wem</CachePath>
+				</File>
+				<File Id="16942921" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Main Beam.wav</ShortName>
+					<CachePath>SFX/Main Beam_818F3B66.wem</CachePath>
+				</File>
+				<File Id="30527012" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BohrmanTunnels_144_4-4_v1.wav</ShortName>
+					<CachePath>SFX/BohrmanTunnels_144_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="52759494" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Nulla.wav</ShortName>
+					<CachePath>SFX/Nulla_818F3B66.wem</CachePath>
+				</File>
+				<File Id="124681114" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_CaveDrone_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_CaveDrone_R1_V1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="129695355" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatAlert_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatAlert_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="136599033" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GateOpen_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GateOpen_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="137666394" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Healed_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Healed_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="141894519" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatDeath_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatDeath_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="147752610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Slash_R3_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Slash_R3_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="149742077" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Jump_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Jump_R1_V1_C1436749.wem</CachePath>
+				</File>
+				<File Id="151524886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatAttack_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatAttack_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="151808675" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hah.wav</ShortName>
+					<CachePath>SFX/Hah_2ABB5F92.wem</CachePath>
+				</File>
+				<File Id="155356646" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Jump_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Jump_R2_V1_C1436749.wem</CachePath>
+				</File>
+				<File Id="174374075" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_ClinkParticles_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_ClinkParticles_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="196280608" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Keeyo.wav</ShortName>
+					<CachePath>SFX/Keeyo_818F3B66.wem</CachePath>
+				</File>
+				<File Id="203355573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R6_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R6_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="246495489" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_UINavigate_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_UINavigate_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="255775542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_BulbOpen_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_BulbOpen_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="275761364" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Heal_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Heal_R1_V1_B5E58104.wem</CachePath>
+				</File>
+				<File Id="297523843" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Slash_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Slash_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="317449928" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_BigBlueTune_Mono_NT_V1.wav</ShortName>
+					<CachePath>SFX/MUS_BigBlueTune_Mono_NT_V1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="318142682" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatAttack_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatAttack_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="354329399" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Slash_R4_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Slash_R4_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="384139587" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="431433393" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Beneh.wav</ShortName>
+					<CachePath>SFX/Beneh_818F3B66.wem</CachePath>
+				</File>
+				<File Id="455007172" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBreak4.wav</ShortName>
+					<CachePath>SFX/IceBreak4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="462711438" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_UISelect_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_UISelect_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="467185361" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerAttackHit_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerAttackHit_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="477952436" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerDamagedImpact_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerDamagedImpact_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="504901714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_BulbOpen_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_BulbOpen_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="523849822" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R5_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R5_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="552693655" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel3_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel3_120_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="561669147" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_ClinkParticles_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_ClinkParticles_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="569175710" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Grass Crunch.wav</ShortName>
+					<CachePath>SFX/Grass Crunch_818F3B66.wem</CachePath>
+				</File>
+				<File Id="597216465" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerAttackHit_R2_V2.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerAttackHit_R2_V2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="599246346" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R3_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R3_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="622349472" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SwitchOpen_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_SwitchOpen_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="622842095" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_ShovelSequence_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_ShovelSequence_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="634247668" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBreak2.wav</ShortName>
+					<CachePath>SFX/IceBreak2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="646559283" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_R4_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_R4_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="681262107" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_CaveColdWinds_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_CaveColdWinds_R1_V1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="709204605" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_SoftSnowAmbience_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_SoftSnowAmbience_R1_V1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="713841033" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="731567955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBreak3.wav</ShortName>
+					<CachePath>SFX/IceBreak3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="755905113" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatDeath_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatDeath_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="769271022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="777663843" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Boss_124_12-8_v1.wav</ShortName>
+					<CachePath>SFX/Boss_124_12-8_v1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="779518494" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerAttackKill_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerAttackKill_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="804371342" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EyeAttack.wav</ShortName>
+					<CachePath>SFX/EyeAttack_818F3B66.wem</CachePath>
+				</File>
+				<File Id="806048397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBreak1.wav</ShortName>
+					<CachePath>SFX/IceBreak1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="806091628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_SurrealForest_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_SurrealForest_R1_V1_21ECBC3B.wem</CachePath>
+				</File>
+				<File Id="812590943" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_R5_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_R5_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="832787432" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_CaveAmbience_R1_V1.wav</ShortName>
+					<CachePath>SFX/AMB_CaveAmbience_R1_V1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="874782692" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R4_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R4_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="876174030" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel2_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel2_120_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="906310925" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatAttack_R3_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatAttack_R3_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="915775243" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GauntletLevel1_120_4-4_v1.wav</ShortName>
+					<CachePath>SFX/GauntletLevel1_120_4-4_v1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="921526463" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerDamaged_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerDamaged_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="937586397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_PlayerAttackKill_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_PlayerAttackKill_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1006831536" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Slash_R2_V1.wav</ShortName>
+					<CachePath>SFX/SFX_Slash_R2_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1044634751" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_GoatAlert_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_GoatAlert_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1047523737" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_WoodCreak_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_WoodCreak_R1_V1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1047663931" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_MidgeWalk_R1_V1.wav</ShortName>
+					<CachePath>SFX/SFX_MidgeWalk_R1_V1_72F1482B.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1763592331" Name="New_Meter" LibName="Wwise Meter" LibId="8454147"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="834058527" Name="Play_Abileh" DurationType="OneShot" DurationMin="1.0038698" DurationMax="1.0038698">
+					<MediaRefs>
+						<MediaRef Id="7316285"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1971792598" Name="Play_Beneh" DurationType="OneShot" DurationMin="1.9657084" DurationMax="1.9657084">
+					<MediaRefs>
+						<MediaRef Id="431433393"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2958765961" Name="Play_BigBlueSolo" MaxAttenuation="100" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="317449928"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1763592331"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2726383372" Name="Play_BohrmanTunnels" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="30527012"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4082933267" Name="Play_BulbOpen" DurationType="OneShot" DurationMin="0.3782665" DurationMax="0.7445887">
+					<MediaRefs>
+						<MediaRef Id="255775542"/>
+						<MediaRef Id="504901714"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3516021586" Name="Play_CaveAmbienceBlend" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="124681114"/>
+						<MediaRef Id="681262107"/>
+						<MediaRef Id="709204605"/>
+						<MediaRef Id="832787432"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2562080238" Name="Play_ClinkParticles" DurationType="OneShot" DurationMin="1.0073187" DurationMax="1.3103459">
+					<MediaRefs>
+						<MediaRef Id="174374075"/>
+						<MediaRef Id="561669147"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2729959470" Name="Play_Cultist" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="16942921"/>
+						<MediaRef Id="777663843"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3220351423" Name="Play_CultistBeam" DurationType="OneShot" DurationMin="2.1745486" DurationMax="2.4408486">
+					<MediaRefs>
+						<MediaRef Id="16942921"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1024905534" Name="Play_EyeShoot" DurationType="OneShot" DurationMin="0.7141751" DurationMax="1.009996">
+					<MediaRefs>
+						<MediaRef Id="804371342"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1602358412" Name="Play_Footstep" DurationType="OneShot" DurationMin="0.42080733" DurationMax="0.5978665">
+					<MediaRefs>
+						<MediaRef Id="646559283"/>
+						<MediaRef Id="713841033"/>
+						<MediaRef Id="769271022"/>
+						<MediaRef Id="812590943"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1648494590" Name="Play_ForestAmbienceBlend" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="806091628"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3788303255" Name="Play_GateOpen" DurationType="OneShot" DurationMin="1.3495047" DurationMax="1.514768">
+					<MediaRefs>
+						<MediaRef Id="136599033"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="747911848" Name="Play_GateOpenSequence" DurationType="OneShot" DurationMin="1.3495047" DurationMax="1.514768">
+					<MediaRefs>
+						<MediaRef Id="136599033"/>
+						<MediaRef Id="622349472"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1691293180" Name="Play_Gauntlet" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="552693655"/>
+						<MediaRef Id="876174030"/>
+						<MediaRef Id="915775243"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3094886953" Name="Play_Hah" DurationType="OneShot" DurationMin="0.44265264" DurationMax="0.44265264">
+					<MediaRefs>
+						<MediaRef Id="151808675"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1288535984" Name="Play_IceBreak" DurationType="OneShot" DurationMin="0.295375" DurationMax="3.8448958">
+					<MediaRefs>
+						<MediaRef Id="455007172"/>
+						<MediaRef Id="634247668"/>
+						<MediaRef Id="731567955"/>
+						<MediaRef Id="806048397"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3689126666" Name="Play_Jump" DurationType="OneShot" DurationMin="0.74227697" DurationMax="1.1994002">
+					<MediaRefs>
+						<MediaRef Id="149742077"/>
+						<MediaRef Id="155356646"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2584420399" Name="Play_Keeyo" DurationType="OneShot" DurationMin="0.48075" DurationMax="0.48075">
+					<MediaRefs>
+						<MediaRef Id="196280608"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2323405115" Name="Play_Landing" DurationType="OneShot" DurationMin="0.45275545" DurationMax="0.68786645">
+					<MediaRefs>
+						<MediaRef Id="713841033"/>
+						<MediaRef Id="769271022"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3419200535" Name="Play_MidgeWalk" MaxAttenuation="100" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="1047663931"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3822837830" Name="Play_Nulla" DurationType="OneShot" DurationMin="1.3185834" DurationMax="1.3185834">
+					<MediaRefs>
+						<MediaRef Id="52759494"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="556581638" Name="Play_PlayerAttackAll" DurationType="OneShot" DurationMin="1.0035882" DurationMax="1.3688542">
+					<MediaRefs>
+						<MediaRef Id="147752610"/>
+						<MediaRef Id="297523843"/>
+						<MediaRef Id="354329399"/>
+						<MediaRef Id="467185361"/>
+						<MediaRef Id="597216465"/>
+						<MediaRef Id="779518494"/>
+						<MediaRef Id="937586397"/>
+						<MediaRef Id="1006831536"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="574786360" Name="Play_PlayerAttackHit" DurationType="OneShot" DurationMin="0.8082416" DurationMax="1.3351698">
+					<MediaRefs>
+						<MediaRef Id="467185361"/>
+						<MediaRef Id="597216465"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3480645053" Name="Play_PlayerAttackKill" DurationType="OneShot" DurationMin="1.0035882" DurationMax="1.3688542">
+					<MediaRefs>
+						<MediaRef Id="779518494"/>
+						<MediaRef Id="937586397"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3583363594" Name="Play_PlayerDamaged" DurationType="OneShot" DurationMin="3.144297" DurationMax="3.961566">
+					<MediaRefs>
+						<MediaRef Id="477952436"/>
+						<MediaRef Id="921526463"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3156981644" Name="Play_PlayerHealed" DurationType="OneShot" DurationMin="6.326372" DurationMax="8.444693">
+					<MediaRefs>
+						<MediaRef Id="137666394"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3737722769" Name="Play_PlayerHealing" DurationType="OneShot" DurationMin="1.6205051" DurationMax="1.6205051">
+					<MediaRefs>
+						<MediaRef Id="275761364"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2321956856" Name="Play_RandomCaveSounds" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="203355573"/>
+						<MediaRef Id="384139587"/>
+						<MediaRef Id="523849822"/>
+						<MediaRef Id="599246346"/>
+						<MediaRef Id="874782692"/>
+						<MediaRef Id="1047523737"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2957100900" Name="Play_ShovelSequence" DurationType="OneShot" DurationMin="4.63925" DurationMax="4.63925">
+					<MediaRefs>
+						<MediaRef Id="622842095"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="989180208" Name="Play_Swing" DurationType="OneShot" DurationMin="0.13393325" DurationMax="0.32421398">
+					<MediaRefs>
+						<MediaRef Id="147752610"/>
+						<MediaRef Id="297523843"/>
+						<MediaRef Id="354329399"/>
+						<MediaRef Id="1006831536"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2552955799" Name="Play_SwingAndPlayerAttackHit" DurationType="OneShot" DurationMin="0.8082416" DurationMax="1.3351698">
+					<MediaRefs>
+						<MediaRef Id="147752610"/>
+						<MediaRef Id="297523843"/>
+						<MediaRef Id="354329399"/>
+						<MediaRef Id="467185361"/>
+						<MediaRef Id="597216465"/>
+						<MediaRef Id="1006831536"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3400760074" Name="Play_SwitchOpen" DurationType="OneShot" DurationMin="0.2876718" DurationMax="0.34210137">
+					<MediaRefs>
+						<MediaRef Id="622349472"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3307826465" Name="Play_UINavigate" DurationType="OneShot" DurationMin="0.4508765" DurationMax="0.50609183">
+					<MediaRefs>
+						<MediaRef Id="246495489"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3703192648" Name="Play_UISelect" DurationType="OneShot" DurationMin="0.50495625" DurationMax="0.5506586">
+					<MediaRefs>
+						<MediaRef Id="462711438"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="278044167" Name="Play_VineBreak" DurationType="OneShot" DurationMin="0.48213094" DurationMax="0.6435676">
+					<MediaRefs>
+						<MediaRef Id="569175710"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2287112540" Name="Play_WatcherAlert" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.41294497" DurationMax="0.7283809">
+					<MediaRefs>
+						<MediaRef Id="129695355"/>
+						<MediaRef Id="1044634751"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="3776590726" Name="Play_WatcherAttack" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.90454614" DurationMax="1.1477518">
+					<MediaRefs>
+						<MediaRef Id="151524886"/>
+						<MediaRef Id="318142682"/>
+						<MediaRef Id="906310925"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2575618364" Name="Play_WatcherDeath" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.8848821" DurationMax="1.0252514">
+					<MediaRefs>
+						<MediaRef Id="141894519"/>
+						<MediaRef Id="755905113"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2178958140" Name="Play_WatcherFootstep" MaxAttenuation="100" DurationType="OneShot" DurationMin="0.58827597" DurationMax="0.8357994">
+					<MediaRefs>
+						<MediaRef Id="646559283"/>
+						<MediaRef Id="713841033"/>
+						<MediaRef Id="769271022"/>
+						<MediaRef Id="812590943"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="3329309366" Name="AMB_Reverb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1210756211" Name="Stop_BigBlueSolo" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3701069102" Name="Stop_BohrmanTunnels" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3411346464" Name="Stop_CaveAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3375565856" Name="Stop_Cultist" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3927559978" Name="Stop_Footstep" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1262204860" Name="Stop_ForestAmbienceBlend" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3312265946" Name="Stop_Gauntlet" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3286627841" Name="Stop_Landing" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3006809981" Name="Stop_MidgeWalk" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="721707010" Name="Stop_RandomCaveSounds" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="1692948755" Name="Dimension_Blend"/>
+				<GameParameter Id="2163227897" Name="Windiness"/>
+				<GameParameter Id="2924436501" Name="Creakiness"/>
+				<GameParameter Id="3600736381" Name="Distance_X"/>
+				<GameParameter Id="4100794546" Name="GauntletDanger"/>
+				<GameParameter Id="4168635916" Name="Openness"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{7CDDE61A-38BA-EDAB-1B41-4402998C7587}</FileHash>
+</SoundBanksInfo>
