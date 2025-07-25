@@ -3,26 +3,66 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilesets/01-02.tmx",
+    "activeFile": "Tilesets/01-UpperOutpost.tmx",
     "expandedProjectPaths": [
         ".",
         "Tilesets"
     ],
     "fileStates": {
         "Tilesets/01-01.tmx": {
-            "scale": 0.5,
+            "scale": 0.75,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 367,
-                "y": 251
+                "x": 2012,
+                "y": -160.66666666666663
             }
         },
         "Tilesets/01-02.tmx": {
             "scale": 0.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": -255,
-                "y": 195
+                "x": 1478,
+                "y": 37
+            }
+        },
+        "Tilesets/01-02U.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 813,
+                "y": 138.5
+            }
+        },
+        "Tilesets/01-03.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -42.666666666666686,
+                "y": -141.66666666666669
+            }
+        },
+        "Tilesets/01-10.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -426.66666666666663,
+                "y": -159.33333333333337
+            }
+        },
+        "Tilesets/01-11.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 508,
+                "y": 53
+            }
+        },
+        "Tilesets/01-UpperOutpost.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -654.5454545454545,
+                "y": 322.72727272727275
             }
         },
         "Tilesets/Snow-Tunnel-Tileset 1.tsx": {
@@ -37,12 +77,16 @@
             "scaleInDock": 1,
             "scaleInEditor": 2
         },
+        "Tilesets/ice bridge.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
         "Tilesets/level.tmx": {
-            "scale": 0.33,
+            "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 101.51515151515162,
-                "y": -462.121212121212
+                "x": 230,
+                "y": -185
             }
         },
         "Tilesets/level1_alt.tmx": {
@@ -86,7 +130,7 @@
         }
     },
     "last.externalTilesetPath": "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/Art/Tilesets",
-    "last.imagePath": "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/_ToBeMerged",
+    "last.imagePath": "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/Art/Tilesets",
     "last.worldFilePath": "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/Art/Tilesets",
     "loadedWorlds": [
         "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/Art/Tilesets/Vesuvius.world"
@@ -96,23 +140,32 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
-        "Tilesets/level.tmx",
-        "Tilesets/01-01.tmx",
-        "Tilesets/rails1plans-Sheet 3.tsx",
-        "Tilesets/01-02.tmx"
-    ],
-    "project": "Vesuvius.tiled-project",
-    "recentFiles": [
-        "Tilesets/level.tmx",
+        "Tilesets/01-10.tmx",
         "Tilesets/01-01.tmx",
         "Tilesets/rails1plans-Sheet 3.tsx",
         "Tilesets/01-02.tmx",
         "Tilesets/Snow-Tunnel-Tileset.tsx",
         "Tilesets/Snow-Tunnel-Tileset-Alt.tsx",
-        "Tilesets/untitled.tmx",
-        "Tilesets/level1_alt.tmx",
-        "Tilesets/level2.tmx",
-        "Tilesets/Snow-Tunnel-Tileset 1.tsx"
+        "Tilesets/ice bridge.tsx",
+        "Tilesets/01-11.tmx",
+        "Tilesets/01-02U.tmx",
+        "Tilesets/01-UpperOutpost.tmx",
+        "Tilesets/01-03.tmx"
+    ],
+    "project": "Vesuvius.tiled-project",
+    "recentFiles": [
+        "Tilesets/01-10.tmx",
+        "Tilesets/01-01.tmx",
+        "Tilesets/rails1plans-Sheet 3.tsx",
+        "Tilesets/01-02.tmx",
+        "Tilesets/Snow-Tunnel-Tileset.tsx",
+        "Tilesets/Snow-Tunnel-Tileset-Alt.tsx",
+        "Tilesets/ice bridge.tsx",
+        "Tilesets/01-11.tmx",
+        "Tilesets/01-02U.tmx",
+        "Tilesets/01-03.tmx",
+        "Tilesets/01-UpperOutpost.tmx",
+        "Tilesets/level.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",

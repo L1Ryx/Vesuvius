@@ -31464,7 +31464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6663615954253619938, guid: 1443ebeccb08146108e06524d09da7ca, type: 3}
       propertyPath: m_text
-      value: Requires Double Jump (long pressed)
+      value: height 4+ 5 Requires Double Jump (long pressed)
       objectReference: {fileID: 0}
     - target: {fileID: 7686239346644838988, guid: 1443ebeccb08146108e06524d09da7ca, type: 3}
       propertyPath: m_Name

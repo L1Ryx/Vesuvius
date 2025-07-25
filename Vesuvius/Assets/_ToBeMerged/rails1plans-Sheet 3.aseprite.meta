@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: rails1plans-Sheet 3
     originalName: 
-    pivot: {x: 0.47252747, y: 0}
+    pivot: {x: 0.4805195, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,7 +132,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 91
+      width: 154
       height: 16
     spriteID: 81f0de1c02f2e7b4fa2731ec8079f616
     spriteBone: []
@@ -156,9 +156,9 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 5
+        x: 6
         y: 0
-        width: 91
+        width: 154
         height: 16
       spriteId: 81f0de1c02f2e7b4fa2731ec8079f616
     linkedCells: []
@@ -203,4 +203,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 16}
+  canvasSize: {x: 160, y: 16}

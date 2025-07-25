@@ -1,17 +1,10 @@
 {
     "maps": [
         {
-            "fileName": "level.tmx",
-            "height": 320,
-            "width": 480,
-            "x": -640,
-            "y": 192
-        },
-        {
             "fileName": "01-01.tmx",
-            "height": 512,
+            "height": 768,
             "width": 768,
-            "x": -1440,
+            "x": -1456,
             "y": -240
         },
         {
@@ -20,6 +13,41 @@
             "width": 16,
             "x": -528,
             "y": -128
+        },
+        {
+            "fileName": "01-11.tmx",
+            "height": 512,
+            "width": 512,
+            "x": -752,
+            "y": -336
+        },
+        {
+            "fileName": "01-10.tmx",
+            "height": 320,
+            "width": 480,
+            "x": -64,
+            "y": 128
+        },
+        {
+            "fileName": "01-02U.tmx",
+            "height": 16,
+            "width": 16,
+            "x": -112,
+            "y": -512
+        },
+        {
+            "fileName": "01-UpperOutpost.tmx",
+            "height": 1024,
+            "width": 1024,
+            "x": 544,
+            "y": -464
+        },
+        {
+            "fileName": "01-03.tmx",
+            "height": 768,
+            "width": 1024,
+            "x": 928,
+            "y": -112
         }
     ],
     "onlyShowAdjacentMaps": false,
