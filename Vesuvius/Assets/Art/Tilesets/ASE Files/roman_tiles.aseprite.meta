@@ -124,7 +124,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: roman_tiles
     originalName: 
-    pivot: {x: 0.71428573, y: -1}
+    pivot: {x: 0.5555556, y: -1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,7 +132,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 224
+      width: 288
       height: 160
     spriteID: 3a146c3af63e827478e34eec98918f61
     spriteBone: []
@@ -158,7 +158,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 160
-        width: 224
+        width: 288
         height: 160
       spriteId: 3a146c3af63e827478e34eec98918f61
     linkedCells: []

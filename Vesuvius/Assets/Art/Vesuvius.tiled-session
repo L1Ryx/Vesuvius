@@ -86,83 +86,91 @@
             }
         },
         "Tilesets/Testmaps/01-02.tmx": {
-            "scale": 3,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 3270,
-                "y": 225.99999999999997
+                "x": 1525.3333333333333,
+                "y": 3.3333333333333144
             }
         },
         "Tilesets/Testmaps/01-02U.tmx": {
-            "scale": 0.33,
+            "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 3584.848484848485,
-                "y": 1674.242424242424
+                "x": 1274,
+                "y": 417.5
             }
         },
         "Tilesets/Testmaps/01-03.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 0.33,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1244,
-                "y": 19
+                "x": 730.3030303030303,
+                "y": 150
             }
         },
         "Tilesets/Testmaps/01-04.tmx": {
-            "scale": 0.75,
+            "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 850.6666666666666,
-                "y": -182
+                "x": -208,
+                "y": 138
             }
         },
         "Tilesets/Testmaps/01-04L.tmx": {
-            "scale": 0.5,
+            "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 506,
-                "y": -133
+                "x": -1296,
+                "y": -78
             }
         },
         "Tilesets/Testmaps/01-04_original.tmx": {
-            "scale": 2,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 702.5,
-                "y": -136.25
-            }
-        },
-        "Tilesets/Testmaps/01-05.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 209.090909090909,
-                "y": 153.030303030303
-            }
-        },
-        "Tilesets/Testmaps/01-06.tmx": {
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -3090,
-                "y": -49.5
+                "x": 583,
+                "y": -77.5
+            }
+        },
+        "Tilesets/Testmaps/01-05.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 120,
+                "y": 465
+            }
+        },
+        "Tilesets/Testmaps/01-06.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -5964,
+                "y": 346
+            }
+        },
+        "Tilesets/Testmaps/01-06L.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -4362,
+                "y": -719
             }
         },
         "Tilesets/Testmaps/01-06test.tmx": {
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -990.9090909090908,
-                "y": 4.545454545454504
+                "x": -709.090909090909,
+                "y": -7.5757575757576205
             }
         },
         "Tilesets/Testmaps/01-08.tmx": {
-            "scale": 0.33,
-            "selectedLayer": -1,
+            "scale": 0.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 3681.818181818182,
-                "y": -489.3939393939395
+                "x": -308,
+                "y": 363
             }
         },
         "Tilesets/Testmaps/01-10.tmx": {
@@ -174,19 +182,19 @@
             }
         },
         "Tilesets/Testmaps/01-11.tmx": {
-            "scale": 0.5,
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1368,
-                "y": -112
+                "x": 4165,
+                "y": 297.5
             }
         },
         "Tilesets/Testmaps/01-UpperOutpost.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
+            "scale": 0.125,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 2378.787878787879,
-                "y": 1719.6969696969697
+                "x": 2936,
+                "y": 332
             }
         },
         "Tilesets/Testmaps/Snow-Tunnel-Tileset.tsx": {
