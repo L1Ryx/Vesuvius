@@ -14,19 +14,27 @@
             "scaleInDock": 1
         },
         "Tiled/Maps/01-01.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
+            "scale": 0.4439,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 713.6363636363636,
-                "y": -251.5151515151515
+                "x": 390.85379589997757,
+                "y": 177.96801081324622
+            }
+        },
+        "Tiled/Maps/01-01_alt.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 468.18181818181813,
+                "y": 121.21212121212113
             }
         },
         "Tiled/Maps/01-02.tmx": {
             "scale": 0.6795,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 729.2126563649742,
-                "y": 359.0875643855776
+                "x": -272.9948491537896,
+                "y": 136.86534216335536
             }
         },
         "Tiled/Maps/01-02U.tmx": {
@@ -134,10 +142,13 @@
             }
         },
         "Tiled/Rules/AutoTileRuleGrass.tmx": {
+            "expandedGroupLayers": [
+                6
+            ],
             "scale": 1.4676757812499999,
             "selectedLayer": 11,
             "viewCenter": {
-                "x": 272.8804311664116,
+                "x": 223.14192561048642,
                 "y": 104.9278062412669
             }
         },
@@ -212,6 +223,10 @@
         },
         "Tiled/Snow-Tunnel-Tileset.tsx": {
             "scaleInDock": 1
+        },
+        "Tiled/Tilesets/01_AltReality_Forest.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "Tiled/Tilesets/Snow-Tunnel-Tileset-Alt.tsx": {
             "scaleInDock": 1,
@@ -518,6 +533,9 @@
     ],
     "project": "Vesuvius.tiled-project",
     "recentFiles": [
+        "Tiled/Maps/01-01_alt.tmx",
+        "Tiled/Maps/01-01.tmx",
+        "Tiled/Tilesets/01_AltReality_Forest.tsx",
         "Tiled/Rules/AutoTileRules.tmx",
         "Tiled/Maps/01-03.tmx",
         "Tiled/Maps/01-04_original.tmx",
@@ -526,10 +544,7 @@
         "Tiled/Maps/01-05.tmx",
         "Tiled/Maps/01-06.tmx",
         "Tiled/Maps/01-06L.tmx",
-        "Tiled/Maps/01-06test.tmx",
-        "Tiled/Maps/01-08.tmx",
-        "Tiled/Maps/01-10.tmx",
-        "Tiled/Maps/01-11.tmx"
+        "Tiled/Maps/01-06test.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
