@@ -1,0 +1,3 @@
+../Rules/AutoTileRuleIcicles.tmx
+../Rules/AutoTileRuleGrass.tmx
+../Rules/AutoTileRuleRocks.tmx

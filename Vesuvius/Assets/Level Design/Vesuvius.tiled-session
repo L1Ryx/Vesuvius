@@ -10,36 +10,39 @@
         "Tilesets"
     ],
     "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
         "Tiled/Maps/01-01.tmx": {
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 904.5454545454544,
-                "y": -287.878787878788
+                "x": 713.6363636363636,
+                "y": -251.5151515151515
             }
         },
         "Tiled/Maps/01-02.tmx": {
-            "scale": 0.48235619469026547,
-            "selectedLayer": 0,
+            "scale": 0.6795,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 904.9329205366356,
-                "y": 626.0933379199632
+                "x": 729.2126563649742,
+                "y": 359.0875643855776
             }
         },
         "Tiled/Maps/01-02U.tmx": {
             "scale": 0.5677734375,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 768.7925696594427,
-                "y": 523.095975232198
+                "x": 657.8328173374613,
+                "y": 544.2311661506708
             }
         },
         "Tiled/Maps/01-03.tmx": {
             "scale": 0.5158203124999999,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 384.8239303294207,
-                "y": 422.62779250283995
+                "x": 373.1919727375995,
+                "y": 445.8917076864824
             }
         },
         "Tiled/Maps/01-04.tmx": {
@@ -54,8 +57,8 @@
             "scale": 0.77373046875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 384.50082039631457,
-                "y": 452.35390634860534
+                "x": 303.0771172535656,
+                "y": 467.86318313770033
             }
         },
         "Tiled/Maps/01-04_original.tmx": {
@@ -70,64 +73,141 @@
             "scale": 0.681328125,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 383.8091961930971,
-                "y": 223.09368191721126
+                "x": 291.34273592477933,
+                "y": 240.70634101593862
             }
         },
         "Tiled/Maps/01-06.tmx": {
             "scale": 0.386865234375,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 383.8546005301023,
-                "y": 392.9016786570743
+                "x": 221.0071942446043,
+                "y": 423.9202322352645
             }
         },
         "Tiled/Maps/01-06L.tmx": {
             "scale": 0.3406640625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -1.4677215915605757,
-                "y": 317.0278637770899
+                "x": -186.4006421281963,
+                "y": 352.2531819745442
             }
         },
         "Tiled/Maps/01-06test.tmx": {
             "scale": 0.77373046875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 512.4523539063487,
-                "y": 452.35390634860534
+                "x": 431.0286507635996,
+                "y": 467.86318313770033
             }
         },
         "Tiled/Maps/01-08.tmx": {
             "scale": 0.681328125,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -640.6604747162023,
-                "y": 223.09368191721126
+                "x": -733.1269349845202,
+                "y": 240.70634101593862
             }
         },
         "Tiled/Maps/01-10.tmx": {
             "scale": 1.23796875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 240.31301274769658,
-                "y": 282.7211914678783
+                "x": 189.42319828347848,
+                "y": 292.4144894610627
             }
         },
         "Tiled/Maps/01-11.tmx": {
             "scale": 0.77373046875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -256.54928688628047,
-                "y": 196.45083932853714
+                "x": -337.9729900290294,
+                "y": 211.96011611763225
             }
         },
         "Tiled/Maps/01-UpperOutpost.tmx": {
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 206,
-                "y": 708
+                "x": -46,
+                "y": 756
+            }
+        },
+        "Tiled/Rules/AutoTileRuleGrass.tmx": {
+            "scale": 1.4676757812499999,
+            "selectedLayer": 11,
+            "viewCenter": {
+                "x": 272.8804311664116,
+                "y": 104.9278062412669
+            }
+        },
+        "Tiled/Rules/AutoTileRuleIcicles.tmx": {
+            "expandedGroupLayers": [
+                21,
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": 9,
+            "viewCenter": {
+                "x": 169.25,
+                "y": 75.5
+            }
+        },
+        "Tiled/Rules/AutoTileRuleRocks.tmx": {
+            "expandedGroupLayers": [
+                21,
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 273.25,
+                "y": 77.5
+            }
+        },
+        "Tiled/Rules/AutoTileRules.tmx": {
+            "expandedGroupLayers": [
+                21,
+                6
+            ],
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": 169.25,
+                "y": 75.5
+            }
+        },
+        "Tiled/Rules/AutoTileRulesGrass.tmx": {
+            "expandedGroupLayers": [
+                21,
+                6
+            ],
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 2,
+            "selectedLayer": 11,
+            "viewCenter": {
+                "x": 170.75,
+                "y": 75.5
+            }
+        },
+        "Tiled/Rules/AutoTileRulesStore.tmx": {
+            "expandedGroupLayers": [
+                21
+            ],
+            "expandedObjectLayers": [
+                6,
+                12
+            ],
+            "scale": 2,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 166.75,
+                "y": 86.5
             }
         },
         "Tiled/Snow-Tunnel-Tileset.tsx": {
@@ -438,18 +518,18 @@
     ],
     "project": "Vesuvius.tiled-project",
     "recentFiles": [
-        "Tiled/Tilesets/Snow-Tunnel-Tileset.tsx",
-        "Tiled/Tilesets/Snow-Tunnel-Tileset-Alt.tsx",
-        "Tiled/Tilesets/rails1plans-Sheet 3.tsx",
-        "Tilesets/Testmaps/01-01.tmx",
-        "Tilesets/ice bridge.tsx",
-        "Tilesets/Testmaps/01-03.tmx",
-        "Tilesets/Testmaps/01-05.tmx",
-        "Tilesets/Testmaps/01-06test.tmx",
-        "Tilesets/Testmaps/01-04L.tmx",
-        "Tilesets/Testmaps/01-08.tmx",
-        "Tilesets/Testmaps/01-06.tmx",
-        "Tilesets/Testmaps/01-11.tmx"
+        "Tiled/Rules/AutoTileRules.tmx",
+        "Tiled/Maps/01-03.tmx",
+        "Tiled/Maps/01-04_original.tmx",
+        "Tiled/Maps/01-04.tmx",
+        "Tiled/Maps/01-04L.tmx",
+        "Tiled/Maps/01-05.tmx",
+        "Tiled/Maps/01-06.tmx",
+        "Tiled/Maps/01-06L.tmx",
+        "Tiled/Maps/01-06test.tmx",
+        "Tiled/Maps/01-08.tmx",
+        "Tiled/Maps/01-10.tmx",
+        "Tiled/Maps/01-11.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
