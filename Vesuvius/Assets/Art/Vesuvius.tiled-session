@@ -3,8 +3,9 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilesets/01-UpperOutpost.tmx",
+    "activeFile": "Tilesets/Testmaps/01-02U.tmx",
     "expandedProjectPaths": [
+        "Tilesets/Testmaps",
         ".",
         "Tilesets"
     ],
@@ -81,40 +82,40 @@
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 3857.5757575757575,
-                "y": 140.90909090909088
+                "x": 5563.636363636364,
+                "y": 469.69696969696975
             }
         },
         "Tilesets/Testmaps/01-02.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 3,
+            "scale": 0.25,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1525.3333333333333,
-                "y": 3.3333333333333144
+                "x": 2740,
+                "y": -508
             }
         },
         "Tilesets/Testmaps/01-02U.tmx": {
             "scale": 1,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1274,
-                "y": 417.5
+                "x": 1750,
+                "y": 589
             }
         },
         "Tilesets/Testmaps/01-03.tmx": {
-            "scale": 0.33,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 730.3030303030303,
-                "y": 150
+                "x": 632.6666666666665,
+                "y": -115
             }
         },
         "Tilesets/Testmaps/01-04.tmx": {
-            "scale": 0.25,
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -208,
-                "y": 138
+                "x": 165,
+                "y": -85
             }
         },
         "Tilesets/Testmaps/01-04L.tmx": {
@@ -150,19 +151,19 @@
             }
         },
         "Tilesets/Testmaps/01-06L.tmx": {
-            "scale": 0.5,
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -4362,
-                "y": -719
+                "x": -1269.69696969697,
+                "y": -139.3939393939395
             }
         },
         "Tilesets/Testmaps/01-06test.tmx": {
             "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -709.090909090909,
-                "y": -7.5757575757576205
+                "x": 699.9999999999998,
+                "y": 742.4242424242423
             }
         },
         "Tilesets/Testmaps/01-08.tmx": {
@@ -241,6 +242,10 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Tilesets/roman_tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
         "Tilesets/test.tmx": {
             "scale": 1,
             "selectedLayer": 1,
@@ -270,32 +275,37 @@
     "map.tileWidth": 16,
     "mapScene.enableWorlds": true,
     "openFiles": [
-        "Tilesets/01-10.tmx",
-        "Tilesets/01-01.tmx",
-        "Tilesets/rails1plans-Sheet 3.tsx",
-        "Tilesets/01-02.tmx",
-        "Tilesets/Snow-Tunnel-Tileset.tsx",
-        "Tilesets/Snow-Tunnel-Tileset-Alt.tsx",
+        "Tilesets/Testmaps/01-01.tmx",
         "Tilesets/ice bridge.tsx",
-        "Tilesets/01-11.tmx",
-        "Tilesets/01-02U.tmx",
-        "Tilesets/01-UpperOutpost.tmx",
-        "Tilesets/01-03.tmx"
+        "Tilesets/Testmaps/01-03.tmx",
+        "Tilesets/Testmaps/01-05.tmx",
+        "Tilesets/Testmaps/01-06test.tmx",
+        "Tilesets/Testmaps/01-04L.tmx",
+        "Tilesets/Testmaps/01-08.tmx",
+        "Tilesets/Testmaps/01-06.tmx",
+        "Tilesets/Testmaps/01-11.tmx",
+        "Tilesets/Testmaps/01-02.tmx",
+        "Tilesets/roman_tiles.tsx",
+        "Tilesets/Testmaps/01-04.tmx",
+        "Tilesets/Testmaps/01-06L.tmx",
+        "Tilesets/Testmaps/01-04_original.tmx",
+        "Tilesets/Testmaps/01-UpperOutpost.tmx",
+        "Tilesets/Testmaps/01-02U.tmx"
     ],
     "project": "Vesuvius.tiled-project",
     "recentFiles": [
-        "Tilesets/Testmaps/01-04_original.tmx",
-        "Tilesets/Testmaps/01-02U.tmx",
-        "Tilesets/Testmaps/01-UpperOutpost.tmx",
-        "Tilesets/Testmaps/01-02.tmx",
-        "Tilesets/Testmaps/01-08.tmx",
-        "Tilesets/01-10.tmx",
-        "Tilesets/Testmaps/01-11.tmx",
-        "Tilesets/Testmaps/01-10.tmx",
-        "Tilesets/Testmaps/01-03.tmx",
         "Tilesets/Testmaps/01-01.tmx",
-        "Tilesets/01-03.tmx",
-        "Tilesets/01-UpperOutpost.tmx"
+        "Tilesets/ice bridge.tsx",
+        "Tilesets/Testmaps/01-03.tmx",
+        "Tilesets/Testmaps/01-05.tmx",
+        "Tilesets/Testmaps/01-06test.tmx",
+        "Tilesets/Testmaps/01-04L.tmx",
+        "Tilesets/Testmaps/01-08.tmx",
+        "Tilesets/Testmaps/01-06.tmx",
+        "Tilesets/Testmaps/01-11.tmx",
+        "Tilesets/Testmaps/01-02.tmx",
+        "Tilesets/roman_tiles.tsx",
+        "Tilesets/Testmaps/01-04.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
