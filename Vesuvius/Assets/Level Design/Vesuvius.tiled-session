@@ -1,0 +1,450 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Tilesets/Testmaps/01-02U.tmx",
+    "expandedProjectPaths": [
+        "Tilesets/Testmaps",
+        ".",
+        "Tilesets"
+    ],
+    "fileStates": {
+        "Tiled/Maps/01-01.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 904.5454545454544,
+                "y": -287.878787878788
+            }
+        },
+        "Tiled/Maps/01-02.tmx": {
+            "scale": 0.48235619469026547,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 904.9329205366356,
+                "y": 626.0933379199632
+            }
+        },
+        "Tiled/Maps/01-02U.tmx": {
+            "scale": 0.5677734375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 768.7925696594427,
+                "y": 523.095975232198
+            }
+        },
+        "Tiled/Maps/01-03.tmx": {
+            "scale": 0.5158203124999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.8239303294207,
+                "y": 422.62779250283995
+            }
+        },
+        "Tiled/Maps/01-04.tmx": {
+            "scale": 0.5158203124999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 256.8723968193866,
+                "y": 166.72472548277176
+            }
+        },
+        "Tiled/Maps/01-04L.tmx": {
+            "scale": 0.77373046875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.50082039631457,
+                "y": 452.35390634860534
+            }
+        },
+        "Tiled/Maps/01-04_original.tmx": {
+            "scale": 0.5158203124999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 706.6414237031428,
+                "y": -151.21544869367665
+            }
+        },
+        "Tiled/Maps/01-05.tmx": {
+            "scale": 0.681328125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 383.8091961930971,
+                "y": 223.09368191721126
+            }
+        },
+        "Tiled/Maps/01-06.tmx": {
+            "scale": 0.386865234375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 383.8546005301023,
+                "y": 392.9016786570743
+            }
+        },
+        "Tiled/Maps/01-06L.tmx": {
+            "scale": 0.3406640625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1.4677215915605757,
+                "y": 317.0278637770899
+            }
+        },
+        "Tiled/Maps/01-06test.tmx": {
+            "scale": 0.77373046875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 512.4523539063487,
+                "y": 452.35390634860534
+            }
+        },
+        "Tiled/Maps/01-08.tmx": {
+            "scale": 0.681328125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -640.6604747162023,
+                "y": 223.09368191721126
+            }
+        },
+        "Tiled/Maps/01-10.tmx": {
+            "scale": 1.23796875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 240.31301274769658,
+                "y": 282.7211914678783
+            }
+        },
+        "Tiled/Maps/01-11.tmx": {
+            "scale": 0.77373046875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -256.54928688628047,
+                "y": 196.45083932853714
+            }
+        },
+        "Tiled/Snow-Tunnel-Tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "Tiled/Tilesets/Snow-Tunnel-Tileset-Alt.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tiled/Tilesets/Snow-Tunnel-Tileset.tsx": {
+            "scaleInEditor": 1
+        },
+        "Tiled/Tilesets/rails1plans-Sheet 3.tsx": {
+            "scaleInEditor": 1
+        },
+        "Tiled/ice bridge.tsx": {
+            "scaleInDock": 1
+        },
+        "Tiled/rails1plans-Sheet 3.tsx": {
+            "scaleInDock": 1
+        },
+        "Tiled/roman_tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "Tilesets/01-01.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 2012,
+                "y": -160.66666666666663
+            }
+        },
+        "Tilesets/01-02.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 512,
+                "y": -129
+            }
+        },
+        "Tilesets/01-02U.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 813,
+                "y": 138.5
+            }
+        },
+        "Tilesets/01-03.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -42.666666666666686,
+                "y": -141.66666666666669
+            }
+        },
+        "Tilesets/01-10.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -426.66666666666663,
+                "y": -159.33333333333337
+            }
+        },
+        "Tilesets/01-11.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -256,
+                "y": -1
+            }
+        },
+        "Tilesets/01-UpperOutpost.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1621.212121212121,
+                "y": 28.787878787878753
+            }
+        },
+        "Tilesets/Snow-Tunnel-Tileset 1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tilesets/Snow-Tunnel-Tileset-Alt.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tilesets/Snow-Tunnel-Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "Tilesets/Testmaps/01-01.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 4468.181818181818,
+                "y": 300
+            }
+        },
+        "Tilesets/Testmaps/01-02.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2314,
+                "y": 552
+            }
+        },
+        "Tilesets/Testmaps/01-02U.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1851.5,
+                "y": 594
+            }
+        },
+        "Tilesets/Testmaps/01-03.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 356.3333333333333,
+                "y": 127.99999999999999
+            }
+        },
+        "Tilesets/Testmaps/01-04.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 209.5,
+                "y": -128
+            }
+        },
+        "Tilesets/Testmaps/01-04L.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 382,
+                "y": 256
+            }
+        },
+        "Tilesets/Testmaps/01-04_original.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384.5,
+                "y": -128
+            }
+        },
+        "Tilesets/Testmaps/01-05.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 385,
+                "y": 0
+            }
+        },
+        "Tilesets/Testmaps/01-06.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 385,
+                "y": 0
+            }
+        },
+        "Tilesets/Testmaps/01-06L.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -1.5151515151515582,
+                "y": -127.27272727272725
+            }
+        },
+        "Tilesets/Testmaps/01-06test.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 510.6060606060606,
+                "y": 254.54545454545462
+            }
+        },
+        "Tilesets/Testmaps/01-08.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -641,
+                "y": 0
+            }
+        },
+        "Tilesets/Testmaps/01-10.tmx": {
+            "scale": 1.1667187499999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 239.98928619258072,
+                "y": 281.55885897950986
+            }
+        },
+        "Tilesets/Testmaps/01-11.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -256.5,
+                "y": 0
+            }
+        },
+        "Tilesets/Testmaps/01-UpperOutpost.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 300,
+                "y": 280
+            }
+        },
+        "Tilesets/Testmaps/Snow-Tunnel-Tileset.tsx": {
+            "scaleInDock": 1
+        },
+        "Tilesets/Testmaps/ice bridge.tsx": {
+            "scaleInDock": 1
+        },
+        "Tilesets/Testmaps/rails1plans-Sheet 3.tsx": {
+            "scaleInDock": 1
+        },
+        "Tilesets/ice bridge.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "Tilesets/level.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 230,
+                "y": -185
+            }
+        },
+        "Tilesets/level1_alt.tmx": {
+            "scale": 0.91140625,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 139.89370821189783,
+                "y": 261.68352477284424
+            }
+        },
+        "Tilesets/level1_alt.tmx#Snow-Tunnel-Tileset-Alt": {
+            "scaleInDock": 1
+        },
+        "Tilesets/level2.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -730,
+                "y": 418
+            }
+        },
+        "Tilesets/rails1plans-Sheet 3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tilesets/roman_tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "Tilesets/test.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": -47.5,
+                "y": -177
+            }
+        },
+        "Tilesets/untitled.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 606,
+                "y": 342
+            }
+        }
+    },
+    "last.externalTilesetPath": "/Users/Brett/Vesuvius/Vesuvius/Assets/Level Design/Tiled/Tilesets",
+    "last.imagePath": "/Users/Brett/Vesuvius/Vesuvius/Assets/Level Design/Tilesets",
+    "last.worldFilePath": "C:/Users/bdwol/Documents/Unity_Projects/Vesuvius/Vesuvius/Assets/Art/Tilesets",
+    "loadedWorlds": [
+        "/Users/Brett/Vesuvius/Vesuvius/Assets/Level Design/Tiled/World/Vesuvius.world"
+    ],
+    "map.fixedSize": false,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "mapScene.enableWorlds": true,
+    "openFiles": [
+        "Tilesets/Testmaps/01-01.tmx",
+        "Tilesets/ice bridge.tsx",
+        "Tilesets/Testmaps/01-03.tmx",
+        "Tilesets/Testmaps/01-05.tmx",
+        "Tilesets/Testmaps/01-06test.tmx",
+        "Tilesets/Testmaps/01-04L.tmx",
+        "Tilesets/Testmaps/01-08.tmx",
+        "Tilesets/Testmaps/01-06.tmx",
+        "Tilesets/Testmaps/01-11.tmx",
+        "Tilesets/Testmaps/01-02.tmx",
+        "Tilesets/roman_tiles.tsx",
+        "Tilesets/Testmaps/01-04.tmx",
+        "Tilesets/Testmaps/01-06L.tmx",
+        "Tilesets/Testmaps/01-04_original.tmx",
+        "Tilesets/Testmaps/01-UpperOutpost.tmx",
+        "Tilesets/Testmaps/01-02U.tmx"
+    ],
+    "project": "Vesuvius.tiled-project",
+    "recentFiles": [
+        "Tiled/Tilesets/Snow-Tunnel-Tileset.tsx",
+        "Tiled/Tilesets/Snow-Tunnel-Tileset-Alt.tsx",
+        "Tiled/Tilesets/rails1plans-Sheet 3.tsx",
+        "Tilesets/Testmaps/01-01.tmx",
+        "Tilesets/ice bridge.tsx",
+        "Tilesets/Testmaps/01-03.tmx",
+        "Tilesets/Testmaps/01-05.tmx",
+        "Tilesets/Testmaps/01-06test.tmx",
+        "Tilesets/Testmaps/01-04L.tmx",
+        "Tilesets/Testmaps/01-08.tmx",
+        "Tilesets/Testmaps/01-06.tmx",
+        "Tilesets/Testmaps/01-11.tmx"
+    ],
+    "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
