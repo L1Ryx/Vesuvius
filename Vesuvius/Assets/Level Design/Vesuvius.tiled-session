@@ -3,11 +3,17 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Tilesets/Testmaps/01-02U.tmx",
+    "activeFile": "Tiled/Maps/01-02.tmx",
     "expandedProjectPaths": [
         "Tilesets/Testmaps",
+        "Tiled/Maps",
+        "Tilesets",
+        "Tiled/World",
+        "Tiled",
+        "Tiled/ObjectTemplates",
         ".",
-        "Tilesets"
+        "Tiled/Rules",
+        "Tiled/Tilesets"
     ],
     "fileStates": {
         ":/automap-tiles.tsx": {
@@ -17,8 +23,8 @@
             "scale": 0.4439,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 390.85379589997757,
-                "y": 177.96801081324622
+                "x": 1017.1209731921604,
+                "y": -205.00112637981533
             }
         },
         "Tiled/Maps/01-01_alt.tmx": {
@@ -30,11 +36,11 @@
             }
         },
         "Tiled/Maps/01-02.tmx": {
-            "scale": 0.6795,
-            "selectedLayer": 6,
+            "scale": 0.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": -272.9948491537896,
-                "y": 136.86534216335536
+                "x": 439,
+                "y": -181
             }
         },
         "Tiled/Maps/01-02U.tmx": {
@@ -46,11 +52,11 @@
             }
         },
         "Tiled/Maps/01-03.tmx": {
-            "scale": 0.5158203124999999,
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 373.1919727375995,
-                "y": 445.8917076864824
+                "x": -698.4848484848485,
+                "y": -418.18181818181824
             }
         },
         "Tiled/Maps/01-04.tmx": {
@@ -134,11 +140,11 @@
             }
         },
         "Tiled/Maps/01-UpperOutpost.tmx": {
-            "scale": 0.25,
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": -46,
-                "y": 756
+                "x": -201.5151515151515,
+                "y": 175.75757575757575
             }
         },
         "Tiled/Rules/AutoTileRuleGrass.tmx": {
@@ -233,9 +239,19 @@
             "scaleInEditor": 1
         },
         "Tiled/Tilesets/Snow-Tunnel-Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tiled/Tilesets/ice bridge.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Tiled/Tilesets/rails1plans-Sheet 3.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tiled/Tilesets/roman_tiles.tsx": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "Tiled/ice bridge.tsx": {
@@ -514,37 +530,30 @@
     "map.tileWidth": 16,
     "mapScene.enableWorlds": true,
     "openFiles": [
-        "Tilesets/Testmaps/01-01.tmx",
-        "Tilesets/ice bridge.tsx",
-        "Tilesets/Testmaps/01-03.tmx",
-        "Tilesets/Testmaps/01-05.tmx",
-        "Tilesets/Testmaps/01-06test.tmx",
-        "Tilesets/Testmaps/01-04L.tmx",
-        "Tilesets/Testmaps/01-08.tmx",
-        "Tilesets/Testmaps/01-06.tmx",
-        "Tilesets/Testmaps/01-11.tmx",
-        "Tilesets/Testmaps/01-02.tmx",
-        "Tilesets/roman_tiles.tsx",
-        "Tilesets/Testmaps/01-04.tmx",
-        "Tilesets/Testmaps/01-06L.tmx",
-        "Tilesets/Testmaps/01-04_original.tmx",
-        "Tilesets/Testmaps/01-UpperOutpost.tmx",
-        "Tilesets/Testmaps/01-02U.tmx"
+        "Tiled/Tilesets/ice bridge.tsx",
+        "Tiled/Tilesets/roman_tiles.tsx",
+        "Tiled/Maps/01-02.tmx",
+        "Tiled/Rules/AutoTileRuleRocks.tmx",
+        "Tiled/Rules/AutoTileRuleIcicles.tmx",
+        "Tiled/Rules/AutoTileRuleGrass.tmx",
+        "Tiled/Maps/01-01.tmx",
+        "Tiled/Maps/01-UpperOutpost.tmx",
+        "Tiled/Maps/01-03.tmx"
     ],
     "project": "Vesuvius.tiled-project",
     "recentFiles": [
-        "Tiled/Maps/01-01_alt.tmx",
-        "Tiled/Maps/01-01.tmx",
-        "Tiled/Tilesets/01_AltReality_Forest.tsx",
-        "Tiled/Rules/AutoTileRules.tmx",
+        "Tiled/Tilesets/ice bridge.tsx",
+        "Tiled/Tilesets/roman_tiles.tsx",
         "Tiled/Maps/01-03.tmx",
-        "Tiled/Maps/01-04_original.tmx",
-        "Tiled/Maps/01-04.tmx",
-        "Tiled/Maps/01-04L.tmx",
-        "Tiled/Maps/01-05.tmx",
-        "Tiled/Maps/01-06.tmx",
-        "Tiled/Maps/01-06L.tmx",
-        "Tiled/Maps/01-06test.tmx"
+        "Tiled/Maps/01-UpperOutpost.tmx",
+        "Tiled/Maps/01-01.tmx",
+        "Tiled/Rules/AutoTileRuleGrass.tmx",
+        "Tiled/Rules/AutoTileRuleIcicles.tmx",
+        "Tiled/Rules/AutoTileRuleRocks.tmx",
+        "Tiled/Maps/01-02.tmx",
+        "Tiled/Maps/01-01_alt.tmx",
+        "Tiled/Tilesets/01_AltReality_Forest.tsx",
+        "Tiled/Rules/AutoTileRules.tmx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
