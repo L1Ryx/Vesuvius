@@ -76,6 +76,7 @@ public class SpawnLocation : MonoBehaviour
                 spawnLocation.transitionData.spawnPosition = (Vector2)spawnLocation.gameObject.transform.position;
                 spawnLocation.transitionData.isVerticalUpTransition = spawnLocation.isVerticalUpTransition;
                 EditorUtility.SetDirty(spawnLocation);
+                EditorUtility.SetDirty(spawnLocation.transitionData);
             }
         }
     }

@@ -1,5 +1,6 @@
 using Events._Arch;
 using Public.Tarodev_2D_Controller.Scripts;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,13 @@ namespace _Gameplay._Arch
         public GameObject GetRuntimePlayer()
         {
             return runtimePlayer;
+        }
+
+        [MenuItem("Tools/Update Spawn Location From Dummy #p")]
+        public static void UpdateSpawnLocationFromDummyEditor()
+        {
+            PlayerSpawner spawner = FindAnyObjectByType<PlayerSpawner>();
+            spawner.UpdatePlayerLocationInSpawnData();
         }
 
         [ContextMenu("Update Spawn Location")]

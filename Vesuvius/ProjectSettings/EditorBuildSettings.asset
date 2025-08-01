@@ -38,5 +38,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/01-08.unity
     guid: faed822336dc848bdbb27eddf6f1e71b
+  - enabled: 1
+    path: Assets/_Scenes/01-01 edit.unity
+    guid: aa52790056bcb044793d51af9ddf264f
+  - enabled: 1
+    path: Assets/_Scenes/01-02L.unity
+    guid: f3c7f4ab4d0cc4dae9abd6f28590feeb
+  - enabled: 1
+    path: Assets/_Scenes/01-02U.unity
+    guid: 6a510ce7e094c4e499ad14adc5c0474c
+  - enabled: 1
+    path: Assets/_Scenes/01-02O.unity
+    guid: ad9061ec41d8ceb44a58d37e34f2824d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
