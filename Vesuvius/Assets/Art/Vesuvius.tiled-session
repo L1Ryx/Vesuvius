@@ -1,5 +1,7 @@
 {
-    "activeFile": "Tilesets/Testmaps/01-05.tmx",
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Tilesets/01-01.tmx": {
@@ -255,6 +257,9 @@
             }
         }
     },
+    "openFiles": [
+    ],
+    "project": "",
     "recentFiles": [
         "Tilesets/Testmaps/01-01.tmx",
         "Tilesets/ice bridge.tsx",

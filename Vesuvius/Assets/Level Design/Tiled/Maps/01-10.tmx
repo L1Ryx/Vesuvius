@@ -5,6 +5,9 @@
  </editorsettings>
  <tileset firstgid="1" source="../Tilesets/Snow-Tunnel-Tileset.tsx"/>
  <layer id="8" name="Tile Layer 1" width="30" height="20">
+  <properties>
+   <property name="unity:layer" value="Terrain"/>
+  </properties>
   <data encoding="csv">
 24,24,24,24,24,24,24,24,24,24,24,24,25,0,0,23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,
 24,24,24,24,24,24,24,24,24,24,24,24,27,0,0,29,24,24,24,24,24,24,24,24,24,24,24,24,24,24,

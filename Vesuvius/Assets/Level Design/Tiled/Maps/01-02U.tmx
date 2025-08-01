@@ -61,6 +61,9 @@
   </data>
  </layer>
  <layer id="1" name="Terrain" width="84" height="36">
+  <properties>
+   <property name="unity:layer" value="Terrain"/>
+  </properties>
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

@@ -3,6 +3,9 @@
  <tileset firstgid="1" source="../Tilesets/Snow-Tunnel-Tileset.tsx"/>
  <tileset firstgid="401" source="../Tilesets/roman_tiles.tsx"/>
  <layer id="1" name="Tile Layer 1" width="64" height="32">
+  <properties>
+   <property name="unity:layer" value="Terrain"/>
+  </properties>
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,24,24,24,24,24,24,24,24,24,24,24,

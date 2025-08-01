@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="16" tileheight="16" infinite="1" nextlayerid="2" nextobjectid="1">
+ <properties>
+  <property name="unity:layer" value="Terrain"/>
+ </properties>
  <tileset firstgid="1" source="../Tilesets/Snow-Tunnel-Tileset.tsx"/>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
+  <properties>
+   <property name="unity:layer" value="Terrain"/>
+  </properties>
   <data encoding="csv">
    <chunk x="-16" y="-32" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

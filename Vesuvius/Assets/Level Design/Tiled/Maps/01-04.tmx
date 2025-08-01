@@ -4,6 +4,9 @@
  <tileset firstgid="401" source="../Tilesets/ice bridge.tsx"/>
  <tileset firstgid="465" source="../Tilesets/roman_tiles.tsx"/>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
+  <properties>
+   <property name="unity:layer" value="Terrain"/>
+  </properties>
   <data encoding="csv">
    <chunk x="-16" y="-32" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
