@@ -227,6 +227,8 @@ GameObject:
   - component: {fileID: 8924419233062624757}
   - component: {fileID: 4995852562530747178}
   - component: {fileID: 672459778067460315}
+  - component: {fileID: 9093728619795954547}
+  - component: {fileID: 8147714310257560623}
   m_Layer: 0
   m_Name: Big Blue (NPC)
   m_TagString: Untagged
@@ -265,24 +267,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd4df831bf6641e281f8a9914b84b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcTalkCanvas: {fileID: 5274154635820882240}
-  npcTalkText: {fileID: 8100844501265517593}
   dialogueCanvas: {fileID: 1017740038698358835}
   dialogueText: {fileID: 7232327488926127036}
   playerSpawner: {fileID: 0}
   dialogueCollection: {fileID: 11400000, guid: c811459c0de4149ec9237f0a1aa8ab4c, type: 2}
-  bigBlueAudio: {fileID: 0}
+  audioScript: {fileID: 2419483815631988418}
   player: {fileID: 0}
-  animator: {fileID: 2987588578132219902}
-  activationDistance: 3
-  lerpSpeed: 4
+  activationDistance: 5
+  lerpSpeed: 2
   pulseSpeed: 1.2
   pulseIntensity: 0.06
-  typingSpeed: 0.025
+  typingSpeed: 0.05
   dialoguePulseSpeed: 0.5
   dialoguePulseIntensity: 0.02
   isForMainMenu: 0
+  waitForSignalBeforeContinue: 0
   currentDialogueTreeID: Intro
+  bigBlueAudio: {fileID: 2419483815631988418}
+  animator: {fileID: 2987588578132219902}
 --- !u!114 &2419483815631988418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +365,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8017170214293421726}
-        m_TargetAssemblyTypeName: _Gameplay._Arch.BigBlue, Assembly-CSharp
+      - m_Target: {fileID: 8147714310257560623}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: OnControlsChanged
         m_Mode: 1
         m_Arguments:
@@ -389,6 +391,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textsNeedingReplacement: []
   isExternallyInitialized: 1
+--- !u!114 &9093728619795954547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747749749922084995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 
+--- !u!114 &8147714310257560623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747749749922084995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962644f9bc3f70f4f85b63d3d2f906ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 5274154635820882240}
+  interactPromptText: {fileID: 8100844501265517593}
+  otherTexts: []
+  activationRadius: 2
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8017170214293421726}
+        m_TargetAssemblyTypeName: _Gameplay._Arch.BigBlue, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  blockedInteractables: {fileID: 0}
+  interactableID: BigBlue
+  interactOnce: 0
+  lerpSpeed: 2
 --- !u!1 &2131307498568448481
 GameObject:
   m_ObjectHideFlags: 0

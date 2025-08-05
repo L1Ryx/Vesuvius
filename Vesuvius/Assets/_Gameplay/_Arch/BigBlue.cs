@@ -9,16 +9,12 @@ using UnityEngine.InputSystem;
 
 namespace _Gameplay._Arch
 {
-    public class BigBlue : MonoBehaviour
+    public class BigBlue : Dialogue
     {
-
         [Header("Component References")]
-        [SerializeField] private PlayerSpawner playerSpawner;
-        [SerializeField] private NPCDialogueCollection dialogueCollection;
         [SerializeField] private BigBlueAudio bigBlueAudio;
 
         [Header("GO References")]
-        [SerializeField] private GameObject player;
         [SerializeField] private Animator animator; // Animator reference for Big Blue
 
         private void Awake()
@@ -26,58 +22,45 @@ namespace _Gameplay._Arch
             bigBlueAudio = this.gameObject.GetComponent<BigBlueAudio>();
         }
 
-        private void OnEnable()
+        protected override void OnEnable()
         {
-            bigBlueAudio.PlayBigBlueSolo();
+            base.OnEnable();
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             bigBlueAudio.StopBigBlueSolo();
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
+            bigBlueAudio.PlayBigBlueSolo();
             animator.Play("Playing"); // Start with the "Playing" animation
         }
 
-
-
-        public void StartDialogue()
+        public override void StartDialogue()
         {
-
+            base.StartDialogue();
             // Play the "PutDown" animation before transitioning to "Idle"
             animator.Play("PutDown");
             bigBlueAudio.StopBigBlueSolo();
             StartCoroutine(WaitForAnimation("PutDown", () =>
             {
                 animator.Play("Idle"); // Transition to "Idle" after "PutDown" finishes
-                //dialogueCanvas.gameObject.SetActive(true); // Show the dialogue canvas
-                //currentDialogueIndex = 0; // Reset dialogue index
-                //DisplayNextDialogue();
             }));
         }
 
-        private void DisplayNextDialogue()
+        protected override void EndDialogue()
         {
-            //string wwiseEvent = dialogueTree.wwiseEvents[currentDialogueIndex];
-            //if (!string.IsNullOrEmpty(wwiseEvent))
-            //{
-            //    bigBlueAudio.PlayWwiseEvent(wwiseEvent);
-            //}
-        }
-
-        private void EndDialogue()
-        {
-
+            base.EndDialogue();
             // Play the "PutBack" animation before transitioning to "Playing"
             animator.Play("PutBack");
             bigBlueAudio.PlayBigBlueSolo();
             StartCoroutine(WaitForAnimation("PutBack", () =>
             {
                 animator.Play("Playing"); // Transition back to "Playing"
-                PlayerControlManager.Instance.EnableNormalControls();
-                //HandleProximityLogic(); // Reactivate proximity logic
             }));
         }
 

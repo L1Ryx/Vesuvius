@@ -17,6 +17,7 @@ namespace _Gameplay._Arch
         [Header("Component References")]
         [SerializeField] private PlayerSpawner playerSpawner;
         [SerializeField] private NPCDialogueCollection dialogueCollection;
+        [SerializeField] private GenericAudioScript audioScript;
 
         [Header("GO References")]
         [SerializeField] private GameObject player;
@@ -47,17 +48,17 @@ namespace _Gameplay._Arch
 
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             PlayerControlManager.Instance.controls.Player.Confirm.performed += OnInteractPerformed;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             PlayerControlManager.Instance.controls.Player.Confirm.performed -= OnInteractPerformed;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             FindPlayer();
             InitializeUI();
@@ -95,7 +96,7 @@ namespace _Gameplay._Arch
             }
         }
 
-        public void StartDialogue()
+        public virtual void StartDialogue()
         {
             isTalking = true;
             isPlayerNear = false;
@@ -124,7 +125,7 @@ namespace _Gameplay._Arch
                     string wwiseEvent = dialogueTree.wwiseEvents[currentDialogueIndex];
                     if (!string.IsNullOrEmpty(wwiseEvent))
                     {
-
+                        audioScript.PlayWwiseEvent(wwiseEvent);
                     }
                 }
 
@@ -151,7 +152,7 @@ namespace _Gameplay._Arch
             isTyping = false; // Reset typing flag when done
         }
 
-        private void EndDialogue()
+        protected virtual void EndDialogue()
         {
             var dialogueTree = dialogueCollection.GetDialogueTreeByID(currentDialogueTreeID);
             if (dialogueTree != null && currentDialogueIndex >= dialogueTree.dialogues.Count)
