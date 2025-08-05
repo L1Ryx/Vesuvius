@@ -4,6 +4,7 @@ using Public.Tarodev_2D_Controller.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using AK.Wwise;
 
 namespace _Gameplay._Arch
 {
@@ -102,6 +103,9 @@ namespace _Gameplay._Arch
             // Freeze player movement immediately
             print("Player frozen");
             PlayerControlManager.Instance.DisableNormalControls();
+            PlayerControlManager.Instance.EnterMenuMode();
+            //PlayerControlManager.Instance.controls.Player.Interact.Disable();
+
 
             dialogueCanvas.gameObject.SetActive(true); // Show the dialogue canvas
             currentDialogueIndex = 0; // Reset dialogue index
@@ -168,6 +172,7 @@ namespace _Gameplay._Arch
 
 
             PlayerControlManager.Instance.EnableNormalControls();
+            PlayerControlManager.Instance.ExitMenuMode();
         }
 
         private void ApplyDialogueTextEffects()

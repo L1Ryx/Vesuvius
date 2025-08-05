@@ -10,7 +10,6 @@ namespace _Gameplay._Arch
     {
         [Header("Settings")]
         public GameObject menuPrefab; // Prefab for the temporary menu
-        public UnsavedPlayerInfo unsavedPlayerInfo;
 
         [Header("Checkpoint Info")]
         public string checkpointScene; // Scene to set as checkpoint
@@ -54,7 +53,7 @@ namespace _Gameplay._Arch
 
             menuScript.MenuClosed += CloseMenu; // Subscribe to the MenuClosed event
 
-            unsavedPlayerInfo.isInMenuMode = true;
+            PlayerControlManager.Instance.EnterMenuMode();
 
             // Freeze player movement
             playerController.SetFreezeMode(true);
@@ -64,7 +63,7 @@ namespace _Gameplay._Arch
 
         private void CloseMenu()
         {
-            unsavedPlayerInfo.isInMenuMode = false;
+            PlayerControlManager.Instance.ExitMenuMode();
 
             if (playerController == null)
             {

@@ -20,7 +20,6 @@ public class Interactable : MonoBehaviour
     [Header("Settings")]
     public float activationRadius = 2f; // Distance for interaction
     public UnityEvent OnInteract; //actions to execute on valid interaction
-    public UnsavedPlayerInfo unsavedPlayerInfo;
     public BinaryStateStorage blockedInteractables;
     public string interactableID;
     public bool interactOnce;
@@ -82,7 +81,7 @@ public class Interactable : MonoBehaviour
             return;
         }
 
-        if (unsavedPlayerInfo.isInMenuMode)
+        if (PlayerControlManager.Instance.IsInMenuMode())
         {
             HandlePromptLerpOut(); // Smoothly lerp the prompt out when the menu is active
             return;
@@ -95,7 +94,7 @@ public class Interactable : MonoBehaviour
     {
         if (player == null) return;
 
-        float distance = Vector3.Distance(player.transform.position, transform.position);
+        float distance = Vector2.Distance(player.transform.position, transform.position);
         isPlayerNear = distance <= activationRadius;
 
         if (isPlayerNear)
@@ -179,7 +178,7 @@ public class Interactable : MonoBehaviour
 
     protected virtual void OnInteractPerformed(InputAction.CallbackContext context)
     {
-        if(unsavedPlayerInfo.isInMenuMode)
+        if(PlayerControlManager.Instance.IsInMenuMode())
         {
             return;
         }

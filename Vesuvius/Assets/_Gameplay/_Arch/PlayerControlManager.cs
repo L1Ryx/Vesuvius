@@ -36,6 +36,8 @@ public class PlayerControlManager : MonoBehaviour
         }
     }
 
+    public bool isInMenuMode = false;
+
     private GameObject player;
     private PlayerController playerController; // Dynamically fetched PlayerController
     private PlayerDamage playerDamage;
@@ -95,5 +97,21 @@ public class PlayerControlManager : MonoBehaviour
             PlayerControlManager.Instance.controls.Player.Heal.Enable();
             PlayerControlManager.Instance.controls.Player.RealityShift.Enable();
         }
+    }
+
+    //Menu mode is used to disable/enable certain behaviors if the player isn't being actively controlled
+    public void EnterMenuMode()
+    {
+        isInMenuMode = true;
+    }
+
+    public void ExitMenuMode()
+    {
+        isInMenuMode = false;
+    }
+
+    public bool IsInMenuMode()
+    {
+        return isInMenuMode;
     }
 }

@@ -8,7 +8,6 @@ public class KeyItemAcquisition : MonoBehaviour
 {
     public GameObject menuPrefab;
     public PlayerUnlocks playerUnlocks;
-    public UnsavedPlayerInfo unsavedPlayerInfo;
 
     public delegate void OnMenuClosed(); // Delegate to notify when the menu is closed
     public event OnMenuClosed MenuClosed;
@@ -63,7 +62,7 @@ public class KeyItemAcquisition : MonoBehaviour
 
         menuInstance = Instantiate(menuPrefab, this.transform);
 
-        unsavedPlayerInfo.isInMenuMode = true;
+        PlayerControlManager.Instance.EnterMenuMode();
 
         DisableControls();
 
@@ -72,9 +71,9 @@ public class KeyItemAcquisition : MonoBehaviour
 
     protected void CloseMenu(InputAction.CallbackContext context)
     {
-        if (unsavedPlayerInfo.isInMenuMode == true)
+        if (PlayerControlManager.Instance.IsInMenuMode())
         {
-            unsavedPlayerInfo.isInMenuMode = false;
+            PlayerControlManager.Instance.ExitMenuMode();
 
             if (playerController == null)
             {
