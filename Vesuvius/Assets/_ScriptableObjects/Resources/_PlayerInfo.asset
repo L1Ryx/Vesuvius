@@ -19,6 +19,12 @@ MonoBehaviour:
   totalCurrency: 0
   totemPower: 100
   abilityCost: 25
+  initialMaximumHealth: 5
+  initialCurrentHealth: 5
+  initialGemFragments: 0
+  initialTotalCurrency: 0
+  initialTotemPower: 50
+  initialAbilityCost: 25
   lastCurrencyChangeAmount: -35
   sceneToLoad: 01-03
   spawnLocation: {x: 60, y: 4}

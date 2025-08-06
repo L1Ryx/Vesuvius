@@ -46,6 +46,14 @@ namespace _ScriptableObjects.PlayerInfo
         private float swingKnockbackCooldownEnd = 0f;
         private float lastDamageTime = 0f;
 
+        [Header("New Game Player Info")]
+        [SerializeField] private int initialMaximumHealth = 5;
+        [SerializeField] private int initialCurrentHealth = 5;
+        [SerializeField] private int initialGemFragments = 0;
+        [SerializeField] private int initialTotalCurrency = 0;
+        [SerializeField] [Range(0, 100)] private int initialTotemPower = 50;
+        [SerializeField] private int initialAbilityCost = 25;
+
 
         [Header("Monitoring")]
         public int lastCurrencyChangeAmount = 24;
@@ -232,12 +240,12 @@ namespace _ScriptableObjects.PlayerInfo
         //reset all stats back to base starting value for new games
         public override void Reset()
         {
-            maximumHealth = 5;
-            currentHealth = 5;
-            gemFragments = 0;
-            totalCurrency = 0;
-            totemPower = 50;
-            abilityCost = 30;
+            maximumHealth = initialMaximumHealth;
+            currentHealth = initialCurrentHealth;
+            gemFragments = initialGemFragments;
+            totalCurrency = initialTotalCurrency;
+            totemPower = initialTotemPower;
+            abilityCost = initialAbilityCost;
             this.SetCheckpoint(startingCradle.GetComponent<EmptyCradle>().checkpointScene,
                 startingCradle.GetComponent<EmptyCradle>().checkpointLocation);
         }
