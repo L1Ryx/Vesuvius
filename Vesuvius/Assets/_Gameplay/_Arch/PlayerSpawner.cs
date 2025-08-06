@@ -27,13 +27,14 @@ namespace _Gameplay._Arch
         {
             return runtimePlayer;
         }
-
+#if UNITY_EDITOR
         [MenuItem("Tools/Update Spawn Location From Dummy #p")]
         public static void UpdateSpawnLocationFromDummyEditor()
         {
             PlayerSpawner spawner = FindAnyObjectByType<PlayerSpawner>();
             spawner.UpdatePlayerLocationInSpawnData();
         }
+#endif
 
         [ContextMenu("Update Spawn Location")]
         public void UpdateSpawnLocationFromDummy()

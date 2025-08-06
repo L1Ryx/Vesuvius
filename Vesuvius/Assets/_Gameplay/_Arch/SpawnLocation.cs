@@ -2,7 +2,9 @@ using Events._Arch;
 using UnityEngine;
 using UnityEditor;
 using _Gameplay._Arch;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine.SceneManagement;
 
 public class SpawnLocation : MonoBehaviour
@@ -12,7 +14,7 @@ public class SpawnLocation : MonoBehaviour
     [SerializeField] private TransitionData transitionData;
     [SerializeField] private bool isVerticalUpTransition;
 
-
+#if UNITY_EDITOR
     [MenuItem("Tools/Update Door Transitions In Scene")]
     public static void UpdateSpawnLocations()
     {
@@ -173,4 +175,5 @@ public class SpawnLocation : MonoBehaviour
 
         Debug.Log("Scene iteration completed.");
     }
+    #endif
 }
