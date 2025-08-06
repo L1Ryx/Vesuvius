@@ -13,7 +13,7 @@ public class GateDataEditor : Editor
 
         if (GUILayout.Button("Reset All Gates"))
         {
-            gateData.ResetGates();
+            gateData.Reset();
             EditorUtility.SetDirty(gateData); // Mark the ScriptableObject as dirty so changes are saved
             Debug.Log("ResetGates button pressed. All gates are now locked.");
         }

@@ -22,6 +22,7 @@ MonoBehaviour:
   lastCurrencyChangeAmount: -35
   sceneToLoad: 01-03
   spawnLocation: {x: 60, y: 4}
+  startingCradle: {fileID: 3683006906005164023, guid: ddedb33e03e64de4d9f16924e4097a11, type: 3}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []

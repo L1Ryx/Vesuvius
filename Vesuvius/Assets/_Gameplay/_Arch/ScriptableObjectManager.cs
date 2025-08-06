@@ -33,9 +33,14 @@ namespace _Gameplay._Arch
 
         public void ResetAllData()
         {
-            foreach (Saveable saveable in saveables)
+            foreach (Saveable SO in saveables)
             {
-                saveable.Reset();
+                if (SO == null)
+                {
+                    Debug.LogWarning("Null reference in saveables list");
+                    continue;
+                }
+                SO.Reset();
             }
 
         }
@@ -44,6 +49,11 @@ namespace _Gameplay._Arch
         {
             foreach (Saveable SO in saveables)
             {
+                if(SO == null)
+                {
+                    Debug.LogWarning("Null reference in saveables list");
+                    continue;
+                }
                 ES3.Save(SO.name, SO, SaveFileName);
             }
 
@@ -54,6 +64,11 @@ namespace _Gameplay._Arch
         {
             foreach (Saveable SO in saveables)
             {
+                if (SO == null)
+                {
+                    Debug.LogWarning("Null reference in saveables list");
+                    continue;
+                }
                 if (!ES3.KeyExists(SO.name, SaveFileName))
                 {
                     Debug.LogWarning($"No saved data found for {SO.name}.");

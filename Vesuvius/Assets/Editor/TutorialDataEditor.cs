@@ -26,7 +26,7 @@ public class TutorialDataEditor : Editor
                 "Yes", "No"))
             {
                 // Call the ResetTutorials method to clear the list
-                tutorialData.ResetTutorials();
+                tutorialData.Reset();
 
                 // Mark the ScriptableObject as dirty so changes are saved
                 EditorUtility.SetDirty(tutorialData);

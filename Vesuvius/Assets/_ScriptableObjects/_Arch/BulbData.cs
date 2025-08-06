@@ -46,18 +46,13 @@ namespace _ScriptableObjects
             return false;
         }
 
-        public void ResetBulbs()
+        public override void Reset()
         {
             foreach (var bulb in bulbEntries)
             {
                 bulb.isAlive = true;
             }
             Debug.Log("All bulbs have been reset to alive state.");
-        }
-
-        public override void Reset()
-        {
-            //none
         }
     }
 }

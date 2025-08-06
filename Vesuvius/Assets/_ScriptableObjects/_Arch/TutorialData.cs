@@ -36,15 +36,10 @@ namespace _ScriptableObjects
         /// <summary>
         /// Clears all tracked tutorials, resetting the list.
         /// </summary>
-        public void ResetTutorials()
+        public override void Reset()
         {
             shownTutorials.Clear();
             Debug.Log("All tutorials have been reset.");
-        }
-
-        public override void Reset()
-        {
-            //nothing
         }
     }
 }

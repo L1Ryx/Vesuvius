@@ -13,7 +13,7 @@ public class BulbDataEditor : Editor
 
         if (GUILayout.Button("Reset All Bulbs"))
         {
-            bulbData.ResetBulbs();
+            bulbData.Reset();
             EditorUtility.SetDirty(bulbData); // Mark the ScriptableObject as dirty so changes are saved
             Debug.Log("ResetBulbs button pressed. All bulbs are now marked as alive.");
         }

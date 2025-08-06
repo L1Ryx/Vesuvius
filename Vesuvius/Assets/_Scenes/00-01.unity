@@ -24777,10 +24777,6 @@ MonoBehaviour:
   - {fileID: 2073994748}
   bugReportURL: https://docs.google.com/forms/d/e/1FAIpQLScOLKdiCTzfjak6u0v8IjDlG94J1XVkfv8iqsFyZyWO3V1gpg/viewform?usp=dialog
   startingCradle: {fileID: 3683006906005164023, guid: ddedb33e03e64de4d9f16924e4097a11, type: 3}
-  startScene: 01-01
-  startingX: 4
-  startingY: -3
-  startingMaximumHealth: 5
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeed: 0.9
@@ -24792,10 +24788,6 @@ MonoBehaviour:
   scriptableObjectManager: {fileID: 2125340338}
   playerInfo: {fileID: 11400000, guid: 29b5cc18fe1f34c598efc30c103cf423, type: 2}
   spawnData: {fileID: 11400000, guid: 27a4ed05d7c2540369d9dfa5010b24ba, type: 2}
-  gateData: {fileID: 11400000, guid: 1a3082850a3a14a22af0299007988845, type: 2}
-  bulbData: {fileID: 11400000, guid: 1a3d98d0c6c234ab39bcd4f255570a02, type: 2}
-  tutorialData: {fileID: 11400000, guid: ca9d54f90b56f4cf4b235da342b04bba, type: 2}
-  gameState: {fileID: 11400000, guid: a74d58717d8acc64d8ddce496b01df2e, type: 2}
   roomEntered:
     m_PersistentCalls:
       m_Calls:
@@ -46693,7 +46685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: saveables.Array.size
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[0]'
@@ -46722,19 +46714,19 @@ PrefabInstance:
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[6]'
       value: 
-      objectReference: {fileID: 11400000, guid: 27a4ed05d7c2540369d9dfa5010b24ba, type: 2}
+      objectReference: {fileID: 11400000, guid: ef52deee15512ca44a425b52346c7ad5, type: 2}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[7]'
       value: 
-      objectReference: {fileID: 11400000, guid: ef52deee15512ca44a425b52346c7ad5, type: 2}
+      objectReference: {fileID: 11400000, guid: 895a27412b9ce514d99262e3aebe9fb6, type: 2}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[8]'
       value: 
-      objectReference: {fileID: 11400000, guid: 895a27412b9ce514d99262e3aebe9fb6, type: 2}
+      objectReference: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[9]'
       value: 
-      objectReference: {fileID: 11400000, guid: b43908aade7402740af0666aa009dc33, type: 2}
+      objectReference: {fileID: 11400000, guid: eee453743b9672d439cafc4bb597256d, type: 2}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[10]'
       value: 

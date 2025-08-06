@@ -33,7 +33,7 @@ namespace _ScriptableObjects
             return false;
         }
 
-        public void ResetGates()
+        public override void Reset()
         {
             foreach (var gate in gateEntries)
             {
@@ -41,11 +41,6 @@ namespace _ScriptableObjects
             }
             SetGateLockedState("01-08-01", false);
             Debug.Log("All gates have been reset to locked state.");
-        }
-
-        public override void Reset()
-        {
-            //none
         }
     }
 }

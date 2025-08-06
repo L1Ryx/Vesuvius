@@ -1,3 +1,4 @@
+using _Gameplay._Arch;
 using Events._Arch;
 using UnityEngine;
 using UnityEngine.Events;
@@ -52,6 +53,7 @@ namespace _ScriptableObjects.PlayerInfo
         [Header("Checkpoint Info")]
         [SerializeField] private string sceneToLoad = ""; // Scene to load on respawn
         [SerializeField] private Vector2 spawnLocation = Vector2.zero; // Player's spawn position in the scene
+        [SerializeField] private GameObject startingCradle;
 
         [Header("Events")]
         public UnityEvent currencyChanged;
@@ -224,21 +226,20 @@ namespace _ScriptableObjects.PlayerInfo
             return lastDamageTime;
         }
 
-        //reset all stats back to base starting value for new games
-        //TODO: finish this
-        public void ResetStats()
-        {
-            gemFragments = 0;
-        }
-
-
-
         public int GetAbilityCost() => abilityCost;
         public void SetAbilityCost(int value) => abilityCost = Mathf.Max(0, value);
 
+        //reset all stats back to base starting value for new games
         public override void Reset()
         {
-            //temp
+            maximumHealth = 5;
+            currentHealth = 5;
+            gemFragments = 0;
+            totalCurrency = 0;
+            totemPower = 50;
+            abilityCost = 30;
+            this.SetCheckpoint(startingCradle.GetComponent<EmptyCradle>().checkpointScene,
+                startingCradle.GetComponent<EmptyCradle>().checkpointLocation);
         }
     }
 }

@@ -29,10 +29,6 @@ namespace _Gameplay._Arch
         [Header("Settings")]
         public string bugReportURL = "https://www.google.com";
         public GameObject startingCradle;
-        public string startScene = "01-01";
-        public int startingX = 4;
-        public int startingY = -3;
-        public int startingMaximumHealth = 5;
         public Color defaultColor = Color.white;
         public Color selectedColor = Color.yellow;
         public float fadeSpeed = 1f;
@@ -48,10 +44,6 @@ namespace _Gameplay._Arch
         [Header("Data Cubes")] 
         [SerializeField] private PlayerInfo playerInfo;
         [SerializeField] private SpawnData spawnData;
-        [SerializeField] private GateData gateData;
-        [SerializeField] private BulbData bulbData;
-        [SerializeField] private TutorialData tutorialData;
-        public GameState gameState;
 
         [Header("Events")]
         public UnityEvent roomEntered;
@@ -70,27 +62,14 @@ namespace _Gameplay._Arch
 
         private void InitializeGameState()
         {
-            playerInfo.SetMaximumHealth(startingMaximumHealth);
-            playerInfo.SetCurrentHealth(playerInfo.GetMaximumHealth());
-            playerInfo.SetTotalCurrency(0);
-            playerInfo.SetTotemPower(50);
-            playerInfo.ResetStats();
-            playerInfo.SetCheckpoint(startingCradle.GetComponent<EmptyCradle>().checkpointScene, 
-                startingCradle.GetComponent<EmptyCradle>().checkpointLocation);
-
             spawnData.spawnLocation.x = playerInfo.GetSpawnLocation().x;
             spawnData.spawnLocation.y = playerInfo.GetSpawnLocation().y;
 
-            gateData.ResetGates();
-            bulbData.ResetBulbs();
-            tutorialData.ResetTutorials();
             scriptableObjectManager.ResetAllData();
-            gameState.Reset();
 
             roomExited.Invoke();
             gameSaved.Invoke();
             gameLoaded.Invoke();
-
 
             StartCoroutine(SwitchToStartScene());
 
