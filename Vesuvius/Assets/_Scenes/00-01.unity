@@ -46685,7 +46685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: saveables.Array.size
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6297571828951732299, guid: b438d8d9bf4c747e98fb2f174ea60ee2, type: 3}
       propertyPath: 'saveables.Array.data[0]'

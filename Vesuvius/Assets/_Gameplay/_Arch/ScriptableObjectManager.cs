@@ -9,8 +9,7 @@ namespace _Gameplay._Arch
 {
     public class ScriptableObjectManager : MonoBehaviour
     {
-        [Header("ScriptableObjects to Save/Load")]
-        public Saveable[] saveables;
+        private Saveable[] saveables;
 
         private static ScriptableObjectManager instance;
 
@@ -29,6 +28,9 @@ namespace _Gameplay._Arch
             // Set the instance and make it persistent
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            //automatically load all saveable SOs stored in the resources folder
+            saveables = Resources.LoadAll<Saveable>("");
         }
 
         public void ResetAllData()
