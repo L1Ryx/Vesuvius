@@ -15,13 +15,13 @@ MonoBehaviour:
   hasCompletedDemo: 0
   maximumHealth: 5
   currentHealth: 5
-  gemFragments: 1
+  gemFragments: 0
   totalCurrency: 0
-  totemPower: 59
+  totemPower: 100
   abilityCost: 25
   lastCurrencyChangeAmount: -35
-  sceneToLoad: 01-01
-  spawnLocation: {x: 4, y: -3}
+  sceneToLoad: 01-03
+  spawnLocation: {x: 60, y: 4}
   currencyChanged:
     m_PersistentCalls:
       m_Calls: []

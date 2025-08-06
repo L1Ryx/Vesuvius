@@ -18651,14 +18651,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Blue (NPC)
       objectReference: {fileID: 0}
-    - target: {fileID: 8147714310257560623, guid: aaa09fdccd85e4cbfa04f46ad0ec46e7, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147714310257560623, guid: aaa09fdccd85e4cbfa04f46ad0ec46e7, type: 3}
-      propertyPath: OnInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9093728619795954547, guid: aaa09fdccd85e4cbfa04f46ad0ec46e7, type: 3}
       propertyPath: serializedGuid.Array.size
       value: 16

@@ -1,3 +1,4 @@
+using System;
 using _ScriptableObjects;
 using _ScriptableObjects.PlayerInfo;
 using Events._Arch;
@@ -17,6 +18,8 @@ namespace _Gameplay._Arch
         public BinaryStateStorage[] binaryStateStorages;
         public PlayerUnlocks playerUnlocks;
         public GameState gameState;
+
+        public Saveable[] saveables;
 
         private static ScriptableObjectManager instance;
         private PlayerControls playerControls;
@@ -74,16 +77,10 @@ namespace _Gameplay._Arch
 
         public void ResetAllData()
         {
-            foreach (BinaryStateStorage bss in binaryStateStorages)
+            foreach (Saveable saveable in saveables)
             {
-                bss.Reset();
+                saveable.Reset();
             }
-            playerUnlocks.Reset();
-            gameState.Reset();
-            // foreach (Saveable saveable in saveables)
-            // {
-            //     saveable.Reset();
-            // }
 
         }
 
@@ -114,10 +111,11 @@ namespace _Gameplay._Arch
 
             if (gameState != null)
                 ES3.Save("GameState", gameState, SaveFileName);
-            // foreach (ScriptableObject SO in saveables)
-            // {
-            //     ES3.Save(SO.name, SO, SaveFileName);
-            // }
+            foreach (Saveable SO in saveables)
+            {
+                //ES3.Save(SO.name, SO, SaveFileName);
+                SaveSO(SO);
+            }
 
             Debug.Log("All ScriptableObjects saved.");
         }
@@ -182,15 +180,15 @@ namespace _Gameplay._Arch
                     JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedBSS), bss);
                 }
             }
-            if (playerUnlocks != null && ES3.KeyExists("PlayerUnlocks", SaveFileName))
-            {
-                PlayerUnlocks loadedPlayerUnlocks = ES3.Load<PlayerUnlocks>("PlayerUnlocks", SaveFileName);
-                JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedPlayerUnlocks), playerUnlocks);
-            }
-            else
-            {
-                Debug.LogWarning("No saved data found for SpawnData.");
-            }
+            //if (playerUnlocks != null && ES3.KeyExists("PlayerUnlocks", SaveFileName))
+            //{
+            //    PlayerUnlocks loadedPlayerUnlocks = ES3.Load<PlayerUnlocks>("PlayerUnlocks", SaveFileName);
+            //    JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedPlayerUnlocks), playerUnlocks);
+            //}
+            //else
+            //{
+            //    Debug.LogWarning("No saved data found for SpawnData.");
+            //}
             if (gameState != null && ES3.KeyExists("GameState", SaveFileName))
             {
                 GameState loadedGameState = ES3.Load<GameState>("GameState", SaveFileName);
@@ -200,16 +198,57 @@ namespace _Gameplay._Arch
             {
                 Debug.LogWarning("No saved data found for SpawnData.");
             }
-            // foreach (ScriptableObject SO in saveables)
-            // {
-            //     if (SO != null && ES3.KeyExists(SO.name, SaveFileName))
-            //     {
-            //         ScriptableObject loadedSO = ES3.Load<ScriptableObject>(SO.name, SaveFileName);
-            //         JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(loadedSO), SO);
-            //     }
-            // }
+            foreach (Saveable SO in saveables)
+            {
+                string typeName = ES3.Load<string>(SO.name + "_type",SaveFileName);
+                Type type = Type.GetType(typeName);
+
+                if (type == null)
+                {
+                    Debug.LogError($"Could not resolve type: {typeName}");
+                    return;
+                }
+
+                Saveable instance = ES3.Load<Saveable>(SO.name + "_data", SaveFileName);
+                JsonUtility.FromJsonOverwrite(JsonUtility.ToJson(instance), SO);
+            }
 
             Debug.Log("All ScriptableObjects loaded.");
+        }
+
+        // Save any saveable Scriptable Object
+        public static void SaveSO(Saveable so)
+        {
+            string saveKey =  so.name;
+            ES3.Save(saveKey + "_type", so.GetType().AssemblyQualifiedName, SaveFileName);
+            ES3.Save(saveKey + "_data", so, SaveFileName);
+        }
+        // Load and instantiate a new ScriptableObject of the saved type
+        public static void LoadSO(string key, Saveable SO)
+        {
+            if (!ES3.KeyExists(key + "_type", SaveFileName) || !ES3.KeyExists(key + "_data", SaveFileName))
+            {
+                Debug.LogWarning($"Key {key} not found.");
+                return;
+            }
+
+            string typeName = ES3.Load<string>(key + "_type");
+            Type type = Type.GetType(typeName);
+
+            if (type == null)
+            {
+                Debug.LogError($"Could not resolve type: {typeName}");
+                return;
+            }
+
+            Saveable instance = ES3.Load<Saveable>(key + "_data", SaveFileName);
+            //SO = Convert.ChangeType(instance, type);
+            //Saveable changedObj = Convert.ChangeType(SO, type);
+            //Saveable instance = Convert.ChangeType(SO, type) as Saveable;
+            //ES3.LoadInto(key + "_data", instance);
+            //ES3.LoadInto(key + "_data", SO);
+            //var changedObj = Convert.ChangeType(SO, type);
+            //return instance;
         }
 
         public bool CheckSaveDataExists()

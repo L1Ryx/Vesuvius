@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerUnlocks", menuName = "Scriptable Objects/PlayerUnlocks")]
-public class PlayerUnlocks : ScriptableObject, Saveable
+public class PlayerUnlocks : Saveable
 {
     public bool canDoubleJump;
     public bool canRealityShift;
@@ -16,14 +16,14 @@ public class PlayerUnlocks : ScriptableObject, Saveable
         canRealityShift = true;
     }
 
-    public void Reset()
+    public override void Reset()
     {
         canDoubleJump = false;
         canRealityShift = false;
     }
 }
 
-public interface Saveable
+public abstract class Saveable : ScriptableObject
 {
-    public void Reset();
+    public abstract void Reset();
 }

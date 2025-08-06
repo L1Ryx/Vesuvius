@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _ScriptableObjects
 {
     [CreateAssetMenu(fileName = "GateData", menuName = "GameData/GateData")]
-    public class GateData : ScriptableObject
+    public class GateData : Saveable
     {
         [System.Serializable]
         public class GateEntry
@@ -41,6 +41,11 @@ namespace _ScriptableObjects
             }
             SetGateLockedState("01-08-01", false);
             Debug.Log("All gates have been reset to locked state.");
+        }
+
+        public override void Reset()
+        {
+            //none
         }
     }
 }

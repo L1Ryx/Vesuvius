@@ -30,7 +30,7 @@ using UnityEngine.Events;
 namespace _ScriptableObjects.PlayerInfo
 {
     [CreateAssetMenu(fileName = "PlayerInfo", menuName = "ScriptableObjects/PlayerInfo", order = 1)]
-    public class PlayerInfo : ScriptableObject
+    public class PlayerInfo : Saveable
     {
         [Header("Player Info")]
         public bool hasCompletedDemo = false;
@@ -235,5 +235,10 @@ namespace _ScriptableObjects.PlayerInfo
 
         public int GetAbilityCost() => abilityCost;
         public void SetAbilityCost(int value) => abilityCost = Mathf.Max(0, value);
+
+        public override void Reset()
+        {
+            //temp
+        }
     }
 }

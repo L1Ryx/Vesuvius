@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _ScriptableObjects
 {
     [CreateAssetMenu(fileName = "BulbData", menuName = "GameData/BulbData")]
-    public class BulbData : ScriptableObject
+    public class BulbData : Saveable
     {
         [System.Serializable]
         public class BulbEntry
@@ -53,6 +53,11 @@ namespace _ScriptableObjects
                 bulb.isAlive = true;
             }
             Debug.Log("All bulbs have been reset to alive state.");
+        }
+
+        public override void Reset()
+        {
+            //none
         }
     }
 }

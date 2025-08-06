@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.Interactions;
 //For example, you could store the guids of all gates that have been opened, so that when loading a Scene
 //it keeps them opened.
 [CreateAssetMenu(fileName = "BinaryStateStorage", menuName = "Scriptable Objects/BinaryStateStorage")]
-public class BinaryStateStorage : ScriptableObject
+public class BinaryStateStorage : Saveable
 {
     [SerializeField]
     HashSet<string> binaryStateStorage = new HashSet<string>();
@@ -42,7 +42,7 @@ public class BinaryStateStorage : ScriptableObject
         }
     }
 
-    public void Reset()
+    public override void Reset()
     {
         binaryStateStorage.Clear();
         shownGuids.Clear();

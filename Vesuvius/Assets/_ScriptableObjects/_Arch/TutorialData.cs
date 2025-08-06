@@ -4,7 +4,7 @@ using UnityEngine;
 namespace _ScriptableObjects
 {
     [CreateAssetMenu(fileName = "TutorialData", menuName = "ScriptableObjects/TutorialData", order = 2)]
-    public class TutorialData : ScriptableObject
+    public class TutorialData : Saveable
     {
         [Header("Tutorial Tracking")]
         [Tooltip("List of tutorial IDs that have been shown.")]
@@ -40,6 +40,11 @@ namespace _ScriptableObjects
         {
             shownTutorials.Clear();
             Debug.Log("All tutorials have been reset.");
+        }
+
+        public override void Reset()
+        {
+            //nothing
         }
     }
 }
